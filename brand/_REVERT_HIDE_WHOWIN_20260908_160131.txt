@@ -1,0 +1,4 @@
+ScoreNet hide Who-will-win card deploy 20260908_160131
+VER boot: 20260907ab
+Revert: bash /var/www/scorenet/_revert_hide_whowin_20260908_160131/REVERT.sh
+Files: brand/boot.js + boot.js?v= bust on HTML shells

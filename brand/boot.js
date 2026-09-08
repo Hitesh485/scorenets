@@ -867,6 +867,45 @@
     });
   } catch (e) {}
 
+  // Remove Sofascore "Who will win?" vote black card (collapse layout; no blank gap).
+  // Does not touch profile predictions list or weekly-challenge copy.
+  try {
+    function snHideWhoWillWinCards() {
+      try {
+        if (document.body && document.body.getAttribute("data-sn-profile-page") === "1") return;
+        var nodes = document.querySelectorAll("span");
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          if (el.closest("#sn-predictions-list")) continue;
+          if (el.closest("[data-sn-who-win-hidden='1']")) continue;
+          var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+          if (t !== "Who will win?") continue;
+          var card = el.closest(".card-component");
+          if (!card) continue;
+          var ct = card.textContent || "";
+          if (!/Cast your vote|Total votes/i.test(ct)) continue;
+          card.style.setProperty("display", "none", "important");
+          card.style.setProperty("height", "0", "important");
+          card.style.setProperty("overflow", "hidden", "important");
+          card.style.setProperty("margin", "0", "important");
+          card.style.setProperty("padding", "0", "important");
+          card.style.setProperty("border", "0", "important");
+          card.setAttribute("data-sn-who-win-hidden", "1");
+        }
+      } catch (eHide) {}
+    }
+    snHideWhoWillWinCards();
+    document.addEventListener("DOMContentLoaded", snHideWhoWillWinCards);
+    [50, 200, 600, 1500, 3000].forEach(function (ms) {
+      setTimeout(snHideWhoWillWinCards, ms);
+    });
+    try {
+      new MutationObserver(function () {
+        snHideWhoWillWinCards();
+      }).observe(document.documentElement, { childList: true, subtree: true });
+    } catch (eObs) {}
+  } catch (eWho) {}
+
   // ScoreNet Who-will-win + profile predictions (isolated)
   try {
     function snLoadPredictions() {
