@@ -1258,9 +1258,6 @@
       "M4 2v20h10.226L19 17.124V2zm1.52 1.552h11.962v12.374H13.38v4.52H5.52z",
       "M15.589 5.737v1.728H9.45v2.223H7.732V5.737zM15.589 9.688v3.952H7.732V11.91h6.139V9.689z",
     ]);
-    var fantasyIco = qlIco(
-      "m4 11-.67 2.33L2 14l1.33.67L4 17l.67-2.33L6 14l-1.33-.67zM15 3 8.06 5.97l-1.73-.31-.83-3.67-.83 3.67L2 6.49l2.67.83.83 3.67.83-3.67 1.82-.33 1.84 11.99 5 3 5-3 2-13-7-3zm3 12h-6v-1.5h4.5V12H18zm0-4.5h-4.5V12H12V9h6z"
-    );
     var torneoIco = qlIco(
       [
         "M14.556 8.008c.054 0 .098.044.098.097v6.464a.097.097 0 0 1-.098.098H1.431a.097.097 0 0 1-.098-.098V12.46c0-.053.043-.097.098-.097h10.828c.054 0 .098-.056.098-.111V8.105c0-.053.043-.097.098-.097z",
@@ -1294,13 +1291,12 @@
       "M16.41 4H7.59L4 7.59V18l2 2h3v-7l-1-1H6V8.41L8.41 6h7.18L18 8.41V12h-2l-1 1v5h-2v-1h-2v3h7l2-2V7.59z"
     );
 
-    // Sofascore: News / Fantasy / Torneo only when logged in
+    // Sofascore: News / Torneo only when logged in (Fantasy removed)
     var top = "";
     if (logged) {
       top =
         '<div class="sn-ql-section sn-ql-section-first">' +
         qlItem("/news", "News", newsIco) +
-        qlItem("/fantasy", "Fantasy", fantasyIco) +
         qlItem("https://torneo.sofascore.com/", "Torneo", torneoIco, true) +
         "</div>";
     }
@@ -2168,7 +2164,7 @@
       "<span>Add matches to your calendar</span></div>" +
       "<div>" +
       ic.trophy +
-      "<span>Play Fantasy &amp; Weekly Challenge</span></div>" +
+      "<span>Play Weekly Challenge</span></div>" +
       "<div>" +
       ic.ai +
       "<span>Get access to ScoreNet Pro</span></div>" +

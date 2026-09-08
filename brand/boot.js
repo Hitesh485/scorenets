@@ -4,6 +4,15 @@
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   var PIXEL = "/static/images/placeholders/pixel.png";
 
+  // Fantasy product removed — never land on /fantasy shells
+  try {
+    var _snFantasyPath = (location.pathname || "").replace(/\/+$/, "") || "/";
+    if (_snFantasyPath === "/fantasy" || _snFantasyPath.indexOf("/fantasy/") === 0) {
+      location.replace("/");
+      return;
+    }
+  } catch (eFantasyRedir) {}
+
   // Quiet noisy third-party / hydration errors from scraped Sofascore SPA
   try {
     var _err = console.error;
@@ -112,6 +121,15 @@
             return;
           }
 
+          // Fantasy removed — never soft-nav into scraped fantasy shells
+          if (path === "/fantasy" || path.indexOf("/fantasy/") === 0) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+            location.assign("/");
+            return;
+          }
+
           // Dedicated scraped shells (not soft Next routes)
           var SHELL_PATHS = [
             "/user/profile",
@@ -119,8 +137,6 @@
             "/user/top-predictors",
             "/user/top-contributors",
             "/user/top-editors",
-            "/fantasy",
-            "/fantasy/landing",
             "/feedback",
             "/football/player-transfers",
             "/football/player-of-the-season",
@@ -191,6 +207,20 @@
             ev.stopPropagation();
             if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
             // Home has live scores + favourites entry points until /favorites shell exists
+            location.assign("/");
+            return;
+          }
+
+          // Fantasy tab removed
+          if (
+            href === "/fantasy" ||
+            href === "/fantasy/" ||
+            (href && href.indexOf("/fantasy/") === 0) ||
+            label === "fantasy"
+          ) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
             location.assign("/");
             return;
           }

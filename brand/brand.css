@@ -173,6 +173,26 @@ img[src*="files.sofascore.com/creatives"],
   display: none !important;
 }
 
+/* Hide Fantasy tab/links (mobile bottom nav + desktop nav CTAs) */
+a[href="/fantasy"],
+a[href="/fantasy/"],
+a[href^="/fantasy/"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  opacity: 0 !important;
+}
+
 svg[width="x1"],
 svg[height="x1"] {
   width: 4px !important;
