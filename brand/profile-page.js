@@ -1,6 +1,6 @@
 /* ScoreNet profile page interactions — Edit / Share / ⋯ menu (Sofascore-matching) */
 (function () {
-  var VER = "20260904q";
+  var VER = "20260908ov";
 
   function ready(fn) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
@@ -458,13 +458,56 @@
     true
   );
 
+  function isDesktopProfile() {
+    try {
+      if (window.matchMedia) return window.matchMedia("(min-width: 992px)").matches;
+    } catch (e) {}
+    return window.innerWidth >= 992;
+  }
+
+  /** Desktop only: remove Predictions section from DOM; keep Overview. */
+  function removeDesktopPredictionsSection() {
+    if (!isProfilePage() || !isDesktopProfile()) return;
+    try {
+      var list = document.getElementById("sn-predictions-list");
+      if (list && list.parentNode) list.parentNode.removeChild(list);
+    } catch (e0) {}
+
+    try {
+      var spans2 = document.querySelectorAll("span");
+      for (var j = 0; j < spans2.length; j++) {
+        var s = spans2[j];
+        if (((s.textContent || "").replace(/\s+/g, " ").trim()) !== "Predictions") continue;
+        if (s.id === "sn-predictions-list" || (s.closest && s.closest("#sn-predictions-list"))) continue;
+        var r = s.parentElement;
+        for (var d = 0; d < 10 && r && r !== document.body; d++) {
+          var cls = String(r.className || "");
+          var st = String(r.getAttribute("style") || "");
+          if (/md:br_xl|mdDown:mb_md/.test(cls) || /surface\.s1|colors-surface-s1/.test(st)) {
+            var rt = (r.textContent || "").replace(/\s+/g, " ");
+            if (/Predictions/i.test(rt) && (/Active|Finished|voted on/i.test(rt) || r.querySelector("svg"))) {
+              if (r.parentNode) r.parentNode.removeChild(r);
+            }
+            break;
+          }
+          r = r.parentElement;
+        }
+        break;
+      }
+    } catch (e2) {}
+  }
+
   function boot() {
     if (!isProfilePage()) return;
+    removeDesktopPredictionsSection();
     bind();
     // auth.js may re-hide photos after loadMe — re-apply
     setTimeout(ensurePhotoVisible, 200);
     setTimeout(ensurePhotoVisible, 800);
     setTimeout(bind, 500);
+    [0, 300, 1000, 2500].forEach(function (ms) {
+      setTimeout(removeDesktopPredictionsSection, ms);
+    });
   }
 
   ready(boot);
