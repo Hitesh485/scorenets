@@ -480,7 +480,7 @@
             };
             iframe.onerror = function () { setStatus("Player failed — Open upstream link"); };
             iframe.src = watchUrl;
-            setStatus("Loading via PC live-proxy for " + gmid);
+            setStatus("Loading via local /xfeed-rts → :8799");
           })
           .catch(function (err) {
             showPlayerMsg("Stream error", String(err && err.message ? err.message : err));
