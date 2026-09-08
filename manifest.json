@@ -1,0 +1,7 @@
+{
+  "mode": "live_static_bridge",
+  "scraped_at": "20260731_173956",
+  "title": "Football Live Scores, Fixtures & Odds | Sofascore | Championship League, Premier League",
+  "assets": 655,
+  "note": "SPA scripts kept; browser talks to Sofascore APIs via bridge"
+}

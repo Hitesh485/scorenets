@@ -1,0 +1,29 @@
+{
+  "assets": 104,
+  "pages": [
+    {
+      "route": "/football/player-transfers",
+      "out": "football/player-transfers/index.html",
+      "bytes": 461357,
+      "title": "Football transfers - latest signings & fees | Sofascore"
+    },
+    {
+      "route": "/football/player-of-the-season",
+      "out": "football/player-of-the-season/index.html",
+      "bytes": 376772,
+      "title": "Sofascore Player of the Season | Winners & Stats"
+    },
+    {
+      "route": "/tv-schedule",
+      "out": "tv-schedule/index.html",
+      "bytes": 350048,
+      "title": "TV Schedule & Channels for Football, Basketball, Tennis & more | Sofascore"
+    },
+    {
+      "route": "/betting-tips-today",
+      "out": "betting-tips-today/index.html",
+      "bytes": 496037,
+      "title": "Free odds analysis and team streak information"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+nginx 18471 ok
+html_patched 32
+/* ScoreNet Live TV — header link (never inject into ad slots) */
+(function (
+chrome_markers_gone
+api 200 97149
+events 24
+REVERT_OK
+
+2026/09/07 11:18:40 [warn] 2690993#2690993: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/scorenets.com:18
+2026/09/07 11:18:40 [warn] 2690993#2690993: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/scorenets.com:19
+2026/09/07 11:18:40 [warn] 2690993#2690993: duplicate MIME type "text/html" in /etc/nginx/sites-enabled/stonexch99:178
+2026/09/07 11:18:40 [warn] 2690993#2690993: protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/stonexch99:223
+2026/09/07 11:18:40 [warn] 2690993#2690993: protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/stonexch99:224
+2026/09/07 11:18:40 [warn] 2690993#2690993: duplicate MIME type "text/html" in /etc/nginx/sites-enabled/stonexch99:398
+2026/09/07 11:18:40 [warn] 2690993#2690993: duplicate MIME type "text/html" in /etc/nginx/snippets/swastik-perf.conf:6
+2026/09/07 11:18:40 [warn] 2690993#2690993: duplicate MIME type "text/html" in /etc/nginx/sites-enabled/swastikgoid:91
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+Removed "/etc/systemd/system/multi-user.target.wants/scorenet-sofa-relay.service".

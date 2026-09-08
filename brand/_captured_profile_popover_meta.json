@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "logged_in_popover": true,
+  "cls": "pb_lg",
+  "text_preview": "majnu ki laila Profile Language English (UK) \u0627\u064e\u0644\u0652\u0639\u064e\u0631\u064e\u0628\u0650\u064a\u064e\u0651\u0629\u064f Az\u0259rbaycan \u09ac\u09be\u0982\u09b2\u09be \u010cesk\u00fd Dansk Deutsch \u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac English (UK) English (US) Espa\u00f1ol Espa\u00f1ol (Latinoam\u00e9rica) Fran\u00e7ais Hind\u012b Hrvatski Magyar Bahasa Indonesia Italiano \u65e5\u672c\u8a9e Nederlands Bokm\u00e5l Polski Portugu\u00eas (Brasil) Portugu\u00eas (Portugal) Rom\u00e2n\u0103 P\u0443",
+  "user": {
+    "name": "majnu ki laila",
+    "id": "6a9a5c862dcc3c7653848f5a",
+    "has_avatar": false
+  },
+  "html_bytes": 20662,
+  "out_file": "_captured_profile_popover.html",
+  "session_storage": "not_provided",
+  "click": {
+    "clicked": true,
+    "why": "mouse-avatar"
+  },
+  "state": {
+    "hasAvatar": true,
+    "signIn": false,
+    "openPop": true,
+    "title": "Football Live Scores, Fixtures & Odds | Sofascore | Championship League, Premier"
+  },
+  "auth_settle": {
+    "hasAvatar": true,
+    "signIn": false
+  }
+}

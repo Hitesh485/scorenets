@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ScoreNet auth</title>
+</head>
+<body style="background:#12141a;color:#fff;font-family:system-ui;padding:24px">
+  <p>Finishing sign-in…</p>
+  <script>
+    (async function () {
+      var params = new URLSearchParams(location.search);
+      var to = params.get("to") || "";
+      var user = null;
+      try {
+        var j = await fetch("/backend/auth/me", { credentials: "include" }).then(function (r) {
+          return r.json();
+        });
+        if (j && j.ok && j.user) user = j.user;
+      } catch (e) {}
+      var payload = { type: "sn-auth-handoff", user: user };
+      if (window.opener && !window.opener.closed) {
+        try {
+          window.opener.postMessage(payload, "*");
+        } catch (e2) {}
+        try {
+          window.close();
+        } catch (e3) {}
+        document.body.innerHTML = "<p>Signed in. You can close this window.</p>";
+        return;
+      }
+      if (to && /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(to)) {
+        var raw = btoa(unescape(encodeURIComponent(JSON.stringify(user))));
+        var dest = to.split("#")[0];
+        if (dest.indexOf("auth-receive") < 0) {
+          dest = dest.replace(/\/?$/, "/") + "brand/auth-receive.html";
+        }
+        location.href = dest + "#sn_auth=" + encodeURIComponent(raw);
+        return;
+      }
+      // Same-tab production handoff (no opener): land on home logged-in
+      location.href = "/?auth=ok";
+    })();
+  </script>
+</body>
+</html>

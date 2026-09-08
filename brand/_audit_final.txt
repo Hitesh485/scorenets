@@ -1,0 +1,58 @@
+=== bak-spa _next block ===
+    }
+
+    # Missing Next chunks must 404 (browser bridge loads them from Sofascore).
+    # Never SPA-fallback .js under /_next/ — that caused "Unexpected token '<'".
+    # Next/Image optimizer is not on this static scrape — unwrap to real image path.
+    # Next/Image optimizer is not on this static scrape.
+    # live-bridge.js unwraps /_next/image?url= to /api/v1/.../image (nginx image location / @sofa_img).
+    # Do not if-rewrite here: encoded $arg_url 404s and unencoded rewrite cycles (500).
+    location = /_next/image {
+        return 404;
+    }
+
+    location ^~ /_next/ {
+        try_files $uri =404;
+        add_header Cache-Control "public, max-age=300";
+    }
+
+    location / {
+        add_header Cache-Control "no-store, no-cache, must-revalidate" always;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|webp|woff2?|ttf|eot|ico|json)$ {
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800, immutable";
+        try_files $uri =404;
+=== bak-20260814 _next block ===
+    }
+    location ^~ /assets/b-code. {
+        try_files $uri /static/images/placeholders/pixel.png;
+    }
+    location ^~ /_next/ {
+        try_files $uri =404;
+        add_header Cache-Control "public, max-age=300";
+    }
+
+    location ^~ /assets/ {
+        try_files $uri =404;
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800";
+    }
+
+    location ^~ /static/ {
+        try_files $uri $uri/ =404;
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800";
+    }
+
+=== how many html broken like theme-boot ===
+broken_theme_boot 23
+HEAD_3000_BRANDISH
+  /brand/theme-boot.js?v=20260907p'gtag_enable_tcf_support']
+boot.js well False
+auth.js well False
+live-bridge well False
+next_script_count 0
+next_scripts_sample []

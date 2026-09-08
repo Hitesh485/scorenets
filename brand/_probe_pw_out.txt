@@ -1,0 +1,67 @@
+1601 /tmp/sn_pw.txt
+=== scrape_missing head ===
+#!/usr/bin/env python3
+"""Scrape missing SofaScore sport shells + list APIs into public/."""
+from __future__ import annotations
+
+import json
+import os
+import re
+import sys
+from datetime import date, datetime, timezone
+from pathlib import Path
+
+from curl_cffi import requests
+
+ROOT = Path(__file__).resolve().parents[1]
+PUBLIC = ROOT / "public"
+CACHE = PUBLIC / "sofa-cache"
+BRAND_VER = "20260814w14"
+
+SPORTS = [
+    "football",
+    "cricket",
+    "tennis",
+    "basketball",
+    "table-tennis",
+    "badminton",
+    "ice-hockey",
+    "baseball",
+    "handball",
+    "volleyball",
+    "american-football",
+    "darts",
+    "esports",
+    "motorsport",
+    "mma",
+    "rugby",
+    "futsal",
+    "snooker",
+    "waterpolo",
+    "aussie-rules",
+    "cycling",
+    "beach-volley",
+    "minifootball",
+    "floorball",
+    "bandy",
+    "padel",
+]
+
+EXTRA_PAGES = ["/news"]
+
+BLOCKED = re.compile(
+    r"doubleclick|googlesyndication|googletagmanager|googletagservices|securepubads|"
+    r"pagead2|adverge|challenges\.cloudflare|cloudflareinsights|criteo|prebid|adnxs|"
+    r"amazon-adsystem|confiant|hotjar|fullstory|sentry\.io|google-analytics|fundingchoices",
+    re.I,
+)
+
+HTML_HEADERS = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-GB,en;q=0.9",
+    "Referer": "https://www.sofascore.com/",
+=== package ===
+=== node fetch ===
+403 {"error": {"code": 403, "reason": "Forbidden" }}
+=== try install playwright in venv briefly? check chrome path ===
+CHROME=

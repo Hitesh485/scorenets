@@ -1,0 +1,23 @@
+{
+  "assets": 0,
+  "pages": [
+    {
+      "route": "/football/player-of-the-season",
+      "out": "football/player-of-the-season/index.html",
+      "bytes": 211,
+      "title": ""
+    },
+    {
+      "route": "/tv-schedule",
+      "out": "tv-schedule/index.html",
+      "bytes": 211,
+      "title": ""
+    },
+    {
+      "route": "/betting-tips-today",
+      "out": "betting-tips-today/index.html",
+      "bytes": 211,
+      "title": ""
+    }
+  ]
+}

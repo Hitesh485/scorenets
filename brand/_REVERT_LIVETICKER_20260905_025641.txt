@@ -1,0 +1,8 @@
+﻿ScoreNet live-ticker deploy 20260905_025641
+Remote root: /var/www/scorenet
+Revert folder: /var/www/scorenet/_revert_liveticker_20260905_025641
+
+To REVERT:
+  ssh -i "D:\Tivra3\scorenet\betting_production (1).pem" ubuntu@13.232.247.32 "bash /var/www/scorenet/_revert_liveticker_20260905_025641/REVERT.sh"
+
+Then hard-refresh the browser.

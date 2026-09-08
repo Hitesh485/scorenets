@@ -1,0 +1,1962 @@
+/* ScoreNet brand — logo + ads + Google/Facebook/Apple auth. Do NOT touch Sofascore layout/flex. */
+
+/* Keep app shell visible + full-bleed mobile width.
+   Use overflow-x: clip (not hidden) so Sofascore sticky header still works. */
+html {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: clip !important;
+}
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: clip !important;
+  margin: 0 !important;
+}
+#__next {
+  display: block !important;
+  pointer-events: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: clip !important;
+}
+
+/* Match-row red TV buttons — hidden site-wide (header Live TV untouched) */
+a.sn-tv-match-btn,
+button.sn-tv-match-btn {
+  display: none !important;
+}
+
+/* Live TV chip — compact, never blow out header */
+#sn-live-tv-link,
+a[data-sn-tv="1"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  margin: 0 8px 0 0 !important;
+  padding: 5px 9px !important;
+  border-radius: 8px !important;
+  background: #e10600 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Mobile header: drop Sofascore "download app" (overlaps Live TV) + collapse ad pocket */
+@media (max-width: 899px) {
+  header a[href*="app.sofascore.com"],
+  header a[href*="deep_link_value"],
+  #sn-download-app-link,
+  a[data-sn-download-app="1"] {
+    display: none !important;
+  }
+
+  #header-ad-container {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* 30x30 header ad pocket left of actions */
+  header div.w_\[30px\].h_\[30px\],
+  header [class*="w_[30px]"][class*="h_[30px]"] {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #sn-live-tv-link,
+  a[data-sn-tv="1"] {
+    margin: 0 6px 0 0 !important;
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* ScoreNet logo */
+img[alt="ScoreNet"],
+img[alt="logo"][data-sn-logo],
+img[src*="scorenet-logo"],
+img[data-sn-logo] {
+  object-fit: contain !important;
+  height: 28px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  background: transparent !important;
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 900px) {
+  img[alt="ScoreNet"],
+  img[alt="logo"][data-sn-logo],
+  img[src*="scorenet-logo"],
+  img[data-sn-logo] {
+    height: 32px !important;
+    max-width: 200px !important;
+  }
+}
+
+/* Hard-kill leftover Sofascore brand marks — HEADER ONLY (never odds/bookmaker/tournament logos) */
+header img[src*="logo_"][src$=".png"],
+header img[src*="logo_"][src$=".svg"],
+header img[src*="logo_"][src$=".webp"],
+header img[src*="/static/images/"][src*="logo"],
+header img[src*="apple-icon"],
+header img[alt="Sofascore"],
+header img[alt="sofaScore"],
+header img[alt="logo"]:not([data-sn-logo]),
+a[href="/"] > img[alt="logo"],
+a[title*="Sofascore"] img,
+a[title*="ScoreNet"] img {
+  content: url("/brand/scorenet-logo.svg?v=20260811a") !important;
+}
+
+/* Soft-hide ads completely — no logo fill in ad slots */
+[data-aaad="true"],
+[data-sn-ad-logo="1"],
+[data-sn-ad-hide="1"],
+[id*="gpt-ad"],
+iframe[src*="files.sofascore.com"],
+img[src*="files.sofascore.com/creatives"],
+[class*="floatingCTA"],
+[class*="FloatingCTA"],
+[class*="ad-unit-container"],
+.sn-ad-logo-slot {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Never hide Sofascore mobile bottom tab bar */
+[class*="bottomNavigation"],
+[class*="BottomNavigation"],
+[class*="z_bottomNavigation"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: none !important;
+  overflow: visible !important;
+  transform: translateY(0) !important;
+  z-index: 10050 !important;
+}
+
+[class*="bottomNavigation"] [class*="ad-unit-container"],
+[class*="BottomNavigation"] [class*="ad-unit-container"] {
+  display: none !important;
+}
+
+svg[width="x1"],
+svg[height="x1"] {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+/* Do NOT hide Facebook / Apple — ScoreNet supports all providers.
+   Legacy Google-only hide rule removed. */
+
+/* Legacy floating chip — disabled; use header profile icon */
+#sn-auth-chip,
+#sn-profile-menu {
+  display: none !important;
+}
+
+html.sn-auth-lock,
+html.sn-auth-lock body {
+  overflow: hidden !important;
+}
+
+/* ===== Sofascore-clone profile dropdown ===== */
+#sn-auth-drop {
+  position: fixed;
+  z-index: 2147483646;
+  width: min(320px, calc(100vw - 16px));
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #f2f2f2;
+  display: block;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#sn-auth-drop.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#sn-auth-drop .sn-drop-card {
+  background: #272c32;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  padding: 0;
+  overflow: hidden;
+  min-width: 320px;
+  width: min(320px, calc(100vw - 24px));
+}
+
+#sn-auth-drop .sn-drop-ico {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: block;
+}
+
+#sn-auth-drop .sn-drop-ico-sm {
+  width: 18px;
+  height: 18px;
+  opacity: 0.75;
+}
+
+#sn-auth-drop .sn-drop-guest-top {
+  padding: 20px 20px 4px;
+}
+
+#sn-auth-drop .sn-drop-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+#sn-auth-drop .sn-drop-mark-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #7a84ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+#sn-auth-drop .sn-drop-mark-svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+#sn-auth-drop .sn-drop-mark {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+#sn-auth-drop .sn-drop-signin {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  background: #7a84ff;
+  color: #12141a;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+#sn-auth-drop .sn-drop-signin:hover {
+  filter: brightness(1.05);
+}
+
+#sn-auth-drop .sn-drop-signin-ico {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(18, 20, 26, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #12141a;
+}
+
+#sn-auth-drop .sn-drop-signin-ico .sn-drop-ico {
+  width: 14px;
+  height: 14px;
+}
+
+#sn-auth-drop .sn-drop-perks {
+  margin-top: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e8eef4;
+}
+
+#sn-auth-drop .sn-drop-perks > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+#sn-auth-drop .sn-drop-perks > div + div {
+  margin-top: 10px;
+}
+
+#sn-auth-drop .sn-drop-perks .sn-drop-ico {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: #e8eef4;
+}
+
+#sn-auth-drop .sn-drop-section {
+  margin: 0;
+  padding: 14px 20px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#sn-auth-drop .sn-drop-label {
+  font-weight: 700;
+  font-size: 14px;
+  color: #e8eef4;
+  margin-bottom: 10px;
+}
+
+#sn-auth-drop .sn-drop-lang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #e8eef4;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+#sn-auth-drop .sn-drop-lang:hover,
+#sn-auth-drop .sn-drop-lang.open {
+  background: rgba(122, 132, 255, 0.18);
+  margin: 0 -12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(100% + 24px);
+}
+
+#sn-auth-drop .sn-drop-flag-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+#sn-auth-drop .sn-drop-flag {
+  font-size: 18px;
+  line-height: 1;
+}
+
+#sn-auth-drop .sn-drop-lang-text {
+  flex: 1;
+}
+
+#sn-auth-drop .sn-lang-menu {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  max-height: 220px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+}
+
+#sn-auth-drop .sn-lang-menu[hidden] {
+  display: none !important;
+}
+
+#sn-auth-drop .sn-lang-opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #e8eef4;
+  font-size: 14px;
+}
+
+#sn-auth-drop .sn-lang-opt:hover,
+#sn-auth-drop .sn-lang-opt.on {
+  background: rgba(122, 132, 255, 0.22);
+}
+
+#sn-auth-drop .sn-drop-outline {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  width: auto;
+  max-width: 100%;
+  appearance: none;
+  background: transparent;
+  color: #7a84ff;
+  border: 1px solid #7a84ff;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sn-auth-drop .sn-drop-theme-opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e8eef4;
+  min-height: 36px;
+  padding: 4px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+}
+
+#sn-auth-drop .sn-drop-theme-opt:hover {
+  background: rgba(122, 132, 255, 0.18);
+}
+
+#sn-auth-drop .sn-drop-theme {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #e8eef4;
+  padding-bottom: 8px;
+}
+
+#sn-auth-drop .sn-drop-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #7a84ff;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#sn-auth-drop .sn-drop-theme-opt.on .sn-drop-radio {
+  border-color: #7a84ff;
+  background: transparent;
+}
+
+#sn-auth-drop .sn-drop-theme-opt.on .sn-drop-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7a84ff;
+}
+
+#sn-auth-drop .sn-drop-settings {
+  margin: 0;
+  padding: 14px 20px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  width: 100%;
+  background: transparent;
+  color: #e8eef4;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+#sn-auth-drop .sn-drop-settings:hover {
+  background: rgba(122, 132, 255, 0.22);
+}
+
+#sn-auth-drop .sn-drop-theme-opt {
+  cursor: pointer;
+}
+
+/* ===== Settings modal (All settings) ===== */
+#sn-settings-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#sn-settings-modal.hidden {
+  display: none !important;
+}
+
+#sn-settings-modal .sn-settings-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+#sn-settings-modal .sn-settings-card {
+  position: relative;
+  z-index: 1;
+  width: min(640px, calc(100vw - 24px));
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  background: #272c32;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
+
+#sn-settings-modal .sn-settings-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 8px;
+}
+
+#sn-settings-modal .sn-settings-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#sn-settings-modal .sn-settings-x {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  line-height: 1;
+}
+
+#sn-settings-modal .sn-settings-body {
+  padding: 8px 16px 20px;
+}
+
+#sn-settings-modal .sn-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  #sn-settings-modal .sn-settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#sn-settings-modal .sn-settings-block {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 14px 14px 10px;
+}
+
+#sn-settings-modal .sn-settings-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c5ccd4;
+  margin-bottom: 10px;
+}
+
+#sn-settings-modal .sn-set-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #e8eef4;
+  font-size: 14px;
+}
+
+#sn-settings-modal .sn-drop-flag-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#sn-settings-modal .sn-drop-outline {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  appearance: none;
+  background: transparent;
+  color: #7a84ff;
+  border: 1px solid #7a84ff;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#sn-settings-modal .sn-set-radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #e8eef4;
+  font-size: 14px;
+  padding: 8px 4px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+#sn-settings-modal .sn-set-radio:hover {
+  background: rgba(122, 132, 255, 0.18);
+}
+
+#sn-settings-modal .sn-drop-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #7a84ff;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#sn-settings-modal .sn-set-radio.on .sn-drop-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7a84ff;
+}
+
+#sn-settings-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(20px);
+  background: #323843;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 2147483647;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+#sn-settings-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ScoreNet-owned header profile button (reliable click target) */
+button.sn-header-profile-btn,
+button.sn-header-ql-btn,
+#sn-header-profile-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0 0 0 4px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 6;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+button.sn-header-ql-btn {
+  margin: 0 4px 0 0;
+  border-radius: 0;
+}
+/* Guest: hide until mounted in main actions cluster (avoids sports-row float) */
+#sn-header-profile-btn[data-sn-profile-pending="1"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+#sn-header-profile-btn .sn-header-guest-ico {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+header [data-sn-native-profile-hidden="1"],
+header [data-sn-hidden-dup-profile="1"] {
+  display: none !important;
+}
+
+#sn-auth-drop .sn-menu-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+#sn-auth-drop a.sn-menu-user-link {
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 16px 20px;
+  border-radius: 0;
+  background: rgba(122, 132, 255, 0.25);
+}
+
+#sn-auth-drop a.sn-menu-user-link:hover {
+  background: rgba(122, 132, 255, 0.32);
+}
+
+#sn-auth-drop .sn-menu-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2a2a;
+  flex-shrink: 0;
+}
+
+#sn-auth-drop .sn-menu-avatar-fallback {
+  background: #374151;
+}
+
+#sn-auth-drop .sn-menu-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+#sn-auth-drop .sn-menu-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#sn-auth-drop .sn-menu-profile-link {
+  color: #7a84ff;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+#sn-auth-drop .sn-menu-chevron {
+  color: #9ca3af;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+#sn-auth-drop .sn-menu-email-row,
+#sn-auth-drop .sn-menu-email {
+  display: none !important;
+}
+
+#sn-auth-drop .sn-menu-logout {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #e8eef4;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  text-align: left;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+#sn-auth-drop .sn-menu-logout:hover {
+  background: rgba(122, 132, 255, 0.25);
+  color: #fff;
+}
+
+/* ===== Quick links popover only (Sofascore surface.sp + textStyle tokens) ===== */
+#sn-quick-links {
+  position: fixed;
+  z-index: 2147483646;
+  width: min(264px, calc(100vw - 16px));
+  font-family: "Sofascore Sans", "Segoe UI", system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#sn-quick-links.hidden {
+  display: none !important;
+}
+
+#sn-quick-links .sn-ql-card {
+  background: #272c32;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  padding: 0 0 8px;
+}
+
+/* display.small — 14px / 700 / -0.028px (sofa title) */
+#sn-quick-links .sn-ql-title {
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  line-height: 1.143 !important;
+  letter-spacing: -0.028px !important;
+  color: #ffffff !important;
+  padding: 16px 16px 8px;
+  margin: 0;
+}
+
+#sn-quick-links .sn-ql-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 0;
+}
+
+#sn-quick-links .sn-ql-section-first {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* body.mediumParagraph — 14px / 400 (sofa row label) */
+#sn-quick-links .sn-ql-item,
+#sn-quick-links a.sn-ql-item,
+#sn-quick-links button.sn-ql-item {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 16px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  line-height: 1.43 !important;
+  letter-spacing: -0.028px !important;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box;
+  font-family: inherit !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#sn-quick-links .sn-ql-item span {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+}
+
+#sn-quick-links .sn-ql-item:hover,
+#sn-quick-links .sn-ql-item:focus {
+  background: rgba(122, 132, 255, 0.22);
+  color: #ffffff !important;
+  outline: none;
+}
+
+#sn-quick-links .sn-ql-ico {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  min-height: 24px;
+  flex: 0 0 24px;
+  flex-shrink: 0;
+  color: #ffffff !important;
+  fill: currentColor;
+  display: block;
+  overflow: visible;
+}
+
+#sn-quick-links .sn-ql-chevron {
+  width: 20px !important;
+  height: 20px !important;
+  margin-left: auto;
+  flex: 0 0 20px;
+  opacity: 0.55;
+  color: #b8b4ff;
+}
+
+#sn-ql-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483645;
+  background: rgba(0, 0, 0, 0.55);
+}
+#sn-ql-backdrop.hidden {
+  display: none !important;
+}
+html.sn-ql-lock,
+html.sn-ql-lock body {
+  overflow: hidden !important;
+}
+
+/* Mobile Sofascore parity: one bolt, no header profile, QL as bottom sheet */
+@media (max-width: 899px) {
+  #sn-header-profile-btn,
+  header button.sn-header-profile-btn,
+  header [data-sn-mobile-header-profile-hidden="1"],
+  header [data-sn-native-profile-hidden="1"],
+  header [data-sn-native-ql-hidden="1"] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #sn-quick-links.sn-ql-sheet {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: min(86vh, 720px);
+    z-index: 2147483646;
+  }
+
+  #sn-quick-links.sn-ql-sheet .sn-ql-card {
+    border-radius: 16px 16px 0 0;
+    max-height: min(86vh, 720px);
+    overflow: auto;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  #sn-quick-links.sn-ql-sheet .sn-ql-grabber {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    margin: 10px auto 4px;
+  }
+
+  #sn-quick-links.sn-ql-sheet .sn-ql-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 8px 4px 16px;
+  }
+
+  #sn-quick-links.sn-ql-sheet .sn-ql-head .sn-ql-title {
+    padding: 8px 0;
+  }
+
+  #sn-quick-links.sn-ql-sheet .sn-ql-close {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #b8b4ff;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  #sn-quick-links.sn-ql-sheet .sn-ql-item {
+    min-height: 48px;
+  }
+}
+
+/* Sofascore logout confirm — surface.sp #272C32, primary #7A84FF, maxW 312px */
+#sn-logout-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#sn-logout-modal.hidden {
+  display: none !important;
+}
+
+#sn-logout-modal .sn-logout-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+#sn-logout-modal .sn-logout-card {
+  position: relative;
+  z-index: 1;
+  width: min(312px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: #272c32;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+#sn-logout-modal .sn-logout-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+}
+
+#sn-logout-modal .sn-logout-msg {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #e8eef4;
+}
+
+#sn-logout-modal .sn-logout-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+
+#sn-logout-modal .sn-logout-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 4px 0;
+  margin: 0;
+  cursor: pointer;
+  color: #7a84ff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+#sn-logout-modal .sn-logout-btn:hover {
+  color: #9aa2ff;
+}
+
+/* Logged-in: only our avatar inside the header profile control */
+header [data-sn-profile="1"] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 2;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-width: 28px;
+  min-height: 28px;
+}
+header [data-sn-profile-trigger="1"] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+header [data-sn-profile-hit="1"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 6 !important;
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  background: transparent !important;
+}
+header [data-sn-profile="1"] > *:not(img[data-sn-avatar]):not([data-sn-profile-hit]),
+header [data-sn-profile="1"] svg,
+header [data-sn-profile="1"] img:not([data-sn-avatar]) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+header [data-sn-profile="1"] img[data-sn-avatar],
+header img.sn-header-avatar {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+header [data-sn-hidden-dup-profile="1"] {
+  display: none !important;
+}
+
+/* Quick links (lightning) must never be collapsed by dup-profile hiding */
+header [data-sn-quick-links="1"],
+header button[aria-label="Quick links"],
+header button[aria-label="quick links"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+header [data-sn-quick-links="1"][data-sn-hidden-dup-profile],
+header button[aria-label="Quick links"][data-sn-hidden-dup-profile] {
+  display: inline-flex !important;
+}
+
+/* ===== Sofascore-clone sign-in modal (Google only) ===== */
+#sn-auth-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#sn-auth-modal.hidden {
+  display: none !important;
+}
+
+#sn-auth-modal .sn-auth-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+#sn-auth-modal .sn-auth-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  background: #0f1113;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+}
+
+#sn-auth-modal .sn-auth-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  appearance: none;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#sn-auth-modal .sn-auth-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+
+#sn-auth-modal .sn-auth-modal-left {
+  padding: 48px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  background: #121416;
+}
+
+#sn-auth-modal .sn-auth-left-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#sn-auth-modal .sn-auth-headline {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+#sn-auth-modal .sn-auth-providers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 393px;
+}
+
+#sn-auth-modal .sn-auth-provider {
+  width: 100%;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 14px 0 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 48px;
+  min-height: 48px;
+}
+
+#sn-auth-modal .sn-auth-provider:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Sofascore-like: Google filled, FB/Apple outline */
+#sn-auth-modal .sn-auth-google {
+  background: #2a2f36;
+  border-color: transparent;
+}
+
+#sn-auth-modal .sn-auth-google:hover {
+  background: #343b44;
+}
+
+#sn-auth-modal .sn-auth-provider-label {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#sn-auth-modal .sn-auth-provider-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#sn-auth-modal .sn-auth-g-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+#sn-auth-modal .sn-auth-fb-icon,
+#sn-auth-modal .sn-auth-apple-icon {
+  background: transparent;
+}
+
+#sn-auth-modal .sn-auth-legal {
+  margin: 0;
+  color: #8b949e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#sn-auth-modal .sn-auth-legal a {
+  color: #6ea8fe;
+  text-decoration: none;
+}
+
+#sn-auth-modal .sn-auth-legal a:hover {
+  opacity: 0.75;
+}
+
+/* Right panel — Sofascore signup: video edge-to-edge cover */
+#sn-auth-modal .sn-auth-modal-right {
+  background: #0b1220;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  align-self: stretch;
+}
+
+#sn-auth-modal .sn-auth-modal-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#sn-auth-modal .sn-auth-modal-video {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: cover;
+  object-position: center;
+  background: #000;
+}
+
+#sn-auth-modal .sn-auth-modal-logo {
+  width: min(220px, 55%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.45));
+}
+
+#sn-auth-modal .sn-auth-modal-sport {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  #sn-auth-modal .sn-auth-modal-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  #sn-auth-modal .sn-auth-modal-right {
+    display: none;
+  }
+  #sn-auth-modal .sn-auth-modal-left {
+    padding: 36px 22px 28px;
+  }
+}
+
+img.sn-header-avatar,
+button img[data-sn-avatar],
+[data-sn-profile] img[data-sn-avatar] {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* My profile page — fill empty avatar ring with silhouette / Google photo */
+.sn-profile-page-avatar-host,
+[data-sn-page-avatar="1"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #a3a3a3 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.sn-profile-page-avatar-fallback-host {
+  width: 96px;
+  height: 96px;
+  margin: 12px auto 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-sizing: border-box;
+}
+
+.sn-profile-page-avatar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sn-profile-page-avatar-host .sn-profile-page-icon,
+[data-sn-page-avatar="1"] .sn-profile-page-icon {
+  width: 46%;
+  height: 46%;
+  display: block;
+  opacity: 0.9;
+}
+
+.sn-profile-page-avatar-host .sn-profile-page-photo,
+[data-sn-page-avatar="1"] .sn-profile-page-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+[data-sn-hidden-empty-avatar="1"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Hide Sofascore empty User-image placeholder when we paint the profile avatar */
+.sn-profile-page-avatar-host > img[alt="User image"],
+.sn-profile-page-avatar-host > img[src*="placeholders/player"],
+img[data-sn-hidden-empty-avatar="1"] {
+  display: none !important;
+}
+
+/* Paywall (TV / Analyst→Pro) SIGN IN — match Sofascore Pro modal */
+.sn-paywall-signin-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 28px 0 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.sn-paywall-signin {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 168px;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  background: #9aa3f5;
+  color: #1a1a1a;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.sn-paywall-signin:hover {
+  background: #adb4f7;
+}
+
+.sn-paywall-signin-ico {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.sn-paywall-signin-ico svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Gold product name in paywall (Sofascore Pro) — Sofascore uses <analyst> tag */
+analyst {
+  color: #c9a227;
+}
+
+/*
+ * Comparison data / AI "About the match" markdown tables.
+ * Sofascore styles these via parent utilities like [&_td]:bd_1px_solid_...;
+ * on the scrape those utilities often don't wrap the table, so borders/padding vanish.
+ * Scope: bare tables + tagged .sn-md-table — do NOT touch .table__* standings widgets.
+ */
+#__next table.sn-md-table,
+#__next table:not([class*="table__"]) {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  display: table !important;
+  table-layout: auto !important;
+  margin: 8px 0 14px !important;
+}
+
+#__next table.sn-md-table thead,
+#__next table:not([class*="table__"]) thead {
+  display: table-header-group !important;
+}
+
+#__next table.sn-md-table tbody,
+#__next table:not([class*="table__"]) tbody {
+  display: table-row-group !important;
+}
+
+#__next table.sn-md-table tr,
+#__next table:not([class*="table__"]) tr {
+  display: table-row !important;
+}
+
+#__next table.sn-md-table th,
+#__next table.sn-md-table td,
+#__next table:not([class*="table__"]) th,
+#__next table:not([class*="table__"]) td {
+  display: table-cell !important;
+  border: 1px solid var(--colors-neutrals-n-lv4, rgba(168, 177, 185, 0.32)) !important;
+  padding: 6px 10px !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  white-space: normal !important;
+  color: inherit !important;
+  box-sizing: border-box !important;
+}
+
+#__next table.sn-md-table th,
+#__next table:not([class*="table__"]) th {
+  font-weight: 600 !important;
+  background: var(--colors-surface-s2, rgba(255, 255, 255, 0.045)) !important;
+}
+
+/* ===== Profile page: Edit / Share toast / ⋯ menu ===== */
+.sn-copied-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(16px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #b8c1ff;
+  color: #12141a;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  z-index: 10060;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.sn-copied-toast-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.sn-copied-ico {
+  display: inline-flex;
+  color: #12141a;
+}
+
+.sn-profile-more {
+  position: fixed;
+  z-index: 10055;
+  min-width: 220px;
+  background: #24262b;
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+}
+.sn-profile-more.hidden {
+  display: none !important;
+}
+.sn-profile-more-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+.sn-profile-more-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.sn-profile-more-danger {
+  color: #f07167;
+}
+.sn-profile-more-danger svg {
+  color: #f07167;
+}
+
+.sn-delete-account-modal,
+.sn-profile-edit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10070;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.sn-delete-account-modal.hidden,
+.sn-profile-edit-modal.hidden {
+  display: none !important;
+}
+.sn-delete-backdrop,
+.sn-pedit-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.sn-delete-card {
+  position: relative;
+  width: min(400px, 100%);
+  background: #272c32;
+  border-radius: 16px;
+  padding: 22px 22px 16px;
+  z-index: 1;
+}
+.sn-delete-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.sn-delete-msg {
+  color: #a8b1b9;
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+.sn-delete-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.sn-delete-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #8b95f2;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.sn-delete-btn-danger {
+  background: #f07167;
+  color: #12141a;
+}
+
+.sn-pedit-card {
+  position: relative;
+  z-index: 1;
+  width: min(440px, 100%);
+  max-height: min(92vh, 760px);
+  background: #20232b;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+.sn-pedit-scroll {
+  overflow: auto;
+  padding: 28px 24px 12px;
+}
+.sn-pedit-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.sn-pedit-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2f36;
+}
+.sn-pedit-change {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #8b95f2;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.sn-pedit-field {
+  display: block;
+  margin-bottom: 12px;
+}
+.sn-pedit-label {
+  display: block;
+  font-size: 12px;
+  color: #8a939c;
+  margin-bottom: 6px;
+}
+.sn-pedit-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #15181e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  padding: 14px 14px;
+  outline: none;
+}
+.sn-pedit-input:focus {
+  border-color: #8b95f2;
+}
+.sn-pedit-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8a939c;
+  font-size: 13px;
+  margin: 4px 0 18px;
+}
+.sn-pedit-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 8px 0 18px;
+}
+.sn-pedit-badges-head {
+  text-align: center;
+  font-weight: 800;
+  color: #fff;
+  font-size: 16px;
+}
+.sn-pedit-badges-sub {
+  text-align: center;
+  color: #8a939c;
+  font-size: 13px;
+  margin: 6px 0 14px;
+}
+.sn-pedit-badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sn-pedit-badge {
+  position: relative;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #1a1e25;
+  border-radius: 12px;
+  color: #e8eaed;
+  padding: 18px 12px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 96px;
+  font-size: 13px;
+}
+.sn-pedit-badge-on {
+  border-color: #8b95f2;
+  box-shadow: 0 0 0 1px #8b95f2 inset;
+}
+.sn-pedit-badge-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #8b95f2;
+  color: #12141a;
+  font-size: 11px;
+  font-weight: 800;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.sn-pedit-badge-on .sn-pedit-badge-check {
+  display: flex;
+}
+.sn-pedit-badge-ico {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+.sn-pedit-badge-ico[data-ico="target"] {
+  border-style: solid;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5c9d0'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23c5c9d0' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+}
+.sn-pedit-badge-ico[data-ico="pencil"] {
+  border-style: solid;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5c9d0'%3E%3Cpath d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/%3E%3C/svg%3E");
+}
+.sn-pedit-badge-ico[data-ico="bolt"] {
+  border-style: solid;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5c9d0'%3E%3Cpath d='M7 2v11h3v9l7-12h-4l4-8z'/%3E%3C/svg%3E");
+}
+.sn-pedit-badge-ico[data-ico="shield"] {
+  border-style: solid;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5c9d0'%3E%3Cpath d='M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/%3E%3C/svg%3E");
+}
+.sn-pedit-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sn-pedit-cancel {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #8b95f2;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.sn-pedit-save {
+  appearance: none;
+  border: 0;
+  background: #8b95f2;
+  color: #12141a;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Scraped profile photos: only when logged in (guest must not see bake-in Google avatar) */
+body[data-sn-profile-page="1"][data-sn-authed="1"] img[alt="User image"][src*="googleusercontent"],
+body[data-sn-profile-page="1"][data-sn-authed="1"] img[alt="User image"][src^="http"] {
+  display: block !important;
+  visibility: visible !important;
+}
+
+body[data-sn-profile-page="1"]:not([data-sn-authed="1"]) img[alt="User image"][src*="googleusercontent"],
+body[data-sn-profile-page="1"]:not([data-sn-authed="1"]) img[alt="User image"][src^="http"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Weekly Challenge: guest must not see Daily 10x voting widget (Sofascore parity) */
+body[data-sn-wc-page="1"]:not([data-sn-authed="1"]) [data-sn-daily-10x-widget="1"],
+body:not([data-sn-authed="1"]) [data-sn-daily-10x-widget="1"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/*
+  Freeze shells (Next hydrate disabled): Sofascore Fresnel hides desktop SSR on
+  phone and leaves the mobile slot empty. Force-show desktop; hide empty mobile.
+  Covers QL pages (data-sn-page), profile, weekly-challenge, etc.
+*/
+body[data-sn-page] .fresnel-container.fresnel-greaterThanOrEqual-mdMin,
+body[data-sn-profile-page="1"] .fresnel-container.fresnel-greaterThanOrEqual-mdMin,
+body[data-sn-wc-page="1"] .fresnel-container.fresnel-greaterThanOrEqual-mdMin {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+body[data-sn-page] .fresnel-container.fresnel-lessThan-mdMin,
+body[data-sn-profile-page="1"] .fresnel-container.fresnel-lessThan-mdMin,
+body[data-sn-wc-page="1"] .fresnel-container.fresnel-lessThan-mdMin {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+body[data-sn-page] .desktop-only,
+body[data-sn-profile-page="1"] .desktop-only,
+body[data-sn-wc-page="1"] .desktop-only {
+  display: block !important;
+  visibility: visible !important;
+}
+
+
+
+/* ScoreNet predictions (Who will win + profile list) */
+.sn-predictions-list{display:flex;flex-direction:column;gap:12px;padding:8px 4px 16px;width:100%}
+.sn-predictions-empty{opacity:.7;font-size:13px;padding:12px 4px}
+.sn-predictions-row{padding:10px 8px;border-radius:8px;background:rgba(255,255,255,.03)}
+.sn-predictions-row-top{display:flex;flex-direction:column;gap:2px;margin-bottom:6px}
+.sn-predictions-when{font-size:12px;opacity:.65}
+.sn-predictions-match{font-size:14px;font-weight:600}
+.sn-predictions-row-vote{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sn-predictions-label{font-size:13px;opacity:.8}
+.sn-predictions-choice{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:50%;background:#3762dc;color:#fff;font-weight:700;font-size:13px}
+.sn-predictions-odds{color:#3ecf8e;font-weight:600;font-size:13px}
+[data-sn-vote-section="1"] button{pointer-events:auto!important;cursor:pointer!important;position:relative;z-index:6}

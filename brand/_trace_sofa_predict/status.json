@@ -1,0 +1,9 @@
+{
+  "ts": "2026-09-07T07:58:21.023963+00:00",
+  "phase": "cdp_monitoring",
+  "mode": "existing_user_chrome",
+  "active": "https://www.sofascore.com/",
+  "log_lines": 0,
+  "write_ops": 0,
+  "seconds_left": 919
+}

@@ -1,0 +1,18 @@
+﻿ScoreNet profile deploy 20260905_022548
+Remote root: /var/www/scorenet
+Revert folder: /var/www/scorenet/_revert_profile_20260905_022548
+
+Live verified OK:
+- /brand/theme-boot.js?v=20260905e → 200
+- /brand/auth.js?v=20260905e → 200
+- /brand/profile-page.js → 200
+- /brand/brand.css?v=20260905e → 200
+- /user/profile/ → 200
+- / → theme-boot ref present
+
+To REVERT live to pre-deploy state (if anything breaks):
+  ssh -i "D:\Tivra3\scorenet\betting_production (1).pem" ubuntu@13.232.247.32 "bash /var/www/scorenet/_revert_profile_20260905_022548/REVERT.sh"
+
+Then hard-refresh the browser (Ctrl+Shift+R).
+
+Note: API OAuth patch was NOT deployed (static profile set only).

@@ -1,0 +1,55 @@
+=== sample chunk 404 ===
+d333 404
+52054 404
+sofa d333 403
+=== nginx _next ===
+85:        proxy_pass https://img.sofascore.com;
+181:    # Per-sport HTML shells (CORS blocks Sofascore /_next/data from this origin)
+208:        proxy_pass https://files.sofascore.com/;
+289:    # Never SPA-fallback .js under /_next/ — that caused "Unexpected token '<'".
+292:    # live-bridge.js unwraps /_next/image?url= to /api/v1/.../image (nginx image location / @sofa_img).
+294:    location = /_next/image {
+298:    location ^~ /_next/ {
+=== index script/logo corruption check ===
+len 698506
+ScoreNet logo refs 8 Sofascore text 0
+bad_v_src [] count 0
+brand scripts ["/brand/theme-boot.js?v=20260907p'gtag_enable_tcf_support'] = true;\n          window.dataLayer = window.dataLayer || [];\n          window.googletag = window.googletag || { cmd: [] };\n          window.adv = window.adv || { cmd: [] };\n          window.sas = window.sas || { cmd: [] };\n        </script><style type="]
+buildId e9udwwXeohTpEeFx9Jmr9
+unique chunk refs in html 1
+d333b046-b1256f18810602e8.js in_html False
+52054.17e6899f3ed90a48.js in_html False
+4765-c8ca352748f2737e.js in_html False
+local _next dir False
+=== location _next block ===
+    # Next/Image optimizer is not on this static scrape — unwrap to real image path.
+    # Next/Image optimizer is not on this static scrape.
+    # live-bridge.js unwraps /_next/image?url= to /api/v1/.../image (nginx image location / @sofa_img).
+    # Do not if-rewrite here: encoded $arg_url 404s and unencoded rewrite cycles (500).
+    location = /_next/image {
+        return 404;
+    }
+
+    location ^~ /_next/ {
+        try_files $uri =404;
+        add_header Cache-Control "public, max-age=300";
+    }
+
+    location / {
+        add_header Cache-Control "no-store, no-cache, must-revalidate" always;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|svg|webp|woff2?|ttf|eot|ico|json)$ {
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800, immutable";
+        try_files $uri =404;
+    }
+
+    # Missing scrape stubs (flags / placeholders / workers)
+    location ^~ /static/ {
+        try_files $uri $uri/ =404;
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800";
+    }
+}

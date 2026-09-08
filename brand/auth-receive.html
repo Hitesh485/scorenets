@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ScoreNet</title>
+</head>
+<body style="background:#12141a;color:#fff;font-family:system-ui;padding:24px">
+  <p>Returning to ScoreNet…</p>
+  <script>
+    (function () {
+      var user = null;
+      var hadPayload = false;
+      try {
+        var m = /(?:^|[?#&])sn_auth=([^&]+)/.exec(location.hash + "&" + location.search.slice(1));
+        if (m) {
+          hadPayload = true;
+          var json = decodeURIComponent(escape(atob(decodeURIComponent(m[1]))));
+          user = JSON.parse(json);
+          if (user) localStorage.setItem("sn_auth_user_v1", JSON.stringify(user));
+          // Do not clear existing local session when handoff returns null mid-poll
+        }
+      } catch (e) {}
+
+      // Embedded / opener handoff path
+      if (hadPayload && window.opener && !window.opener.closed) {
+        try {
+          window.opener.postMessage({ type: "sn-auth-handoff", user: user }, "*");
+        } catch (e2) {}
+        try {
+          window.close();
+        } catch (e3) {}
+      }
+      if (hadPayload && window.parent && window.parent !== window) {
+        try {
+          window.parent.postMessage({ type: "sn-auth-handoff", user: user }, "*");
+        } catch (e4) {}
+        return;
+      }
+
+      location.replace("/");
+    })();
+  </script>
+</body>
+</html>

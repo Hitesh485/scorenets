@@ -1,0 +1,972 @@
+[
+  {
+    "url": "https://www.sofascore.com/user/profile",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/static/fonts/SofascoreSans/woff2/SofascoreSans-Regular.woff2",
+    "method": "GET",
+    "resource": "font"
+  },
+  {
+    "url": "https://www.sofascore.com/static/fonts/SofascoreSans/woff2/SofascoreSans-Medium.woff2",
+    "method": "GET",
+    "resource": "font"
+  },
+  {
+    "url": "https://www.sofascore.com/static/fonts/SofascoreSans/woff2/SofascoreSans-Bold.woff2",
+    "method": "GET",
+    "resource": "font"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/css/9a6d92a6b60f39e4.css",
+    "method": "GET",
+    "resource": "stylesheet"
+  },
+  {
+    "url": "https://www.sofascore.com/static/locales/messages.en.6845bf7d5afa.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/99618.f47f07fe54f3f87d.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/76396.0f322086a877e946.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/71870.7feb5c99f545b08f.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/59908.495e38b296da7741.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/38731.2d3f42ed810c33fe.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/75575.22aae18ec4240c05.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/3045.e159d86a7dc30330.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/71339.2cbd53d09181ea0a.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/45023.bf0d96b9e59b68fa.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/5258.388e19ededb92953.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/5817.c2b68ed21b59e868.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/68481.ee95b65deac1cf33.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/41224.e5ebdda3e14a9de1.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/webpack-4993a6676f7c1e73.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/framework-aed03caaeb4d9b0d.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/main-8413cf92738feb20.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/pages/_app-d33180d1748d923a.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/d333b046-b1256f18810602e8.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/4765-ff83bcc092500da8.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/28446-d9835f27ca973519.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/56591-3cf494cd1b09a1e7.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/83170-8690f279da9adc1c.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/98501-a7d3d591b3f5fb4c.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/59283-7c12d5f02f9450ff.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/29190-1fab24daedd39c45.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/41828-17a27abd6ffc969d.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/8943-7fb09ebe949d42dc.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/91570-315b25e061fa93d5.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/72333-68674d12a9dc4991.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/88121-01d20adaa154377c.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/pages/user/profile/%5B%5B...userId%5D%5D-ac3a89bab8205c43.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/R3p43n4-Tii8_CiDPh-ue/_buildManifest.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/R3p43n4-Tii8_CiDPh-ue/_ssgManifest.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/52054.1dbe364c54210b59.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://accounts.google.com/gsi/client",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/static/scripts/highlightsWorker.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/25908.71714b2a60266abc.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/27976.c8a01d94f2904a45.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/81598.aeb22f1b31c210ac.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/44535.16f598453c0a8a66.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/53960.94f260c8bee6412b.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/67365.38cc2b62df39487e.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/73950.f488c32e546d1f9a.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/9497.eea901ce91390e76.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/45309-27911e075da9617a.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/27560-6858953e78522901.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/20337-ceb6fca9c03b7443.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/14388-c40f9244517c8b59.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/79203-f10dd2da2525e391.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/18545-dfeff699c3194d46.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/85585-2bc8f8c0a4e6bddf.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/89500-f1c235cb4c2a2b9c.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/86843.ca38fad490db2707.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/69067.3a9a2873ce39309b.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/88356.e3a6d3a1d2cfa427.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/71906.19b788780d733d5a.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/58765.29584ef625aea38b.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/32001.e27ad55f4bfab6ce.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/38501.7f2f9808515e56fe.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.sofascore.com/static/videos/sports.mp4",
+    "method": "GET",
+    "resource": "media"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/23289.1ec93487ff3e6d13.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/62492.fa3e7fc07189dbde.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/38215.67b7706e2ca8263f.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/branding/providers/IN/web",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/trending/events/IN/all",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://cdn.adverge.ai/adv.sofascore.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/static/videos/sports.mp4",
+    "method": "GET",
+    "resource": "media"
+  },
+  {
+    "url": "https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202609030101/pubads_impl.js?cb=122880906",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/39670.2244d5fbaca0ca06.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://securepubads.g.doubleclick.net/pagead/managed/dict/m202609030101/gpt",
+    "method": "GET",
+    "resource": "other"
+  },
+  {
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/7l2vt/0x4AAAAAADcoqB6O4KpaoADv/auto/fbE/new/normal?lang=auto",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://accounts.google.com/gsi/style",
+    "method": "GET",
+    "resource": "stylesheet"
+  },
+  {
+    "url": "https://accounts.google.com/gsi/button?type=standard&size=large&width=393&theme=outline&is_fedcm_supported=true&client_id=1041482749526-pog2k1h2qm81bs9tbik7ri14ql4bk1sa.apps.googleusercontent.com&iframe_id=gsi_489621_401186&cas=nbegGAb9ThHXaXNZyeXrdDCjEQnMqiJRxiC2i7gh2k4",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/i/21866864457?ers=3",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.sofascore.com/_next/static/chunks/85984.edc9bd00e3f0b3c2.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/34318/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/56035/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/168086/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/56021/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2888/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/40/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/3250/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2058/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/56027/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/34469/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/34315/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/168094/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2695/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2699/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2846/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2824/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/1962/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/5926/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/57163/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/308084/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/7/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/36/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2829/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2697/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2673/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2819/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/3002/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/17/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/1643/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2816/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/25/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/39/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/1961/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/36837/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/3202/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/1981/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2817/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/2959/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/23400/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://img.sofascore.com/api/v1/team/168090/image",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://scripts.webcontentassessor.com/scripts/9711f4c30547940f6fb34ddd61761b4a02e80e7270366d323cb165013a62ba11",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://backend.adverge.ai/api/v2/logs/page-view",
+    "method": "POST",
+    "resource": "ping"
+  },
+  {
+    "url": "https://b-code.liadm.com/did-00a7.min.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://cdn.pbxai.com/0d9767fe-b508-4bde-b932-8296e0b93d76.js?pbxd=https%3A%2F%2Fwww.sofascore.com",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://adv-a.hbwrapper.com/",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://unpkg.com/web-vitals/dist/web-vitals.iife.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://adv-a.hbwrapper.com/tis",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/prebid/currency-file@1/latest.json",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://rp.liadm.com/j?dtstmp=1788844490095&did=did-00a7&se=eyJpcHY2IjoiMjQwMTo0OTAwOjg4NDA6ZWEyNDpjZGQ2Ojc4ZTQ6NjliNzpiODc4In0&duid=a78faec1e09d--01m1zq1fbd4nff1bsvtrbyxdc4&tv=11.29.0&pu=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&wpn=prebid&cd=.sofascore.com&pip6=MjQwMTo0OTAwOjg4NDA6ZWEyNDpjZGQ2Ojc4ZTQ6NjliNzpiODc4",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://id.a-mx.com/sync/?tagId=&ref=null&u=https://www.sofascore.com/user/profile&tl=https://www.sofascore.com/user/profile&nf=0&rt=true&v=11.29.0&av=2.0&vg=adv&us_privacy=null&am=null&gdpr=0&gdpr_consent=",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://gum.criteo.com/sid/json?origin=prebid&topUrl=https%3A%2F%2Fwww.sofascore.com%2F&domain=www.sofascore.com&cw=1&lsw=1",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://id5-sync.com/api/config/prebid",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://idx.liadm.com/idex/did-00a7/any?duid=a78faec1e09d--01m1zq1fbd4nff1bsvtrbyxdc4&did=did-00a7&cd=.sofascore.com&pu=https%3A%2F%2Fwww.sofascore.com&pip6=MjQwMTo0OTAwOjg4NDA6ZWEyNDpjZGQ2Ojc4ZTQ6NjliNzpiODc4&resolve=nonId&resolve=uid2&resolve=bidswitch&resolve=medianet&resolve=magnite&resolve=pubmatic&resolve=index&resolve=openx&resolve=thetradedesk&resolve=sovrn&resolve=vidazoo&resolve=sharethrough&resolve=triplelift&resolve=zetassp&resolve=nexxen",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://id.crwdcntrl.net/id?c=18110",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://hbwrapper.nyc3.cdn.digitaloceanspaces.com/cookiesEnabled.html",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://unpkg.com/web-vitals@6.2.1/dist/web-vitals.iife.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCI.woff2",
+    "method": "GET",
+    "resource": "font"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/f/AGSKWxU2egO9-dB1dvsleacAeNVx-wfpdCi-GGJePrIaQCGazSOzWYPtBKSCmcSLNO4BTfE0OIiev5T5HEViPcutxJ3PT_UnoYSWlLph3X5y0d4nMnhROYA3-6UvvdYICmnhbzWPpN9tJw==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4ODQ0NDkwLDI2MzAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzddXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJST3NxLV9zMXVETSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw4MjU3XV1dIl0sWzM1LCIxNzg4ODQ0NDkwIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://cm.g.doubleclick.net/partnerpixels?gdpr=0&us_privacy=1---&gpp_sid=-1&url=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://static.criteo.net/js/ld/publishertag.ids.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://securepubads.g.doubleclick.net/gampad/ads?pvsid=2539505731814224&correlator=3210660336583559&eid=31099681%2C122880906&output=ldjh&gdfp_req=1&vrg=202609030101&ptt=17&impl=fifs&gdpr=0&us_privacy=1---&gpp_sid=-1&iu_parts=21866864457%2CWEB_Desktop-Mobile_Homepage_Gift_Fluid&enc_prev_ius=%2F0%2F1&prev_iu_szs=320x50%7C1x1&fluid=height&ifi=1&didk=1903898832&dids=div-gpt-ad-1680080290316-0&adfs=3089422110&sfv=1-0-45&sc=1&cookie_enabled=1&abxe=1&dt=1788844490282&lmt=1788844490&adxs=1006&adys=65&biw=1440&bih=900&scr_x=0&scr_y=0&btvi=0&ucis=1&oid=2&u_his=2&u_h=900&u_w=1440&u_ah=900&u_aw=1440&u_cd=24&u_sd=1&u_tz=330&dmc=16&bc=31&nvt=1&uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE1MS4wLjc5MjIuMzQiLG51bGwsMCxudWxsLCI2NCIsW1siTm90PUE_QnJhbmQiLCI5OS4wLjAuMCJdLFsiSGVhZGxlc3NDaHJvbWUiLCIxNTEuMC43OTIyLjM0Il0sWyJDaHJvbWl1bSIsIjE1MS4wLjc5MjIuMzQiXV0sMF0.&url=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&vis=1&psz=30x-1&msz=30x-1&fws=516&ohw=1440&a3p=Eh0KDmVzcC5jcml0ZW8uY29tGKH8wvuHNEgAUgIIZA..&dlt=1788844488905&idt=780&prev_scp=ad_format%3D09_Gift_WEB%26ad_position%3Dnav_bar&cust_params=fpdTest%3Dtrue%26li-module-enabled%3Dt1%26pis2s%3Dtrue%26wvr%3D7%26wie%3Dtop%26cndl%3D10%26cnrtt%3D0%26cntp%3Dna%26cnet%3D4g%26cnsd%3Dfalse%26wrc%3Dnf%26gpt_l%3D0%26wrap_l%3D8600%26sesdepth%3D1%26domain%3Dsofascore.com%26wrapCode%3Dsofascore%26wrapId%3D10201%26ab_bucket%3D1%26prst%3Dno%26pnType%3Dnavigate%26dtoTest%3Dtrue%26language%3Den%26page_r%3D100%26cookieEnabled%3Dna&adks=2089879339&frm=20&eoidce=1&pgls=CAk.",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://54fb10cdb17fde0e355dcbf8e5254552.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://c3.a-mo.net/b?uid=a99f9e31%2D290d%2D43d2%2D9e13%2D6db6ceee91dd&sh=id%2Ea%2Dmx%2Ecom&gdpr=0&",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=2539505731814224",
+    "method": "GET",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://lb.eu-1-id5-sync.com/lb/v1",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://id.a-mx.com/set?oid=a99f9e31-290d-43d2-9e13-6db6ceee91dd&uid=a99f9e31-290d-43d2-9e13-6db6ceee91dd&",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://ep2.adtrafficquality.google/sodar/sodar2.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://rp4.liadm.com/j?dtstmp=1788844490095&did=did-00a7&se=eyJpcHY2IjoiMjQwMTo0OTAwOjg4NDA6ZWEyNDpjZGQ2Ojc4ZTQ6NjliNzpiODc4In0&duid=a78faec1e09d--01m1zq1fbd4nff1bsvtrbyxdc4&tv=11.29.0&pu=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&wpn=prebid&cd=.sofascore.com&pip6=MjQwMTo0OTAwOjg4NDA6ZWEyNDpjZGQ2Ojc4ZTQ6NjliNzpiODc4&i6=MjQwMTo0OTAwOjg4NDA6ZWEyNDpjZGQ2Ojc4ZTQ6NjliNzpiODc4&n3pc=true",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/f/AGSKWxVg7KofS9U3oY_MvVh1E-QSW5rT8FLLBM4rFprRJ0MLLCTWUI4Du2Dxugn2K7OTQmnDX9eS3gKaiU95J6nTlcYtN72rQGZFK6LElYO2pscApf7FzMK3whU5mKeyjqGwEWNdYsQxH1nKeCPxV-AIXECeTQZchLKUePDaqCdtB9p0C3c4na3hJBTDzJ0p/_&program=revshare&.eu/adv//rollad._468_80./scripts/AdService_",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://pagead2.googlesyndication.com/pagead/show_companion_ad.js?fcd=true",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://ep2.adtrafficquality.google/sodar/sodar2/255/runner.html",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://www.google.com/recaptcha/api2/aframe",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://pagead2.googlesyndication.com/pagead/ping?e=1",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://pagead2.googlesyndication.com/bg/0RC8bF15euHoMkh1IXZZfWRSzQN4ykSPR6g1iQcPav8.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVHhsXC4G2bcMVnoiaHbHeEnuvST3TR35Kv56WN-SvUPqwKoKvRgPvO8a5fYT4HRy8VoHJfrona_dywlrjelRgG5mYkFqYVkGgjrlVH6YxVzMUdI_iRbGQCUDPGS2O_YyG1VUN83Q==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/f/AGSKWxUHqYqRTW0lyXqJBe-5nFuybPZ7kp7w5QAtWY_TzLV0Gc4ikFvRjGx74bJoqN6wTfevgvDSsyHbBf00tfbgxjd9vRI6-rMi24DncQzgRnJPTNLxyHKnciw8qottQUOIfCCekabiwA==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4ODQ0NDkxLDIyODAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNl0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vdXNlci9wcm9maWxlIixudWxsLFtbOCwiUk9zcS1fczF1RE0iXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsODI1N11dXSJdLFszNSwiMTc4ODg0NDQ5MCJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://ep2.adtrafficquality.google/generate_204?CYfY6Q",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=2539505731814224&rc=",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://id5-sync.com/g/v2/1838.json",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/f/AGSKWxWYZxbd1aMDEkP-asfNGwZ1RZiLjxH4WNn9B5xVwN6FC2r59KrDroK7TXQbSxiBb6SCdQ_EzpoJwpHpPlvI-LdYp1zOdDnDEaoGDA9K4J-nxAFGVd0psyrS29Bfhz7KDi1qrwGnBg==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4ODQ0NDkxLDQ1NjAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMF0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vdXNlci9wcm9maWxlIixudWxsLFtbOCwiUk9zcS1fczF1RE0iXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsODI1N11dXSJdLFszNSwiMTc4ODg0NDQ5MCJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVJrTrVdRwGXpLzYJDv8r1iUF2reFx6u3CEbL4tVvT7qZ6M6ANeyzEGvPLDHAuKNAtB0PgG4AXdPueoKgunCDStHuTDTcJLkqcTW0MzZcj3trNGjtw_cOdkFWFDfGG1Rrq3Em9c2A==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/f/AGSKWxV4Wgg7OujOAjjn2QorDlCr4jI1RUjjNBxSpgOOWvmPgBlWMGmALxVOccrW8klL2K-Bmu78JixS9SyF021P_KYAvYXsBhQhvmm7PuhFLtGFItHgOj_sYfevbH7_qY4VIp3Xy6F-sQ==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4ODQ0NDkxLDU3OTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMCw5XSxudWxsLDIsbnVsbCwiZW4iLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJST3NxLV9zMXVETSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw4MjU3XV1dIl0sWzM1LCIxNzg4ODQ0NDkwIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://gumi.criteo.com/syncframe?origin=publishertagids&topUrl=www.sofascore.com&gdpr=0&gdpr_consent=&gpp=&gpp_sid=-1",
+    "method": "GET",
+    "resource": "document"
+  },
+  {
+    "url": "https://fundingchoicesmessages.google.com/el/AGSKWxVwU2Xt66Mo7H77Rv-ZscMRDNOVge5GYHU9fWnqMAmj32nibc88-3uYXx6HxmMkUrgTVmo4Ggw9WM52I7TwEvFFtToXdpaFhloSRc5dzAb7ff5G7z-dEvt3oZMGS-26_4UPO92F3w==",
+    "method": "POST",
+    "resource": "xhr"
+  },
+  {
+    "url": "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=2539505731814224&bg=!sbKlstDNAAaL4Wq0q-E7AEcBe5WfOIGkEv4dMZWh_8reFZS7thq0EW3cx8b9BzTvtgaPpQsrJWAUIV2k-zeIH-BCtmgMom_ocH-jq-MCuKzmLx18_UJaHgIAAAC3UgAAAARoAQd-ADcOPE6zLUtuf1O7XOOEdzUVvwMRL4RNkQ4KhAn2nQ_NrdGwl1hFAbV0h4KI85I0uM9wE2AJDqWdmQKcwm7bmfx_gPnAV2IQzptlQ4TQWyGuYcywdBTJLdeOhcrnrZpizKbQdvsC7oD3WvnamAUSZfYaF2S9UFibEBIIhdr4ZsMq4bBt1D-yjrEEuSaOUKooHLfcLWZmivOuHrZk-Kpsb2Lb87JsP44ZBrR07sozVSQc9MsUYQlOx-FiSX61QtmWg8N3Y2fWJu8WO9_Oqog6R6Z685Y20mwwoImyArJZzMGlF--O7UQBXAndQ10yjxIChUQTyLp2XOj9nh60kCesc-wlxSUJ74rK__111Ieq31AISfdyjPGC3QOn9h3xOwFsYXqC5hYz71Y6qP3WBDpy2ndOO0OwM6sPD5ytJfHqXADjQ9yu1SprT6DVoHYb5WGWGwRUy52R6ccnAigPW4Gnd45n7FeSq5xrpKFadM2FROfV8b-Za0SREj53T61woWnjWdMxHzuRLWalrKHhjIB5kzY11QJXF0H_D098BmUzTJItb8x5t2WP4OymDaF8QY0PBhJokoQytTVSk1AH8bGwmcP52TfGZXcWKdVJ-czu0Mj0Fp5hDaTAGD5gBG2EcKjAdYk6CE8WQ0lq0ia8BXY13Q1G29KdrVaGaaqYmx4zwIVvPhA8iIAsZ2hiRecg8fboryN9p9v163eei221odlNiv59JoGbtpzx0VLKgILJtpR65p1AZ59HQqne7qtp4Aj4COeYwFP2xjowxvVKTmH9zP-FcRa7AsCbkBXHyUhqO82lNomTw0EU_AphJo_NbGvemN61iKSA4ttlFCgvaN3YH1sYvIOoGq_Mgf020hJ-FNxWZJBhRkE-qUVNprfp7xDuiWMycHf5iBuIcJyAdDI9vlCZqCvjw-vaQzjYQjzboqdVqK1zx2S65WKHzTRMPGUNqBUBKuhq_Lc",
+    "method": "GET",
+    "resource": "image"
+  },
+  {
+    "url": "https://gumi.criteo.com/sid/json?origin=publishertagids&domain=sofascore.com&sn=ChromeSyncframe&so=0&topUrl=www.sofascore.com",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://mug.criteo.com/sid?cpp=EXE1LHw1K3RHUjFITUZMYnBYSnBzdmRIUHpwSFowbzZVd09yS3pmdkFXOEdlUkJpdUxZZTB5UFZyUmo0NkZRY1lYTEhaN1BoRzlPWFE2ZlJaRTJsSVFGSmxybXF1MWNLdHUrVWRPTitUd1BvZHRPYTE0ZnRmZnV3VEFqdjMzMnBCQnlXVWM3OGhFeEc4WWZWWUZjRDlKeGhyWWdJclZ5aHc2YWEzOVdZQVNCRjd1SDdacXo2Wno2SVo2ODlaK05QbDlyQjBHZzhrbjVCS1pUaDh0bWdjWitwZHVySzRIR3ZSa1BWWHpMc05MVlc4ekYzdnFEeTJhVURXUEhGOUZrbTVucDYxaFpkRFRaRkxEUnZlVXBEbHBmUFBhL3ZyWXl1M3hteUhFOU51ZGwzSFduTT18&cppv=2",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://adv-a.hbwrapper.com/",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://connect.facebook.net/en_US/sdk.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://adv-a.hbwrapper.com/",
+    "method": "POST",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://connect.facebook.net/en_US/bundle/sdk.js/",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://connect.facebook.net/app_config/json/723083761050073/",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.facebook.com/platform/impression.php/f21c4b4deb07af5f6/?api_key=723083761050073&lid=117&payload=%7B%22payload%22%3A%7B%22cbt_delta%22%3A0%2C%22logger_id%22%3A%22fc2262be8e5e54ed2%22%2C%22action%22%3A%22client_login_start%22%2C%22client_funnel_version%22%3A1%7D%2C%22source%22%3A%22jssdk%22%7D",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.facebook.com/platform/impression.php/f2f97e08306568920/?api_key=723083761050073&lid=117&payload=%7B%22payload%22%3A%7B%22cbt_delta%22%3A0%2C%22logger_id%22%3A%22f2a78eb70c84012de%22%2C%22action%22%3A%22client_login_start%22%2C%22client_funnel_version%22%3A1%7D%2C%22source%22%3A%22jssdk%22%7D",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://www.facebook.com/x/oauth/status?client_id=723083761050073&input_token&origin=1&redirect_uri=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&sdk=joey&wants_cookie_data=false",
+    "method": "GET",
+    "resource": "fetch"
+  },
+  {
+    "url": "https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js",
+    "method": "GET",
+    "resource": "script"
+  },
+  {
+    "url": "https://www.facebook.com/x/oauth/status?client_id=723083761050073&input_token&origin=1&redirect_uri=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&sdk=joey&wants_cookie_data=false",
+    "method": "GET",
+    "resource": "fetch"
+  }
+]

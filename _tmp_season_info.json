@@ -1,0 +1,136 @@
+{
+  "info": {
+    "season": {
+      "name": "Serie A 26/27",
+      "year": "26/27",
+      "editor": false,
+      "id": 95836
+    },
+    "goals": 78,
+    "homeTeamWins": 11,
+    "awayTeamWins": 13,
+    "draws": 4,
+    "yellowCards": 88,
+    "redCards": 1,
+    "newcomersUpperDivision": [],
+    "newcomersLowerDivision": [
+      {
+        "name": "Venezia",
+        "slug": "venezia",
+        "shortName": "Venezia",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 78506,
+        "nameCode": "VEN",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 2688,
+        "teamColors": {
+          "primary": "#231f20",
+          "secondary": "#ed7d01",
+          "text": "#ed7d01"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فينيسيا",
+            "bn": "ভেনেজিয়া",
+            "hi": "वेनेज़िया",
+            "ru": "Венеция"
+          },
+          "shortNameTranslation": {
+            "ar": "فينيسيا"
+          }
+        }
+      },
+      {
+        "name": "Frosinone",
+        "slug": "frosinone",
+        "shortName": "Frosinone",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 52150,
+        "nameCode": "FRO",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 2801,
+        "teamColors": {
+          "primary": "#ffff00",
+          "secondary": "#0033cc",
+          "text": "#0033cc"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "فروزينوني",
+            "bn": "ফ্রোসিনোন",
+            "hi": "फ्रोसिनोन",
+            "ru": "Фрозиноне"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      {
+        "name": "Monza",
+        "slug": "monza",
+        "shortName": "Monza",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 91630,
+        "nameCode": "MON",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 2729,
+        "teamColors": {
+          "primary": "#d71742",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "مونزا",
+            "bn": "মনজা",
+            "hi": "मॉन्ज़ा",
+            "ru": "Монца"
+          },
+          "shortNameTranslation": {}
+        }
+      }
+    ],
+    "newcomersOther": [],
+    "numberOfCompetitors": 20,
+    "id": 63180,
+    "hostCountries": []
+  }
+}

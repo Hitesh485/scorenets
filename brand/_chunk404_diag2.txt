@@ -1,0 +1,28 @@
+theme-boot idx 95
+'<html lang="en" dir="ltr" translate="no" class="dark"><head><script src="/brand/theme-boot.js?v=20260907p\'gtag_enable_tcf_support\'] = true;\n          window.dataLayer = window.dataLayer || [];\n          window.googletag = window.googletag || { cmd: [] };\n          window.adv = wi'
+---
+SCRIPT <script src="/brand/theme-boot.js?v=20260907p'gtag_enable_tcf_support'] = true;
+          window.dataLayer = window.dataLayer || [];
+          window.googletag = window.googletag |
+---
+---
+sw.js refs 1 serviceWorker 2
+header Sofascore img/alt 3
+scorenet-logo True
+bak /tmp/scorenets.com.bak.1788778653 _next proxy sofascore False try_files _next True
+bak /tmp/scorenets.com.bak.sofa.1788778886 _next proxy sofascore False try_files _next True
+=== git/bak sites-available ===
+-rw-r--r-- 1 root root 12342 Sep  7 11:18 /etc/nginx/sites-available/scorenets.com
+-rw-r--r-- 1 root root  5812 Aug 13 14:32 /etc/nginx/sites-available/scorenets.com.bak-20260814-next
+-rw-r--r-- 1 root root 12142 Sep  1 12:50 /etc/nginx/sites-available/scorenets.com.bak-spa-1788515920
+298:    location ^~ /_next/ {
+299-        try_files $uri =404;
+300-        add_header Cache-Control "public, max-age=300";
+301-    }
+302-
+303-    location / {
+304-        add_header Cache-Control "no-store, no-cache, must-revalidate" always;
+305-        try_files $uri $uri/ /index.html;
+306-    }
+=== does live-bridge rewrite chunk to sofa? ===
+open live-bridge snippet

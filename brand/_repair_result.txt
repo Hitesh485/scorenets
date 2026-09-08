@@ -1,0 +1,9 @@
+fixed_files 23 subs 23 still_bad 0
+home_checks {'theme_boot_ok': True, 'boot_js': False, 'live_bridge': False, 'auth_js': False, 'next_scripts': 0}
+theme snippet: 'theme-boot.js?v=20260907p"></script><script>\n          window[\'gtag_enable_tcf_support\'] = true;\n          window.dataLa'
+next_js_count 0
+sample []
+brand ['/brand/theme-boot.js?v=20260907p']
+api_events 25
+REPAIR_OK
+

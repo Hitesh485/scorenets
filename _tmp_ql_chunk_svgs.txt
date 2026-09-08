@@ -1,0 +1,139 @@
+
+
+########## News chunk=59908 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\59908.495e38b296da7741_86dc65f913.js ##########
+size=851
+viewBox=['0 0 24 24']
+path_count=2
+PATH[0]: M4 2v20h10.226L19 17.124V2zm1.52 1.552h11.962v12.374H13.38v4.52H5.52z
+PATH[1]: M15.589 5.737v1.728H9.45v2.223H7.732V5.737zM15.589 9.688v3.952H7.732V11.91h6.139V9.689z
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="d8919083-0924-41a9-a8a4-12bd12fb5e25",e._sentryDebugIdIdentifier="sentry-dbid-d8919083-0924-41a9-a8a4-12bd12fb5e25")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[59908],{59908:(e,t,s)=>{s.r(t),s.d(t,{default:()=>r});var d=s(64631),n=s(6029);function r(e){return(0,n.jsxs)(d.t,(0,d.n)((0,d.n)({isRtlPrevented:!0,widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},e),{},{children:[(0,n.jsx)("path",{d:"M4 2v20h10.226L19 17.124V2zm1.52 1.552h11.962v12.374H13.38v4.52H5.52z"}),(0,n.jsx)("path",{d:"M15.589 5.737v1.728H9.45v2.223H7.732V5.737zM15.589 9.688v3.952H7.732V11.91h6.139V9.689z"})]}))}}}]);
+
+
+########## Fantasy chunk=93427 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\93427.bae311e8c684ef23_a142458eaa.js ##########
+size=946
+viewBox=['0 0 24 24']
+path_count=1
+PATH[0]: m4 11-.67 2.33L2 14l1.33.67L4 17l.67-2.33L6 14l-1.33-.67zM15 3 8.06 5.97l-1.73-.31-.83-3.67-.83 3.67L2 6.49l2.67.83.83 3.67.83-3.67 1.82-.33 1.84 11.99 5 3 5-3 2-13-7-3zm3 12h-6v-1.5h4.5V12H18zm0-4.5h-4.5V12H12V9h6z
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="0a10b841-2e1c-4210-853a-11fb6518727f",e._sentryDebugIdIdentifier="sentry-dbid-0a10b841-2e1c-4210-853a-11fb6518727f")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[93427],{93427:(e,t,l)=>{l.r(t),l.d(t,{default:()=>r});var n=l(64631),s=l(6029);function r(e){return(0,s.jsx)(n.t,(0,n.n)((0,n.n)({isRtlPrevented:!0,widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},e),{},{children:(0,s.jsx)("g",{fillRule:"evenodd",clipRule:"evenodd",children:(0,s.jsx)("path",{d:"m4 11-.67 2.33L2 14l1.33.67L4 17l.67-2.33L6 14l-1.33-.67zM15 3 8.06 5.97l-1.73-.31-.83-3.67-.83 3.67L2 6.49l2.67.83.83 3.67.83-3.67 1.82-.33 1.84 11.99 5 3 5-3 2-13-7-3zm3 12h-6v-1.5h4.5V12H18zm0-4.5h-4.5V12H12V9h6z"})})}))}}}]);
+
+
+########## Dropping odds chunk=91844 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\91844.0b710001a7fc073c_05a95d8be9.js ##########
+size=769
+viewBox=['0 0 24 24']
+path_count=1
+PATH[0]: m16 18 2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6z
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="2fcff903-420b-4e40-a636-c06d9daa876a",e._sentryDebugIdIdentifier="sentry-dbid-2fcff903-420b-4e40-a636-c06d9daa876a")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[91844],{91844:(e,t,r)=>{r.r(t),r.d(t,{default:()=>n});var s=r(6029),a=r(72447);function n(e){return(0,s.jsx)(a.S,Object.assign({widthAttr:"24",heightAttr:"24",fill:"none",viewBox:"0 0 24 24"},e,{children:(0,s.jsx)("path",{fill:"currentColor",d:"m16 18 2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6z"})}))}r(62042),r(3587),r(1157)}}]);
+
+
+########## TV schedule chunk=13854 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\13854.226c4e05e414ce72_97aeb2e6ac.js ##########
+size=1184
+viewBox=['0 0 24 24']
+path_count=2
+PATH[0]: M20 4H2v14h7v2h6v-2h7V4zm0 12H4V6h16z
+PATH[1]: M8.273 13.916V9.013H6.582c-.05 0-.082-.034-.082-.085v-.844c0-.05.033-.084.082-.084h4.421c.049 0 .082.034.082.084v.844c0 .05-.033.085-.082.085H9.319v4.903c0 .05-.032.084-.081.084h-.883c-.049 0-.082-.034-.082-.084M17.495 8.084l-1.733 5.832c-.016.059-.049.084-.106.084H14.08c-.057 0-.09-.025-.106-.084l-1.717-5.832c-.016-.05.009-.084.058-.084h.948c.057 0 .09.025.106.084l1.414 4.937h.212L16.4 8.084c.016-.059.049-.084.106-.084h.932c.049 0 .073.034.057.084
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="8a9bdc92-8c3f-4ba6-ae44-9c2f57b3dc86",e._sentryDebugIdIdentifier="sentry-dbid-8a9bdc92-8c3f-4ba6-ae44-9c2f57b3dc86")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[13854],{13854:(e,t,c)=>{c.r(t),c.d(t,{default:()=>d});var s=c(64631),h=c(6029);function d(e){return(0,h.jsxs)(s.t,(0,s.n)((0,s.n)({isRtlPrevented:!0,widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},e),{},{children:[(0,h.jsx)("path",{d:"M20 4H2v14h7v2h6v-2h7V4zm0 12H4V6h16z"}),(0,h.jsx)("path",{d:"M8.273 13.916V9.013H6.582c-.05 0-.082-.034-.082-.085v-.844c0-.05.033-.084.082-.084h4.421c.049 0 .082.034.082.084v.844c0 .05-.033.085-.082.085H9.319v4.903c0 .05-.032.084-.081.084h-.883c-.049 0-.082-.034-.082-.084M17.495 8.084l-1.733 5.832c-.016.059-.049.084-.106.084H14.08c-.057 0-.09-.025-.106-.084l-1.717-5.832c-.016-.05.009-.084.058-.084h.948c.057 0 .09.025.106.084l1.414 4.937h.212L16.4 8.084c.016-.059.049-.084.106-.084h.932c.049 0 .073.034.057.084"})]}))}}}]);
+
+
+########## Player of the Season chunk=5093 file=None ##########
+FILE NOT FOUND
+similar: []
+
+
+########## Player transfers chunk=25103 file=None ##########
+FILE NOT FOUND
+similar: []
+
+
+########## Give us feedback chunk=45636 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\45636.e41d977c3628d3bc_e41afa646b.js ##########
+size=749
+viewBox=['0 0 24 24']
+path_count=1
+PATH[0]: M16.41 4H7.59L4 7.59V18l2 2h3v-7l-1-1H6V8.41L8.41 6h7.18L18 8.41V12h-2l-1 1v5h-2v-1h-2v3h7l2-2V7.59z
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="4431af54-a0e1-4066-84cc-6390c7d40eca",e._sentryDebugIdIdentifier="sentry-dbid-4431af54-a0e1-4066-84cc-6390c7d40eca")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[45636],{45636:(e,t,s)=>{s.r(t),s.d(t,{default:()=>a});var n=s(64631),r=s(6029);function a(e){return(0,r.jsx)(n.t,(0,n.n)((0,n.n)({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},e),{},{children:(0,r.jsx)("path",{d:"M16.41 4H7.59L4 7.59V18l2 2h3v-7l-1-1H6V8.41L8.41 6h7.18L18 8.41V12h-2l-1 1v5h-2v-1h-2v3h7l2-2V7.59z"})}))}}}]);
+
+
+########## Sofascore FAQ chunk=27318 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\27318.cbb22103237ddf33_39fc1a3416.js ##########
+size=1256
+viewBox=['0 0 24 24']
+path_count=1
+PATH[0]: M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10m.169-16.103c-2.47 0-4.116 1.36-4.435 3.595-.017.1.05.168.15.168h1.9c.1 0 .167-.067.184-.168.151-.991.84-1.58 2.117-1.58 1.31 0 1.831.488 1.831 1.143 0 .79-.47 1.109-1.562 1.596l-.2.09c-.768.345-1.48.665-1.48 1.825v1.344c0 .101.067.168.168.168h1.764c.1 0 .168-.067.168-.168v-.79c0-.621.47-.84.94-1.041 1.445-.605 2.453-1.36 2.453-3.04 0-1.983-1.596-3.142-3.998-3.142m-1.764 9.744v2.2c0 .101.067.168.168.168h2.369c.1 0 .168-.067.168-.168v-2.2c0-.101-.068-.168-.168-.168h-2.37c-.1 0-.167.067-.167.168
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},c=(new e.Error).stack;c&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[c]="2b616448-ee3c-4fdc-8488-ea8ca0ff2044",e._sentryDebugIdIdentifier="sentry-dbid-2b616448-ee3c-4fdc-8488-ea8ca0ff2044")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[27318],{27318:(e,c,t)=>{t.r(c),t.d(c,{default:()=>d});var n=t(64631),s=t(6029);function d(e){return(0,s.jsx)(n.t,(0,n.n)((0,n.n)({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},e),{},{children:(0,s.jsx)("path",{fillRule:"evenodd",d:"M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10m.169-16.103c-2.47 0-4.116 1.36-4.435 3.595-.017.1.05.168.15.168h1.9c.1 0 .167-.067.184-.168.151-.991.84-1.58 2.117-1.58 1.31 0 1.831.488 1.831 1.143 0 .79-.47 1.109-1.562 1.596l-.2.09c-.768.345-1.48.665-1.48 1.825v1.344c0 .101.067.168.168.168h1.764c.1 0 .168-.067.168-.168v-.79c0-.621.47-.84.94-1.041 1.445-.605 2.453-1.36 2.453-3.04 0-1.983-1.596-3.142-3.998-3.142m-1.764 9.744v2.2c0 .101.067.168.168.168h2.369c.1 0 .168-.067.168-.168v-2.2c0-.101-.068-.168-.168-.168h-2.37c-.1 0-.167.067-.167.168",clipRule:"evenodd"})}))}}}]);
+
+
+########## Bolt/QL trigger chunk=38731 file=D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\38731.2d3f42ed810c33fe_037a06ae8c.js ##########
+size=719
+viewBox=['0 0 24 24']
+path_count=1
+PATH[0]: m6 14 4.044-10H17l-4 5.556h5L7 22l3-8z
+FULL:
+!function(){try{var e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="f164dac8-7137-4615-86c9-1cbe74e6f3c0",e._sentryDebugIdIdentifier="sentry-dbid-f164dac8-7137-4615-86c9-1cbe74e6f3c0")}catch(e){}}();"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[38731],{38731:(e,t,n)=>{n.r(t),n.d(t,{default:()=>s});var r=n(64631),l=n(6029);function s(e){return(0,l.jsx)(r.t,(0,r.n)((0,r.n)({widthAttr:"24",heightAttr:"24",fill:"none",viewBox:"0 0 24 24"},e),{},{children:(0,l.jsx)("path",{fill:"currentColor",d:"m6 14 4.044-10H17l-4 5.556h5L7 22l3-8z"})}))}}}]);
+
+
+########## TORNEO SEARCH ##########
+
+CANDIDATE 25346.974df457aab8c049_8666ae9b96.js size=32468 paths=6
+  repeat(4, minmax(0, 1fr))
+  highlighted_transfers
+  highlighted_transfers
+  highlighted_transfers
+  learn_more_button
+  editor_banner_header
+
+CANDIDATE 40846.1e4c098221b632a6_3f97d5fd50.js size=6988 paths=3
+  M0 0h116v32H0z
+  M43.278 29.4v.47c0 .058-.04.096-.095.096h-.929c-.058 0-.095-.04-.095-.096v-7.008c0-.058.04-.095.095-.095h1.015c.058 0 .095.04.095.095v2.478c.373-.402.785-.537 1.31-.537 1.264 0 2.3
+  M29.533 15.048H24.84c-.12 0-.218.099-.218.218v9.292c0 .121-.099.248-.218.248H.218c-.121 0-.218.1-.218.22v4.725c0 .121.099.219.218.219h29.315c.122 0 .219-.1.219-.22V15.267a.22.22 0 
+
+CANDIDATE 40846.86eb2b0af4626b24_8574e75d65.js size=6970 paths=3
+  M0 0h116v32H0z
+  M43.278 29.4v.47c0 .058-.04.096-.095.096h-.929c-.058 0-.095-.04-.095-.096v-7.008c0-.058.04-.095.095-.095h1.015c.058 0 .095.04.095.095v2.478c.373-.402.785-.537 1.31-.537 1.264 0 2.3
+  M29.533 15.048H24.84c-.12 0-.218.099-.218.218v9.292c0 .121-.099.248-.218.248H.218c-.121 0-.218.1-.218.22v4.725c0 .121.099.219.218.219h29.315c.122 0 .219-.1.219-.22V15.267a.22.22 0 
+
+CANDIDATE 67101.0101b28630d3bbfe_7b9d51006d.js size=16948 paths=6
+  repeat(4, minmax(0, 1fr))
+  highlighted_transfers
+  highlighted_transfers
+  highlighted_transfers
+  learn_more_button
+  editor_banner_header
+
+CANDIDATE 88121-01d20adaa154377c_27e2849476.js size=73410 paths=21
+  M66.8686 67.5H50.1543V84.2501H66.8686V67.5Z
+  M100.287 84.25H83.5723V101H100.287V84.25Z
+  M16.7142 84.25H0V101H16.7142V84.25Z
+  M50.142 67.5H33.4277V84.2501H50.142V67.5Z
+  M116.999 50.75H100.285V67.5001H116.999V50.75Z
+  M66.8569 50.75H50.1426V67.5001H66.8569V50.75Z
+
+CANDIDATE 94027-a919585e3016fce2_e2c9e2f08c.js size=22285 paths=12
+  M18 40L11.25 42.0645L12.2365 51.871L12.8077 52.9032L18 56L23.1923 52.9032L23.7687 51.8348L24.75 42.0645L18 40Z
+  M18 80L11.25 82.0645L12.2365 91.871L12.8077 92.9032L18 96L23.1923 92.9032L23.7687 91.8348L24.75 82.0645L18 80Z
+  M116.5 14.8301L113.74 15.8301V18.8501L115.82 19.6601L117.89 17.3701L116.5 14.8301Z
+  M114 9C110.14 9 107 12.14 107 16C107 19.86 110.14 23 114 23C117.86 23 121 19.86 121 16C121 12.14 117.86 9 114 9ZM114 21.26C113.03 21.26 112.12 20.99 111.34 20.53L111.59 19.15L110.0
+  M274.5 14.8301L271.74 15.8301V18.8501L273.82 19.6601L275.89 17.3701L274.5 14.8301Z
+  M272 9C268.14 9 265 12.14 265 16C265 19.86 268.14 23 272 23C275.86 23 279 19.86 279 16C279 12.14 275.86 9 272 9ZM272 21.26C271.03 21.26 270.12 20.99 269.34 20.53L269.59 19.15L268.0
+
+CANDIDATE 94027-aeda1acd11d312b4_41b11385db.js size=22639 paths=12
+  M18 40L11.25 42.0645L12.2365 51.871L12.8077 52.9032L18 56L23.1923 52.9032L23.7687 51.8348L24.75 42.0645L18 40Z
+  M18 80L11.25 82.0645L12.2365 91.871L12.8077 92.9032L18 96L23.1923 92.9032L23.7687 91.8348L24.75 82.0645L18 80Z
+  M116.5 14.8301L113.74 15.8301V18.8501L115.82 19.6601L117.89 17.3701L116.5 14.8301Z
+  M114 9C110.14 9 107 12.14 107 16C107 19.86 110.14 23 114 23C117.86 23 121 19.86 121 16C121 12.14 117.86 9 114 9ZM114 21.26C113.03 21.26 112.12 20.99 111.34 20.53L111.59 19.15L110.0
+  M274.5 14.8301L271.74 15.8301V18.8501L273.82 19.6601L275.89 17.3701L274.5 14.8301Z
+  M272 9C268.14 9 265 12.14 265 16C265 19.86 268.14 23 272 23C275.86 23 279 19.86 279 16C279 12.14 275.86 9 272 9ZM272 21.26C271.03 21.26 270.12 20.99 269.34 20.53L269.59 19.15L268.0
+
+
+########## leagues-outline ##########
+
+IN 76396.0f322086a877e946_bb4d9be95e.js @6083
+e-outline":return(0,n.jsx)(v.default,{...r});case"leagues-outline":return(0,n.jsx)(f.default,{...r});case"follow-default":return(0,n.jsx)(x,{...r});case"follow-active":return(0,n.jsx)(j.default,{...r});case"menu":return(0,n.jsx)(w,{...r});case"question-mark":return(0,n.jsx)(A.default,{...r});case"question-mark-outline":return(0,n.jsx)(p,{...r});default:return null}}},82818:(t,e,r)=>{r.r(e),r.d(e,{default:()=>d});var n=r(64631),l=r(6029);function d(t){return(0,l.jsx)(n.t,(0,n.n)((0,n.n)({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},t),{},{children:(0,l.jsx)("path",{fillRule:"evenodd",d:"M20 2H2v20h20V2zM4 4h16v2H4zm16 16H4V8h16z"})}))}},89135:(t,e,r)=>{r.r(e),r.d(e,{default:()=>d});var n=r(64631),l=r(6029);function d(t){return(0,l.jsx)(n.t,(0,n.n)((0,n.n)({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},t),{},{children:(0,l.jsx)("path",{d:"M6 11.99 14.058 4l1.432 1.42-6.636 6.57 6.646 6.6L14.078 20z"})}))}},92712:(t,e,r)=>{r.r(e),r.d(e,{default:()=>d});var n=r(64631),l=r(6029);function d(t){return(0,l.jsx)(n.t,(0,n.n)((0,n.n)({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},t),{},{children:(0,l.jsx)("path",{fill:"currentColor",fillRule:"evenodd",d:"m12 2 3.09 6.253L22 9.263l-5 4.864L18.18 21 12 17.753 5.82 21 7 14.127 2 9.262l6.91-1.009z"})}))}}}]);
+
+IN 76396.c76b3c4a241d95a7_5c470b4fa2.js @6180
+e-outline":return(0,n.jsx)(v.default,{...r});case"leagues-outline":return(0,n.jsx)(f.default,{...r});case"follow-default":return(0,n.jsx)(j,{...r});case"follow-active":return(0,n.jsx)(x.default,{...r});case"menu":return(0,n.jsx)(w,{...r});case"question-mark":return(0,n.jsx)(g.default,{...r});case"question-mark-outline":return(0,n.jsx)(A,{...r});default:return null}}},82818:(t,e,r)=>{r.r(e),r.d(e,{default:()=>i});var n=r(6029),l=r(72447);function i(t){return(0,n.jsx)(l.S,Object.assign({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},t,{children:(0,n.jsx)("path",{fillRule:"evenodd",d:"M20 2H2v20h20V2zM4 4h16v2H4zm16 16H4V8h16z"})}))}r(62042),r(3587),r(1157)},89135:(t,e,r)=>{r.r(e),r.d(e,{default:()=>i});var n=r(6029),l=r(72447);function i(t){return(0,n.jsx)(l.S,Object.assign({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},t,{children:(0,n.jsx)("path",{d:"M6 11.99 14.058 4l1.432 1.42-6.636 6.57 6.646 6.6L14.078 20z"})}))}r(62042),r(3587),r(1157)},92712:(t,e,r)=>{r.r(e),r.d(e,{default:()=>i});var n=r(6029),l=r(72447);function i(t){return(0,n.jsx)(l.S,Object.assign({widthAttr:"24",heightAttr:"24",viewBox:"0 0 24 24"},t,{children:(0,n.jsx)("path",{fill:"currentColor",fillRule:"evenodd",d:"m12 2 3.09 6.253L22 9.263l-5 4.864L18.18 21 12 17.753 5.82 21 7 14.127 2 9.262l6.91-1.009z"})}))}r(62042),r(3587),r(1157)}}]);
+
+IN 88121-01d20adaa154377c_27e2849476.js (no path nearby) @58323: leagues-outline",color:"neutrals.nLv1"})}),!e&&(0,r.jsx)(h,{routeKey:"betting",id:"app.droppingOdds",icon:(0,r.jsx)(c.dv0,{color:"neutrals.nLv1",width:"24",height:"24"}),onClick:p.M8}),(0,r.jsx)(h,{ro

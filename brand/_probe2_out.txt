@@ -1,0 +1,27 @@
+1497 /tmp/sn_probe2.txt
+=== curl_cffi warm ===
+chrome124 403 48 {"error": {"code": 403, "reason": "challenge" }}
+chrome131 403 48 {"error": {"code": 403, "reason": "challenge" }}
+chrome136 403 48 {"error": {"code": 403, "reason": "challenge" }}
+=== playwright? ===
+chromium-1228
+chromium_headless_shell-1228
+ffmpeg-1011
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'playwright'
+=== find relay binders ===
+/home/ubuntu/scorenet-next/scripts/sofa_relay_9473.py
+/home/ubuntu/tenexch2-front/pc_relay_map.py
+/home/ubuntu/tenexch2-front/__pycache__/pc_relay_map.cpython-312.pyc
+/home/ubuntu/tenexch2-admin/pc_relay_map.py
+/home/ubuntu/tenexch2-admin/__pycache__/pc_relay_map.cpython-312.pyc
+/var/www/scorenet-api/sofa-cache/api__v1__event__16818471.json
+/var/www/scorenet-api/sofa-cache/api__v1__event__16818471__incidents.json
+/home/ubuntu/scorenet-next/scripts/sofa_relay_9473.py
+/etc/systemd/system/scorenet-sofa-relay.service
+/etc/systemd/system/multi-user.target.wants/scorenet-sofa-relay.service
+=== flare cookies attempt ===
+flare home ok 200 cookies 18 ua Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, l
+cookie names ['AD_VERGE_SESSION_COOKIE_V1', 'FCCDCF', '__eoi', '__gads', '__gpi', '_adv_sid', '_adv_uid', '_cc_id', '_ga', '_ga_HNQ9P9MGZR', '_gcl_au', '_lc2_fpi', '_lc2_fpi_meta', '_li_dcdm_c', 'cto_bidid', 'cto_bundle', 'panoramaId', 'panoramaId_expiry']
+api with flare cookies 403 48 {"error": {"code": 403, "reason": "challenge" }}

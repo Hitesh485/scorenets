@@ -1,0 +1,8 @@
+230 /tmp/sn_pw2.txt
+CHROME_EXISTS=yes
+title Football Live Scores, Fixtures & Odds | Sofascore | Championship League, Premier League
+pw status 403 len 48
+{"error": {"code": 403, "reason": "challenge" }}
+events 0
+sched status 403 len 48
+sched events 0

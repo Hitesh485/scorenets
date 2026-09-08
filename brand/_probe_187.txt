@@ -1,0 +1,27 @@
+=== 187 sofa via sshpass ===
+ssh: connect to host 187.77.140.231 port 22: Connection timed out
+=== list reverse tunnels related to 18471 on this box ===
+LISTEN 0      128        127.0.0.1:8799       0.0.0.0:*    users:(("sshd",pid=2549455,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8787       0.0.0.0:*    users:(("sshd",pid=2556568,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8788       0.0.0.0:*    users:(("sshd",pid=2548962,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8877       0.0.0.0:*    users:(("sshd",pid=2558241,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8878       0.0.0.0:*    users:(("sshd",pid=2576762,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8888       0.0.0.0:*    users:(("sshd",pid=2546316,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8893       0.0.0.0:*    users:(("sshd",pid=2551679,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8887       0.0.0.0:*    users:(("sshd",pid=2550496,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      128        127.0.0.1:8855       0.0.0.0:*    users:(("sshd",pid=2552177,fd=7))                                                                                                                                                                                                                         
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=1539137,fd=3),("systemd",pid=1,fd=220))                                                                                                                                                                                                
+ubuntu   2657084  0.0  0.2 266192 33376 ?        Ss   10:57   0:00 /home/ubuntu/scorenet-next/.venv/bin/python /home/ubuntu/scorenet-next/scripts/sofa_relay_9473.py
+=== any autossh ===
+  ex99-nano-stone-tunnel.service                                                                                         loaded    inactive   dead         1ex99 nano-ws via stone PC tunnel (:8893)
+  ex99-tv-stone-tunnel.service                                                                                           loaded    active     running      1ex99 casino TV relay via stone :8788 (local :8789)
+  scorenet-cffi.service                                                                                                  loaded    active     running      ScoreNet SofaScore curl_cffi worker
+  scorenet-sofa-relay.service                                                                                            loaded    active     running      ScoreNet Sofascore live API relay (127.0.0.1:9473 only)
+  tivra-8799-tunnel.service                                                                                              loaded    active     running      Sports TV 8799 reverse tunnel to Tivra via AWS B (Stone)
+=== tv.js sofa cache writer? ===
+10:/** Real Sofascore JSON scraped via browser (VPS/PC IPs get API 403). */
+11:const SOFA_CACHE_DIR = process.env.SOFA_CACHE_DIR || path.join(__dirname, "..", "..", "sofa-cache");
+1256:  return path.join(SOFA_CACHE_DIR, rel + ".json");
+1271: * Prefer scraped Sofascore JSON. Fall back to exchange-shaped synthetic feed.
+1282:    // 1) Exact scraped Sofascore payload
+1305:        const mapFile = path.join(SOFA_CACHE_DIR, "_event_custom_ids.json");

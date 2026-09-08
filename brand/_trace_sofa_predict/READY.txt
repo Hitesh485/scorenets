@@ -1,0 +1,3 @@
+READY existing Chrome CDP
+active=https://www.sofascore.com/
+Predict now.

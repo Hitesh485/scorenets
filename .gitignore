@@ -1,0 +1,21 @@
+# secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secret*
+!.gitkeep
+
+# python / local
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

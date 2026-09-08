@@ -1,0 +1,11 @@
+ScoreNet pred empty-state deploy 20260907_180908
+VER: 20260907z
+Remote root: /var/www/scorenet
+Revert: bash /var/www/scorenet/_revert_pred_empty_20260907_180908/REVERT.sh
+
+Files:
+- brand/sn-predictions.js
+- brand/boot.js
+- user/profile/index.html
+
+Hard-refresh https://scorenets.com/user/profile/

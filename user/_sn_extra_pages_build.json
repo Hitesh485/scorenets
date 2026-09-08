@@ -1,0 +1,187 @@
+{
+  "cookies_file": "C:\\Users\\hites\\.cursor\\projects\\d-Tivra3-scorenet-scorenet\\attachments\\0b656983-db8b-4727-90d0-9b52be32ac44\\cookies_1.txt",
+  "ls_file": "C:\\Users\\hites\\.cursor\\projects\\d-Tivra3-scorenet-scorenet\\attachments\\0b656983-db8b-4727-90d0-9b52be32ac44\\local-storage-2026-09-04T12-25-00-322Z.json",
+  "assets": 149,
+  "pages": [
+    {
+      "route": "/user/weekly-challenge",
+      "out": "user/weekly-challenge/index.html",
+      "bytes": 209389,
+      "markers": {
+        "weekly": true,
+        "predict": false,
+        "contrib": false,
+        "editor": false,
+        "fantasy": true,
+        "feedback": false,
+        "login_wall": false
+      }
+    },
+    {
+      "route": "/user/top-predictors",
+      "out": "user/top-predictors/index.html",
+      "bytes": 341301,
+      "markers": {
+        "weekly": true,
+        "predict": true,
+        "contrib": true,
+        "editor": true,
+        "fantasy": true,
+        "feedback": true,
+        "login_wall": false
+      }
+    },
+    {
+      "route": "/user/top-contributors",
+      "out": "user/top-contributors/index.html",
+      "bytes": 300340,
+      "markers": {
+        "weekly": true,
+        "predict": true,
+        "contrib": true,
+        "editor": true,
+        "fantasy": true,
+        "feedback": true,
+        "login_wall": false
+      }
+    },
+    {
+      "route": "/user/top-editors",
+      "out": "user/top-editors/index.html",
+      "bytes": 229210,
+      "markers": {
+        "weekly": true,
+        "predict": true,
+        "contrib": true,
+        "editor": true,
+        "fantasy": true,
+        "feedback": true,
+        "login_wall": false
+      }
+    },
+    {
+      "route": "/fantasy",
+      "out": "fantasy/index.html",
+      "bytes": 211383,
+      "markers": {
+        "weekly": true,
+        "predict": false,
+        "contrib": false,
+        "editor": false,
+        "fantasy": true,
+        "feedback": false,
+        "login_wall": false
+      }
+    },
+    {
+      "route": "/fantasy/landing",
+      "out": "fantasy/landing/index.html",
+      "bytes": 79346,
+      "markers": {
+        "weekly": true,
+        "predict": false,
+        "contrib": false,
+        "editor": false,
+        "fantasy": true,
+        "feedback": false,
+        "login_wall": false
+      }
+    },
+    {
+      "route": "/feedback",
+      "out": "feedback/index.html",
+      "bytes": 296430,
+      "markers": {
+        "weekly": true,
+        "predict": false,
+        "contrib": false,
+        "editor": false,
+        "fantasy": true,
+        "feedback": true,
+        "login_wall": false
+      }
+    }
+  ],
+  "mapping_sample": [
+    [
+      "/_next/static/chunks/38731.2d3f42ed810c33fe.js",
+      "/assets/www.sofascore.com/38731.2d3f42ed810c33fe_037a06ae8c.js"
+    ],
+    [
+      "/_next/static/chunks/99618.f47f07fe54f3f87d.js",
+      "/assets/www.sofascore.com/99618.f47f07fe54f3f87d_e9716cc451.js"
+    ],
+    [
+      "/static/fonts/SofascoreSans/woff2/SofascoreSans-Bold.woff2",
+      "/assets/www.sofascore.com/SofascoreSans-Bold_c62cd5aebb.woff2"
+    ],
+    [
+      "/static/fonts/SofascoreSans/woff2/SofascoreSans-Regular.woff2",
+      "/assets/www.sofascore.com/SofascoreSans-Regular_ac2d5d1600.woff2"
+    ],
+    [
+      "/static/fonts/SofascoreSans/woff2/SofascoreSans-Medium.woff2",
+      "/assets/www.sofascore.com/SofascoreSans-Medium_6eca5e9b74.woff2"
+    ],
+    [
+      "/_next/static/chunks/59908.495e38b296da7741.js",
+      "/assets/www.sofascore.com/59908.495e38b296da7741_86dc65f913.js"
+    ],
+    [
+      "/_next/static/chunks/13936.a35faa33830fa180.js",
+      "/assets/www.sofascore.com/13936.a35faa33830fa180_d4e07e26a9.js"
+    ],
+    [
+      "/_next/static/chunks/77581.b2aa7d2a3ff9bb74.js",
+      "/assets/www.sofascore.com/77581.b2aa7d2a3ff9bb74_a1f4108ff4.js"
+    ],
+    [
+      "/_next/static/chunks/55835.199d2e8c8b6e563f.js",
+      "/assets/www.sofascore.com/55835.199d2e8c8b6e563f_323025d993.js"
+    ],
+    [
+      "/_next/static/chunks/85984.edc9bd00e3f0b3c2.js",
+      "/assets/www.sofascore.com/85984.edc9bd00e3f0b3c2_03a6352dc6.js"
+    ],
+    [
+      "/_next/static/chunks/43535-5eed4e5dd8f7aa55.js",
+      "/assets/www.sofascore.com/43535-5eed4e5dd8f7aa55_4bc1fcd5ff.js"
+    ],
+    [
+      "/_next/static/chunks/8943-7fb09ebe949d42dc.js",
+      "/assets/www.sofascore.com/8943-7fb09ebe949d42dc_35bc634503.js"
+    ],
+    [
+      "/_next/static/chunks/72333-68674d12a9dc4991.js",
+      "/assets/www.sofascore.com/72333-68674d12a9dc4991_3261748163.js"
+    ],
+    [
+      "/_next/static/chunks/22939-ef7e9fa248572205.js",
+      "/assets/www.sofascore.com/22939-ef7e9fa248572205_ea26cf356d.js"
+    ],
+    [
+      "/_next/static/chunks/91570-315b25e061fa93d5.js",
+      "/assets/www.sofascore.com/91570-315b25e061fa93d5_372db5a753.js"
+    ],
+    [
+      "/_next/static/css/9a6d92a6b60f39e4.css",
+      "/assets/www.sofascore.com/9a6d92a6b60f39e4_4994bf463f.css"
+    ],
+    [
+      "/_next/static/chunks/61411.6d701e3a71374316.js",
+      "/assets/www.sofascore.com/61411.6d701e3a71374316_58a2c78288.js"
+    ],
+    [
+      "/_next/static/chunks/75575.22aae18ec4240c05.js",
+      "/assets/www.sofascore.com/75575.22aae18ec4240c05_8b43b01a8f.js"
+    ],
+    [
+      "/_next/static/chunks/25346.974df457aab8c049.js",
+      "/assets/www.sofascore.com/25346.974df457aab8c049_8666ae9b96.js"
+    ],
+    [
+      "/_next/static/chunks/3045.e159d86a7dc30330.js",
+      "/assets/www.sofascore.com/3045.e159d86a7dc30330_d12177db91.js"
+    ]
+  ]
+}

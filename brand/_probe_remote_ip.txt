@@ -1,0 +1,8 @@
+=== find chrome bins ===
+/home/ubuntu/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome
+=== fetch sofa from stone host via existing local forward style ===
+{"error": {"code": 403, "reason": "Forbidden" }}
+HTTP 403 size 48
+=== try 187 host via sshpass if keyless ===
+=== scheduled count via current public api ===
+events 5 hdr-cache-ish

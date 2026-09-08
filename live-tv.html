@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/brand/theme-boot.js?v=20260907p"></script><link rel="stylesheet" href="/brand/brand.css?v=20260907p"/><script src="/brand/boot.js?v=20260907p"></script><script src="/brand/live-bridge.js?v=20260904f2"></script><script src="/brand/auth.js?v=20260907mob"></script><script src="/brand/tv.js?v=20260811a"></script><script src="/brand/inject.js?v=20260904i"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Live TV — ScoreNet</title>
+  <link rel="icon" href="/brand/scorenet-logo.svg?v=20260811a" />
+  <link rel="stylesheet" href="/brand/brand.css?v=20260907p" />
+  <style>
+    :root {
+      --sn-tv-bg: #0b0e11;
+      --sn-tv-panel: #141a1f;
+      --sn-tv-line: #2a333b;
+      --sn-tv-text: #e8eef2;
+      --sn-tv-muted: #8b9aa5;
+      --sn-tv-accent: #e10600;
+      --sn-tv-pad: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1a232c 0%, var(--sn-tv-bg) 55%);
+      color: var(--sn-tv-text);
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+    .sn-tv-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px var(--sn-tv-pad);
+      padding-left: max(var(--sn-tv-pad), env(safe-area-inset-left));
+      padding-right: max(var(--sn-tv-pad), env(safe-area-inset-right));
+      border-bottom: 1px solid var(--sn-tv-line);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .sn-tv-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 800;
+      letter-spacing: .04em;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .sn-tv-brand img { height: 26px; width: auto; flex-shrink: 0; }
+    .sn-tv-brand span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+    }
+    .sn-tv-health {
+      font-size: 12px;
+      color: var(--sn-tv-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+    .sn-tv-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #666;
+      flex-shrink: 0;
+    }
+    .sn-tv-dot.ok { background: #22c55e; box-shadow: 0 0 10px rgba(34,197,94,.6); }
+    .sn-tv-dot.bad { background: #ef4444; }
+    .sn-tv-wrap {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px var(--sn-tv-pad) 32px;
+      padding-left: max(var(--sn-tv-pad), env(safe-area-inset-left));
+      padding-right: max(var(--sn-tv-pad), env(safe-area-inset-right));
+      padding-bottom: max(32px, env(safe-area-inset-bottom));
+      display: grid;
+      gap: 14px;
+    }
+    @media (min-width: 900px) {
+      .sn-tv-wrap { grid-template-columns: 1.6fr 1fr; align-items: start; padding: 18px 16px 40px; }
+      .sn-tv-brand span { font-size: 16px; }
+      .sn-tv-brand img { height: 28px; }
+    }
+    .sn-tv-player {
+      background: #000;
+      border: 1px solid var(--sn-tv-line);
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 200px;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      width: 100%;
+    }
+    .sn-tv-player iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+    .sn-tv-empty {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--sn-tv-muted);
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .sn-tv-panel {
+      background: var(--sn-tv-panel);
+      border: 1px solid var(--sn-tv-line);
+      border-radius: 12px;
+      padding: 14px;
+      width: 100%;
+    }
+    .sn-tv-panel h1 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    .sn-tv-panel p {
+      margin: 0 0 14px;
+      color: var(--sn-tv-muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .sn-tv-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      align-items: stretch;
+    }
+    .sn-tv-row input {
+      flex: 1 1 auto;
+      min-width: 0;
+      width: 100%;
+      background: #0d1216;
+      border: 1px solid var(--sn-tv-line);
+      color: var(--sn-tv-text);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 16px; /* avoids iOS zoom */
+    }
+    .sn-tv-row button, .sn-tv-chip {
+      appearance: none;
+      border: 0;
+      border-radius: 8px;
+      background: var(--sn-tv-accent);
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 14px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+    .sn-tv-chip {
+      background: #243039;
+      font-weight: 600;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+    }
+    .sn-tv-chip:hover { background: #31414d; }
+    .sn-tv-status {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--sn-tv-muted);
+      min-height: 18px;
+      word-break: break-all;
+    }
+    .sn-tv-back {
+      color: #9ec1ff;
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* Mobile: compact header, edge-to-edge content */
+    @media (max-width: 699px) {
+      :root { --sn-tv-pad: 10px; }
+      .sn-tv-top { gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+      .sn-tv-brand span { font-size: 13px; max-width: 42vw; }
+      .sn-tv-health-text { display: none !important; }
+      .sn-tv-wrap { gap: 12px; padding-top: 10px; }
+      .sn-tv-player {
+        border-radius: 10px;
+        min-height: 180px;
+      }
+      .sn-tv-panel { padding: 12px; border-radius: 10px; }
+      .sn-tv-panel h1 { font-size: 17px; }
+      .sn-tv-panel p { font-size: 12px; margin-bottom: 12px; }
+      .sn-tv-row { gap: 6px; }
+      .sn-tv-row button { padding: 10px 12px; }
+    }
+
+    @media (max-width: 380px) {
+      .sn-tv-brand span { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="sn-tv-top">
+    <a class="sn-tv-brand" href="/">
+      <img src="/brand/scorenet-logo.svg?v=20260811a" alt="ScoreNet" />
+      <span>SCORENET LIVE TV</span>
+    </a>
+    <div class="sn-tv-health">
+      <span class="sn-tv-dot" id="sn-tv-dot"></span>
+      <span class="sn-tv-health-text" id="sn-tv-health-text">Checking tunnel…</span>
+      <a class="sn-tv-back" href="/">Scores</a>
+    </div>
+  </header>
+
+  <main class="sn-tv-wrap">
+    <section class="sn-tv-player" id="sn-tv-player">
+      <div class="sn-tv-empty" id="sn-tv-empty">
+        <strong>Pick a live event</strong>
+        <span>Enter an event ID (gmid) and press Watch</span>
+      </div>
+    </section>
+
+    <aside class="sn-tv-panel">
+      <h1>Watch live</h1>
+      <p>Live TV matches from exchange (relay :8799). Dead/old event IDs show “starting soon” — use chips below.</p>
+      <div class="sn-tv-row">
+        <input id="sn-tv-gmid" type="text" inputmode="numeric" placeholder="Event ID (live TV)" autocomplete="off" />
+        <button type="button" id="sn-tv-play">Watch</button>
+      </div>
+      <div id="sn-tv-quick" style="margin-top:10px"></div>
+      <div class="sn-tv-status" id="sn-tv-status"></div>
+      <p style="margin-top:12px;font-size:13px;line-height:1.5;color:#aaa">
+        Stream PC relay se unlock hota hai (browser pe direct playg3 IP-lock / starting soon dikhata hai).
+      </p>
+      <p style="margin-top:8px;font-size:13px">
+        <a id="sn-tv-upstream" href="#" target="_blank" rel="noreferrer" style="display:none;color:#7eb8ff;font-weight:600">
+          Open upstream player (new tab)
+        </a>
+      </p>
+    </aside>
+  </main>
+
+  <script>
+  (function () {
+    var dot = document.getElementById("sn-tv-dot");
+    var healthText = document.getElementById("sn-tv-health-text");
+    var statusEl = document.getElementById("sn-tv-status");
+    var input = document.getElementById("sn-tv-gmid");
+    var player = document.getElementById("sn-tv-player");
+    var quick = document.getElementById("sn-tv-quick");
+    var params = new URLSearchParams(location.search);
+    var lastGmid = "";
+    var hasLiveProxy = false;
+    var healthReady = null;
+
+    var QUICK = [];
+    var liveTvEvents = [];
+
+    function setStatus(msg) {
+      statusEl.textContent = msg || "";
+    }
+
+    function showPlayerMsg(title, detail) {
+      var iframe = player.querySelector("iframe");
+      if (iframe) iframe.remove();
+      var box = document.getElementById("sn-tv-empty");
+      if (!box) {
+        box = document.createElement("div");
+        box.id = "sn-tv-empty";
+        box.className = "sn-tv-empty";
+        player.appendChild(box);
+      }
+      box.innerHTML =
+        "<strong>" + title + "</strong>" +
+        (detail ? "<span style=\"max-width:420px;line-height:1.45\">" + detail + "</span>" : "");
+    }
+
+    function setHealthLabel(msg) {
+      healthText.textContent = msg || "";
+      var healthBox = healthText.parentElement;
+      if (healthBox) healthBox.setAttribute("title", msg || "");
+      if (dot) dot.setAttribute("title", msg || "");
+    }
+
+    function renderQuick(events) {
+      quick.innerHTML = "";
+      liveTvEvents = (events || []).filter(function (e) { return e && e.tv && e.gmid; });
+      QUICK = liveTvEvents.slice(0, 8);
+      if (!QUICK.length) {
+        quick.innerHTML = "<span style=\"color:#888;font-size:12px\">No live TV events right now</span>";
+        return;
+      }
+      QUICK.forEach(function (ev) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "sn-tv-chip";
+        b.title = ev.name || ev.gmid;
+        b.textContent = (ev.name || ev.gmid).slice(0, 28);
+        b.onclick = function () { playGmid(String(ev.gmid)); };
+        quick.appendChild(b);
+      });
+    }
+
+    function loadLiveEvents() {
+      return fetch("/backend/tv/live-events?t=" + Date.now(), { credentials: "include", cache: "no-store" })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          renderQuick((j && j.events) || []);
+          return liveTvEvents;
+        })
+        .catch(function () {
+          renderQuick([]);
+          return [];
+        });
+    }
+
+    function checkHealth() {
+      healthReady = fetch("/backend/tv/health", { credentials: "include" })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          var ok = j && j.ok;
+          var u = j && j.upstream;
+          var allows = (u && u.allows) || [];
+          hasLiveProxy = allows.indexOf("live-proxy") !== -1;
+          dot.className = "sn-tv-dot " + (ok && hasLiveProxy ? "ok" : "bad");
+          if (!ok) {
+            setHealthLabel("TV tunnel down");
+          } else if (!hasLiveProxy) {
+            setHealthLabel("Tunnel OK · live-proxy missing — restart PC relay");
+          } else {
+            setHealthLabel(
+              "TV tunnel OK · " + ((u && u.user) || "Demo9304") + " · :8799"
+            );
+          }
+          return hasLiveProxy;
+        })
+        .catch(function () {
+          hasLiveProxy = false;
+          dot.className = "sn-tv-dot bad";
+          setHealthLabel("TV tunnel unreachable");
+          return false;
+        });
+      return healthReady;
+    }
+
+    function ensureViewerIp(cb) {
+      if (window.__SN_VIEWER_IP__) {
+        cb(window.__SN_VIEWER_IP__);
+        return;
+      }
+      fetch("/backend/tv/viewer-ip", { credentials: "include", cache: "no-store" })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j && j.ip) {
+            window.__SN_VIEWER_IP__ = j.ip;
+            cb(j.ip);
+            return;
+          }
+          return fetch("https://api.ipify.org?format=json", { cache: "no-store" })
+            .then(function (r2) { return r2.json(); })
+            .then(function (j2) {
+              window.__SN_VIEWER_IP__ = (j2 && j2.ip) || "127.0.0.1";
+              cb(window.__SN_VIEWER_IP__);
+            });
+        })
+        .catch(function () {
+          fetch("https://api.ipify.org?format=json", { cache: "no-store" })
+            .then(function (r) { return r.json(); })
+            .then(function (j) {
+              window.__SN_VIEWER_IP__ = (j && j.ip) || "127.0.0.1";
+              cb(window.__SN_VIEWER_IP__);
+            })
+            .catch(function () {
+              window.__SN_VIEWER_IP__ = "127.0.0.1";
+              cb(window.__SN_VIEWER_IP__);
+            });
+        });
+    }
+
+    function setUpstreamLink(url) {
+      var a = document.getElementById("sn-tv-upstream");
+      if (!a) return;
+      if (url) {
+        a.href = url;
+        a.style.display = "";
+      } else {
+        a.style.display = "none";
+      }
+    }
+
+    function playGmid(gmid) {
+      gmid = String(gmid || "").trim();
+      if (!/^\d{1,15}$/.test(gmid)) {
+        setStatus("Enter a valid numeric event ID");
+        return;
+      }
+      lastGmid = gmid;
+      input.value = gmid;
+      setStatus("Loading stream for " + gmid + "…");
+      history.replaceState(null, "", "/live-tv/?gmid=" + encodeURIComponent(gmid));
+
+      if (!hasLiveProxy) {
+        showPlayerMsg(
+          "Live proxy missing on PC",
+          "Home PC pe chalao: pc_relay_package\\home_pc_setup\\START_SPORTS_TV_8799.ps1"
+        );
+        setStatus("Blocked: PC relay needs live-proxy");
+        return;
+      }
+
+      var known = liveTvEvents.find(function (e) { return String(e.gmid) === gmid; });
+      if (liveTvEvents.length && !known) {
+        setStatus("Warning: " + gmid + " live TV list me nahi — try kar rahe hain…");
+      }
+
+      ensureViewerIp(function (viewerIp) {
+        fetch(
+          "/backend/tv/stream?gmid=" +
+            encodeURIComponent(gmid) +
+            "&ip=" +
+            encodeURIComponent(viewerIp) +
+            "&probe=1&t=" +
+            Date.now(),
+          { credentials: "include" }
+        )
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (!data || !data.url) {
+              showPlayerMsg(
+                "Stream unavailable",
+                (data && (data.hint || data.msg || data.error)) || "gettv returned no URL."
+              );
+              setStatus("No stream for " + gmid);
+              setUpstreamLink("");
+              return;
+            }
+            if (data.probe && data.probe.locked && !data.probe.hasStream) {
+              showPlayerMsg(
+                "Stream starting soon / offline",
+                "Is gmid pe abhi live video nahi hai (placeholder). Neeche se koi LIVE TV match choose karo."
+              );
+              setStatus("Offline: " + gmid + " — pick a live TV chip");
+              setUpstreamLink(data.embedDirect || data.url);
+              return;
+            }
+            setUpstreamLink(data.embedDirect || data.url);
+            var watchUrl =
+              "/backend/tv/watch?gmid=" +
+              encodeURIComponent(gmid) +
+              "&ip=" +
+              encodeURIComponent(viewerIp) +
+              "&t=" +
+              Date.now();
+            var emptyEl = document.getElementById("sn-tv-empty");
+            if (emptyEl) emptyEl.remove();
+            var iframe = player.querySelector("iframe");
+            if (!iframe) {
+              iframe = document.createElement("iframe");
+              iframe.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
+              iframe.allowFullscreen = true;
+              iframe.referrerPolicy = "no-referrer";
+              player.appendChild(iframe);
+            }
+            iframe.onload = function () {
+              setStatus("Playing " + gmid + (known ? " · " + (known.name || "") : "") + " (PC relay)");
+            };
+            iframe.onerror = function () { setStatus("Player failed — Open upstream link"); };
+            iframe.src = watchUrl;
+            setStatus("Loading via PC live-proxy for " + gmid);
+          })
+          .catch(function (err) {
+            showPlayerMsg("Stream error", String(err && err.message ? err.message : err));
+            setStatus("Failed to load stream");
+          });
+      });
+    }
+
+    document.getElementById("sn-tv-play").onclick = function () {
+      playGmid(input.value);
+    };
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") playGmid(input.value);
+    });
+
+    setInterval(checkHealth, 30000);
+    setInterval(loadLiveEvents, 45000);
+    var boot = params.get("gmid") || params.get("eventId") || "";
+    var bootT1 = params.get("t1") || "";
+    var bootT2 = params.get("t2") || "";
+    Promise.all([checkHealth(), loadLiveEvents()]).then(function () {
+      if (boot) {
+        playGmid(boot);
+        return;
+      }
+      if (bootT1 && bootT2) {
+        setStatus("Resolving live stream for " + bootT1 + " vs " + bootT2 + "…");
+        fetch("/backend/tv/resolve?t1=" + encodeURIComponent(bootT1) + "&t2=" + encodeURIComponent(bootT2) + "&t=" + Date.now(), {
+          credentials: "include",
+          cache: "no-store",
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (j && j.ok && j.gmid) {
+              playGmid(j.gmid);
+              return;
+            }
+            showPlayerMsg(
+              "Stream nahi mila",
+              (j && j.hint) || "Exchange live list / highlighthome chahiye."
+            );
+            setStatus((j && (j.hint || j.error)) || "No matching live TV event");
+          })
+          .catch(function (err) {
+            showPlayerMsg("Resolve failed", String(err && err.message || err));
+          });
+        return;
+      }
+      if (liveTvEvents.length) {
+        playGmid(String(liveTvEvents[0].gmid));
+      } else {
+        showPlayerMsg("No live TV", "Abhi koi live+TV match nahi. Baad me try karo.");
+      }
+    });
+  })();
+</script>
+</body>
+</html>
