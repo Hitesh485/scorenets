@@ -7,7 +7,7 @@
   window.__snPredictionsUi = 1;
 
   var API = "/backend/sn-predictions";
-  var VER = "20260908ov";
+  var VER = "20260908ow";
   var pendingPenBtn = null;
 
   function isAuthed() {
@@ -95,7 +95,7 @@
     // Pen is the icon button beside trophy (svg, not a vote pill)
     if (!btn.querySelector("svg")) return false;
     var label = ((btn.getAttribute("aria-label") || "") + " " + (btn.textContent || "")).toLowerCase();
-    if (/trophy|challenge|share|close/.test(label)) return false;
+    if (/trophy|challenge|share|close|standings/.test(label)) return false;
     return true;
   }
 
