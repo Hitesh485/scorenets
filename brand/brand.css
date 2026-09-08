@@ -1163,6 +1163,17 @@ header [data-sn-quick-links="1"][data-sn-hidden-dup-profile],
 header button[aria-label="Quick links"][data-sn-hidden-dup-profile] {
   display: inline-flex !important;
 }
+/* Native Sofascore bolt clone (left of Live TV) — hide when ScoreNet QL exists */
+header [data-sn-native-ql-hidden="1"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
 
 /* ===== Sofascore-clone sign-in modal (Google only) ===== */
 #sn-auth-modal {

@@ -1,6 +1,6 @@
 /* ScoreNet Live TV — header link (never inject into ad slots) */
 (function () {
-  var VER = "20260811a";
+  var VER = "20260908ql";
 
   function isBadMount(el) {
     if (!el || !el.closest) return true;
@@ -93,6 +93,12 @@
       }
       if (before) mount.insertBefore(existing, before);
       else mount.appendChild(existing);
+      // After Live TV lands, drop native Sofascore bolt left of it (ScoreNet QL stays)
+      try {
+        if (typeof window.__snHideNativeQlClones === "function") {
+          window.__snHideNativeQlClones();
+        }
+      } catch (eHideQl) {}
     } catch (e) {}
   }
 

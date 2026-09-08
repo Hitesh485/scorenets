@@ -911,7 +911,7 @@
     function snLoadPredictions() {
       if (document.querySelector('script[data-sn-predictions="1"]')) return;
       var s = document.createElement("script");
-      s.src = "/brand/sn-predictions.js?v=20260908ow";
+      s.src = "/brand/sn-predictions.js?v=20260908mt";
       s.async = true;
       s.setAttribute("data-sn-predictions", "1");
       (document.head || document.documentElement).appendChild(s);

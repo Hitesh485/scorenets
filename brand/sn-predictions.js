@@ -7,7 +7,7 @@
   window.__snPredictionsUi = 1;
 
   var API = "/backend/sn-predictions";
-  var VER = "20260908ow";
+  var VER = "20260908mt";
   var pendingPenBtn = null;
 
   function isAuthed() {
@@ -524,12 +524,17 @@
     return window.innerWidth >= 992;
   }
 
-  function stripDesktopProfilePredictions() {
-    if (!isProfilePage() || !isDesktopProfile()) return;
+  function stripProfilePredictionsList() {
+    if (!isProfilePage()) return;
     try {
       var list = document.getElementById("sn-predictions-list");
       if (list && list.parentNode) list.parentNode.removeChild(list);
     } catch (e0) {}
+  }
+
+  function stripDesktopProfilePredictions() {
+    if (!isProfilePage() || !isDesktopProfile()) return;
+    stripProfilePredictionsList();
   }
 
   function setTextByLabel(labelRe, value) {
@@ -933,40 +938,19 @@
 
   function refreshProfile() {
     if (!isProfilePage()) return;
-    // Desktop: keep Overview stats; strip Predictions list / section only
-    if (isDesktopProfile()) {
-      stripDesktopProfilePredictions();
-      if (!isAuthed()) return;
-      fetch(API + "/summary", { credentials: "include" })
-        .then(function (r) {
-          return r.json();
-        })
-        .then(function (sum) {
-          if (sum && sum.ok) paintOverview(sum.summary);
-        })
-        .catch(function (e) {
-          console.warn("[sn-predictions] overview paint", e);
-        });
-      return;
-    }
+    // Profile: keep Overview stats; never paint Predictions list (logic removed).
+    // Desktop + mobile/tablet (≤991.98) — list strip only; section DOM remove is profile-page.js.
+    stripProfilePredictionsList();
     if (!isAuthed()) return;
-    Promise.all([
-      fetch(API + "/summary", { credentials: "include" }).then(function (r) {
+    fetch(API + "/summary", { credentials: "include" })
+      .then(function (r) {
         return r.json();
-      }),
-      fetch(API + "/me?status=all", { credentials: "include" }).then(function (r) {
-        return r.json();
-      }),
-    ])
-      .then(function (pair) {
-        var sum = pair[0];
-        var me = pair[1];
+      })
+      .then(function (sum) {
         if (sum && sum.ok) paintOverview(sum.summary);
-        if (me && me.ok) paintPredictions(me.predictions || [], profileFilter);
-        bindProfileTabs();
       })
       .catch(function (e) {
-        console.warn("[sn-predictions] profile paint", e);
+        console.warn("[sn-predictions] overview paint", e);
       });
   }
 

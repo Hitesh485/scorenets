@@ -1,6 +1,6 @@
 /* ScoreNet profile page interactions — Edit / Share / ⋯ menu (Sofascore-matching) */
 (function () {
-  var VER = "20260908ov";
+  var VER = "20260908mt";
 
   function ready(fn) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
@@ -465,9 +465,16 @@
     return window.innerWidth >= 992;
   }
 
-  /** Desktop only: remove Predictions section from DOM; keep Overview. */
-  function removeDesktopPredictionsSection() {
-    if (!isProfilePage() || !isDesktopProfile()) return;
+  /** Sofascore Fresnel md: below 992 = mobile/tablet. */
+  function isMobileTabletProfile() {
+    try {
+      if (window.matchMedia) return window.matchMedia("(max-width: 991.98px)").matches;
+    } catch (e) {}
+    return window.innerWidth < 992;
+  }
+
+  /** Remove Predictions section DOM; keep Overview. Viewport gated by callers. */
+  function removePredictionsSectionDom() {
     try {
       var list = document.getElementById("sn-predictions-list");
       if (list && list.parentNode) list.parentNode.removeChild(list);
@@ -497,9 +504,22 @@
     } catch (e2) {}
   }
 
+  /** Desktop only: remove Predictions section from DOM; keep Overview. */
+  function removeDesktopPredictionsSection() {
+    if (!isProfilePage() || !isDesktopProfile()) return;
+    removePredictionsSectionDom();
+  }
+
+  /** Mobile/tablet only (≤991.98px): same Predictions strip; do not touch desktop. */
+  function removeMobilePredictionsSection() {
+    if (!isProfilePage() || !isMobileTabletProfile()) return;
+    removePredictionsSectionDom();
+  }
+
   function boot() {
     if (!isProfilePage()) return;
     removeDesktopPredictionsSection();
+    removeMobilePredictionsSection();
     bind();
     // auth.js may re-hide photos after loadMe — re-apply
     setTimeout(ensurePhotoVisible, 200);
@@ -507,6 +527,7 @@
     setTimeout(bind, 500);
     [0, 300, 1000, 2500].forEach(function (ms) {
       setTimeout(removeDesktopPredictionsSection, ms);
+      setTimeout(removeMobilePredictionsSection, ms);
     });
   }
 

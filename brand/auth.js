@@ -354,7 +354,7 @@
     if (/lightning|bolt|flash/i.test(html)) return true;
     // Common flash/bolt path fragments in Sofascore icon set
     if (
-      /M11\.5 2|M13 2 8\.5|m7 2|M12 1\.5.*L6|M7 2v11l3-1|m12 2.*L7|L12 22|l-3-9/i.test(html) &&
+      /M11\.5 2|M13 2 8\.5|m7 2|M12 1\.5.*L6|M7 2v11l3-1|m12 2.*L7|L12 22|l-3-9|m6 14 4\.044|L7 22l3-8/i.test(html) &&
       el.closest &&
       el.closest("header,[class*='Header']")
     ) {
@@ -815,8 +815,10 @@
     if (/quick links/.test(textOf(el))) return true;
     var html = String(el.innerHTML || "");
     if (/lightning|bolt|flash/i.test(html)) return true;
-    // ScoreNet / Sofascore bolt path used by injector
+    // ScoreNet injected bolt
     if (/M11 2 5\.5 13|M13 2 8\.5|m7 2v11/i.test(html)) return true;
+    // Sofascore native Quick links bolt (webpack G8$ / lightning glyph)
+    if (/m6 14 4\.044|4\.044-10H17|L7 22l3-8|m6 14.*H17l-4/i.test(html)) return true;
     return false;
   }
 
@@ -1158,6 +1160,34 @@
       document.querySelector("header") ||
       document.querySelector('[class*="Header"]');
     if (!header) return;
+    var liveTv = document.getElementById("sn-live-tv-link");
+    var liveLeft = liveTv && liveTv.getBoundingClientRect ? liveTv.getBoundingClientRect().left : -1;
+
+    // Keep a single ScoreNet-owned bolt; hide extras if any
+    var injected = header.querySelectorAll("button.sn-header-ql-btn[data-sn-ql-injected='1']");
+    if (injected.length > 1) {
+      var keep = owned;
+      if (!keep) {
+        // Prefer bolt to the right of Live TV (canonical mobile order)
+        for (var k = 0; k < injected.length; k++) {
+          var ir = injected[k].getBoundingClientRect();
+          if (liveLeft >= 0 && ir.left >= liveLeft - 2) {
+            keep = injected[k];
+            break;
+          }
+        }
+        if (!keep) keep = injected[injected.length - 1];
+      }
+      for (var d = 0; d < injected.length; d++) {
+        if (injected[d] === keep) continue;
+        try {
+          injected[d].style.setProperty("display", "none", "important");
+          injected[d].setAttribute("data-sn-native-ql-hidden", "1");
+        } catch (eDup) {}
+      }
+      owned = keep;
+    }
+
     var nodes = header.querySelectorAll("button,a,[role='button']");
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
@@ -1165,15 +1195,32 @@
       if (n.getAttribute("data-sn-ql-injected") === "1") continue;
       if (n.id === "sn-live-tv-link" || n.getAttribute("data-sn-tv") === "1") continue;
       if (n.id === "sn-header-profile-btn") continue;
-      if (!looksLikeLightning(n) && !isQuickLinksControl(n)) continue;
+      var isBolt = looksLikeLightning(n) || isQuickLinksControl(n);
+      if (!isBolt) continue;
       try {
         var r = n.getBoundingClientRect();
-        if (r.top > 90) continue;
+        if (r.width < 8 || r.height < 8) continue;
+        if (r.top > 100) continue;
+        // Always hide native / unmarked bolts in header chrome (keep only owned)
+        // Especially the duplicate left of Live TV on mobile
+        if (liveLeft >= 0 && r.right <= liveLeft + 4) {
+          n.style.setProperty("display", "none", "important");
+          n.setAttribute("data-sn-native-ql-hidden", "1");
+          continue;
+        }
         n.style.setProperty("display", "none", "important");
         n.setAttribute("data-sn-native-ql-hidden", "1");
       } catch (eHide) {}
     }
   }
+
+  // Used by tv.js after Live TV insert — hide native bolt left of Live TV
+  window.__snHideNativeQlClones = function () {
+    var owned =
+      document.querySelector("header button.sn-header-ql-btn[data-sn-ql-injected='1']") ||
+      document.querySelector("button.sn-header-ql-btn[data-sn-ql-injected='1']");
+    hideNativeQuickLinkClones(owned);
+  };
 
   function ensureQuickLinks() {
     var el = document.getElementById("sn-quick-links");
