@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909sp";
+  var VER = "20260910cmp";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -182,13 +182,22 @@
           for (var si = 0; si < SHELL_PATHS.length; si++) {
             var sp = SHELL_PATHS[si];
             if (path === sp || path.indexOf(sp + "/") === 0) {
-              if (location.pathname === path || location.pathname.replace(/\/$/, "") === path.replace(/\/$/, "")) {
+              // Keep ?ids= / s_ids= / ut_ids= (team compare is query-driven)
+              var qIdx = href.indexOf("?");
+              var hIdx = href.indexOf("#");
+              var search =
+                qIdx >= 0
+                  ? href.slice(qIdx, hIdx >= 0 && hIdx > qIdx ? hIdx : href.length)
+                  : "";
+              var herePath = location.pathname.replace(/\/$/, "") || "/";
+              var destPath = path.replace(/\/$/, "") || "/";
+              if (herePath === destPath && location.search === search) {
                 return;
               }
               ev.preventDefault();
               ev.stopPropagation();
               if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
-              location.assign(path);
+              location.assign(path + search);
               return;
             }
           }
@@ -1479,6 +1488,21 @@
   }
 
   brand();
+  // Team compare shell: hydrate ?ids= from live /api/v1 (Next disabled on this page).
+  try {
+    function snLoadCompareLive() {
+      if (!/^\/football\/team\/compare\/?$/i.test(location.pathname || "")) return;
+      if (window.__SN_COMPARE_LIVE__) return;
+      if (document.querySelector('script[src*="compare-live.js"]')) return;
+      var s = document.createElement("script");
+      s.src = "/brand/compare-live.js?v=20260910cmp";
+      s.async = true;
+      s.setAttribute("data-sn-compare-live", "1");
+      (document.head || document.documentElement).appendChild(s);
+    }
+    snLoadCompareLive();
+    document.addEventListener("DOMContentLoaded", snLoadCompareLive);
+  } catch (eCmp) {}
   // Hybrid live WebSocket client (HTTP /api/v1 fallback stays). Safe no-op if /ws down.
   try {
     function snLoadLiveWs() {
