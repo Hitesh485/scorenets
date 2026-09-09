@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909ui";
+  var VER = "20260909ff";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -784,38 +784,197 @@
     } catch (e) {}
   }
 
+  function isOddsBrandContext(el) {
+    try {
+      if (!el || !el.closest) return false;
+      if (
+        el.closest(
+          '[class*="odds"],[class*="Odds"],[class*="bookmaker"],[class*="Bookmaker"],[class*="featuredOdds"],[class*="FeaturedOdds"]'
+        )
+      ) {
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+
   function isHeaderBrandImg(img) {
     if (!img || !img.getBoundingClientRect) return false;
     // Never rewrite logos inside odds / featured betting widgets
     try {
       var near = (img.getAttribute("alt") || "") + " " + (img.className || "");
       if (/bookmaker|odds|betting/i.test(near)) return false;
-      if (img.closest && img.closest('[class*="odds"],[class*="Odds"],[class*="bookmaker"],[class*="Bookmaker"],[class*="featuredOdds"]')) {
-        return false;
-      }
+      if (isOddsBrandContext(img)) return false;
     } catch (e) {}
     var alt = (img.getAttribute("alt") || "").toLowerCase();
     var src = img.currentSrc || img.src || img.getAttribute("src") || "";
     if (src.indexOf("scorenet-logo") >= 0 || img.getAttribute("data-sn-logo") === "1") return true;
-    if (alt === "logo" || alt === "sofascore" || alt === "scorenet") {
-      // only if in header / home link
-      if (img.closest("header") || (img.closest("a") && (img.closest("a").getAttribute("href") === "/" || img.closest("a").getAttribute("href") === ""))) {
+    if (alt === "logo" || alt === "sofascore" || alt === "scorenet" || /sofascore/i.test(alt)) {
+      // header, home link, OR footer brand mark
+      if (
+        img.closest("header") ||
+        img.closest("footer") ||
+        (img.closest("a") &&
+          (img.closest("a").getAttribute("href") === "/" || img.closest("a").getAttribute("href") === ""))
+      ) {
         return true;
       }
-      return false;
     }
     if (isSofaBrandAsset(src)) return true;
+    // Footer / lower-page Sofascore wordmark images (not tiny icons)
+    try {
+      if (img.closest("footer") || nearAppStoreBlock(img)) {
+        var rf = img.getBoundingClientRect();
+        if (rf.width > 70 && rf.width < 420 && rf.height > 12 && rf.height < 90) return true;
+      }
+    } catch (eF) {}
     if ((img.className || "").toString().indexOf("pos_absolute") >= 0) {
       var r = img.getBoundingClientRect();
       if (r.top < 160 && r.left < 280 && r.width > 60 && r.height > 10 && r.height < 72) return true;
     }
     var a = img.closest("a");
-    if (a && img.closest("header")) {
+    if (a && (img.closest("header") || img.closest("footer"))) {
       var t = (a.getAttribute("title") || "") + " " + (a.getAttribute("aria-label") || "");
       if (/sofa|scorenet|home|live results/i.test(t)) return true;
       if (a.getAttribute("href") === "/" || a.getAttribute("href") === "") return true;
     }
     return false;
+  }
+
+  function nearAppStoreBlock(el) {
+    try {
+      var node = el;
+      for (var i = 0; i < 8 && node; i++) {
+        if (node.querySelector) {
+          if (
+            node.querySelector(
+              'a[href*="play.google"],a[href*="apps.apple"],a[href*="itunes.apple"],a[href*="app.sofascore.com"]'
+            )
+          ) {
+            return true;
+          }
+        }
+        node = node.parentElement;
+      }
+      return false;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function replaceSvgWithLogo(svg) {
+    if (!svg || !svg.parentNode || svg.getAttribute("data-sn-logo") === "1") return;
+    try {
+      var img = document.createElement("img");
+      img.src = LOGO;
+      img.alt = "ScoreNet";
+      img.setAttribute("data-sn-logo", "1");
+      var r = svg.getBoundingClientRect();
+      var h = Math.max(24, Math.min(48, Math.round(r.height || 32) || 32));
+      img.style.setProperty("height", h + "px", "important");
+      img.style.setProperty("width", "auto", "important");
+      img.style.setProperty("max-width", "220px", "important");
+      img.style.setProperty("object-fit", "contain", "important");
+      img.style.setProperty("display", "block", "important");
+      img.style.setProperty("margin", "0 auto", "important");
+      svg.setAttribute("data-sn-logo", "1");
+      svg.parentNode.replaceChild(img, svg);
+    } catch (e) {}
+  }
+
+  function isSofascoreWordmarkSvg(svg) {
+    if (!svg || svg.tagName !== "SVG") return false;
+    if (svg.getAttribute("data-sn-logo") === "1") return false;
+    if (isOddsBrandContext(svg)) return false;
+    try {
+      var wAttr = svg.getAttribute("width") || "";
+      var hAttr = svg.getAttribute("height") || "";
+      var vb = svg.getAttribute("viewBox") || "";
+      // Known Sofascore footer wordmark (SSR + React icon chunk 75575)
+      if (
+        (wAttr === "158" && hAttr === "24") ||
+        /\b0\s+0\s+158\s+24\b/.test(vb)
+      ) {
+        return true;
+      }
+      // Store badges (Google Play / App Store) — keep
+      if ((wAttr === "136" && hAttr === "40") || /\b0\s+0\s+136\s+40\b/.test(vb)) {
+        return false;
+      }
+      // Torneo-by-Sofascore full mark in QL — leave for now (product link)
+      if ((wAttr === "116" && hAttr === "32") || /\b0\s+0\s+116\s+32\b/.test(vb)) {
+        return false;
+      }
+
+      var r = svg.getBoundingClientRect();
+      // Tiny UI icons — keep
+      if (r.width > 0 && r.width < 48 && r.height < 48) return false;
+      var label =
+        (svg.getAttribute("aria-label") || "") +
+        " " +
+        (svg.getAttribute("title") || "") +
+        " " +
+        (svg.getAttribute("class") || "");
+      if (/sofascore|LogoSofa|logoSofa/i.test(label)) return true;
+
+      var inFooter = !!svg.closest("footer");
+      var nearStore = nearAppStoreBlock(svg);
+      var pathN = svg.querySelectorAll("path").length;
+      var pageH = Math.max(document.documentElement.scrollHeight || 0, document.body ? document.body.scrollHeight : 0);
+      var absTop = r.top + (window.scrollY || window.pageYOffset || 0);
+      var nearPageBottom = pageH > 0 && pageH - absTop < 1200;
+      // Soft fallback: wide short mark above download links (single-path wordmark OK)
+      if (
+        (inFooter || nearStore || nearPageBottom) &&
+        r.width >= 140 &&
+        r.width <= 200 &&
+        r.height >= 18 &&
+        r.height <= 32 &&
+        pathN >= 1
+      ) {
+        return true;
+      }
+      // Inline <image> pointing at Sofascore logo asset
+      var hrefImg = svg.querySelector("image,img");
+      if (hrefImg) {
+        var href =
+          hrefImg.getAttribute("href") ||
+          hrefImg.getAttribute("xlink:href") ||
+          hrefImg.getAttribute("src") ||
+          "";
+        if (isSofaBrandAsset(href) || /sofascore/i.test(href)) return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+
+  function scrubBrandLogos() {
+    try {
+      document.querySelectorAll("img").forEach(function (img) {
+        if (img.getAttribute("data-sn-logo") === "1") return;
+        if (isHeaderBrandImg(img)) styleLogo(img);
+      });
+      document.querySelectorAll("svg").forEach(function (svg) {
+        if (isSofascoreWordmarkSvg(svg)) replaceSvgWithLogo(svg);
+      });
+    } catch (e) {}
+  }
+
+  function scrubSofaMessages() {
+    try {
+      var m = window.__SOFA_MESSAGES__;
+      if (!m || typeof m !== "object" || m.__snBranded) return;
+      Object.keys(m).forEach(function (k) {
+        if (typeof m[k] === "string" && /sofascore/i.test(m[k])) {
+          m[k] = rebrandUiLabel(m[k]);
+        }
+      });
+      try {
+        Object.defineProperty(m, "__snBranded", { value: 1, enumerable: false });
+      } catch (e2) {
+        m.__snBranded = 1;
+      }
+    } catch (e) {}
   }
 
   function scrubHeadIcons() {
@@ -1047,7 +1206,7 @@
     try {
       document
         .querySelectorAll(
-          'meta[property="og:title"],meta[property="og:site_name"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"],meta[name="description"],meta[name="application-name"],meta[name="apple-mobile-web-app-title"],meta[property="twitter:title"]'
+          'meta[property="og:title"],meta[property="og:site_name"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"],meta[name="description"],meta[name="application-name"],meta[name="apple-mobile-web-app-title"],meta[property="twitter:title"],meta[name="author"],meta[name="keywords"]'
         )
         .forEach(function (m) {
           var c = m.getAttribute("content");
@@ -1106,22 +1265,20 @@
       stripHeavyScripts();
 
       document
-        .querySelectorAll('header a[title*="Sofascore"],header a[title*="ScoreNet"],header a[aria-label*="Sofascore"],header a[aria-label*="ScoreNet"]')
+        .querySelectorAll(
+          'header a[title*="Sofascore"],header a[title*="ScoreNet"],header a[aria-label*="Sofascore"],header a[aria-label*="ScoreNet"],footer a[title*="Sofascore"],footer a[aria-label*="Sofascore"]'
+        )
         .forEach(function (a) {
           a.setAttribute("title", "ScoreNet live results");
           a.setAttribute("aria-label", "ScoreNet");
           a.querySelectorAll("img").forEach(styleLogo);
         });
 
-      document
-        .querySelectorAll("header img, a[href='/'] img, img[alt='Sofascore'], img[alt='ScoreNet']")
-        .forEach(function (img) {
-          if (isHeaderBrandImg(img)) styleLogo(img);
-        });
+      // Site-wide brand logos (header + footer wordmarks). Never odds/bookmaker marks.
+      scrubBrandLogos();
 
-      // Do NOT rewrite generic logo_*.png site-wide — those are bookmaker / partner marks in odds
-
-      // UI-only brand rename (text/meta/attrs). Never href/src/API hosts.
+      // UI-only brand rename (text/meta/attrs/i18n). Never href/src/API hosts.
+      scrubSofaMessages();
       scrubBrandMeta();
       scrubBrandAttrs();
       scrubBrandTextNodes();
@@ -1138,6 +1295,20 @@
   }
 
   brand();
+  // Hybrid live WebSocket client (HTTP /api/v1 fallback stays). Safe no-op if /ws down.
+  try {
+    function snLoadLiveWs() {
+      if (window.__snLiveWsBoot) return;
+      if (document.querySelector('script[data-sn-live-ws="1"]')) return;
+      var s = document.createElement("script");
+      s.src = "/brand/live-ws.js?v=20260909ws";
+      s.async = true;
+      s.setAttribute("data-sn-live-ws", "1");
+      (document.head || document.documentElement).appendChild(s);
+    }
+    snLoadLiveWs();
+    document.addEventListener("DOMContentLoaded", snLoadLiveWs);
+  } catch (eWs) {}
   // Live ticker on Next-disabled shells (profile / user / fantasy)
   try {
     function snLoadLiveTicker() {
@@ -1149,7 +1320,7 @@
       if (!need) return;
       if (document.querySelector('script[src*="live-ticker.js"]')) return;
       var s = document.createElement("script");
-      s.src = "/brand/live-ticker.js?v=20260907pe";
+      s.src = "/brand/live-ticker.js?v=20260909ws";
       s.async = true;
       (document.head || document.documentElement).appendChild(s);
     }

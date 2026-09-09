@@ -1,6 +1,6 @@
-/* ScoreNet inject — force brand logos in header only (never odds/bookmaker logos) */
+/* ScoreNet inject — force brand logos in header + footer (never odds/bookmaker logos) */
 (function () {
-  var LOGO = "/brand/scorenet-logo.svg?v=20260811a";
+  var LOGO = "/brand/scorenet-logo.svg?v=20260909ff";
   function force(img) {
     if (!img || !img.tagName) return;
     // Skip odds / bookmaker widgets
@@ -60,17 +60,57 @@
     } catch (e) {}
   }
 
+  function swapFooterWordmark() {
+    try {
+      // Sofascore footer chrome uses divs (not <footer>). Target known 158×24 wordmark SVG.
+      document
+        .querySelectorAll(
+          'svg[width="158"][height="24"],svg[viewBox="0 0 158 24"],footer svg,footer img'
+        )
+        .forEach(function (el) {
+          if (el.getAttribute("data-sn-logo") === "1") return;
+          if (el.tagName === "IMG") {
+            var alt = (el.getAttribute("alt") || "").toLowerCase();
+            var src = el.getAttribute("src") || "";
+            if (alt === "logo" || /sofascore/i.test(alt) || /sofascore|LogoSofa/i.test(src)) force(el);
+            return;
+          }
+          // Never replace Google Play / App Store badge SVGs
+          var w = el.getAttribute("width") || "";
+          var h = el.getAttribute("height") || "";
+          var vb = el.getAttribute("viewBox") || "";
+          if ((w === "136" && h === "40") || /\b0\s+0\s+136\s+40\b/.test(vb)) return;
+
+          var isKnown = (w === "158" && h === "24") || /\b0\s+0\s+158\s+24\b/.test(vb);
+          var r = el.getBoundingClientRect();
+          var looksWide = r.width >= 140 && r.width <= 200 && r.height >= 18 && r.height <= 32;
+          if (!isKnown && !looksWide) return;
+
+          var img = document.createElement("img");
+          img.src = LOGO;
+          img.alt = "ScoreNet";
+          img.setAttribute("data-sn-logo", "1");
+          img.style.cssText =
+            "height:" +
+            Math.max(24, Math.min(48, Math.round(r.height || 24))) +
+            "px;width:auto;max-width:220px;object-fit:contain;display:block;margin:0 auto";
+          el.setAttribute("data-sn-logo", "1");
+          if (el.parentNode) el.parentNode.replaceChild(img, el);
+        });
+    } catch (e) {}
+  }
+
   function apply() {
     try {
       document
         .querySelectorAll(
-          'header a[title*="Sofascore"] img,header a[title*="ScoreNet"] img,header a[href="/"] img,header img[alt="logo"],header img[alt="Sofascore"],header img[src*="scorenet-logo"]'
+          'header a[title*="Sofascore"] img,header a[title*="ScoreNet"] img,header a[href="/"] img,header img[alt="logo"],header img[alt="Sofascore"],header img[src*="scorenet-logo"],footer img[alt="logo"],footer img[alt="Sofascore"],footer img[src*="scorenet-logo"]'
         )
         .forEach(function (el) {
           force(el);
         });
       document.querySelectorAll('a[title*="Sofascore"],a[title*="ScoreNet"]').forEach(function (a) {
-        if (!a.closest || !a.closest("header")) return;
+        if (!a.closest || !(a.closest("header") || a.closest("footer"))) return;
         a.setAttribute("title", "ScoreNet live results");
         a.setAttribute("aria-label", "ScoreNet");
         a.querySelectorAll("img").forEach(force);
@@ -81,6 +121,7 @@
           link.setAttribute("href", LOGO);
         }
       });
+      swapFooterWordmark();
       tagMarkdownTables();
     } catch (e) {}
   }

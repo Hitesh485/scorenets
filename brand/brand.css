@@ -114,7 +114,7 @@ img[data-sn-logo] {
   }
 }
 
-/* Hard-kill leftover Sofascore brand marks — HEADER ONLY (never odds/bookmaker/tournament logos) */
+/* Hard-kill leftover Sofascore brand marks — header + footer wordmarks (never odds/bookmaker logos) */
 header img[src*="logo_"][src$=".png"],
 header img[src*="logo_"][src$=".svg"],
 header img[src*="logo_"][src$=".webp"],
@@ -123,10 +123,26 @@ header img[src*="apple-icon"],
 header img[alt="Sofascore"],
 header img[alt="sofaScore"],
 header img[alt="logo"]:not([data-sn-logo]),
+footer img[alt="Sofascore"],
+footer img[alt="sofaScore"],
+footer img[alt="logo"]:not([data-sn-logo]),
 a[href="/"] > img[alt="logo"],
 a[title*="Sofascore"] img,
 a[title*="ScoreNet"] img {
-  content: url("/brand/scorenet-logo.svg?v=20260811a") !important;
+  content: url("/brand/scorenet-logo.svg?v=20260909ff") !important;
+}
+
+/* Known Sofascore footer wordmark (158×24) — hide until JS swaps to ScoreNet */
+svg[width="158"][height="24"]:not([data-sn-logo]),
+svg[viewBox="0 0 158 24"]:not([data-sn-logo]) {
+  visibility: hidden !important;
+}
+
+/* Footer Sofascore SVG wordmark — hide until boot.js swaps to ScoreNet img */
+footer svg[aria-label*="Sofascore"],
+footer svg[aria-label*="SofaScore"],
+footer svg[aria-label*="sofascore"] {
+  visibility: hidden !important;
 }
 
 /* Soft-hide ads completely — no logo fill in ad slots */

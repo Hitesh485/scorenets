@@ -20,6 +20,7 @@
     "mma",
   ];
   var POLL_MS = 15000;
+  var POLL_MS_WS = 45000;
   var LIVE_OUTER =
     "d_flex ai_center gap_sm flex-d_row py_xs px_sm br_sm bg_status.liveHighlight bd_1px_solid_{colors.neutrals.nLv4} hover:bg_status.liveHighlight";
   var SCHED_OUTER =
@@ -373,12 +374,27 @@
     if (!shouldRun()) return;
     wireScroller();
     refresh();
-    setInterval(function () {
+    var pollId = setInterval(function () {
       refresh();
       wireScroller();
     }, POLL_MS);
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) refresh();
+    });
+    // Hybrid: when WS snapshots arrive, refresh immediately; slow HTTP poll while WS up
+    window.addEventListener("sn-live-ws", function () {
+      try {
+        refresh();
+      } catch (e) {}
+      try {
+        if (window.__snLiveWs && window.__snLiveWs.connected && window.__snLiveWs.connected()) {
+          clearInterval(pollId);
+          pollId = setInterval(function () {
+            refresh();
+            wireScroller();
+          }, POLL_MS_WS);
+        }
+      } catch (e2) {}
     });
   }
 

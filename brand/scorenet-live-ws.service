@@ -1,0 +1,20 @@
+[Unit]
+Description=ScoreNet live WebSocket hub (polls :18471, serves :18472)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/scorenet/brand
+ExecStart=/usr/bin/python3 /var/www/scorenet/brand/sn_live_ws_server.py
+Restart=always
+RestartSec=2
+Environment=SN_LIVE_WS_HOST=127.0.0.1
+Environment=SN_LIVE_WS_PORT=18472
+Environment=SN_SOFA_RELAY_URL=http://127.0.0.1:18471
+Environment=SN_LIVE_WS_POLL=2.5
+
+[Install]
+WantedBy=multi-user.target
