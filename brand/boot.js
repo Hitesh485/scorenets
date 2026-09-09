@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909pp";
+  var VER = "20260909fr";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -14,6 +14,15 @@
       return;
     }
   } catch (eFantasyRedir) {}
+
+  // Privacy policy removed — never land on /privacy-policy shell
+  try {
+    var _snPrivPath = (location.pathname || "").replace(/\/+$/, "") || "/";
+    if (_snPrivPath === "/privacy-policy" || _snPrivPath.indexOf("/privacy-policy/") === 0) {
+      location.replace("/");
+      return;
+    }
+  } catch (ePrivRedir) {}
 
   // TV schedule: Sofascore SPA defaults to By competition when hash has no tab.
   // Force #tab:channels before Next hydrates so Watchlist/Suggested show SonyLIV etc.
@@ -146,6 +155,15 @@
             return;
           }
 
+          // Privacy policy removed — never soft-nav into scraped shell
+          if (path === "/privacy-policy" || path.indexOf("/privacy-policy/") === 0) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+            location.assign("/");
+            return;
+          }
+
           // Dedicated scraped shells (not soft Next routes)
           var SHELL_PATHS = [
             "/user/profile",
@@ -154,7 +172,6 @@
             "/user/top-contributors",
             "/user/top-editors",
             "/feedback",
-            "/privacy-policy",
             "/cookies-policy",
             "/football/player-transfers",
             "/football/player-of-the-season",
@@ -293,6 +310,35 @@
       document.body.setAttribute("data-sn-profile-page", "1");
     }
   } catch (eProfFlag) {}
+
+  // Scoped Fresnel desktop fallback: only Next-disabled shells whose mobile
+  // Fresnel slot is empty. Live /tv-schedule keeps native mobile content.
+  function snApplyFresnelDesktopFallback() {
+    try {
+      if (!document.body) return;
+      if (document.body.getAttribute("data-sn-fresnel-desktop") === "1") return;
+      if (!document.querySelector('script[data-sn-next-disabled="1"]')) return;
+      var more = document.querySelector(
+        ".fresnel-container.fresnel-greaterThanOrEqual-mdMin"
+      );
+      if (!more) return;
+      var less = document.querySelector(".fresnel-container.fresnel-lessThan-mdMin");
+      var lessText = less
+        ? String(less.innerText || "")
+            .replace(/\s+/g, " ")
+            .trim()
+        : "";
+      if (!less || lessText.length < 80) {
+        document.body.setAttribute("data-sn-fresnel-desktop", "1");
+      }
+    } catch (eFresnel) {}
+  }
+  try {
+    if (document.body) snApplyFresnelDesktopFallback();
+    document.addEventListener("DOMContentLoaded", snApplyFresnelDesktopFallback);
+    setTimeout(snApplyFresnelDesktopFallback, 0);
+    setTimeout(snApplyFresnelDesktopFallback, 400);
+  } catch (eFresnelBoot) {}
 
   try {
     if (navigator.serviceWorker) {
@@ -1348,7 +1394,6 @@
         document.querySelector("script[data-sn-next-disabled]") ||
         /^\/user(\/|$)/.test(location.pathname || "") ||
         /^\/fantasy(\/|$)/.test(location.pathname || "") ||
-        /^\/privacy-policy(\/|$)/.test(location.pathname || "") ||
         /^\/cookies-policy(\/|$)/.test(location.pathname || "") ||
         /^\/impressum(\/|$)/.test(location.pathname || "") ||
         /^\/feedback(\/|$)/.test(location.pathname || "");

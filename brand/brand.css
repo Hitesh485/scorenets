@@ -209,6 +209,26 @@ a[href^="/fantasy/"] {
   opacity: 0 !important;
 }
 
+/* Hide Privacy Policy links (footer / legal / nav) */
+a[href="/privacy-policy"],
+a[href="/privacy-policy/"],
+a[href^="/privacy-policy/"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  opacity: 0 !important;
+}
+
 svg[width="x1"],
 svg[height="x1"] {
   width: 4px !important;
@@ -1965,11 +1985,12 @@ body:not([data-sn-authed="1"]) [data-sn-daily-10x-widget="1"] {
 }
 
 /*
-  Freeze shells (Next hydrate disabled): Sofascore Fresnel hides desktop SSR on
-  phone and leaves the mobile slot empty. Force-show desktop; hide empty mobile.
-  Covers QL pages (data-sn-page), profile, weekly-challenge, etc.
+  Freeze shells only: Sofascore Fresnel hides desktop SSR on phone and leaves an
+  empty mobile slot. Force-show desktop when boot sets data-sn-fresnel-desktop=1
+  (Next disabled + mobile Fresnel empty). Do NOT key off bare data-sn-page —
+  live pages like /tv-schedule keep real mobile Fresnel content.
 */
-body[data-sn-page] .fresnel-container.fresnel-greaterThanOrEqual-mdMin,
+body[data-sn-fresnel-desktop="1"] .fresnel-container.fresnel-greaterThanOrEqual-mdMin,
 body[data-sn-profile-page="1"] .fresnel-container.fresnel-greaterThanOrEqual-mdMin,
 body[data-sn-wc-page="1"] .fresnel-container.fresnel-greaterThanOrEqual-mdMin {
   display: block !important;
@@ -1978,7 +1999,7 @@ body[data-sn-wc-page="1"] .fresnel-container.fresnel-greaterThanOrEqual-mdMin {
   max-height: none !important;
   overflow: visible !important;
 }
-body[data-sn-page] .fresnel-container.fresnel-lessThan-mdMin,
+body[data-sn-fresnel-desktop="1"] .fresnel-container.fresnel-lessThan-mdMin,
 body[data-sn-profile-page="1"] .fresnel-container.fresnel-lessThan-mdMin,
 body[data-sn-wc-page="1"] .fresnel-container.fresnel-lessThan-mdMin {
   display: none !important;
@@ -1986,7 +2007,7 @@ body[data-sn-wc-page="1"] .fresnel-container.fresnel-lessThan-mdMin {
   height: 0 !important;
   overflow: hidden !important;
 }
-body[data-sn-page] .desktop-only,
+body[data-sn-fresnel-desktop="1"] .desktop-only,
 body[data-sn-profile-page="1"] .desktop-only,
 body[data-sn-wc-page="1"] .desktop-only {
   display: block !important;

@@ -1030,8 +1030,7 @@
       "</button>" +
       "</div></div>" +
       '<p class="sn-auth-legal">By signing in, you agree to our ' +
-      '<a href="/terms-and-conditions">Terms &amp; Conditions</a> and ' +
-      '<a href="/privacy-policy">Privacy Policy</a></p>' +
+      '<a href="/terms-and-conditions">Terms &amp; Conditions</a></p>' +
       "</div>" +
       '<div class="sn-auth-modal-right" aria-hidden="true">' +
       '<div class="sn-auth-modal-art">' +
