@@ -1,0 +1,1277 @@
+{
+  "scraped_at": "2026-09-09T17:29:32",
+  "mode": "mobile_tablet_clean_v2",
+  "ver": "20260909mob2",
+  "rules": [
+    "profile HTML saved before any settings/gear/sign-in clicks",
+    "settings via /settings + optional overlay file after profile save",
+    "fantasy skipped",
+    "no deploy"
+  ],
+  "viewports": [
+    {
+      "name": "mobile",
+      "w": 390,
+      "h": 844
+    },
+    {
+      "name": "tablet",
+      "w": 768,
+      "h": 1024
+    }
+  ],
+  "fantasy_skipped": true,
+  "fantasy_urls_seen": [],
+  "pages": [
+    {
+      "viewport": "mobile",
+      "key": "profile",
+      "ok": true,
+      "final_url": "https://www.sofascore.com/user/profile",
+      "title": "Football Live Score - Sofascore",
+      "raw": "D:\\Tivra3\\scorenet\\scorenet\\user\\profile\\_mob_scrape\\_raw_mobile.html",
+      "cooked": "D:\\Tivra3\\scorenet\\scorenet\\user\\profile\\_mob_scrape\\index_mobile.html",
+      "bytes_raw": 163750,
+      "guest_signals": {
+        "has_home_for_sports": true,
+        "has_sign_in": true,
+        "has_join_date": false,
+        "has_world_of_stats": false,
+        "has_quick_links": true,
+        "has_my_profile": true,
+        "has_fantasy_text": true,
+        "has_settings_bake": false,
+        "has_lang_picker_bake": false
+      },
+      "href_count": 94,
+      "hrefs_sample": [
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/feedback",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Scores"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news",
+          "text": "News"
+        },
+        {
+          "tag": "A",
+          "href": "https://torneo.com/",
+          "text": "Torneo"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Search SofascoreCtrlK"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Sign in"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "SIGN IN"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/tv-schedule",
+          "text": "TV Schedule & Channels"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/user/weekly-challenge",
+          "text": "Weekly Challenge"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/betting-tips-today",
+          "text": "Dropping odds"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/player-of-the-season",
+          "text": "Player of the Season"
+        },
+        {
+          "tag": "A",
+          "href": "https://sofascore.helpscoutdocs.com/",
+          "text": "Sofascore FAQ"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/us-open-qf-sabalenka-survives-noskova-in-2-tiebreaks",
+          "text": "US Open QF: Sabalenka survives Noskova in 2 tiebreaks"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/tiafoe-beats-michelsen-in-us-open-five-set-comeback",
+          "text": "Tiafoe beats Michelsen in US Open five-set comeback"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/serhou-guirassy-makes-champions-league-history-with-two-goals-and-an-own-goal",
+          "text": "Serhou Guirassy makes Champions League history with two goals and an own goal"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/us-open-ben-shelton-beats-carlos-alcaraz-in-5-set-epic",
+          "text": "US Open: Ben Shelton beats Carlos Alcaraz in 5-set epic"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/us-open-quarterfinal-preview-mirra-andreeva-vs-coco-gauff",
+          "text": "US Open quarterfinal preview: Mirra Andreeva vs Coco Gauff"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/khachanov-vs-blockx-preview-us-open-quarterfinal-with-big-serves-on-show",
+          "text": "Khachanov vs Blockx preview: US Open quarterfinal with big serves on show"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/spain/laliga/8",
+          "text": "LaLiga"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/england/premier-league/17",
+          "text": "Premier League"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/france/ligue-1/34",
+          "text": "Ligue 1"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/italy/serie-a/23",
+          "text": "Serie A"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/germany/bundesliga/35",
+          "text": "Bundesliga"
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "key": "feedback",
+      "ok": true,
+      "final_url": "https://www.sofascore.com/feedback",
+      "title": "Football Live Score - Sofascore",
+      "raw": "D:\\Tivra3\\scorenet\\scorenet\\feedback\\_mob_scrape\\_raw_mobile.html",
+      "cooked": "D:\\Tivra3\\scorenet\\scorenet\\feedback\\_mob_scrape\\index_mobile.html",
+      "bytes_raw": 200004,
+      "guest_signals": {},
+      "href_count": 119,
+      "hrefs_sample": [
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://app.sofascore.com/nixz/header?deep_link_value=https%3A%2F%2Fwww.sofascore.com%2Fsport",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Scores"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news",
+          "text": "News"
+        },
+        {
+          "tag": "A",
+          "href": "https://torneo.com/",
+          "text": "Torneo"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Search SofascoreCtrlK"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Sign in"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/cricket",
+          "text": "Cricket"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/tennis",
+          "text": "Tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/basketball",
+          "text": "Basketball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/table-tennis",
+          "text": "Table tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/baseball",
+          "text": "Baseball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/motorsport",
+          "text": "Motorsport"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/badminton",
+          "text": "Badminton"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/volleyball",
+          "text": "Volleyball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/american-football",
+          "text": "American football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/ice-hockey",
+          "text": "Ice hockey"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/mma",
+          "text": "MMA"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/esports",
+          "text": "Esports"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/handball",
+          "text": "Handball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/snooker",
+          "text": "Snooker"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/darts",
+          "text": "Darts"
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "key": "settings",
+      "ok": true,
+      "final_url": "https://www.sofascore.com/settings",
+      "title": "404 | Page not found",
+      "raw": "D:\\Tivra3\\scorenet\\scorenet\\settings\\_mob_scrape\\_raw_mobile.html",
+      "cooked": "D:\\Tivra3\\scorenet\\scorenet\\settings\\_mob_scrape\\index_mobile.html",
+      "bytes_raw": 204971,
+      "guest_signals": {},
+      "href_count": 117,
+      "hrefs_sample": [
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://app.sofascore.com/nixz/header?deep_link_value=https%3A%2F%2Fwww.sofascore.com%2Fsport",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Scores"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news",
+          "text": "News"
+        },
+        {
+          "tag": "A",
+          "href": "https://torneo.com/",
+          "text": "Torneo"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Search SofascoreCtrlK"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Sign in"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/cricket",
+          "text": "Cricket"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/tennis",
+          "text": "Tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/basketball",
+          "text": "Basketball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/table-tennis",
+          "text": "Table tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/baseball",
+          "text": "Baseball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/motorsport",
+          "text": "Motorsport"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/badminton",
+          "text": "Badminton"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/volleyball",
+          "text": "Volleyball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/american-football",
+          "text": "American football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/ice-hockey",
+          "text": "Ice hockey"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/mma",
+          "text": "MMA"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/esports",
+          "text": "Esports"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/handball",
+          "text": "Handball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/snooker",
+          "text": "Snooker"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/darts",
+          "text": "Darts"
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "key": "profile",
+      "ok": true,
+      "final_url": "https://www.sofascore.com/user/profile",
+      "title": "Football Live Score - Sofascore",
+      "raw": "D:\\Tivra3\\scorenet\\scorenet\\user\\profile\\_mob_scrape\\_raw_tablet.html",
+      "cooked": "D:\\Tivra3\\scorenet\\scorenet\\user\\profile\\_mob_scrape\\index_tablet.html",
+      "bytes_raw": 142758,
+      "guest_signals": {
+        "has_home_for_sports": true,
+        "has_sign_in": true,
+        "has_join_date": false,
+        "has_world_of_stats": false,
+        "has_quick_links": true,
+        "has_my_profile": true,
+        "has_fantasy_text": true,
+        "has_settings_bake": false,
+        "has_lang_picker_bake": false
+      },
+      "href_count": 94,
+      "hrefs_sample": [
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/feedback",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Scores"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news",
+          "text": "News"
+        },
+        {
+          "tag": "A",
+          "href": "https://torneo.com/",
+          "text": "Torneo"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Search SofascoreCtrlK"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Sign in"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "SIGN IN"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/tv-schedule",
+          "text": "TV Schedule & Channels"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/user/weekly-challenge",
+          "text": "Weekly Challenge"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/betting-tips-today",
+          "text": "Dropping odds"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/player-of-the-season",
+          "text": "Player of the Season"
+        },
+        {
+          "tag": "A",
+          "href": "https://sofascore.helpscoutdocs.com/",
+          "text": "Sofascore FAQ"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/us-open-qf-sabalenka-survives-noskova-in-2-tiebreaks",
+          "text": "US Open QF: Sabalenka survives Noskova in 2 tiebreaks"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/tiafoe-beats-michelsen-in-us-open-five-set-comeback",
+          "text": "Tiafoe beats Michelsen in US Open five-set comeback"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/serhou-guirassy-makes-champions-league-history-with-two-goals-and-an-own-goal",
+          "text": "Serhou Guirassy makes Champions League history with two goals and an own goal"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/us-open-ben-shelton-beats-carlos-alcaraz-in-5-set-epic",
+          "text": "US Open: Ben Shelton beats Carlos Alcaraz in 5-set epic"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/us-open-quarterfinal-preview-mirra-andreeva-vs-coco-gauff",
+          "text": "US Open quarterfinal preview: Mirra Andreeva vs Coco Gauff"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news/khachanov-vs-blockx-preview-us-open-quarterfinal-with-big-serves-on-show",
+          "text": "Khachanov vs Blockx preview: US Open quarterfinal with big serves on show"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/spain/laliga/8",
+          "text": "LaLiga"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/england/premier-league/17",
+          "text": "Premier League"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/france/ligue-1/34",
+          "text": "Ligue 1"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/italy/serie-a/23",
+          "text": "Serie A"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/football/tournament/germany/bundesliga/35",
+          "text": "Bundesliga"
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "key": "feedback",
+      "ok": true,
+      "final_url": "https://www.sofascore.com/feedback",
+      "title": "Football Live Score - Sofascore",
+      "raw": "D:\\Tivra3\\scorenet\\scorenet\\feedback\\_mob_scrape\\_raw_tablet.html",
+      "cooked": "D:\\Tivra3\\scorenet\\scorenet\\feedback\\_mob_scrape\\index_tablet.html",
+      "bytes_raw": 180705,
+      "guest_signals": {},
+      "href_count": 119,
+      "hrefs_sample": [
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://app.sofascore.com/nixz/header?deep_link_value=https%3A%2F%2Fwww.sofascore.com%2Fsport",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Scores"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news",
+          "text": "News"
+        },
+        {
+          "tag": "A",
+          "href": "https://torneo.com/",
+          "text": "Torneo"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Search SofascoreCtrlK"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Sign in"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/cricket",
+          "text": "Cricket"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/tennis",
+          "text": "Tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/basketball",
+          "text": "Basketball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/table-tennis",
+          "text": "Table tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/baseball",
+          "text": "Baseball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/motorsport",
+          "text": "Motorsport"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/badminton",
+          "text": "Badminton"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/volleyball",
+          "text": "Volleyball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/american-football",
+          "text": "American football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/ice-hockey",
+          "text": "Ice hockey"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/mma",
+          "text": "MMA"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/esports",
+          "text": "Esports"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/handball",
+          "text": "Handball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/snooker",
+          "text": "Snooker"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/darts",
+          "text": "Darts"
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "key": "settings",
+      "ok": true,
+      "final_url": "https://www.sofascore.com/settings",
+      "title": "404 | Page not found",
+      "raw": "D:\\Tivra3\\scorenet\\scorenet\\settings\\_mob_scrape\\_raw_tablet.html",
+      "cooked": "D:\\Tivra3\\scorenet\\scorenet\\settings\\_mob_scrape\\index_tablet.html",
+      "bytes_raw": 183098,
+      "guest_signals": {},
+      "href_count": 117,
+      "hrefs_sample": [
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://app.sofascore.com/nixz/header?deep_link_value=https%3A%2F%2Fwww.sofascore.com%2Fsport",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Download app"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Scores"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/news",
+          "text": "News"
+        },
+        {
+          "tag": "A",
+          "href": "https://torneo.com/",
+          "text": "Torneo"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Search SofascoreCtrlK"
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "href": "",
+          "text": "Sign in"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/trending",
+          "text": "Trending"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/",
+          "text": "Football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/cricket",
+          "text": "Cricket"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/tennis",
+          "text": "Tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/basketball",
+          "text": "Basketball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/table-tennis",
+          "text": "Table tennis"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/baseball",
+          "text": "Baseball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/motorsport",
+          "text": "Motorsport"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/badminton",
+          "text": "Badminton"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/volleyball",
+          "text": "Volleyball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/american-football",
+          "text": "American football"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/ice-hockey",
+          "text": "Ice hockey"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/mma",
+          "text": "MMA"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/esports",
+          "text": "Esports"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/handball",
+          "text": "Handball"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/snooker",
+          "text": "Snooker"
+        },
+        {
+          "tag": "A",
+          "href": "https://www.sofascore.com/darts",
+          "text": "Darts"
+        }
+      ]
+    }
+  ],
+  "settings_overlays": [
+    {
+      "opened": false,
+      "method": {
+        "ok": false
+      },
+      "viewport": "mobile"
+    },
+    {
+      "opened": false,
+      "method": {
+        "ok": false
+      },
+      "viewport": "tablet"
+    }
+  ],
+  "oauth_urls": [
+    "https://accounts.google.com/gsi/client",
+    "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:1041482749526:web:9365699b4ff68ade/webConfig",
+    "https://firebaseinstallations.googleapis.com/v1/projects/api-project-1041482749526/installations",
+    "https://fundingchoicesmessages.google.com/i/21866864457?ers=3",
+    "https://www.googletagmanager.com/gtag/js?l=dataLayer&id=G-HNQ9P9MGZR",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxVxGX8qNWjQDn1K3xwjwhztlIjybqoancSkZHcgedqRe_Dlg7sAMbN5Itfzk448BdvE5Yq7K9NTIKE0k32jFvP1urg12oqhoARsAm8wE6MWxGC3Tn5FiBFRXm7tImj_l0VrUk915A==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxV-aFFN-3l9CP7B_RTurkWFDd1yqmVw0rDjYCsEyGvkaNRuOYXtRz2jShGwnznBfdTbw7drhrQllDHG7zL93RHNbiXt6q0Pa8KwXlt4hNlIuDPBJoeTlEJkOo3eWtkHZAI4ghqRGw==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU0ODI5LDU3ODAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzddXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw3NTddXV0iXSxbMzUsIjE3ODg5NTQ4MjkiXSxbMTksIjIiXSxbMjQsIiJdLFsyNSwiW1szMTA2MTY5MF1dIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://www.google.com/measurement/conversion?random=1788954829827&cv=11&tid=G-HNQ9P9MGZR&fst=1788954829827&fmt=8&en=session_start&gtm=45je6930v869352338za200zd869352338xec&gcs=G1--&gcd=13l3l3l3l5l1&dma=0&tcfd=14I54&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120474863&u_w=390&u_h=844&url=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&gacid=1920005616.1788954830&gpp_sid=-1&frm=0&tiba=Football%20Live%20Score%20-%20Sofascore&gtm_ee=1&npa=0&us_privacy=1---&gdpr=0&gdpr_consent=tcempty&pscdl=noapi&auid=1194380465.1788954830&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uamb=1&uam=&uap=iOS&uapv=17_0&uaw=0&rcb=3",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954829416&_gaz=1&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGAC&_fid=d_HKb2HBO9JhCSLLcVrIE5&_prs=ok&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=3&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120474863&sid=1788954829&sct=1&seg=0&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&en=page_view&_fv=1&_nsi=1&_ss=2&_ee=1&ep.origin=firebase&tfd=1342",
+    "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-HNQ9P9MGZR&cid=1920005616.1788954830&gtm=45je6930v869352338za200zd869352338&rcb=3&aip=1&dma=0&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&frm=0&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120474863&z=1817296520",
+    "https://fastlane.rubiconproject.com/a/api/fastlane.json?account_id=26420&site_id=605570&zone_id=3897892&size_id=43&p_pos=atf&gdpr=0&rp_schain=1.0,1!pubmax.com,144,1,,,&eid_amxdt.net=amx*r*e004c236-2f84-4cdb-811f-81817fca23b5%5E1%5E%5E%5E%5E%5E&eid_pubcid.org=f48f95fd-2603-45b2-b58f-e56a7aba4a19%5E1%5E%5E%5E%5E%5E&rf=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&kw=livescore%2Clive%20scores%2Csofascore%2Cresults%2Csofa%20score&tg_i.domain=sofascore.com&tg_i.page=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&tg_i.cat=IAB17&tg_i.documentLang=en&tg_i.mobile=1&tg_i.dfp_ad_unit_code=%2F21866864457%2Fweb-mobile-leaderboard-bottom&tk_flint=pbjs_lite_v11.29.0&l_pb_bid_id=0b2b423c-3051-4054-a8bb-ebc90b56444f&p_screen_res=390x844&rp_secure=1&ipv6=2401%3A4900%3A8842%3A5a42%3Ab984%3A29fd%3A57e4%3A6b2f&rp_hard_floor=0.125&p_site.mobile=1&p_gpid=%2F21866864457%2Fweb-mobile-leaderboard-bottom&m_ch_arch=arm&m_ch_ua=%22Chromium%22%7Cv%3D%22152%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224%22%2C%22Google%20Chrome%22%7Cv%3D%22152%22&m_ch_full_ver=%22Chromium%22%7Cv%3D%22152.0.7977.83%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224.0.0.0%22%2C%22Google%20Chrome%22%7Cv%3D%22152.0.7977.83%22&m_ch_mobile=%3F1&m_ch_platform=iOS&m_ch_platform_ver=17_0&slots=1&rand=0.4047333621516619",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUbUhQ-FpP4rLG_6VvNPDjGDV-6VGe3cCXTSJ04mbQhGklnGo6gmJD6rlDMSuvROsrV0uxz7MI4LUU5RUybdx6zTd-TE0JgoW2Qc6F8Nx6IigTXcI6LN6_6DEUKTuJEXX2zFdX7d-3EV5n7PhehdYrqrzn2r0elS2Jxo7jnOpKyZi_phNa4l4faarwy/_/ad-tag2./adleftsidebar._gads_footer./adbebi_/openads-",
+    "https://pagead2.googlesyndication.com/pagead/js/lidar.js?fcd=true",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxXUe-bQDW8Zbl9eNRhY6G8Tg1aBMVT74or0xNCBeU-KjfgegfYoaTGzlNdepVnjHXVOj-Y6SEehUC8zZ5WUjRWe2FkU0TD__VO-9HEcLgj8wt6kA-bdj2va8DnesehXRN-TEJFCHg==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU0ODMwLDc0NTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNl0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vdXNlci9wcm9maWxlIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsNzU3XV1dIl0sWzM1LCIxNzg4OTU0ODI5Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjUsIltbMzEwNjE2OTBdXSJdLFsyOSwiZmFsc2UiXV1d",
+    "https://pagead2.googlesyndication.com/pagead/ping?e=1",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxXsek18tVK8Tn0T1D9wSF6Qo1zez3FbpuXOvX7N1KzTKcJFNXhqoDq7IliE87DBusWaQjMkfvDnWN4Nr6AnQCf2esXCLQoJA__gikzBnOjodcFR3vsFH4ea3Ir3TWwMnZnMq3bOCg==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU0ODMwLDg2MTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMF0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vdXNlci9wcm9maWxlIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsNzU3XV1dIl0sWzM1LCIxNzg4OTU0ODI5Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjUsIltbMzEwNjE2OTBdXSJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxXIsQG2Aajh9oGO72CBs02zPfahk94P4XnbJ90i7HT_0EUixbJeUU8X21TRqkIaMdLpFXu2ktFUFhiePWx4QljbbHrSbTOkrhQhZB4_T85J1_gBQ7rf6db-BiKnxkas5rafLrezqg==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUa-ALcajeoE_iSqwnpsuhQZ48H6F7k716WvAixjTxf82ZB1ethJ4opPJ05HIjmxiM2JZ_gcZm8a6G7vVO4VSmnEpNLLRxzJXim-EblU8gMzbm_-3ISlpR1jQTtsctCQh9FwpBalg==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU0ODMwLDk4MjAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMCw5XSxudWxsLDIsbnVsbCwiZW4iLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw3NTddXV0iXSxbMzUsIjE3ODg5NTQ4MjkiXSxbMTksIjIiXSxbMjQsIiJdLFsyNSwiW1szMTA2MTY5MF1dIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxWD_JIdJKTKWRY01ONkfbc6TMWZxsYufFuC3hlzNvxvzYvX_mzr3T346zuGjwTmTD2EmtMkYuiBbuyA93q9TPgh_f7sVfq030pAgy7ueSL7g1QfZvYtia7FQuYHRkBkn_80wlUzHA==",
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=7033904142852627",
+    "https://350f86b917331a00cb6ed870ffb05f1a.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "https://ep2.adtrafficquality.google/sodar/sodar2.js",
+    "https://ep2.adtrafficquality.google/sodar/sodar2/255/runner.html",
+    "https://www.google.com/recaptcha/api2/aframe",
+    "https://pagead2.googlesyndication.com/bg/o4-ogFGHNUmTyA9letJjAGCVBR7cCUVwuZlEYnOU3dk.js",
+    "https://www.google.com/measurement/conversion?random=1788954831973&cv=11&tid=G-HNQ9P9MGZR&fst=1788954831973&fmt=8&en=ads_impression_custom&gtm=45je6930v869352338za200zd869352338xec&gcs=G1--&gcd=13l3l3l3l5l1&dma=0&tcfd=14I54&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120474863&u_w=390&u_h=844&url=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&gacid=1920005616.1788954830&userId=89abdd97-60ba-4afc-b4e3-4bfd2250755f&gpp_sid=-1&frm=0&tiba=Football%20Live%20Score%20-%20Sofascore&gtm_ee=1&npa=0&us_privacy=1---&gdpr=0&gdpr_consent=tcempty&pscdl=noapi&auid=1194380465.1788954830&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uamb=1&uam=&uap=iOS&uapv=17_0&uaw=0&rcb=3",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954829416&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=3&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120474863&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&sid=1788954829&sct=1&seg=0&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&_s=2&tfd=3479",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954829416&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&_prs=ok&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=3&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120474863&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&sid=1788954829&sct=1&seg=0&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&en=ads_impression_custom&_c=1&_ee=1&ep.origin=firebase&ep.position=affiliate_320x50&ep.name=Sofascore%20Analyst%20v3%20%2F%20English%20%2F%20July&ep.provider=sofascore&ep.type=banner&ep.app_language=en&ep.custom_screen_resolution=390x844&_et=36&tfd=3480",
+    "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=7033904142852627&rc=",
+    "https://ep2.adtrafficquality.google/generate_204?f7ADeQ",
+    "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=7033904142852627&bg=!JySlJEbNAAZGRqKQZkY7AEcBe5WfOGo30UHLUhE1rTwIYYmChY4FReOEk9T1BEeBGpTv4quucPf5zzQ8pDOJv1u70f58a6nYgwTtBYPUuTch8sjh3C0grwIAAACUUgAAAAdoAQd-ADbnv-duDpFjYJQzS9hvmOKyQNkMxtBQjq3jKzBrdmPK-I7fGe_KfsYGYRAJRKFTP-YcSbagHgyZAqK-Bzq4QOiNPyCfXKukm11KpU-P5mjjGVoMyOc9QL6T1ejHts2cY0fv_Sg5coAbiKfwytswOhy7fPD8d50SXEiyHFCm9bw3N8f1sgR7Tp3OBhncQDFlFX1PJZiLKREizFwrMEZsDxfDUXYIU2rHZldRGna2vQnUCeWfZ0tctiDY-mKNC27zvlwyv-QmUBADefdwPhE5XUNraEy-YGjATb4iwFbLHqFsdHt9GFikh88aDiswvHEuU8zcqLT4_b6QVWArYvx_EAbIfDkbCcqybEu3f1SyWLmBMDk9dfnL1ylNd2mwF6_xuwmiR8ns07fEguKGtQ_pvr7lv1DVunpvS6CeHlWGPcnmluYQmWamBQ-R__MxJHBxpC6QzX27PGNYYwUJMX1srBQWoMqM5yJrnBB_-KWaJ79OQ9inXbhmPbdk74K7YzI6HxHHmXxK-5Rn9rZQRgzI3YXheKFJylcs8EFA8kp5YsNowmMU7jhfhHuLD-FCA8BM_7VT6mtAHsdguwxoA6C2THMJj2s65RseSCugb03KevfLWG0ntQknz4gTtAvnRuj9AwR934NCslsYsEalBtn90N9wV6y_w4ajaVtIvUROK-52uS2GfnFjyEGmc4TgZmm3p6TiGIkRgD4XymW9LJArz3Y6_EeVdzGikka2oTZ7SluZhNOuG-BU52qJVcblI3AU0qCvw8EIsFkgkPokqI0APNLWMpxTKI5AoIEOVsKfW3QMkRgFHu6na09_r3cr7ctr27k7Xnzq2lpMyjdk705BrjZxXfHlr69DMljxlipQ1GeQXaam3D18sXPGle5Qx9A8wp-kcjhjOl6qpE6w7FHKX95aEnlEPXSUxdRPb6g-zUPJhDxuFmzo6vOWPlGMOeZ4hPs6Wemb7es92a9Bfg",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxUSnU0FbnXmCCVIBfyFc364eG3CF0phy-Rxe-HAEefaciBNVpw9ETgTdIsZWE8wD4nkppGCGwWSjgan2aHJB5_azUvMaizQ1YPg6-BiM_XJ3Moa3hRhyeIrTGhFdGH46yz0fk4FMQ==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxVdlL8RkBQSMKsqP7RgoEuxhRPm1OTdzg7Hddjud7LLSOanTkDJ6WELBM2bl6c-QQ9ZT2oL9YD7I58n03bQkcmovfxi-6FbB239M2ZXOFNIU9f67eRG0U9dwM2rp-bsqpiILTv8gQ==?fccs=W1siQUtzUm9sOW1TazlYUk1na3hpUEJzbUNZY0twcUNRaFVGUXNwdGpZQS0xV0RyZU9nVTBlYV80VDNUcTUwb25SdVQ1eHZnM1ZHcWF5U2ZpYUZ5NURiOUVzdUhwUURMYUk3cC1TZ2piV2tzYkFvdmNsRl9QWkNKRW5QR0dhWnBNdnNoX1BGM3hOSmo0SlFpMUZ4M0Y5cEVCSHhaVnFaZXdodWtnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4NTgsNDQ0MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL2ZlZWRiYWNrIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsMTc2XV1dIl0sWzIzLCIxNzg4OTU0ODMwIl0sWzM1LCIxNzg4OTU0ODI5Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://2a58ea804c985266a854ae0a81c75dbc.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "https://fastlane.rubiconproject.com/a/api/fastlane.json?account_id=26420&site_id=605570&zone_id=3897892&size_id=43&p_pos=atf&rp_schain=1.0,1!pubmax.com,144,1,,,&eid_amxdt.net=amx*r*09c3e2ac-a091-4fac-9f88-a1241899d9e9%5E1%5E%5E%5E%5E%5E&eid_id5-sync.com=ID5*qZMQnz_4_-0pPsAXue8PGVyq8RSAiirf6ZgueDcy8kr__2qhSM5aAAEBCmqhSM0A3hFpRMsgFBv6EtvMgFNuLQ%5E1%5E%5E%5E%5E%5E&eid_pubcid.org=f48f95fd-2603-45b2-b58f-e56a7aba4a19%5E1%5E%5E%5E%5E%5E&eid_liveintent.com=32-eVWpXJAr%2B7BTxptf%2FMGeZlcI3mQ5NiCehop%2F4lNV2jVcdZbpVkA9a2%2FKRHkPTTm%2FZ%2F9hgWFN71HNaAt4UVXLuHRDsf1z1cvrGzkaPSfkFrtXrQ%3D%3D%5E3%5E%5E%5E%5E%5E&eid_bidswitch.net=ff10c9bb-97ce-406f-8ba3-e72eb24215d4%5E3%5E%5E%5E%5E%5E&eid_liveintent.triplelift.com=1286243011721458848655%5E3%5E%5E%5E%5E%5E&eid_zeta-ssp.liveintent.com=ua-464015a5-63ae-33d4-9f2a-f020a860fae4%5E3%5E%5E%5E%5E%5E&eid_media.net=4010204164595743000V10%5E3%5E%5E%5E%5E%5E&eid_rubiconproject.com=MFMF0B0V-26-8PSV%5E3%5E%5E%5E%5E%5E&eid_liveintent.indexexchange.com=ZDLvyt9RcTH64KPwKGE2-AAA%265472%5E3%5E%5E%5E%5E%5E&eid_openx.net=8f19dad7-6b73-47fe-9c2f-9cf5bda6583e%5E3%5E%5E%5E%5E%5E&eid_pubmatic.com=0ADA7DEF-F9F7-4660-BC58-25D4E9FAB0D8%5E3%5E%5E%5E%5E%5E&eid_liveintent.sovrn.com=KO8nAQZHXyhKv7JVRPqyyy3C%5E3%5E%5E%5E%5E%5E&eid_sharethrough.com=bf738453-a139-4936-b2c4-0bd57c44ba58%5E3%5E%5E%5E%5E%5E&eid_liveintent.unrulymedia.com=RX-459ab0ed-c4ff-4b9e-ae80-f754af522c20-004%5E3%5E%5E%5E%5E%5E&rf=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&kw=livescore%2Clive%20scores%2Csofascore%2Cresults%2Csofa%20score&tg_i.domain=sofascore.com&tg_i.page=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&tg_i.cat=IAB17&tg_i.documentLang=en&tg_i.mobile=1&tg_i.dfp_ad_unit_code=%2F21866864457%2Fweb-mobile-leaderboard-bottom&tk_flint=pbjs_lite_v11.29.0&l_pb_bid_id=0adee768-d052-4eb7-99d9-ee1654f1139e&p_screen_res=390x844&rp_secure=1&ipv6=2401%3A4900%3A8842%3A5a42%3Ab984%3A29fd%3A57e4%3A6b2f&rp_hard_floor=0.125&p_site.mobile=1&p_gpid=%2F21866864457%2Fweb-mobile-leaderboard-bottom&m_ch_arch=arm&m_ch_ua=%22Chromium%22%7Cv%3D%22152%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224%22%2C%22Google%20Chrome%22%7Cv%3D%22152%22&m_ch_full_ver=%22Chromium%22%7Cv%3D%22152.0.7977.83%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224.0.0.0%22%2C%22Google%20Chrome%22%7Cv%3D%22152.0.7977.83%22&m_ch_mobile=%3F1&m_ch_platform=iOS&m_ch_platform_ver=17_0&slots=1&rand=0.5594629828811898",
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=3102547808274144",
+    "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=3102547808274144&rc=",
+    "https://ep2.adtrafficquality.google/generate_204?3SQY5Q",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxU0Ou5dRT32XacAx5iNlXy-JoA0Z9e4WN9q7EwE6zF-Z9CWc_DEi8wtp41uxRTKGsCz4IFm9xnR0qgTJadZbEGw-DaWECjTxzeJcPOa378_U28AtWKo-ms08LLByOpIyjWPxGEy2TUfi_E5IBP0oCFbTkcRfuUDs505cL_xyPkiz06d7GNXl2r54F-r/_&videoadid=img-banner-ad./cpm_ad./peel.js",
+    "https://pagead2.googlesyndication.com/pagead/show_companion_ad.js?fcd=true",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxU1G5x6MqCXHi3IEAUx9zyqoKO6VdURKA-Dg-VTVW4MgfIPpKR8wKJtkLJHz5msssyPo-1h-Df3oc6OVeIl1il7Xd3BL-GKsNkq2dAa8vIEwsK-vel45WFlPjTS9abgx4okBhp0yA==?fccs=W1siQUtzUm9sOW1TazlYUk1na3hpUEJzbUNZY0twcUNRaFVGUXNwdGpZQS0xV0RyZU9nVTBlYV80VDNUcTUwb25SdVQ1eHZnM1ZHcWF5U2ZpYUZ5NURiOUVzdUhwUURMYUk3cC1TZ2piV2tzYkFvdmNsRl9QWkNKRW5QR0dhWnBNdnNoX1BGM3hOSmo0SlFpMUZ4M0Y5cEVCSHhaVnFaZXdodWtnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4NTksMzE0MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2XSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9mZWVkYmFjayIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDE3Nl1dXSJdLFsyMywiMTc4ODk1NDgzMCJdLFszNSwiMTc4ODk1NDgyOSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxU-89RSNaEcISWMVVdWYIjoDjpisqlaywbbL9_MK7oEMZzsYdYhypMWHIr3J1XdqByJgMS5gc_gdaZ8Xoxr2AqTQnvY0IylKBkt-124o0JUHUnhe6V90bV_54QCwyLO3hDUjacfdg==?fccs=W1siQUtzUm9sOW1TazlYUk1na3hpUEJzbUNZY0twcUNRaFVGUXNwdGpZQS0xV0RyZU9nVTBlYV80VDNUcTUwb25SdVQ1eHZnM1ZHcWF5U2ZpYUZ5NURiOUVzdUhwUURMYUk3cC1TZ2piV2tzYkFvdmNsRl9QWkNKRW5QR0dhWnBNdnNoX1BGM3hOSmo0SlFpMUZ4M0Y5cEVCSHhaVnFaZXdodWtnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4NTksNDI1MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9mZWVkYmFjayIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDE3Nl1dXSJdLFsyMywiMTc4ODk1NDgzMCJdLFszNSwiMTc4ODk1NDgyOSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxXR7HoQ3O-g1hINd398gKP78V9MCQgcypmdvww6TcQzXuGY_iltEbH6kChA3PjP4Fa4G3wr8kbYY6p90eOePraTpQ7vS6mrnedk3ZTubNZYpCMRfVv-JHYha_y3aIo2MajUiSd-XA==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxVuogDVx93IxYiU5i5jx1wWq6p57QmLB5vlviUm3bIW2ME-HBsuUjU8QWV-Ei144DsJRHdL3WPMoPtPaDNasc_MFPc5zoNBgMR-5MslH2cuDrVUHiEm9mCIsuVBvLpuLhvRZOvnxg==?fccs=W1siQUtzUm9sOW1TazlYUk1na3hpUEJzbUNZY0twcUNRaFVGUXNwdGpZQS0xV0RyZU9nVTBlYV80VDNUcTUwb25SdVQ1eHZnM1ZHcWF5U2ZpYUZ5NURiOUVzdUhwUURMYUk3cC1TZ2piV2tzYkFvdmNsRl9QWkNKRW5QR0dhWnBNdnNoX1BGM3hOSmo0SlFpMUZ4M0Y5cEVCSHhaVnFaZXdodWtnPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4NTksNTM4MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwLDldLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL2ZlZWRiYWNrIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsMTc2XV1dIl0sWzIzLCIxNzg4OTU0ODMwIl0sWzM1LCIxNzg4OTU0ODI5Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=3102547808274144&bg=!NTalNlTNAAZGRqKQZkY7AEcBe5WfOAovQW3VteQSBXnSjVpvrcxnuPWt7GDfDs7fnG0no-oxsTpggsWA3oVGRhi7SUu0sW9bgV6dffNnfgsz9vYKf1AHigIAAAB9UgAAAAhoAQd-ADbWsOVMERvbdBnI0OfN_8aKXihzCOsU01Al3FXGQNEgeECP3nTao1aD52NsWMUGNILSxQu665WZAo-CZIad7sQtbc8BpbKakcqXyxFy6tzdF8cutePkEpK4ij2KFo-mobSNTqs5gWThUIfQAYRg1p1p-dZXEjEtem_UgbmoIP4RVETJP8CrLerNPjF0wZK9kfmcimb5PtaPDSNL4nYZIEhW9K9qVKz4ej386qivCW0OMMPJTOfysV4owJUXcLGFQ7Y41g6nbh0y1RkPwa4jQjdMvOh6T_eT92aFv5cyQOpJcxyWeovtjqVF0I8fntM900J3jab7_hX148q-MB4_v5U07pJdBSt3yikb7qyU6HhVj5DSjFOmkeOXMNVG_-i_2HRhO7XwHtlf-IXAERL7dYz0wtHi6p6lBNqoPhjw38s1KPPim-Bk3PKcjRQhoo9rYm53TJp0dBPmaWoAVgzu9kTHP_JGk4DAfgdGI9PEu5pSVsFEL431sN5HSREqMOXlgQsJ_gFpQwqWoAgYVhlXJ-D2xzW2XynyLUpt5jtfZZNTXNaN_0EPI-gOX3Z5tA1BJX5hpYgBpHsiHxLP_G3qqdfs58pAD8DKn1EVvut0mSEfYTQnkGZ5D4DkRITKNhpx_mp1qfd1tQq3ClKleybJfzsek-ptyAeB6HZ00ofaCzt6ITJDcsw80zEza3HW1jZCbf8RcBbvPyNsUkpYMmzri2UW2PBlC_R8mZHyqoFoceVDmM4kriuwB9sec6PRvCu5aHxJDnT11CURJ3Q3GZtKEN6UR1yhgbkJYfIwG1jvk9XijbjaeXBbt7dC_8lxE25xyhC2_tifX9OGKfPLQhGTnbhKKysyJWVAsH3jU_RUx9pYyYe2pGsAsh7XtK1R2xRlht7Earq_k8VNESQvpJorpQ8H5NTcSfswRiHuHTxw2JT90QBQWExRzhIF",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxX3wOnA1yzZ6vT0aGdAJA5ysFuvT4ujSs-KCykv30QZ2BsaZPh9hMorFzf768P7iLYGO8iYxpJfQ-jRUc1Pbkgfr9W9uqw4RaFfowJ3eLO5os-H-udZykh7sSi_GubRRMszMDlgKw==",
+    "https://www.google.com/measurement/conversion?random=1788954860392&cv=11&tid=G-HNQ9P9MGZR&fst=1788954860392&fmt=8&en=ads_impression_custom&gtm=45je6930v869352338za200zd869352338xec&gcs=G1--&gcd=13l3l3l3l5l1&dma=0&tcfd=14I54&tag_exp=115616986~115938466~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153&u_w=390&u_h=844&url=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&gacid=1920005616.1788954830&userId=89abdd97-60ba-4afc-b4e3-4bfd2250755f&gpp_sid=-1&frm=0&tiba=Football%20Live%20Score%20-%20Sofascore&gtm_ee=1&npa=0&us_privacy=1---&gdpr=0&gdpr_consent=tcempty&pscdl=noapi&auid=1194380465.1788954830&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uamb=1&uam=&uap=iOS&uapv=17_0&uaw=0&rcb=16",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954858482&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=16&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&dt=Football%20Live%20Score%20-%20Sofascore&_s=1&tfd=2551",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954858482&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&_prs=ok&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=16&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938466~115938469~117776795~118897920~118897930~120213116~120385423~120469145~120469153&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&dt=Football%20Live%20Score%20-%20Sofascore&en=ads_impression_custom&_c=1&_ee=1&ep.origin=firebase&ep.position=affiliate_320x50&ep.name=Sofascore%20Analyst%20v4%20%2F%20English%20%2F%20July&ep.provider=sofascore&ep.type=banner&ep.app_language=en&ep.custom_screen_resolution=390x844&_et=44&tfd=2552",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxUpHhTX6AJGLAGW1vxwv2uLCyoXKAzhg1yeLQEtkb4rWI2UUMbJ99mfOlZNN87g5iuIHwroE910VYh0afuHh9AAUdPD3c-_7ezByGkIFBfyHaDiP3fQs8ewnEV9vpBMCif0DbxAUA==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWSUU-IxGpSvem_-ieK4vkwjK8Kbjk6wrFn0qpqm2Dt2MzSBjg1-sQM5XRqRpzdgX_qqvzNUldF9ugGRKQBu61W4eG1dU3vM0QmB9VrTmztVp1gV4SWa8T3nLIjG58FJhNmDPK5HA==?fccs=W1siQUtzUm9sX3BnU25qVnl0U0dSelFtczc3VHhxdXIxVl95SDB1VmlOTDVXTXNXSzR6UlBUWDVjeHh2NXQzcHA2R3hnMWZRVWc5R3RSWkJHWVVLalRycHB3b001R3VHT0RlRnNSSC15QU5ZMndFc3oyTFdXeGd4VS11d1NxNGdpay1LTnhYRFU1eE1QTGdkSGw1dzNMY3JvUnlqNEJkQW4wTlhRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4ODUsOTAxMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3NldHRpbmdzIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsMTQ3XV1dIl0sWzIzLCIxNzg4OTU0ODMwIl0sWzM1LCIxNzg4OTU0ODI5Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://5c58533d931b3296aca8fba8e68c9e94.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "https://fastlane.rubiconproject.com/a/api/fastlane.json?account_id=26420&site_id=605570&zone_id=3897892&size_id=43&p_pos=atf&rp_schain=1.0,1!pubmax.com,144,1,,,&eid_amxdt.net=amx*r*09c3e2ac-a091-4fac-9f88-a1241899d9e9%5E1%5E%5E%5E%5E%5E&eid_id5-sync.com=ID5*N6i006HDW6G3BWRbJ9SrVcKRVVgesY6Td6OKNKkJVgb__2qhSOtaAAEBCmqhSM0A3hH5qbVi4FuAXMxbvWqiww%5E1%5E%5E%5E%5E%5E&eid_pubcid.org=f48f95fd-2603-45b2-b58f-e56a7aba4a19%5E1%5E%5E%5E%5E%5E&eid_liveintent.com=32-eVWpXJAr%2B7BTxptf%2FMGeZlcI3mQ5NiCehop%2F4lNV2jVcdZbpVkA9a2%2FKRHkPTTm%2FZ%2F9hgWFN71HNaAt4UVXLuHRDsf1z1cvrGzkaPSfkFrtXrQ%3D%3D%5E3%5E%5E%5E%5E%5E&eid_bidswitch.net=ff10c9bb-97ce-406f-8ba3-e72eb24215d4%5E3%5E%5E%5E%5E%5E&eid_liveintent.triplelift.com=1286243011721458848655%5E3%5E%5E%5E%5E%5E&eid_zeta-ssp.liveintent.com=ua-464015a5-63ae-33d4-9f2a-f020a860fae4%5E3%5E%5E%5E%5E%5E&eid_media.net=4010204164595743000V10%5E3%5E%5E%5E%5E%5E&eid_rubiconproject.com=MFMF0B0V-26-8PSV%5E3%5E%5E%5E%5E%5E&eid_liveintent.indexexchange.com=ZDLvyt9RcTH64KPwKGE2-AAA%265472%5E3%5E%5E%5E%5E%5E&eid_openx.net=8f19dad7-6b73-47fe-9c2f-9cf5bda6583e%5E3%5E%5E%5E%5E%5E&eid_pubmatic.com=0ADA7DEF-F9F7-4660-BC58-25D4E9FAB0D8%5E3%5E%5E%5E%5E%5E&eid_liveintent.sovrn.com=KO8nAQZHXyhKv7JVRPqyyy3C%5E3%5E%5E%5E%5E%5E&eid_sharethrough.com=bf738453-a139-4936-b2c4-0bd57c44ba58%5E3%5E%5E%5E%5E%5E&eid_liveintent.unrulymedia.com=RX-459ab0ed-c4ff-4b9e-ae80-f754af522c20-004%5E3%5E%5E%5E%5E%5E&rf=https%3A%2F%2Fwww.sofascore.com%2Fsettings&kw=livescore%2Clive%20scores%2Csofascore%2Cresults%2Csofa%20score&tg_i.domain=sofascore.com&tg_i.page=https%3A%2F%2Fwww.sofascore.com%2Fsettings&tg_i.cat=IAB17&tg_i.documentLang=en&tg_i.mobile=1&tg_i.dfp_ad_unit_code=%2F21866864457%2Fweb-mobile-leaderboard-bottom&tk_flint=pbjs_lite_v11.29.0&l_pb_bid_id=9647136f-8699-4a8f-9d5a-b9293652f70f&p_screen_res=390x844&rp_secure=1&ipv6=2401%3A4900%3A8842%3A5a42%3Ab984%3A29fd%3A57e4%3A6b2f&rp_hard_floor=0.125&p_site.mobile=1&p_gpid=%2F21866864457%2Fweb-mobile-leaderboard-bottom&m_ch_arch=arm&m_ch_ua=%22Chromium%22%7Cv%3D%22152%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224%22%2C%22Google%20Chrome%22%7Cv%3D%22152%22&m_ch_full_ver=%22Chromium%22%7Cv%3D%22152.0.7977.83%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224.0.0.0%22%2C%22Google%20Chrome%22%7Cv%3D%22152.0.7977.83%22&m_ch_mobile=%3F1&m_ch_platform=iOS&m_ch_platform_ver=17_0&slots=1&rand=0.8755833012169305",
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=5731216252226622",
+    "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=5731216252226622&rc=",
+    "https://ep2.adtrafficquality.google/generate_204?TZDLzA",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUyNNAV7_m5vDiYYcJ32_Q06t8Ndmu3vk0miw4CSPeKpS38ua_AjZdYS-ztAzPDc5keSwGkkveYbnkgy4GmPL-r9mO5mylrwMvy-yLZNpjI8H_5HMR9vznuBhDYla-XTd_rnF6dNjiiXZ315aRofF9voN7zmNXvP0q_tbFa4Y-3RrKQHeLvl6DBq_l7/_.uk/ads./ad/article_/requestadvertisement./yahoofeedproxy./ad-identifier.",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxV0EnM87Ltq5Jcp5gRZxUI8dxmcnaTfHZQkk3ZNZ9B4F58b9YCuKFdfhzVF6tdGSA8yQdJW7S_RdB1VpaaxFFt__3QwWtBnKxEgIUWyMJPeBl10zXfy_fMbWnFUrz01zFIdTjSNBQ==?fccs=W1siQUtzUm9sX3BnU25qVnl0U0dSelFtczc3VHhxdXIxVl95SDB1VmlOTDVXTXNXSzR6UlBUWDVjeHh2NXQzcHA2R3hnMWZRVWc5R3RSWkJHWVVLalRycHB3b001R3VHT0RlRnNSSC15QU5ZMndFc3oyTFdXeGd4VS11d1NxNGdpay1LTnhYRFU1eE1QTGdkSGw1dzNMY3JvUnlqNEJkQW4wTlhRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4ODYsNzY0MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2XSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9zZXR0aW5ncyIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDE0N11dXSJdLFsyMywiMTc4ODk1NDgzMCJdLFszNSwiMTc4ODk1NDgyOSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWmy7mQjY3HZZ9e1nrEeOPWqnN08oLnHByyy3M5MN_sIncksm9DorTNuwRuWzi-g8I_5UZjhoEYwAFHJsj0m3tg6E4GnuasSqX2pBKeLGf2LVWGuzIJuHRyc8ad8sWTWZx3mSbogw==?fccs=W1siQUtzUm9sX3BnU25qVnl0U0dSelFtczc3VHhxdXIxVl95SDB1VmlOTDVXTXNXSzR6UlBUWDVjeHh2NXQzcHA2R3hnMWZRVWc5R3RSWkJHWVVLalRycHB3b001R3VHT0RlRnNSSC15QU5ZMndFc3oyTFdXeGd4VS11d1NxNGdpay1LTnhYRFU1eE1QTGdkSGw1dzNMY3JvUnlqNEJkQW4wTlhRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4ODYsODc2MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9zZXR0aW5ncyIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDE0N11dXSJdLFsyMywiMTc4ODk1NDgzMCJdLFszNSwiMTc4ODk1NDgyOSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxWOFZrfIzeVqyGzA5-LgY5uSpcgS8A84soEIDuEjCFjy8e7HWP9A8R_sOJE_12SRfMT-a72M-WGA9WSY9VLDOudH8t37otXybHmtlvbQaZbDr4cQc8WmAfRWt8haITBZPpQU9qTRw==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWlYI9MhUnp-yZqUR-xMgyijsWAF-q5zBhL2MuaF74hbydu2mhCNt9hcX5PbdEBLWhrsd1Pagyireok3BN19V-Vcn6cRPyssa1p8frM0XyJJI0DYB8FR4GDorbKcbTDJBelca5YFQ==?fccs=W1siQUtzUm9sX3BnU25qVnl0U0dSelFtczc3VHhxdXIxVl95SDB1VmlOTDVXTXNXSzR6UlBUWDVjeHh2NXQzcHA2R3hnMWZRVWc5R3RSWkJHWVVLalRycHB3b001R3VHT0RlRnNSSC15QU5ZMndFc3oyTFdXeGd4VS11d1NxNGdpay1LTnhYRFU1eE1QTGdkSGw1dzNMY3JvUnlqNEJkQW4wTlhRPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ4ODYsOTg2MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwLDldLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3NldHRpbmdzIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsMTQ3XV1dIl0sWzIzLCIxNzg4OTU0ODMwIl0sWzM1LCIxNzg4OTU0ODI5Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=5731216252226622&bg=!g4ClgOLNAAZGRqKQZkY7AEcBe5WfOF_vrjQ34_vLiEulLnhKQllwPW3sQPbBmoi4ZxgHWd-8qavr9xNrU3LSpm8FFib1OaQVIub07C14pLC5ptQZocDmvQIAAAB8UgAAAAloAQd-ADao6FQvNZCGVxo8mDXsqWdQxhCYBDhyMPFtJdgjKDnHbOKrWrs-iaBIrQp6yxM0WutNt0C_wl4KAGfxHINszA-WHoiR5V_w7R6n6FoocFm610oqnd9xagRsm_01LRGRlOpCzJOID8ZjK6eU9NfWDdW6yQSl6y3x1Lf4oyUVQkQ7O5m6RNL09juIgYSCtc8kwjNMZ0C-Q3f5jlGUb-1qxqAimQKSLmJeu4IbbBZU1pLyhgVtzBeP0QtGv0QiLsp0dSUeIaMRTvATVJhff0H_h3fCae45329IZPT33Gw-Mri2HKOpp-WR-fylCVpyMqUVkNBqAZePyeK09olpyfWmXXZuRgJ58Bm4Y2nvaB8m7ID-lJj7aN4m77rEpUzEH3or6bDuCFeEHIXVkMUMl31tVpcw6kTYkuPuj76fn94yPQYIY5HDFoYrRmHxNbAjTxZai5d_TjmqWJll9pq5gb0c--frUuF0A4LGEPWuc7SrjSNTOfWnUeHpz4bBuGVeCfk1GBu1Z8bhr7g6w29tkY-nwH6HsGJpCMR-MdyvbIqyTBuYriZFlH0Tq4JlThCVRQMLSv-A_EhX1bFfbSMq4jBP9FC6N6arCIH51sX9TwGwK77yQ0J4mupjiMK0k9qm1IttXjInDwuUqXqLb2q9Yg2EsaEIZ4zS1-ByMoAPJG3vZhNCRqxN2qmxLBAVnp7nVrBOvY-AiErKDJphC_jlZwDNSsZUr4HN2FiX-tyaeLZbeN5znCDRM0s5RZgiK3vsuTo9_7FoBx-9fWIUEBDYkYktm3eltoFJ03uzbAwtlzMDpVwVZJ2gCuFJdWDN_w_tT0V1jMPp8gSeg4hkJHa_oHh07rcSvHpJ7TzEy7H8KR3rh8x1yeAFryTx4BwTw_KpPZ_veP7eZeABzP_qLLxaxzQEEkxAlRfo1ocwZgnrgkfaS9Fur4I3zgsjYWFOyQUN-2JJB1UysrZYG1dw2jriXKj6PGJAo48llvx2nZGx9IlzZnmMih90hJPt4JHvO3eH4BwMMGvH4li__kRreNoXJKJp43eeY65R9ds5fgUV_OXaAF-tdWQ6n45GFZEx5Azw9H3v4CmKbZQB9w",
+    "https://www.google.com/measurement/conversion?random=1788954887137&cv=11&tid=G-HNQ9P9MGZR&fst=1788954887137&fmt=8&en=ads_impression_custom&gtm=45je6930v869352338za200zd869352338xec&gcs=G1--&gcd=13l3l3l3l5l1&dma=0&tcfd=14I54&tag_exp=115616986~115938466~115938468~117776795~118897920~118897930~120213116~120385422~120469145~120469153~120474864&u_w=390&u_h=844&url=https%3A%2F%2Fwww.sofascore.com%2Fsettings&gacid=1920005616.1788954830&userId=89abdd97-60ba-4afc-b4e3-4bfd2250755f&gpp_sid=-1&frm=0&tiba=404%20%7C%20Page%20not%20found&gtm_ee=1&npa=0&us_privacy=1---&gdpr=0&gdpr_consent=tcempty&pscdl=noapi&auid=1194380465.1788954830&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uamb=1&uam=&uap=iOS&uapv=17_0&uaw=0&rcb=15",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954885930&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=15&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~120474864&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fsettings&dt=404%20%7C%20Page%20not%20found&_s=1&tfd=1774",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954885930&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&_prs=ok&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=15&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938466~115938468~117776795~118897920~118897930~120213116~120385422~120469145~120469153~120474864&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fsettings&dt=404%20%7C%20Page%20not%20found&en=ads_impression_custom&_c=1&_ee=1&ep.origin=firebase&ep.position=affiliate_320x50&ep.name=Sofascore%20Analyst%20v3%20%2F%20English%20%2F%20July&ep.provider=sofascore&ep.type=banner&ep.app_language=en&ep.custom_screen_resolution=390x844&_et=25&tfd=1775",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxXcXVA1wLQ9DdANhVmbyfATIahA9dn44i8cN3u4_CHq7rRr7tKnxUG65YREg2KkOap4H84Nt2VK4tXZP3fLQHOg8W_L3M02ONtG5Czqj9pW7Go1sw5LzOD8HV7CevDbEoFyuHCuDg==",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954885930&_gaz=1&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=15&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115616986~115938466~115938468~117776795~118897920~118897930~120213116~120385422~120469145~120469153~120474864&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fsettings&dt=404%20%7C%20Page%20not%20found&en=scroll_progress&_ee=1&ep.origin=firebase&ep.link=%2Fsettings&ep.type=%2F%5Bsport%5D&ep.name=100%25&ep.app_language=en&ep.custom_screen_resolution=390x844&_et=83770&tfd=85548",
+    "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-HNQ9P9MGZR&cid=1920005616.1788954830&gtm=45je6930v869352338za200zd869352338&rcb=15&aip=1&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&dma=0&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&frm=0&tag_exp=115616986~115938466~115938468~117776795~118897920~118897930~120213116~120385422~120469145~120469153~120474864&z=582495274",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxUjVkN1JyY82kNA5FBtMHqBbxD9Zzv5dPsvH9MmQuKogc8WSjB4Y0DfFXb9TVpCTHAbcBP082RUOcKn_mU6buNqb30udGF44wdZMm3bB_QpsajtdbQYvOX2L58azLr9qvrxWNlyzw==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUffefbADXyQg8bZlGHNRLoxO6RcvmS42zRVM6sZrVxHbao0G7gQaW-LDl9lUHNQI7BnQ9C3-gfSA5bx2NidKCZmUk7FFMu-IVtFM6tNsyz1hHLSkcn8bQr0Egmmb7HVTpD20GCnQ==?fccs=W1siQUtzUm9sOEpFYk1Hd0VlSTN5MXk0aGZqOVBiOTlGb2F1bTltTkR6WEFIcmFTT0J5MTBTM1pWOG1pVjREaDk5eGpWcWg4bmtfWEtYX0FneXVMczZrajdETEdjdTdva0RVVUJGTUpvX0M4MFUxQmdqVTVZcE1MS21ianVLTUtuWlVuY3pPTl84YzJQYms3dUZ3NHRkTHRUUm1UMkRwMlRWYmtBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ5NzMsNTAzMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3VzZXIvcHJvZmlsZSIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDM2MF1dXSJdLFsyMywiMTc4ODk1NDgzMCJdLFszNSwiMTc4ODk1NDgyOSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fastlane.rubiconproject.com/a/api/fastlane.json?account_id=26420&site_id=605570&zone_id=3897892&size_id=43&p_pos=atf&rp_schain=1.0,1!pubmax.com,144,1,,,&eid_amxdt.net=amx*r*09c3e2ac-a091-4fac-9f88-a1241899d9e9%5E1%5E%5E%5E%5E%5E&eid_id5-sync.com=ID5*PYMnL6voyF29LvenLf84qci6xqQUmh1vfYgZyKMixfr__2qhSQZaAAEBCmqhSM0A3hEQfnU_CtmS8CIz4WsjOg%5E1%5E%5E%5E%5E%5E&eid_pubcid.org=f48f95fd-2603-45b2-b58f-e56a7aba4a19%5E1%5E%5E%5E%5E%5E&eid_liveintent.com=32-eVWpXJAr%2B7BTxptf%2FMGeZlcI3mQ5NiCehop%2F4lNV2jVcdZbpVkA9a2%2FKRHkPTTm%2FZ%2F9hgWFN71HNaAt4UVXLuHRDsf1z1cvrGzkaPSfkFrtXrQ%3D%3D%5E3%5E%5E%5E%5E%5E&eid_bidswitch.net=ff10c9bb-97ce-406f-8ba3-e72eb24215d4%5E3%5E%5E%5E%5E%5E&eid_liveintent.triplelift.com=1286243011721458848655%5E3%5E%5E%5E%5E%5E&eid_zeta-ssp.liveintent.com=ua-464015a5-63ae-33d4-9f2a-f020a860fae4%5E3%5E%5E%5E%5E%5E&eid_media.net=4010204164595743000V10%5E3%5E%5E%5E%5E%5E&eid_rubiconproject.com=MFMF0B0V-26-8PSV%5E3%5E%5E%5E%5E%5E&eid_liveintent.indexexchange.com=ZDLvyt9RcTH64KPwKGE2-AAA%265472%5E3%5E%5E%5E%5E%5E&eid_openx.net=8f19dad7-6b73-47fe-9c2f-9cf5bda6583e%5E3%5E%5E%5E%5E%5E&eid_pubmatic.com=0ADA7DEF-F9F7-4660-BC58-25D4E9FAB0D8%5E3%5E%5E%5E%5E%5E&eid_liveintent.sovrn.com=KO8nAQZHXyhKv7JVRPqyyy3C%5E3%5E%5E%5E%5E%5E&eid_sharethrough.com=bf738453-a139-4936-b2c4-0bd57c44ba58%5E3%5E%5E%5E%5E%5E&eid_liveintent.unrulymedia.com=RX-459ab0ed-c4ff-4b9e-ae80-f754af522c20-004%5E3%5E%5E%5E%5E%5E&rf=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&kw=livescore%2Clive%20scores%2Csofascore%2Cresults%2Csofa%20score&tg_i.domain=sofascore.com&tg_i.page=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&tg_i.cat=IAB17&tg_i.documentLang=en&tg_i.mobile=1&tg_i.dfp_ad_unit_code=%2F21866864457%2Fweb-mobile-leaderboard-bottom&tk_flint=pbjs_lite_v11.29.0&l_pb_bid_id=ec0eb2cc-aa3f-43ad-aa12-2416250ac19b&p_screen_res=390x844&rp_secure=1&ipv6=2401%3A4900%3A8842%3A5a42%3Ab984%3A29fd%3A57e4%3A6b2f&rp_hard_floor=0.0125&p_site.mobile=1&p_gpid=%2F21866864457%2Fweb-mobile-leaderboard-bottom&m_ch_arch=arm&m_ch_ua=%22Chromium%22%7Cv%3D%22152%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224%22%2C%22Google%20Chrome%22%7Cv%3D%22152%22&m_ch_full_ver=%22Chromium%22%7Cv%3D%22152.0.7977.83%22%2C%22Not%3FA_Brand%22%7Cv%3D%2224.0.0.0%22%2C%22Google%20Chrome%22%7Cv%3D%22152.0.7977.83%22&m_ch_mobile=%3F1&m_ch_platform=iOS&m_ch_platform_ver=17_0&slots=1&rand=0.7964115868033789",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxX-311MJU50Z6oeGJwMABomn6ZKIOCsyhskKEgc8RPCqmZFF7IZfl14vwB9VxvVkQKs_i8BE13iOXaODTyqqk8zEkashJN2NWTAqoVu_KuA13IUzZet0mjYzqAngVMnP3vby6gHsZ3m1MawZQ_ecnNPfs7mj924fHc4w5TYUQunRDvR2AqWUtKEDjnt/_-728-90./wwe_ads.-ad-server/_type=adimg&/ads/webplayer?",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxXPv4nwG1jmyfsOU3qU3vcSN6n70WkBf8toaZGaZdnlzww0dPAXZUxATzlZ07BpWK7tsvv4gpnNOIBaFVp3enwYwE_VlyZpoyunShD7pVbEzFzrzwEnlV5D5x9IBfAboWPlin2eeg==?fccs=W1siQUtzUm9sOEpFYk1Hd0VlSTN5MXk0aGZqOVBiOTlGb2F1bTltTkR6WEFIcmFTT0J5MTBTM1pWOG1pVjREaDk5eGpWcWg4bmtfWEtYX0FneXVMczZrajdETEdjdTdva0RVVUJGTUpvX0M4MFUxQmdqVTVZcE1MS21ianVLTUtuWlVuY3pPTl84YzJQYms3dUZ3NHRkTHRUUm1UMkRwMlRWYmtBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ5NzQsNTA3MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2XSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCwzNjBdXV0iXSxbMjMsIjE3ODg5NTQ4MzAiXSxbMzUsIjE3ODg5NTQ4MjkiXSxbMTksIjIiXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWjZdzgPRSJbPW-a1qcfcg3F7agBHqTkCwvcssDD4QfJNjNNDmIRfU76HFR9VhnzPPE3Q7qetumgF_CkFTMdnEEwaPxPz_5m0l9hw44T2ikgZVw-l2AyUtXZ49hs3dhOE9zGnCL1g==?fccs=W1siQUtzUm9sOEpFYk1Hd0VlSTN5MXk0aGZqOVBiOTlGb2F1bTltTkR6WEFIcmFTT0J5MTBTM1pWOG1pVjREaDk5eGpWcWg4bmtfWEtYX0FneXVMczZrajdETEdjdTdva0RVVUJGTUpvX0M4MFUxQmdqVTVZcE1MS21ianVLTUtuWlVuY3pPTl84YzJQYms3dUZ3NHRkTHRUUm1UMkRwMlRWYmtBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ5NzQsNjI2MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCwzNjBdXV0iXSxbMjMsIjE3ODg5NTQ4MzAiXSxbMzUsIjE3ODg5NTQ4MjkiXSxbMTksIjIiXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxWPPdrGz_tOvfPy03caVjWLipI1eSB9SyXvUNpKBxOwK6-Ar0gY3aEpBdabk3K9ToPvLC8JaXmqvs6VCq8rBceYR78kAw5FN8ylBXuRBpixe_RE5kUPZ8Jy4XtclpUI16EnCn8Wew==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUshfQruNEUGrTlVBc8H6t5CnAFjgW7wOzMdpY6KYWQ1OGATM5tUqtiyePpVZzlrqlFo4AGZ9GAboroVD5IJ0rRYqO7siRLIxREiBsGXZmDS2Tc6eE7PW295cjE08_3bFicq9l9Ww==?fccs=W1siQUtzUm9sOEpFYk1Hd0VlSTN5MXk0aGZqOVBiOTlGb2F1bTltTkR6WEFIcmFTT0J5MTBTM1pWOG1pVjREaDk5eGpWcWg4bmtfWEtYX0FneXVMczZrajdETEdjdTdva0RVVUJGTUpvX0M4MFUxQmdqVTVZcE1MS21ianVLTUtuWlVuY3pPTl84YzJQYms3dUZ3NHRkTHRUUm1UMkRwMlRWYmtBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTQ5NzQsNzY0MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwLDldLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3VzZXIvcHJvZmlsZSIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDM2MF1dXSJdLFsyMywiMTc4ODk1NDgzMCJdLFszNSwiMTc4ODk1NDgyOSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=3089900638963941",
+    "https://767264ad04ccc4445ab8afbb604add9b.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxUdWsksGBbCtso3hgNKbP-pKIwM1T6qljdbkL8sX3Q6uIKTLymiANXy9tfkcz4M0Ge30wESjSmXnNquShmyqekURS9ElccaI0atQuOC-Yd00U4Job04oLig5I1RB_j0OJzKUreimw==",
+    "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=3089900638963941&rc=",
+    "https://ep2.adtrafficquality.google/generate_204?lOLrgw",
+    "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=3089900638963941&bg=!wcKlwqDNAAZGRqKQZkY7AEcBe5WfOH3u2gbkqNt7S05FwkUChc8UbmjSphOocR2quJsFGgPvyMxmITowmnChbVK6nczkgg-s9qraJ3XP2t_qM9dKJ9CrCwIAAABxUgAAAAhoAQd-ADatUm0GMvRmPlBS-p8gy_DblY2-Xzqvw29mmLc2_gxtDMcUZXQ7rMks2l2tY8MGtRPcOT1o7roKAFOt5F_pCqiqqzrL-oNLrlQe6xfLl6sIh0h8M297EPBMebL7tpUackmhNQYgo9SC0Qz7VWKrOFtaarXhvpYXzoz4H9tTUHIr_IfM5TyszejSKf06qpkCnaKPK5VgXUKQwsZoemI_X0A0pgkYqPyMftkf2lEApsWub8UBO7P28Ez6_kO5vbZOKfpbaT-Gio5AQyBkvY_8tpK9WHa59SdM-06pMamgSozJ_Ahp3G1o3zfLfwa57lWUphMT2_roZcMypgTxaxP5ErUqJUs9P7twruNn2c8Ho2fSomYeoRmM9oaFPCxkuIm8hwPziR7WcGkXFfuVJuYuXwCkC-5OerShwGg3kkCZVh5wUIA1beQ2SiQ6RM79mPOirUcbsfBhRp9osZOZeHqJAms_Pv-BkQERaSuzwwZbuhG0qGnSM-36LZ9N-zeglkrWW-j7nEqyMOPtf8u_9lRYlDM2pUJylUqBObLS65ygNrrq2AAWh5tUXQNo03Tq5UPtmSqQuKz7QgoarCtyydp5PilecSquw1cYtRTGUkFa8gKslDYhKcytRp10OiWAIEtkPYKlzn1expLyUI1nCKZ-PnUhkVAOsS_P7n57i-XmbvPymDWBTtJCE_NlwMBbmNsMrU3iOBMsA4xRVGZiqHGvtnScQFXpXXtHa0ARmJfIa2nh_bvy96ylmX9vaPb1N5Bu2wWaufgfWJvYr7tTu8N7iTWqdSKF6qMzjWnAc_L77h5zJRAj3PZjY6NJCyulMmKvdo14HhEnfe-hjF-xCK-lqVw9S8UaATQbbHAbPOd9EyUtSNy_6cCjqci3nO0A_xIVWS31Ye1jmnSQULa8BrHLxaXx1IUSV2EVh5Tw6SeSeZgH3878QIZ06zuvwUfj5PjxCWHk4g7dnZ1ptYgNFfZwO4O_JieTyFi0aRClCFQo-fdrLQ-nGjd8mRZxqXqCtXZ-2kpuPMgan7RP-_92tGMidgbk8sqD4r-hLeEclH76EyVxiLHTqC-frnz0He5Rpw",
+    "https://www.google.com/measurement/conversion?random=1788954975727&cv=11&tid=G-HNQ9P9MGZR&fst=1788954975727&fmt=8&en=ads_impression_custom&gtm=45je6930v869352338za200zd869352338xec&gcs=G1--&gcd=13l3l3l3l5l1&dma=0&tcfd=14I54&tag_exp=115616986~115938466~115938468~117776795~118897920~118897930~120213116~120385422~120469145~120469153&u_w=390&u_h=844&url=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&gacid=1920005616.1788954830&userId=89abdd97-60ba-4afc-b4e3-4bfd2250755f&gpp_sid=-1&frm=0&tiba=Football%20Live%20Score%20-%20Sofascore&gtm_ee=1&npa=0&us_privacy=1---&gdpr=0&gdpr_consent=tcempty&pscdl=noapi&auid=1194380465.1788954830&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uamb=1&uam=&uap=iOS&uapv=17_0&uaw=0&rcb=12",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954973518&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=12&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&_s=1&tfd=2918",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6930v869352338za200zd869352338&_p=1788954973518&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=d_HKb2HBO9JhCSLLcVrIE5&_prs=ok&cid=1920005616.1788954830&frm=0&pscdl=noapi&rcb=12&sr=390x844&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938466~115938468~117776795~118897920~118897930~120213116~120385422~120469145~120469153&uid=89abdd97-60ba-4afc-b4e3-4bfd2250755f&sid=1788954829&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&en=ads_impression_custom&_c=1&_ee=1&ep.origin=firebase&ep.position=affiliate_320x50&ep.name=Sofascore%20Analyst%20v3%20%2F%20English%20%2F%20July&ep.provider=sofascore&ep.type=banner&ep.app_language=en&ep.custom_screen_resolution=390x844&_et=31&tfd=2918",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxV1rkMNmwDP1FeqW_67DQgdinhpiEvv0Ktt1UhJrZ5hEKEqnxmp5Rbr-XyPyk2CE1mdjqDb6eYwrbbl6MDG2jdZ37GoCP0O8X9hrZyKaAXFNbJbgMoHc2iO_p-D9UbyEu6E4s2FIw==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWHYfNi4ojT_-NgKfM9wMoAJ1gKIoHAbHq8eoT22avX_fxNiyNwBwz2GHRigXmGnM6vSHOJ2SMQ4YojfgSShnFfccHDOPAHW5W93_OPl_g2NxY0VIZzw36JZlnz4IugPdHCZgohXw==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU1MDAxLDM2NTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzddXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw3NjRdXV0iXSxbMzUsIjE3ODg5NTUwMDEiXSxbMTksIjIiXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d",
+    "https://www.google.com/measurement/conversion?random=1788955001558&cv=11&tid=G-HNQ9P9MGZR&fst=1788955001558&fmt=8&en=session_start&gtm=45je6941h2v869352338za200zd869352338xec&gcs=G1--&gcd=13l3l3l3l5l1&dma=0&tcfd=14I54&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385423~120469145~120469153&u_w=768&u_h=1024&url=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&gacid=185924918.1788955002&gpp_sid=-1&frm=0&tiba=Football%20Live%20Score%20-%20Sofascore&gtm_ee=1&npa=0&us_privacy=1---&gdpr=0&gdpr_consent=tcempty&pscdl=noapi&auid=1422524256.1788955002&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uamb=1&uam=&uap=iOS&uapv=17_0&uaw=0&rcb=10",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955001100&_gaz=1&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGAC&_fid=cNPdgxUwZ-3daj0_qEX4oU&_prs=ok&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=10&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385423~120469145~120469153&sid=1788955001&sct=1&seg=0&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&en=page_view&_fv=1&_nsi=1&_ss=2&_ee=1&ep.origin=firebase&tfd=1425",
+    "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-HNQ9P9MGZR&cid=185924918.1788955002&gtm=45je6941h2v869352338za200zd869352338&rcb=10&aip=1&dma=0&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&frm=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385423~120469145~120469153&z=1826217220",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWXv_WPhEDI-fza-08tuSwWNn8weboRb41tT37mmQ9o8tKi5sCIDtGzNX9a-ISFQQx7cI4zqf67d9_iIis5_-q7MeWssLrYxPZ1aXRVtFKE5cs5XqUP8tFjRea10OLQZIS0cYA_xLDHq_wGN48uf5yzsFHrGPHgBmOInlawltha7rqGde9vPGIiduw7/_/adscripts3./leftad_/googleadhp./adfeeds./ads0.",
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?fcd=true",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWEue6-z6bOfi2QEQQGaFzb8HDZrQcvIao21HQveymBg1StQxYA0KTOufxTG17KikeqiFbVfYi5KR0PwSSQ3JFbJrkR4-4MYCkRW8zwXj079cw8cJ4d5wa6_7q1fmJEA9iDocl3KA==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU1MDAyLDU3MDAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNl0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vdXNlci9wcm9maWxlIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsNzY0XV1dIl0sWzM1LCIxNzg4OTU1MDAxIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUPck6dogDbGFeeBYDFo0aSFDv8RuZMRIPdqxuqz1RZUrrYXAKHTdzaONH1cI8CFxjTsSpyRKwbfhodBpR-p2-evuI27dj2CioJFyRmltxEZ3Zq4ISxzLurs76Brak3xgVY4ms6-A==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU1MDAyLDY3NzAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMF0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vdXNlci9wcm9maWxlIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsNzY0XV1dIl0sWzM1LCIxNzg4OTU1MDAxIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxWx6roGOvSH8UKIfmqvP-fcwCAA9ziIItgz2Ax3Wz92aZOAFRcW6YE5sKBHL6rEH7VlSnf1p3qDx015Ate1UjjBjnzLeKkVFnyNTCt4QIR_Qhe-8jVy0KpMezqRg1omWSNlLKNVXA==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxXt2eVnab66dLpZ5nlqJW_ZsWMW74AChSJeLCqDMPbbPbsH_uKz75QOFjUtDL-h_NqW46mMd7Lpb-Lio-j3Xk-uhnk8Y3ZdhtQZbWbl7kDm8ridIhrsgXWScofw1EBelq68_7NsqA==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzg4OTU1MDAyLDc5NjAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMCw5XSxudWxsLDIsbnVsbCwiZW4iLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw3NjRdXV0iXSxbMzUsIjE3ODg5NTUwMDEiXSxbMTksIjIiXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxVtV8-xrNNtyWoyIPvOj1fnRkxuHE1-Wj7KYJWoBVulaMgxLYk3XGvJhqEsflEpHjcdwBp-fbDI6-e3AlXL7_rFtOjHChqhO1y_ILdBoBW4AjE0ca3bxZiUAfPFGoblDWbQN9o8Ig==",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955001100&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=cNPdgxUwZ-3daj0_qEX4oU&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=10&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385423~120469145~120469153&uid=08a558d5-c38b-4d22-af36-5e1d007f8d85&sid=1788955001&sct=1&seg=0&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&_s=2&tfd=6445",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxUY2JT0IHQ6-8fC3k5dLaMAesJCNj3742xHjcSoRvkJ9FGcFzhXwS8MzfHqjloOnkoI0x3qTypOeTyO1e7KIFhlqJcAI_yieeWXuduN0xzc3kFpl-M-COxJ_q15DDpdz5RPQL59pw==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUF_BdcARlStnPmOcVPFvqtStmlM_YDgsCs13xCdAI9I-lS1BlAxgzDSxRfTQmPYJ4MLsGPbODXBt__sU90ybPPXNnOnMpu2mr7_phkH6-EiJLEd_ohKddX67lYJDLhgsVNeFUgFQ==?fccs=W1siQUtzUm9sOEIwSTRMdHpEN05tdGFQNE9lWnVabFNlYzJHc2JTT0pQUU5oaHl6a19LejR3N1owRlpTR1lOTlR6VzlmMDE2RkZwaVhfaVNKelBGSHNMR1FfX29vbWVvRVhWN0MwZURuVW81bzdQcWF4bEVleTJRdGZMd2RQazBuemFBN3ZPZGtEZUg5aXJ2WXAtY3VwNzNrMldsQWl5QkdSdXN3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwMzEsNzkwMDAwMDBdLG51bGwsbnVsbCxudWxsLFtudWxsLFs3XV0sImh0dHBzOi8vd3d3LnNvZmFzY29yZS5jb20vZmVlZGJhY2siLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCw1NDhdXV0iXSxbMzUsIjE3ODg5NTUwMDEiXSxbMTksIjIiXSxbMjQsIiJdLFsyNSwiW1s5NTM0MDI1Myw5NTM0MDI1NV1dIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://e8177286b12a39c63c18639f475c27f3.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955030768&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&_fid=cNPdgxUwZ-3daj0_qEX4oU&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=5&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115938466~115938469~118897920~118897930~119791749~120213116~120385422~120420414~120469145~120469153~120914213&sid=1788955001&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&dt=Football%20Live%20Score%20-%20Sofascore&_s=1&tfd=1058",
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=3858600796766387",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxXH2fBQ3QblIWMJuMBVP7NbGQVrTiNJBiNZCcVrZ3rQ1_Aazo_t6hxHnZo28X6m7ZN5HaBWKxdyCNYaC-WVFgaAbBlsVscSyR27YYylArqjqN5xpoAhBIPAk-6Rb6kUO7QvOZz-PwMrCqTpQCp1tOhgR6sMlYZj8iVgk6K1lnNvNoNewu0-9-6XLe2A/_?service=ad&/etology.?adversion=-advertise./oas_ad_",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxVRtcd6BS-WNuMZaeKXWUqtp4L9oLofBrBXPzT92xejGDk-NCJrfwP5Fh-HWIa1aNU6hDjhb3UBzl7uKEyJhyCP6s7rbAP6L2gyLsyWqe6GHeQS9CTsM5Vn13kgdtP3Km2yybXtLA==?fccs=W1siQUtzUm9sOEIwSTRMdHpEN05tdGFQNE9lWnVabFNlYzJHc2JTT0pQUU5oaHl6a19LejR3N1owRlpTR1lOTlR6VzlmMDE2RkZwaVhfaVNKelBGSHNMR1FfX29vbWVvRVhWN0MwZURuVW81bzdQcWF4bEVleTJRdGZMd2RQazBuemFBN3ZPZGtEZUg5aXJ2WXAtY3VwNzNrMldsQWl5QkdSdXN3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwMzEsOTU4MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2XSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9mZWVkYmFjayIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDU0OF1dXSJdLFszNSwiMTc4ODk1NTAwMSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI1LCJbWzk1MzQwMjUzLDk1MzQwMjU1XV0iXSxbMjksImZhbHNlIl1dXQ",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWVK_dYj6qvIqVZACBcPvAR77fXOAFgKPPuqDVP4luDXYb2hn4DTVbRTzvNoxWZI5Edrp7ZnyDvHQDSqaXVx8qOZlBbx_gHSL1PCMgunlyPN3l60yqbB2jSjOoFFYRL3eSW8X-lxQ==?fccs=W1siQUtzUm9sOEIwSTRMdHpEN05tdGFQNE9lWnVabFNlYzJHc2JTT0pQUU5oaHl6a19LejR3N1owRlpTR1lOTlR6VzlmMDE2RkZwaVhfaVNKelBGSHNMR1FfX29vbWVvRVhWN0MwZURuVW81bzdQcWF4bEVleTJRdGZMd2RQazBuemFBN3ZPZGtEZUg5aXJ2WXAtY3VwNzNrMldsQWl5QkdSdXN3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwMzIsODUwMDAwMDBdLG51bGwsbnVsbCxudWxsLFtudWxsLFs3LDYsMTBdLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL2ZlZWRiYWNrIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsNTQ4XV1dIl0sWzM1LCIxNzg4OTU1MDAxIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjUsIltbOTUzNDAyNTMsOTUzNDAyNTVdXSJdLFsyOSwiZmFsc2UiXV1d",
+    "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=3858600796766387&rc=",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxX1Kjx8FiPu9AyB8Tr8IuIj1BQUiYzs45NfpP58AbWjfXNn8l0ViyNafzrGUoTDxRhNVLVYNjWjOapNYVeVgOrCS8eFge39RPt_gVk9rtSV_BlEr7iXnnTSKQMeS0ciGf3ut1fBEg==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxVbo6vuoOSKo9wrotWYgqx6HNkZonjpqA1tjsLq_9dqZ9ZfCC8D0k9zjrCjXvWbG9-N_VrXluY7oadlqvYbVQ3pRnSqxdpTOeTmuVOP5saYoRlMHkWq4AZHlqXgAfrNnhTCEd7VbA==?fccs=W1siQUtzUm9sOEIwSTRMdHpEN05tdGFQNE9lWnVabFNlYzJHc2JTT0pQUU5oaHl6a19LejR3N1owRlpTR1lOTlR6VzlmMDE2RkZwaVhfaVNKelBGSHNMR1FfX29vbWVvRVhWN0MwZURuVW81bzdQcWF4bEVleTJRdGZMd2RQazBuemFBN3ZPZGtEZUg5aXJ2WXAtY3VwNzNrMldsQWl5QkdSdXN3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwMzIsMTk5MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwLDldLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL2ZlZWRiYWNrIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsNTQ4XV1dIl0sWzM1LCIxNzg4OTU1MDAxIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjUsIltbOTUzNDAyNTMsOTUzNDAyNTVdXSJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxXFEsKOZ00AzTsNqSwOFZjBs95V_MMpe2rxB2uLifKLZoTCXFZQWpbOg3mxZS4xkPT5CKSYw7QbVVUDl2lvW9wJ_bJIhYWAay_tY5bRE4E4flFqt1sPAquwu8LxLnT3qGhoXryaZQ==",
+    "https://ep2.adtrafficquality.google/generate_204?YZhj9w",
+    "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=3858600796766387&bg=!XV6lXjzNAAZGRqKQZkY7AEcBe5WfOFyktC7zNJ4svhSSwWrwU-or_fNPerhLyaZGdVnJpcagAxMS1Ue0iKL8-Z_ctU0xeI1MEFt-iNFv-AD7yy-_m-BkfAIAAACIUgAAAAZoAQd-ADbom_FAlsMcLTOifYP1glH95Ny3VPOxEAeG3ZZ25HYwJpSgTo_FLt9b13rvthj-t2l4UCZhCwyZAosMBHes3zBwbj044GhoBkbzbCRPI7IDV_e84ZIwBRxlZBO2D0JOPkGgOS4rAq7Fq8CvaQiDhvJqKCT3pa1IE-AJu8Ac4MN0BHedSI16WRPrmLqZgjYbdRA5hw3j3VRgIBw9YGb8DO4WZx9SPZ8p8hItZbKFTUX4d6afX3ifAv25XA23WjG_xudY8uyOByj9eylYnjYzsE6FD8xmphIQoz8d0YXWydtyui5vzPtBq7acUROryUwzAvPeCOhs5uI7agK_DTrtFNQKOMTmssPTftgd7m27F8M3bPUqyBjLlooPQf7pbA7ibJdtKsUieHCVcsV2b96Ezyiel3IudaM3Zw9I1Dnh84xZiZ0JAR8ElNprcVGzSQogebXw8p92AlSA4ZW-rZANQCiHiype9o3Wua2u4C4GvlFf-1HnZZ0H4rVHGtz8OVlki2JwLzB0AEC4d4mkaQdqzMNrPn5QevbOLoeRcjmKDHnnpPzyoPtECgX3YtM-oct1oln45rh3i8jwE5gVkyaXg7RdUy36LBfClY6QGcKpW7IG9EpMJia0Sj7mWnggea4RlYONvM7Zv42YhwodI2yDh-4fPTU6771gtUXFnQOLjtZf-Ovuo4Ta94gsXwLn8AVDCkuGFAJ4xsmUtpgAAxZscIgmzc8zHR7helKWs4DLw6l3BjegGXi6Num_aYlaAVC6NSxAXCw9YyLGXH5dcs2vhK1W5pOtE3PiLKC7D9IG4_VicOVuBIl3hVG-AU8CoWCFzvcxb_2fCEXsLLyjDslJwklmnnPg-UrsE3uil_XpYRBBDmVwM2_ePD4Xah67S5bas8vfKOYfOngwH3shT-1YCHequz7r7KBFPiDBQ5ZENOlgKXxdVuk",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955030768&gcd=13l3l3l3l1l1&npa=0&dma=0&tcfd=10004&_eu=AAAAAGQC&_fid=cNPdgxUwZ-3daj0_qEX4oU&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=5&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115938466~115938469~118897920~118897930~119791749~120213116~120385422~120420414~120469145~120469153~120914213&uid=08a558d5-c38b-4d22-af36-5e1d007f8d85&sid=1788955001&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Ffeedback&dt=Football%20Live%20Score%20-%20Sofascore&en=ads_error&_ee=1&ep.origin=firebase&epn.id=3&ep.position=%2F21866864457%2FWEB_Desktop-Mobile_Homepage_Gift_Fluid&ep.provider=google&ep.type=banner&ep.app_language=en&ep.custom_screen_resolution=768x1024&_et=395&tfd=6074",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxVQztlM6pOUh8sYJvnQzgdzNvbUlltPgZrm4SrtYZvy3gIBUeTHFohLpRi68daBO-8uYt55Ol_91mqWm1re9LZXQIn5_xqwUHly1J_TSeFJRKAyOveBBBoq02UrXD1sZulhUClm0A==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxVBfggNT0aL7OQX-v7T4eY90MWVIHHpVKsJzfpN643arnUW0RlZZpwL3n8r6hSbPvvh2Xh8ke35Mfe1kgriF1kKb6UAodx6Po6qdpGQ5W9HKeMOcQlSnIneVC4jhnb1OAKcGASRRw==?fccs=W1siQUtzUm9sOU9Za3Z4c1hmNVhLZTN6YlZwZDIzenI0cThLT1FtV1JFYWJVWDhNQkxIMkxaazBHNWxUc3hLV2JUbmVVYUQ1TXNxRV9OMjZ1MEhwWG9ReWhZOTFqclRsc21KaVZPb0duTU9XQklvME5aSzlGS1ZZeUJZb3Nxc2VEWktEQ0ttZk9YOGN1bWItc090dEFKSFpOT2h3cEpZazRkbE9BPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwNTgsMTk3MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3NldHRpbmdzIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsMTU3XV1dIl0sWzIzLCIxNzg4OTU1MDMwIl0sWzM1LCIxNzg4OTU1MDAxIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://c393e6f9bc09d55cac1bbcabff00cc89.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html",
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gpt&tv=m202609030101&st=env&sjk=1330754389957171",
+    "https://pagead2.googlesyndication.com/pagead/sodar?id=sodar2&v=255&li=gpt_m202609030101&jk=1330754389957171&rc=",
+    "https://ep2.adtrafficquality.google/generate_204?yXEB_w",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxVe1ojYRNEKNJiSnGMqVnRPn33VztX7y5OF80cH75Q-rf3V35Od5ggSWKkpNecjbW4ak1GyUALUwXkE2THhiUECEjHwtUZXCd1K0EtRLEZSvf3T6stDT3LGLMr1AM1g6Ypsq8JVIT6oCWYx-C0HZXjIEmVD7dLVbFOynTdP7oZihY1tzL1lhssR6v4f/_/js/oas-_120x240_/aduxads._bottom_ads./ads_min_",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxW7lKtzfn0E6EPuQP9ylQp8-4Z5EbyKPSgq0-wspd_bZkJlB1AMtlNhG18PT6y_LAvxStutZMpml3FURhXit9j3LbYn_cRqhv4w4iN2BStGfLW4skkOYvvg0evGfOLabvwETsqfOw==?fccs=W1siQUtzUm9sOU9Za3Z4c1hmNVhLZTN6YlZwZDIzenI0cThLT1FtV1JFYWJVWDhNQkxIMkxaazBHNWxUc3hLV2JUbmVVYUQ1TXNxRV9OMjZ1MEhwWG9ReWhZOTFqclRsc21KaVZPb0duTU9XQklvME5aSzlGS1ZZeUJZb3Nxc2VEWktEQ0ttZk9YOGN1bWItc090dEFKSFpOT2h3cEpZazRkbE9BPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwNTksMTA5MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2XSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9zZXR0aW5ncyIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDE1N11dXSJdLFsyMywiMTc4ODk1NTAzMCJdLFszNSwiMTc4ODk1NTAwMSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWdW6hlfPSgKBTfT7hL1nXRqG1i22x54-5T85zV3zI6o1frFnrfjII33AOBjyfUrs3W72qlv9sUDsmnjTq9NP_HA38spO38dqOD6nLoqIQ8J2U1DirCE6FRJSV-DpGZvozEMsrLlg==?fccs=W1siQUtzUm9sOU9Za3Z4c1hmNVhLZTN6YlZwZDIzenI0cThLT1FtV1JFYWJVWDhNQkxIMkxaazBHNWxUc3hLV2JUbmVVYUQ1TXNxRV9OMjZ1MEhwWG9ReWhZOTFqclRsc21KaVZPb0duTU9XQklvME5aSzlGS1ZZeUJZb3Nxc2VEWktEQ0ttZk9YOGN1bWItc090dEFKSFpOT2h3cEpZazRkbE9BPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwNTksMjQ0MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS9zZXR0aW5ncyIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDE1N11dXSJdLFsyMywiMTc4ODk1NTAzMCJdLFszNSwiMTc4ODk1NTAwMSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://ep1.adtrafficquality.google/pagead/sodar?id=sodar2&v=255&t=2&li=gpt_m202609030101&jk=1330754389957171&bg=!1tWl1bfNAAZGRqKQZkY7AEcBe5WfOCVyIMeRuwWRBFThAhfG3DAETY3OOlmX8-pPUCQa2-nsqfehxpglb-cZXCMGlTrjIGiUk9JFggu1ybTOuTJUVtUfRQIAAACQUgAAAAZoAQd-ADbMlnXTBR1gG9EEg2AdiDwB2O6pf3Xt-dPox5V2i03MdJqm0B7-XEPnXxAkr2Y7zCssmbTUYxeZApIUXuskAmj9JU9Wj91RfHUnkqnJgAO7j-EX9YDWQghgV9r2NEtVIoWY1XZgRPKMPwAXZUhnx5UFrpz_cjY1uH3yoMmOT6bbAk1nPdAuUxkxuHo_ehTdiMeYIW9HBs_x7W6poSVI3kSq8Rk8lm6qE4ov3jPbvspzShzEP1hlCZAszQ0ofRWm0L5tIvCIx4dLq_mASFC3mvjz1RJeREw2qyU3r-R7sbYFjDmdPC3JGmuny1lyS0ZAv6cu1Uw3WwGoYUG-fniRMyOzpEMLbvJQRSZnusVHJpiCt2pVALoGGbkajtLMT-WDJHvsau7CJdn_b9xKPEmQQ9QHwWBE2ISZQaOI0iI3QXIMdPzHXz3mgxVAHOh79nsLMAiOOb2qRk-9bSA0RB4-4ocQEeExeZVj9XvOO8tdQXlLxzA9UorHX-oarJMNOFleIXgDjCRwqDNF4zHIAeP3fZ02UMJMadKkG_YH7r9ADqnaQ2pKlkybi-ooXbl1IGb3mMq-9fEixv2VFemNk7wXcfS8i1T-1RJjU3N869owA_DiyloIiKDYkiChywGEnvxMP3lzPNBlBcO0LKx47xXex2cP8F71b6_8jgDnwWW6vvQnExPhVE9vS-ZJTbbnUpwDWA6Ol1KH210cmTMQO3OkThD9Xwi9LLsZ34CXmp3gyjcLF_4Opjb-braN0aABYdh-bRssO0VZOEryum3RqUlc2RlQ5dJxSrgfGyAuq6bn5Mh_eXoPR5opgIKgxT8Fcvuc6TsEHhlZt_yGX_bt_Y-GR930Dc0TAL08DobLJrqiW7mjPWwJMg42zCod8iC6yzfyPp-xUB7jaOuGcgmPkKG4bbND6JKbibsSEOWOEgFySgwsNI4iYLcJWjsDXrTF",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxXJuTnpJ9uNitWcEvEPSpJMIS3iRfWHtOV5fA5cqwlbx6qDCtutV8IjOi3_3-XIqiee901jb8NXVZ4BsBtm00D9ejVV_MiYWzhBwtCMrfpfw0gRy-RcDLmU6-KaJz1jcQ_zHcN8zA==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUZZ82J35DwrXu88c8ZQodKcLgUqC7G8S-anOqstr8kMydxrZU0O1K1aqEFFNJT9joAJiwJAeA5ZoTJyiSvT_unBzuOWQsbfsgZkGQhJLIwAyVm6SoeoYcSZwcrKddd9sA4_5OAJQ==?fccs=W1siQUtzUm9sOU9Za3Z4c1hmNVhLZTN6YlZwZDIzenI0cThLT1FtV1JFYWJVWDhNQkxIMkxaazBHNWxUc3hLV2JUbmVVYUQ1TXNxRV9OMjZ1MEhwWG9ReWhZOTFqclRsc21KaVZPb0duTU9XQklvME5aSzlGS1ZZeUJZb3Nxc2VEWktEQ0ttZk9YOGN1bWItc090dEFKSFpOT2h3cEpZazRkbE9BPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUwNTksNTYzMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwLDldLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3NldHRpbmdzIixudWxsLFtbOCwid3liWFQ4dHVuZkkiXSxbOSwiZW4tVVMiXSxbMTgsIltbW251bGwsMTU3XV1dIl0sWzIzLCIxNzg4OTU1MDMwIl0sWzM1LCIxNzg4OTU1MDAxIl0sWzE5LCIyIl0sWzI0LCIiXSxbMjksImZhbHNlIl1dXQ",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxU6bXScjbz4aFw3mubMqs03BnwB8MKSgYAvK4hvpNl84U7c9osLY_vNQqNcNkoAfBgHBK1oWFxF1jTO-kBn03R9vLSlxXjBkqIyOdaaGavDo9YYBeImnLI3FhctklgatJ74eimNBA==",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955058224&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=cNPdgxUwZ-3daj0_qEX4oU&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=10&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120412527~120469145~120469153&sid=1788955001&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fsettings&dt=404%20%7C%20Page%20not%20found&_s=1&tfd=5595",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955058224&_gaz=1&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=cNPdgxUwZ-3daj0_qEX4oU&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=10&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120412527~120469145~120469153&uid=08a558d5-c38b-4d22-af36-5e1d007f8d85&sid=1788955001&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fsettings&dt=404%20%7C%20Page%20not%20found&en=scroll_progress&_ee=1&ep.origin=firebase&ep.link=%2Fsettings&ep.type=%2F%5Bsport%5D&ep.name=100%25&ep.app_language=en&ep.custom_screen_resolution=768x1024&_et=84822&tfd=85530",
+    "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-HNQ9P9MGZR&cid=185924918.1788955002&gtm=45je6941h2v869352338za200zd869352338&rcb=10&aip=1&uid=08a558d5-c38b-4d22-af36-5e1d007f8d85&dma=0&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&frm=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120412527~120469145~120469153&z=1701318136",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxVglvp2ZhEClU9_FAGh4kJu1QK_e4r-6vwrrmrl-4Q7XxbeQK2OuLjLFncXiuA5flH0yoNqN_YkyhkFFEgDfEVhxoFbuLBMspSWNP_IqNoQ8bfsB-BXV5vqjtgayUql6y1Qf95pMQ==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUtNbqdBbbb7I3k8WAuycRxl_7aXiZKtf4Twrcn95ltC1LgZeIBl9rr2Ug05xtrjIitCtEm6H0M71aHR3lSNFGO-RIrB-OpGBTvQzDWCg3PGOeEVP7fTILZhDycJmo2bZAqTcQ7GQ==?fccs=W1siQUtzUm9sLXhEclRsd05OdTB3MFpHeVpqNGl2RDVhbUEwU2NsaENXWkU4UTdPLW96SWV3bXA4Ylp5eGJWck92ZzI3R1puSE4tZWZvdmVhTVc1QjZzbi1HVHJsN1NRR1VJWjdIVzJ4bkVxMTZzdVFlQkVHajA3QThKN185RmVhcXBXTnQ0bFdsbEZOUzRISmRoVkMxT1hsRXRXZDFlQmktcmx3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUxNDUsODA3MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3VzZXIvcHJvZmlsZSIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDM1Nl1dXSJdLFsyMywiMTc4ODk1NTAzMCJdLFszNSwiMTc4ODk1NTAwMSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUczkgB-3-agEL6AE43SZsS97NY0Z3zfIWPcxu3zl29TI4XpK9yG4SuugBVDHDFh9NnOOfUXZbbGbuspqwFbBSXfMP-dTaBTwNVt-05A-ri9-rBxC9eh4FEBbEzAcxuNFgi1Hy2WREAd_Oz5Z5V7qZyytDw2yOOIhLGjRp7cUMHUVuRw3gTXEt2_MBg/_/serveads.-web-advert-/cont-adv.?adcontext=.show_ad_",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxU6meyDclzEB7osedk_5wfj7FYiqs8pTwGAOfhdr9T5T_SlFCrX6iP9SyUiiDmsJwZeaKfs7gwNSbAEmc777_8EhsJR3Wc6FXxOMXMVHK1OfCUe5y7eNMeRv3Zsi1tSeiITGJL3gg==?fccs=W1siQUtzUm9sLXhEclRsd05OdTB3MFpHeVpqNGl2RDVhbUEwU2NsaENXWkU4UTdPLW96SWV3bXA4Ylp5eGJWck92ZzI3R1puSE4tZWZvdmVhTVc1QjZzbi1HVHJsN1NRR1VJWjdIVzJ4bkVxMTZzdVFlQkVHajA3QThKN185RmVhcXBXTnQ0bFdsbEZOUzRISmRoVkMxT1hsRXRXZDFlQmktcmx3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUxNDYsNjY1MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2XSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCwzNTZdXV0iXSxbMjMsIjE3ODg5NTUwMzAiXSxbMzUsIjE3ODg5NTUwMDEiXSxbMTksIjIiXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxWxISmJAilsLAPyzZWDpCmuCHfV4MvbH7sD2bZJqczl3Bsu-UpjQP-ELUnPE2INJqsKnRfskZcc5m1N11zsHL-pjLnk_wcg-5xHIh2NcK-lF-4yiRsC7fm6VtNu6o5Tn6nrNibsvw==?fccs=W1siQUtzUm9sLXhEclRsd05OdTB3MFpHeVpqNGl2RDVhbUEwU2NsaENXWkU4UTdPLW96SWV3bXA4Ylp5eGJWck92ZzI3R1puSE4tZWZvdmVhTVc1QjZzbi1HVHJsN1NRR1VJWjdIVzJ4bkVxMTZzdVFlQkVHajA3QThKN185RmVhcXBXTnQ0bFdsbEZOUzRISmRoVkMxT1hsRXRXZDFlQmktcmx3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUxNDYsNzc5MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuc29mYXNjb3JlLmNvbS91c2VyL3Byb2ZpbGUiLG51bGwsW1s4LCJ3eWJYVDh0dW5mSSJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbbnVsbCwzNTZdXV0iXSxbMjMsIjE3ODg5NTUwMzAiXSxbMzUsIjE3ODg5NTUwMDEiXSxbMTksIjIiXSxbMjQsIiJdLFsyOSwiZmFsc2UiXV1d",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxV-2pYY8xphmczrI6iP9FUs8DA5ezZ2e9y4zvyeQ0vRn0rdszPYiIbIgUK43tC-VxHOiDCYpFRyXDJn6yfFepQ3oYBhHQ7jHDuzduztjaBBvhwP1TH-NlSL2qDxVXwBZzPFa-vtQA==",
+    "https://fundingchoicesmessages.google.com/f/AGSKWxUEMT8Yx8Nw_FnMHtOtjKJu4a2ODOzF5D95RgBLSEnwcEbOdntarhIk6KuQDpUWVsQ02rmVHVFrARxPGRFciBjPUsHxfphxDzQVNofKdI6lXx7_YWHtMOTcZQUi5FGaAYZil9aKrg==?fccs=W1siQUtzUm9sLXhEclRsd05OdTB3MFpHeVpqNGl2RDVhbUEwU2NsaENXWkU4UTdPLW96SWV3bXA4Ylp5eGJWck92ZzI3R1puSE4tZWZvdmVhTVc1QjZzbi1HVHJsN1NRR1VJWjdIVzJ4bkVxMTZzdVFlQkVHajA3QThKN185RmVhcXBXTnQ0bFdsbEZOUzRISmRoVkMxT1hsRXRXZDFlQmktcmx3PT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3ODg5NTUxNDYsODg4MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw2LDEwLDldLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5zb2Zhc2NvcmUuY29tL3VzZXIvcHJvZmlsZSIsbnVsbCxbWzgsInd5YlhUOHR1bmZJIl0sWzksImVuLVVTIl0sWzE4LCJbW1tudWxsLDM1Nl1dXSJdLFsyMywiMTc4ODk1NTAzMCJdLFszNSwiMTc4ODk1NTAwMSJdLFsxOSwiMiJdLFsyNCwiIl0sWzI5LCJmYWxzZSJdXV0",
+    "https://fundingchoicesmessages.google.com/el/AGSKWxUItuwbqcRz8gthG7OM1abbYP8TbVm55G2PTjaK01E4-hC0PeZFSKQGj5QFyKRfmyGl7rjuRzGnutEPcVJEBoBGhETaYZfYOmM4aalyISkG95UuXWKpPceG_hieWYhFRqC6HAjvAw==",
+    "https://analytics.google.com/g/collect?v=2&tid=G-HNQ9P9MGZR&gtm=45je6941h2v869352338za200zd869352338&_p=1788955145825&gcs=G1--&gcd=13l3l3l3l5l1&npa=0&dma=0&tcfd=14I54&_eu=AAAAAGQC&_fid=cNPdgxUwZ-3daj0_qEX4oU&cid=185924918.1788955002&frm=0&pscdl=noapi&rcb=2&sr=768x1024&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.83%7CNot%253FA_Brand%3B24.0.0.0%7CGoogle%2520Chrome%3B152.0.7977.83&uam=&uamb=1&uap=iOS&uapv=17_0&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153~120474862&sid=1788955001&sct=1&seg=1&dl=https%3A%2F%2Fwww.sofascore.com%2Fuser%2Fprofile&dt=Football%20Live%20Score%20-%20Sofascore&_s=1&tfd=5757"
+  ],
+  "api_urls": [
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/token/init",
+    "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/token/init",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "https://www.sofascore.com/api/v1/country/alpha2",
+    "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured"
+  ],
+  "api_saved_count": 76,
+  "network_count": 1272,
+  "assets_count": 107,
+  "img_assets_count": 27,
+  "deploy": false,
+  "outputs": {
+    "profile": "D:\\Tivra3\\scorenet\\scorenet\\user\\profile\\_mob_scrape",
+    "feedback": "D:\\Tivra3\\scorenet\\scorenet\\feedback\\_mob_scrape",
+    "settings": "D:\\Tivra3\\scorenet\\scorenet\\settings\\_mob_scrape",
+    "api": "D:\\Tivra3\\scorenet\\scorenet\\user\\profile\\_mob_scrape\\_raw_api",
+    "assets": "D:\\Tivra3\\scorenet\\scorenet\\assets\\www.sofascore.com"
+  }
+}

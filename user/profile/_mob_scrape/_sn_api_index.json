@@ -1,0 +1,458 @@
+[
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "mobile__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "mobile__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "mobile__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "mobile__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "mobile__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "mobile__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "bytes": 220588,
+    "file": "mobile__api__v1__dsp__country__IN.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "mobile__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "bytes": 2107,
+    "file": "mobile__api__v1__config__country-sport-priorities__country.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "bytes": 2497,
+    "file": "mobile__api__v1__config__country-sport-priorities__country__IN.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "mobile__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "mobile__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "mobile__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "mobile__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "mobile__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/token/init",
+    "bytes": 839,
+    "file": "mobile__api__v1__token__init.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "bytes": 220588,
+    "file": "mobile__api__v1__dsp__country__IN.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "mobile__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "bytes": 2107,
+    "file": "mobile__api__v1__config__country-sport-priorities__country.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "mobile__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "bytes": 2497,
+    "file": "mobile__api__v1__config__country-sport-priorities__country__IN.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "mobile__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "mobile__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "mobile__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "mobile__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "bytes": 220588,
+    "file": "mobile__api__v1__dsp__country__IN.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "mobile__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "mobile__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "mobile__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "mobile__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "mobile__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "mobile__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "mobile__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "mobile",
+    "url": "https://www.sofascore.com/api/v1/dsp/country/IN",
+    "bytes": 220588,
+    "file": "mobile__api__v1__dsp__country__IN.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "tablet__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "tablet__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "tablet__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "tablet__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "tablet__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "tablet__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "tablet__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "bytes": 2107,
+    "file": "tablet__api__v1__config__country-sport-priorities__country.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "bytes": 2497,
+    "file": "tablet__api__v1__config__country-sport-priorities__country__IN.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "tablet__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "tablet__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "tablet__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "tablet__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/token/init",
+    "bytes": 839,
+    "file": "tablet__api__v1__token__init.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "tablet__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "tablet__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+    "bytes": 2107,
+    "file": "tablet__api__v1__config__country-sport-priorities__country.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+    "bytes": 2497,
+    "file": "tablet__api__v1__config__country-sport-priorities__country__IN.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "tablet__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "tablet__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "tablet__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "tablet__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "tablet__api__v1__odds__providers__IN__web-featured.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+    "bytes": 637,
+    "file": "tablet__api__v1__sport__19800__event-count.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/country/alpha2",
+    "bytes": 211,
+    "file": "tablet__api__v1__country__alpha2.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+    "bytes": 11013,
+    "file": "tablet__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+    "bytes": 10406,
+    "file": "tablet__api__v1__event__newly-added-events.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+    "bytes": 5379,
+    "file": "tablet__api__v1__odds__providers__IN__web.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+    "bytes": 2576,
+    "file": "tablet__api__v1__odds__providers__IN__web-odds.json"
+  },
+  {
+    "viewport": "tablet",
+    "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+    "bytes": 16,
+    "file": "tablet__api__v1__odds__providers__IN__web-featured.json"
+  }
+]

@@ -1,6 +1,6 @@
 /* ScoreNet profile page interactions — Edit / Share / ⋯ menu (Sofascore-matching) */
 (function () {
-  var VER = "20260908m2";
+  var VER = "20260909gpf";
   var mobMoveStash = [];
   var mobMqBound = false;
 
@@ -685,9 +685,6 @@
       "m22 10-4 4v1l-2 2H8l-2-2v-1l-4-4V4h3v2H4v3l2 2V2h12v9l2-2V6h-1V4h3zm-6-6H8v10.17l.83.83h6.34l.83-.83zM7 22v-2h4v-2h2v2h4v2z"
     );
     var odds = ico("m16 18 2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6z");
-    var fantasy = ico(
-      "M12 2l2.4 4.86L20 7.27l-3.6 3.51L17.2 17 12 14.27 6.8 17l.8-6.22L4 7.27l5.6-.41z"
-    );
     var pots = ico(
       "M11.162 12.626H4.837v2.04h6.325zM4.837 1.333v2.044h3.894v7.653h2.432V1.333zM7.269 4.97H4.837v6.06H7.27z",
       "0 0 16 16"
@@ -708,7 +705,6 @@
       mobRow("/tv-schedule#tab:channels", "TV Schedule & Channels", tv) +
       mobRow("/user/weekly-challenge", "Weekly Challenge", cup) +
       mobRow("/betting-tips-today", "Dropping odds", odds) +
-      mobRow("/fantasy", "Fantasy", fantasy) +
       mobRow("/football/player-of-the-season", "Player of the Season", pots) +
       "</div>" +
       '<div class="sn-mob-card">' +

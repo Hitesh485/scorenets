@@ -1048,8 +1048,8 @@
         var guestProfile =
           document.body && document.body.getAttribute("data-sn-profile-guest") === "1";
         closeModal();
-        // Freeze shell has no real guest profile — leave like Sofascore dismiss-away
-        if (guestProfile) {
+        // Mobile guest page stays; desktop in-flow modal dismiss → home
+        if (guestProfile && !isGuestMobViewport()) {
           try {
             location.href = "/";
           } catch (eClose) {}
@@ -1434,6 +1434,13 @@
     }
   }
 
+  function isGuestMobViewport() {
+    try {
+      if (window.matchMedia) return window.matchMedia("(max-width: 991.98px)").matches;
+    } catch (e) {}
+    return window.innerWidth < 992;
+  }
+
   function ensureGuestProfileCss() {
     var s = document.getElementById("sn-guest-profile-css");
     if (!s) {
@@ -1441,30 +1448,83 @@
       s.id = "sn-guest-profile-css";
       (document.head || document.documentElement).appendChild(s);
     }
-    // Sofascore: signup card in page flow (NOT fixed/sticky); scroll with footer
+    // Desktop: in-flow signup card. Mobile: Sofascore guest page (SIGN IN → modal overlay).
     s.textContent =
       "body[data-sn-profile-guest='1']{background:#000!important}" +
       "body[data-sn-profile-guest='1'] main," +
       "body[data-sn-profile-guest='1'] #entityHeaderPortal{display:none!important}" +
-      "body[data-sn-profile-guest='1'] #sn-profile-guest-blank{" +
-      "display:flex!important;flex-direction:column;align-items:center;justify-content:center;" +
-      "width:100%;min-height:70vh;background:#000;pointer-events:auto;padding:24px 16px 48px;box-sizing:border-box}" +
       "body[data-sn-profile-guest='1'] [data-sn-guest-footer='1']{" +
       "position:relative;z-index:2;background:#0f1113}" +
-      "body[data-sn-profile-guest='1'] #sn-auth-modal," +
+      /* Desktop in-flow auth card */
+      "body[data-sn-profile-guest='1']:not([data-sn-guest-mob='1']) #sn-profile-guest-blank{" +
+      "display:flex!important;flex-direction:column;align-items:center;justify-content:center;" +
+      "width:100%;min-height:70vh;background:#000;pointer-events:auto;padding:24px 16px 48px;box-sizing:border-box}" +
+      "body[data-sn-profile-guest='1']:not([data-sn-guest-mob='1']) #sn-auth-modal," +
       "#sn-auth-modal[data-sn-auth-inflow='1']{" +
       "position:relative!important;inset:auto!important;left:auto!important;top:auto!important;" +
       "right:auto!important;bottom:auto!important;display:flex!important;" +
       "align-items:center!important;justify-content:center!important;" +
       "z-index:1!important;padding:0!important;width:100%!important;max-width:960px;" +
       "margin:0 auto;pointer-events:auto!important;background:transparent!important}" +
-      "body[data-sn-profile-guest='1'] #sn-auth-modal .sn-auth-modal-backdrop," +
+      "body[data-sn-profile-guest='1']:not([data-sn-guest-mob='1']) #sn-auth-modal .sn-auth-modal-backdrop," +
       "#sn-auth-modal[data-sn-auth-inflow='1'] .sn-auth-modal-backdrop{display:none!important}" +
-      "body[data-sn-profile-guest='1'] #sn-auth-modal .sn-auth-modal-card," +
+      "body[data-sn-profile-guest='1']:not([data-sn-guest-mob='1']) #sn-auth-modal .sn-auth-modal-card," +
       "#sn-auth-modal[data-sn-auth-inflow='1'] .sn-auth-modal-card{" +
       "max-height:none!important;width:min(920px,100%)!important;margin:0 auto}" +
-      "html.sn-auth-lock body[data-sn-profile-guest='1']," +
-      "html.sn-auth-lock:has(body[data-sn-profile-guest='1']){overflow:auto!important}";
+      "html.sn-auth-lock body[data-sn-profile-guest='1']:not([data-sn-guest-mob='1'])," +
+      "html.sn-auth-lock:has(body[data-sn-profile-guest='1']:not([data-sn-guest-mob='1'])){overflow:auto!important}" +
+      /* Mobile guest page */
+      "@media (max-width:991.98px){" +
+      "body[data-sn-guest-mob='1'] #sn-profile-guest-blank{display:none!important}" +
+      /* Keep freeze main hidden; our guest root + bottom nav provide the UI */ +
+      "body[data-sn-guest-mob='1'] main{display:none!important}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root{" +
+      "display:flex!important;flex-direction:column;gap:12px;width:100%;max-width:560px;" +
+      "margin:0 auto;padding:8px 8px calc(88px + env(safe-area-inset-bottom,0px));box-sizing:border-box;" +
+      "position:relative;z-index:3;background:#000;pointer-events:auto}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-title{" +
+      "font-size:13px;font-weight:600;color:rgba(255,255,255,.55);padding:4px 8px 0}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-hero{" +
+      "display:flex;flex-direction:column;align-items:center;padding:12px 8px 4px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-avatar{" +
+      "width:96px;height:96px;border-radius:50%;background:#2a2e33;display:flex;align-items:center;" +
+      "justify-content:center;color:#9ca3af;margin-bottom:14px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-avatar svg{width:52%;height:52%}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-tagline{" +
+      "color:#fff;font-size:18px;font-weight:700;text-align:center;line-height:1.3;margin:0 8px 14px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-card{" +
+      "background:#1a1d21;border-radius:12px;overflow:hidden;width:100%}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-benefits{padding:14px 16px;display:flex;flex-direction:column;gap:12px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-benefit{" +
+      "display:flex;align-items:center;gap:12px;color:#fff;font-size:14px;font-weight:500}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-benefit svg{flex-shrink:0;width:22px;height:22px;opacity:.95}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-signin{" +
+      "display:flex;align-items:center;justify-content:center;width:100%;margin-top:12px;min-height:48px;" +
+      "border:0;border-radius:10px;background:#7c6af2;color:#111;font-size:15px;font-weight:800;" +
+      "letter-spacing:.04em;cursor:pointer;font-family:inherit}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-card-title{" +
+      "text-align:center;font-size:16px;font-weight:700;color:#fff;padding:14px 12px 6px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-row{" +
+      "display:flex;align-items:center;gap:14px;padding:14px 16px;color:#fff;text-decoration:none;" +
+      "border:0;background:transparent;width:100%;box-sizing:border-box;font:inherit;cursor:pointer}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-row-label{flex:1;text-align:left;font-size:14px;font-weight:500}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-row svg:first-child{flex-shrink:0;width:22px;height:22px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-chevron{flex-shrink:0;width:20px;height:20px;color:#7c9cff}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-about{padding:8px 16px 20px;color:rgba(255,255,255,.75);font-size:13px;line-height:1.45}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-about-title{color:#fff;font-size:16px;font-weight:700;padding:14px 16px 4px}" +
+      /* Keep bottom nav Profile icon visible (Fantasy hide / avatar scrub must not collapse it) */
+      "body[data-sn-guest-mob='1'] [class*='bottomNavigation'] a[href*='/user/profile']," +
+      "body[data-sn-guest-mob='1'] [class*='BottomNavigation'] a[href*='/user/profile']," +
+      "body[data-sn-guest-mob='1'] [class*='bottomNavigation'] a[href*='/user/profile'] svg," +
+      "body[data-sn-guest-mob='1'] [class*='BottomNavigation'] a[href*='/user/profile'] svg{" +
+      "display:flex!important;visibility:visible!important;opacity:1!important;" +
+      "width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;" +
+      "overflow:visible!important;pointer-events:auto!important}" +
+      "body[data-sn-guest-mob='1'] [class*='bottomNavigation'] a[href*='/user/profile'] svg," +
+      "body[data-sn-guest-mob='1'] [class*='BottomNavigation'] a[href*='/user/profile'] svg{" +
+      "display:block!important;width:24px!important;height:24px!important;margin:0 auto}" +
+      "}" +
+      "@media (min-width:992px){#sn-guest-mob-root{display:none!important}}";
   }
 
   function findGuestFooterRoot() {
@@ -1546,17 +1606,377 @@
     } catch (e) {}
   }
 
-  /* Guest /user/profile: Sofascore-style in-flow signup card (not fixed sticky). */
+  function guestMobIco(d, vb) {
+    return (
+      '<svg viewBox="' +
+      (vb || "0 0 24 24") +
+      '" aria-hidden="true" focusable="false"><path fill="currentColor" d="' +
+      d +
+      '"/></svg>'
+    );
+  }
+
+  function guestMobRow(href, label, ico, external) {
+    var attrs = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+    return (
+      '<a class="sn-guest-row" href="' +
+      href +
+      '"' +
+      attrs +
+      ">" +
+      ico +
+      '<span class="sn-guest-row-label">' +
+      label +
+      "</span>" +
+      '<svg class="sn-guest-chevron" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.29 6.71a1 1 0 0 0 0 1.41L13.17 12l-3.88 3.88a1 1 0 1 0 1.41 1.41l4.59-4.59a1 1 0 0 0 0-1.41L10.7 6.7a1 1 0 0 0-1.41.01z"/></svg>' +
+      "</a>"
+    );
+  }
+
+  function buildGuestMobHtml() {
+    var star = guestMobIco(
+      "m12 2 2.4 4.86L20 7.27l-3.6 3.51L17.2 17 12 14.27 6.8 17l.8-6.22L4 7.27l5.6-.41z"
+    );
+    var cal = guestMobIco(
+      "M22 2v10.11a6.8 6.8 0 0 0-2-1.43V8H4v12h6.68c.35.75.84 1.43 1.43 2H2V2zm-5 10c1.13 0 2.17.37 3 1 1.21.91 2 2.37 2 4 0 2.76-2.24 5-5 5a5.01 5.01 0 0 1-4-2c-.63-.83-1-1.87-1-3 0-2.76 2.24-5 5-5m.5 2h-1v3.51l2.12 2.12.71-.7-1.83-1.83zM20 4H4v2h16z"
+    );
+    var cup = guestMobIco(
+      "m22 10-4 4v1l-2 2H8l-2-2v-1l-4-4V4h3v2H4v3l2 2V2h12v9l2-2V6h-1V4h3zm-6-6H8v10.17l.83.83h6.34l.83-.83zM7 22v-2h4v-2h2v2h4v2z"
+    );
+    var ai = guestMobIco(
+      "M15 15H1V1h14zM5.748 4.517c-.068 0-.107.029-.127.097l-2.185 6.773c-.02.058.01.097.068.097H4.61c.069 0 .108-.029.127-.097l.471-1.51H8.08l.48 1.51c.02.068.06.097.127.097h1.118c.058 0 .088-.039.069-.097L7.708 4.614c-.02-.068-.06-.097-.128-.097zm4.977 0c-.059 0-.098.039-.098.097v6.773c0 .058.04.097.098.097h1.058c.059 0 .098-.039.098-.097V4.614c0-.058-.04-.097-.098-.097zM6.768 5.73l.94 2.97H5.581l.941-2.97z",
+      "0 0 16 16"
+    );
+    var person = guestMobIco(
+      "M12 12a4.8 4.8 0 1 0-4.8-4.8A4.8 4.8 0 0 0 12 12zm0 2.4c-3.2 0-9.6 1.61-9.6 4.8V21h19.2v-1.8c0-3.19-6.4-4.8-9.6-4.8z"
+    );
+    var tv = guestMobIco(
+      "M20 4H2v14h7v2h6v-2h7V4zm0 12H4V6h16zM8.273 13.916V9.013H6.582c-.05 0-.082-.034-.082-.085v-.844c0-.05.033-.084.082-.084h4.421c.049 0 .082.034.082.084v.844c0 .05-.033.085-.082.085H9.319v4.903c0 .05-.032.084-.081.084h-.883c-.049 0-.082-.034-.082-.084"
+    );
+    var odds = guestMobIco("m16 18 2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6z");
+    var pots = guestMobIco(
+      "M11.162 12.626H4.837v2.04h6.325zM4.837 1.333v2.044h3.894v7.653h2.432V1.333zM7.269 4.97H4.837v6.06H7.27z",
+      "0 0 16 16"
+    );
+    var faq = guestMobIco(
+      "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10m.169-16.103c-2.47 0-4.116 1.36-4.435 3.595-.017.1.05.168.15.168h1.9c.1 0 .167-.067.184-.168.151-.991.84-1.58 2.117-1.58 1.31 0 1.831.488 1.831 1.143 0 .79-.47 1.109-1.562 1.596l-.2.09c-.768.345-1.48.665-1.48 1.825v1.344c0 .101.067.168.168.168h1.764c.1 0 .168-.067.168-.168v-.79c0-.621.47-.84.94-1.041 1.445-.605 2.453-1.36 2.453-3.04 0-1.983-1.596-3.142-3.998-3.142m-1.764 9.744v2.2c0 .101.067.168.168.168h2.369c.1 0 .168-.067.168-.168v-2.2c0-.101-.068-.168-.168-.168h-2.37c-.1 0-.167.067-.167.168"
+    );
+    var fb = guestMobIco(
+      "M16.41 4H7.59L4 7.59V18l2 2h3v-7l-1-1H6V8.41L8.41 6h7.18L18 8.41V12h-2l-1 1v5h-2v-1h-2v3h7l2-2V7.59z"
+    );
+
+    return (
+      '<div class="sn-guest-title">My profile</div>' +
+      '<div class="sn-guest-hero">' +
+      '<div class="sn-guest-avatar" aria-hidden="true">' +
+      person +
+      "</div>" +
+      '<p class="sn-guest-tagline">Your home for sports insights</p>' +
+      '<div class="sn-guest-card">' +
+      '<div class="sn-guest-benefits">' +
+      '<div class="sn-guest-benefit">' +
+      star +
+      "<span>Sync your favourites across devices</span></div>" +
+      '<div class="sn-guest-benefit">' +
+      cal +
+      "<span>Add matches to your calendar</span></div>" +
+      '<div class="sn-guest-benefit">' +
+      cup +
+      "<span>Play Weekly Challenge</span></div>" +
+      '<div class="sn-guest-benefit">' +
+      ai +
+      "<span>Get access to ScoreNet Pro</span></div>" +
+      "</div>" +
+      '<button type="button" class="sn-guest-signin" id="sn-guest-mob-signin">SIGN IN</button>' +
+      "</div></div>" +
+      '<div class="sn-guest-card">' +
+      '<div class="sn-guest-card-title">Quick links</div>' +
+      guestMobRow("/tv-schedule/#tab:channels", "TV Schedule & Channels", tv) +
+      guestMobRow("/user/weekly-challenge", "Weekly Challenge", cup) +
+      guestMobRow("/betting-tips-today", "Dropping odds", odds) +
+      guestMobRow("/football/player-of-the-season", "Player of the Season", pots) +
+      "</div>" +
+      '<div class="sn-guest-card">' +
+      '<div class="sn-guest-card-title">Support</div>' +
+      guestMobRow("https://sofascore.helpscoutdocs.com", "ScoreNet FAQ", faq, true) +
+      guestMobRow("/feedback", "Give us feedback", fb) +
+      "</div>" +
+      '<div class="sn-guest-card">' +
+      '<div class="sn-guest-about-title">About</div>' +
+      '<p class="sn-guest-about">Live scores service at ScoreNet livescore offers sports live scores, results and tables. Follow your favourite teams right here live! Live score on ScoreNet is automatically updated and you don\'t need to refresh it manually.</p>' +
+      "</div>"
+    );
+  }
+
+  function clearGuestMobPage() {
+    try {
+      if (document.body) document.body.removeAttribute("data-sn-guest-mob");
+    } catch (e0) {}
+    var root = document.getElementById("sn-guest-mob-root");
+    if (root && root.parentNode) root.parentNode.removeChild(root);
+  }
+
+  function ensureBottomNavProfileIcon() {
+    try {
+      var navs = document.querySelectorAll(
+        '[class*="bottomNavigation"],[class*="BottomNavigation"],[class*="z_bottomNavigation"]'
+      );
+      for (var n = 0; n < navs.length; n++) {
+        var nav = navs[n];
+        var nodes = nav.querySelectorAll("a,button,[role='button'],div");
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          var href = ((el.getAttribute && el.getAttribute("href")) || "").split("?")[0];
+          var t = textOf(el);
+          var isProf =
+            /\/user\/profile\/?$/i.test(href) ||
+            (/^profile$/i.test(t) && el.children && el.children.length <= 4);
+          if (!isProf) continue;
+          try {
+            el.style.removeProperty("display");
+            el.style.removeProperty("visibility");
+            el.style.removeProperty("opacity");
+            el.style.removeProperty("width");
+            el.style.removeProperty("height");
+            el.removeAttribute("data-sn-hidden-dup-profile");
+            el.removeAttribute("data-sn-native-profile-hidden");
+            el.removeAttribute("data-sn-hidden-empty-avatar");
+          } catch (e1) {}
+          var svgs = el.querySelectorAll("svg");
+          var visibleSvg = false;
+          for (var s = 0; s < svgs.length; s++) {
+            try {
+              svgs[s].style.removeProperty("display");
+              svgs[s].style.removeProperty("visibility");
+              svgs[s].style.removeProperty("opacity");
+              svgs[s].style.removeProperty("width");
+              svgs[s].style.removeProperty("height");
+              svgs[s].removeAttribute("data-sn-hidden-empty-avatar");
+              visibleSvg = true;
+            } catch (e2) {}
+          }
+          if (!visibleSvg && !el.querySelector("img")) {
+            if (el.getAttribute("data-sn-bn-profile-ico") === "1") continue;
+            var ico = document.createElement("span");
+            ico.setAttribute("data-sn-bn-profile-ico", "1");
+            ico.setAttribute("aria-hidden", "true");
+            ico.style.cssText =
+              "display:flex;align-items:center;justify-content:center;width:24px;height:24px;margin:0 auto;color:currentColor";
+            ico.innerHTML =
+              '<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">' +
+              '<path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2m0 2a8 8 0 0 0-5 14.246V16l2-2h6l2 2v2.245A8 8 0 0 0 12 4m0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6"/>' +
+              "</svg>";
+            var label = null;
+            for (var c = 0; c < el.childNodes.length; c++) {
+              if (el.childNodes[c].nodeType === 1 && /profile/i.test(el.childNodes[c].textContent || "")) {
+                label = el.childNodes[c];
+                break;
+              }
+            }
+            if (label) el.insertBefore(ico, label);
+            else el.insertBefore(ico, el.firstChild);
+            el.setAttribute("data-sn-bn-profile-ico", "1");
+          }
+        }
+      }
+    } catch (e) {}
+  }
+
+  function ensureGuestMobPage() {
+    if (!isProfilePath() || user || !isGuestMobViewport()) {
+      clearGuestMobPage();
+      return false;
+    }
+    ensureGuestProfileCss();
+    try {
+      if (document.body) {
+        document.body.setAttribute("data-sn-profile-page", "1");
+        document.body.setAttribute("data-sn-profile-guest", "1");
+        document.body.setAttribute("data-sn-guest-mob", "1");
+      }
+    } catch (e1) {}
+
+    clearGuestBlankLayer();
+    // Don't keep desktop in-flow modal mounted on mobile guest page
+    try {
+      var modal = document.getElementById("sn-auth-modal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.removeAttribute("data-sn-auth-inflow");
+        if (modal.parentNode && modal.parentNode.id === "sn-profile-guest-blank") {
+          document.body.appendChild(modal);
+        }
+      }
+      modalOpen = false;
+      document.documentElement.classList.remove("sn-auth-lock");
+    } catch (e2) {}
+
+    var footer = findGuestFooterRoot();
+    if (footer) footer.setAttribute("data-sn-guest-footer", "1");
+
+    var root = document.getElementById("sn-guest-mob-root");
+    if (!root) {
+      root = document.createElement("div");
+      root.id = "sn-guest-mob-root";
+      root.setAttribute("data-sn-auth-ui", "1");
+      root.innerHTML = buildGuestMobHtml();
+      if (footer && footer.parentNode) footer.parentNode.insertBefore(root, footer);
+      else {
+        var main = document.querySelector("main");
+        if (main && main.parentNode) main.parentNode.insertBefore(root, main.nextSibling);
+        else document.body.appendChild(root);
+      }
+      var btn = document.getElementById("sn-guest-mob-signin");
+      if (btn) {
+        btn.addEventListener("click", function (ev) {
+          if (ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+          }
+          openModal({ inFlow: false });
+        });
+      }
+    }
+
+    ensureBottomNavProfileIcon();
+    return true;
+  }
+
+  /* Guest /user/profile: mobile Sofascore page; desktop in-flow signup card. */
+  function hasNativeGuestMobProfile() {
+    try {
+      var t = (document.body && document.body.innerText) || "";
+      return (
+        /Your home for sports insights/i.test(t) &&
+        (/Sign in/i.test(t) || /SIGN IN/.test(t)) &&
+        !/Join date/i.test(t)
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function ensureNativeGuestMobCss() {
+    var s = document.getElementById("sn-guest-native-css");
+    if (!s) {
+      s = document.createElement("style");
+      s.id = "sn-guest-native-css";
+      (document.head || document.documentElement).appendChild(s);
+    }
+    // Real mobile/tablet scrape: show mobile Fresnel, hide desktop force + Fantasy
+    s.textContent =
+      "@media (max-width:991.98px){" +
+      "body[data-sn-guest-native='1'] .fresnel-container.fresnel-greaterThanOrEqual-mdMin," +
+      "body[data-sn-guest-native='1'] .desktop-only{" +
+      "display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important}" +
+      "body[data-sn-guest-native='1'] .fresnel-container.fresnel-lessThan-mdMin{" +
+      "display:block!important;visibility:visible!important;height:auto!important;max-height:none!important;overflow:visible!important}" +
+      "body[data-sn-guest-native='1'] main{display:block!important}" +
+      "body[data-sn-guest-native='1'] #sn-guest-mob-root," +
+      "body[data-sn-guest-native='1'] #sn-profile-guest-blank{display:none!important}" +
+      "body[data-sn-guest-native='1'] a[href='/fantasy']," +
+      "body[data-sn-guest-native='1'] a[href='/fantasy/']," +
+      "body[data-sn-guest-native='1'] a[href^='/fantasy/']{display:none!important}" +
+      "}";
+  }
+
+  function scrubNativeGuestFantasy() {
+    try {
+      document.querySelectorAll("a[href='/fantasy'],a[href='/fantasy/'],a[href^='/fantasy/']").forEach(function (a) {
+        var row = a.closest("a") || a;
+        row.style.setProperty("display", "none", "important");
+      });
+      // Benefit line "Play Fantasy & Weekly Challenge" → Weekly Challenge only
+      var nodes = document.querySelectorAll("span,div,p,li");
+      for (var i = 0; i < nodes.length; i++) {
+        var el = nodes[i];
+        if (el.childElementCount > 2) continue;
+        var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+        if (/Play Fantasy\s*&\s*Weekly Challenge/i.test(t)) {
+          el.textContent = t.replace(/Play Fantasy\s*&\s*Weekly Challenge/i, "Play Weekly Challenge");
+        }
+      }
+      // Fantasy promo cards
+      nodes = document.querySelectorAll("div,section,article");
+      for (var j = 0; j < nodes.length; j++) {
+        var card = nodes[j];
+        var ct = (card.textContent || "").replace(/\s+/g, " ").trim();
+        if (ct.length > 220) continue;
+        if (/ScoreNet Fantasy|Sofascore Fantasy|Own your team\. Rule the league/i.test(ct) && /Play now/i.test(ct)) {
+          card.style.setProperty("display", "none", "important");
+        }
+      }
+    } catch (e) {}
+  }
+
+  function activateNativeGuestMob() {
+    try {
+      if (document.body) {
+        document.body.setAttribute("data-sn-profile-page", "1");
+        document.body.setAttribute("data-sn-guest-native", "1");
+        document.body.removeAttribute("data-sn-profile-guest");
+        document.body.removeAttribute("data-sn-guest-mob");
+      }
+    } catch (e0) {}
+    clearGuestMobPage();
+    clearGuestBlankLayer();
+    ensureNativeGuestMobCss();
+    scrubNativeGuestFantasy();
+    ensureBottomNavProfileIcon();
+    try {
+      var modal = document.getElementById("sn-auth-modal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.removeAttribute("data-sn-auth-inflow");
+      }
+      modalOpen = false;
+      document.documentElement.classList.remove("sn-auth-lock");
+    } catch (e1) {}
+  }
+
   function ensureGuestProfileGate() {
     if (!isProfilePath()) return;
     if (user) {
       try {
-        if (document.body) document.body.removeAttribute("data-sn-profile-guest");
+        if (document.body) {
+          document.body.removeAttribute("data-sn-profile-guest");
+          document.body.removeAttribute("data-sn-guest-mob");
+          document.body.removeAttribute("data-sn-guest-native");
+        }
       } catch (e0) {}
       clearGuestBlankLayer();
+      clearGuestMobPage();
       closeModal();
       return;
     }
+
+    // Mobile/tablet: prefer native Sofascore guest scrape when present
+    if (isGuestMobViewport()) {
+      if (hasNativeGuestMobProfile()) {
+        activateNativeGuestMob();
+        [100, 400, 1000, 2000].forEach(function (ms) {
+          setTimeout(function () {
+            if (!user && isProfilePath() && isGuestMobViewport() && hasNativeGuestMobProfile()) {
+              activateNativeGuestMob();
+            }
+          }, ms);
+        });
+        return;
+      }
+      ensureGuestMobPage();
+      [100, 400, 1000, 2000].forEach(function (ms) {
+        setTimeout(function () {
+          if (!user && isProfilePath() && isGuestMobViewport()) {
+            if (hasNativeGuestMobProfile()) activateNativeGuestMob();
+            else ensureGuestMobPage();
+          }
+        }, ms);
+      });
+      return;
+    }
+
+    clearGuestMobPage();
+
     // Native guest scrape already has in-flow card — leave it
     try {
       var bodyText = (document.body && document.body.innerText) || "";
@@ -1586,6 +2006,11 @@
     [100, 400, 1000, 2000].forEach(function (ms) {
       setTimeout(function () {
         if (document.body && document.body.getAttribute("data-sn-profile-guest") === "1") {
+          if (isGuestMobViewport()) {
+            if (hasNativeGuestMobProfile()) activateNativeGuestMob();
+            else ensureGuestMobPage();
+            return;
+          }
           ensureGuestBlankLayer();
           openModal({ inFlow: true });
           try {
@@ -1601,7 +2026,14 @@
     var inFlow = !!(opts && opts.inFlow);
     var guestProfile =
       document.body && document.body.getAttribute("data-sn-profile-guest") === "1";
-    if (guestProfile) inFlow = true;
+    var guestMob =
+      document.body && document.body.getAttribute("data-sn-guest-mob") === "1";
+    // Mobile guest page: SIGN IN opens overlay modal (not in-flow card)
+    if (guestMob || (guestProfile && isGuestMobViewport())) {
+      inFlow = false;
+    } else if (guestProfile) {
+      inFlow = true;
+    }
 
     var el = ensureModal();
     if (inFlow) {
@@ -3358,6 +3790,9 @@
         fillProfilePageCircle();
       } catch (e) {}
       try {
+        ensureBottomNavProfileIcon();
+      } catch (eBn0) {}
+      try {
         ensurePaywallSignIn();
         ensurePaywallQr();
       } catch (e2) {}
@@ -3386,6 +3821,9 @@
     try {
       fillProfilePageCircle();
     } catch (e) {}
+    try {
+      ensureBottomNavProfileIcon();
+    } catch (eBn1) {}
     try {
       ensurePaywallSignIn();
       ensurePaywallQr();
