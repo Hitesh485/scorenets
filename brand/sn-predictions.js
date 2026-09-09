@@ -7,8 +7,7 @@
   window.__snPredictionsUi = 1;
 
   var API = "/backend/sn-predictions";
-  var VER = "20260908mt";
-  var pendingPenBtn = null;
+  var VER = "20260909cv";
 
   function isAuthed() {
     try {
@@ -18,85 +17,14 @@
     }
   }
 
-  function ensureChangeVoteCss() {
-    if (document.getElementById("sn-change-vote-css")) return;
-    var s = document.createElement("style");
-    s.id = "sn-change-vote-css";
-    s.textContent =
-      "#sn-change-vote-modal{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45)}" +
-      "#sn-change-vote-modal.hidden{display:none!important}" +
-      "#sn-change-vote-modal .sn-cv-card{width:min(312px,calc(100vw - 32px));background:#22252b;color:#fff;border-radius:12px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.45)}" +
-      "#sn-change-vote-modal .sn-cv-title{font-size:18px;font-weight:700;line-height:24px;margin:0 0 8px}" +
-      "#sn-change-vote-modal .sn-cv-body{font-size:14px;line-height:1.4;opacity:.9;margin:0}" +
-      "#sn-change-vote-modal .sn-cv-actions{display:flex;justify-content:flex-end;gap:16px;margin-top:20px}" +
-      "#sn-change-vote-modal .sn-cv-close,#sn-change-vote-modal .sn-cv-continue{appearance:none;border:0;background:transparent;color:#8ea0ff;font-weight:700;font-size:14px;cursor:pointer;padding:4px 2px}" +
-      "#sn-change-vote-modal .sn-cv-continue{color:#3762dc}";
-    (document.head || document.documentElement).appendChild(s);
-  }
-
-  function closeChangeVoteModal() {
-    var el = document.getElementById("sn-change-vote-modal");
-    if (el) el.classList.add("hidden");
-    pendingPenBtn = null;
-  }
-
-  function openChangeVoteModal(penBtn) {
-    ensureChangeVoteCss();
-    pendingPenBtn = penBtn;
-    var el = document.getElementById("sn-change-vote-modal");
-    if (!el) {
-      el = document.createElement("div");
-      el.id = "sn-change-vote-modal";
-      el.innerHTML =
-        '<div class="sn-cv-card" role="dialog" aria-modal="true">' +
-        '<p class="sn-cv-title">Having second thoughts?</p>' +
-        '<p class="sn-cv-body">Watch an ad and change vote.</p>' +
-        '<div class="sn-cv-actions">' +
-        '<button type="button" class="sn-cv-close" data-sn-cv="close">CLOSE</button>' +
-        '<button type="button" class="sn-cv-continue" data-sn-cv="continue">CONTINUE</button>' +
-        "</div></div>";
-      el.addEventListener("click", function (ev) {
-        var a = ev.target && ev.target.getAttribute && ev.target.getAttribute("data-sn-cv");
-        if (!a && ev.target === el) a = "close";
-        if (a === "close") {
-          ev.preventDefault();
-          closeChangeVoteModal();
-          return;
-        }
-        if (a === "continue") {
-          ev.preventDefault();
-          var btn = pendingPenBtn;
-          closeChangeVoteModal();
-          if (!btn) return;
-          // One-shot pass: let native handler reset vote (ads disabled path).
-          window.__snVoteEditPass = 1;
-          try {
-            btn.click();
-          } catch (e0) {}
-          setTimeout(function () {
-            window.__snVoteEditPass = 0;
-          }, 800);
-        }
-      });
-      document.body.appendChild(el);
-    }
-    el.classList.remove("hidden");
-  }
-
-  function isChangeVotePen(btn, section) {
-    if (!btn || !section) return false;
-    if (btn.closest("a[href*='weekly-challenge']")) return false;
-    if (!/Total votes/i.test(section.textContent || "")) return false;
-    var pills = voteButtons(section);
-    if (pills.indexOf(btn) >= 0) return false;
-    for (var i = 0; i < pills.length; i++) {
-      if (pills[i].contains(btn)) return false;
-    }
-    // Pen is the icon button beside trophy (svg, not a vote pill)
-    if (!btn.querySelector("svg")) return false;
-    var label = ((btn.getAttribute("aria-label") || "") + " " + (btn.textContent || "")).toLowerCase();
-    if (/trophy|challenge|share|close|standings/.test(label)) return false;
-    return true;
+  // Change-vote ad modal removed (was #sn-change-vote-modal).
+  function nukeChangeVoteModal() {
+    try {
+      var el = document.getElementById("sn-change-vote-modal");
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+      var css = document.getElementById("sn-change-vote-css");
+      if (css && css.parentNode) css.parentNode.removeChild(css);
+    } catch (e) {}
   }
 
   function pathSegments() {
@@ -399,7 +327,7 @@
   function onDocClick(ev) {
     var t = ev.target;
     if (!t || !t.closest) return;
-    if (t.closest("#sn-auth-modal, #sn-auth-drop, #sn-change-vote-modal, [data-sn-auth-ui], a[href*='weekly-challenge']")) return;
+    if (t.closest("#sn-auth-modal, #sn-auth-drop, [data-sn-auth-ui], a[href*='weekly-challenge']")) return;
 
     var btn = t.closest("button");
     if (!btn) return;
@@ -408,21 +336,7 @@
     // ignore trophy/WC clear button in header of widget
     if (btn.closest("a[href*='weekly-challenge']")) return;
 
-    // Pen / change-vote: native skips ad modal when rewarded ads are stubbed → instant reset.
-    // Restore scrape popup; CONTINUE then allows one native reset.
-    if (isChangeVotePen(btn, section)) {
-      if (window.__snVoteEditPass) {
-        window.__snVoteEditPass = 0;
-        return;
-      }
-      ev.preventDefault();
-      ev.stopPropagation();
-      try {
-        ev.stopImmediatePropagation();
-      } catch (ePen) {}
-      openChangeVoteModal(btn);
-      return;
-    }
+    // Change-vote ad modal removed — do not intercept pen/media close.
 
     var buttons = voteButtons(section);
     if (buttons.indexOf(btn) < 0) {
@@ -955,6 +869,7 @@
   }
 
   function boot() {
+    nukeChangeVoteModal();
     enableVoteButtons();
     harvestEventIdsFromPage();
     document.addEventListener("click", onDocClick, true);

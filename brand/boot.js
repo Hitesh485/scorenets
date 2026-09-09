@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909ff";
+  var VER = "20260909cv";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -1382,7 +1382,7 @@
     function snLoadPredictions() {
       if (document.querySelector('script[data-sn-predictions="1"]')) return;
       var s = document.createElement("script");
-      s.src = "/brand/sn-predictions.js?v=20260908mt";
+      s.src = "/brand/sn-predictions.js?v=20260909cv";
       s.async = true;
       s.setAttribute("data-sn-predictions", "1");
       (document.head || document.documentElement).appendChild(s);
