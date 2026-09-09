@@ -1,42 +1,24 @@
-/* ScoreNet Sports TV — tv-schedule overlay only.
-   Reads /backend/tv/live-events (AWS relay via scorenets.com). No server writes.
-   Does NOT hide date tabs / sport filters / channel chips. */
+/* ScoreNet Sports TV — Watchlist-below entry only (diamond /backend/tv/live-events).
+   Does NOT inject into Suggested, filter chips, watchlist cards, or schedule empty states. */
 (function () {
-  var VER = "20260909stv5";
-  var CHANNEL_ID = "sn-sports-tv";
+  var VER = "20260909stv7";
   var CHANNEL_NAME = "Sports TV";
-  var LS_KEY = "sn_sports_tv_selected";
+  var LS_OPEN = "sn_sports_tv_open";
 
   if (!/^\/tv-schedule\/?$/.test(location.pathname)) return;
 
-  // Default to By channel when landing with no hash (do not override explicit tournament hash)
-  try {
-    var h = String(location.hash || "");
-    if (!h || h === "#") {
-      history.replaceState(null, "", location.pathname + location.search + "#tab:channels");
-    }
-  } catch (eHash) {}
-
-
-  // Allow hot-reload of fixed script version
   if (window.__SN_SPORTS_TV__ === VER) return;
   window.__SN_SPORTS_TV__ = VER;
 
-  // Undo previous broken hide (hid entire schedule card)
-  try {
-    document.querySelectorAll("[data-sn-stv-hidden]").forEach(function (el) {
-      el.style.display = "";
-      el.removeAttribute("data-sn-stv-hidden");
-    });
-  } catch (e0) {}
-
-  // Opt-in only — native Sofascore channel list (SonyLIV / Apple TV / …) stays primary
   var state = {
-    selected: localStorage.getItem(LS_KEY) === "1",
+    open: false,
     events: [],
     loading: false,
     error: "",
   };
+  try {
+    state.open = localStorage.getItem(LS_OPEN) === "1";
+  } catch (eLs) {}
 
   function etidLabel(etid) {
     var m = {
@@ -49,231 +31,161 @@
     return m[Number(etid)] || "Sport";
   }
 
+  function logoUrl() {
+    return "/brand/scorenet-logo.svg?v=" + VER;
+  }
+
+  /** Strip legacy injects from older Sports TV overlay versions (keep current wrap). */
+  function scrubLegacy() {
+    ["sn-stv-watchcard", "sn-stv-suggest", "sn-stv-chip"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.remove();
+    });
+    try {
+      // Old floating schedule panel (not inside the new Watchlist-below wrap)
+      var panel = document.getElementById("sn-stv-panel");
+      if (panel && !panel.closest("#sn-stv-wrap")) panel.remove();
+      document.querySelectorAll("[data-sn-stv-hidden]").forEach(function (el) {
+        el.style.display = "";
+        el.removeAttribute("data-sn-stv-hidden");
+      });
+      document.querySelectorAll("[data-sn-channel='sn-sports-tv']").forEach(function (el) {
+        if (!el.closest("#sn-stv-wrap")) el.remove();
+      });
+    } catch (eScrub) {}
+  }
+
   function injectCss() {
     var old = document.getElementById("sn-sports-tv-css");
     if (old) old.remove();
     var s = document.createElement("style");
     s.id = "sn-sports-tv-css";
     s.textContent =
-      "#sn-stv-watchcard,#sn-stv-suggest,#sn-stv-chip,#sn-stv-panel{font-family:inherit;color:inherit}" +
-      "#sn-stv-watchcard{position:relative;width:88px;min-width:88px;height:88px;border-radius:10px;background:var(--colors-surface-s2);border:1px solid var(--colors-neutrals-nLv4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:6px;box-sizing:border-box}" +
-      "#sn-stv-watchcard.is-on{outline:2px solid #e10600;outline-offset:1px}" +
-      "#sn-stv-watchcard img{width:36px;height:36px;object-fit:contain}" +
-      "#sn-stv-watchcard .sn-stv-name{font-size:10px;line-height:1.2;text-align:center;color:var(--colors-neutrals-nLv1);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}" +
-      "#sn-stv-suggest{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;cursor:pointer}" +
-      "#sn-stv-suggest .sn-stv-left{display:flex;align-items:center;gap:12px;min-width:0}" +
-      "#sn-stv-suggest img{width:40px;height:40px;object-fit:contain;flex-shrink:0}" +
-      "#sn-stv-suggest .sn-stv-meta{display:flex;flex-direction:column;min-width:0}" +
-      "#sn-stv-suggest .sn-stv-title{font-size:14px;font-weight:600;color:var(--colors-neutrals-nLv1)}" +
-      "#sn-stv-suggest .sn-stv-sub{font-size:12px;color:var(--colors-neutrals-nLv3)}" +
-      "#sn-stv-suggest .sn-stv-plus{width:28px;height:28px;border-radius:8px;border:0;background:var(--colors-surface-s3,var(--colors-neutrals-nLv4));color:var(--colors-neutrals-nLv1);font-size:18px;cursor:pointer;flex-shrink:0}" +
-      "#sn-stv-chip{appearance:none;border:0;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;cursor:pointer;background:var(--colors-surface-s2);color:var(--colors-neutrals-nLv1);margin:0 4px 0 0}" +
-      "#sn-stv-chip.is-on{background:#e10600;color:#fff}" +
-      "#sn-stv-panel{display:block;margin:12px 0 16px;padding:14px;border-radius:12px;background:var(--colors-surface-s1);border:1px solid var(--colors-neutrals-nLv4);color:var(--colors-neutrals-nLv1)}" +
-      "#sn-stv-panel[hidden]{display:none!important}" +
-      "#sn-stv-panel h3{margin:0 0 8px;font-size:15px;color:var(--colors-neutrals-nLv1)}" +
-      "#sn-stv-panel .sn-stv-hint{margin:0 0 12px;font-size:12px;color:var(--colors-neutrals-nLv3)}" +
-      "#sn-stv-list{display:flex;flex-direction:column;gap:8px;max-height:min(60vh,520px);overflow:auto}" +
-      ".sn-stv-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;background:var(--colors-surface-s2);text-decoration:none;color:var(--colors-neutrals-nLv1);border:1px solid transparent}" +
+      "#sn-stv-wrap{font-family:inherit;color:inherit;margin:10px 0 12px;padding:0 2px;box-sizing:border-box}" +
+      "#sn-stv-entry{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;border:1px solid var(--colors-neutrals-nLv4);background:var(--colors-surface-s2);color:var(--colors-neutrals-nLv1);cursor:pointer;text-align:left;box-sizing:border-box}" +
+      "#sn-stv-entry:hover{border-color:#e10600}" +
+      "#sn-stv-entry.is-open{outline:2px solid #e10600;outline-offset:1px}" +
+      "#sn-stv-entry .sn-stv-left{display:flex;align-items:center;gap:10px;min-width:0}" +
+      "#sn-stv-entry img{width:32px;height:32px;object-fit:contain;flex-shrink:0}" +
+      "#sn-stv-entry .sn-stv-meta{display:flex;flex-direction:column;min-width:0}" +
+      "#sn-stv-entry .sn-stv-title{font-size:14px;font-weight:600;color:var(--colors-neutrals-nLv1)}" +
+      "#sn-stv-entry .sn-stv-sub{font-size:11px;color:var(--colors-neutrals-nLv3)}" +
+      "#sn-stv-entry .sn-stv-chev{flex-shrink:0;font-size:12px;color:var(--colors-neutrals-nLv3);transition:transform .15s ease}" +
+      "#sn-stv-entry.is-open .sn-stv-chev{transform:rotate(180deg);color:#e10600}" +
+      "#sn-stv-panel{display:none;margin-top:8px;padding:10px;border-radius:10px;background:var(--colors-surface-s1);border:1px solid var(--colors-neutrals-nLv4)}" +
+      "#sn-stv-panel.is-open{display:block}" +
+      "#sn-stv-list{display:flex;flex-direction:column;gap:6px;max-height:min(50vh,420px);overflow:auto}" +
+      ".sn-stv-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;border-radius:8px;background:var(--colors-surface-s2);text-decoration:none;color:var(--colors-neutrals-nLv1);border:1px solid transparent}" +
       ".sn-stv-row:hover{border-color:#e10600}" +
       ".sn-stv-row .sn-stv-main{min-width:0;flex:1}" +
-      ".sn-stv-row .sn-stv-match{font-size:13px;font-weight:600;color:var(--colors-neutrals-nLv1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
-      ".sn-stv-row .sn-stv-sport{font-size:11px;color:var(--colors-neutrals-nLv3);margin-top:2px}" +
-      ".sn-stv-row .sn-stv-watch{flex-shrink:0;background:#e10600;color:#fff;border:0;border-radius:8px;padding:7px 10px;font-size:12px;font-weight:700}" +
-      ".sn-stv-empty{font-size:13px;color:var(--colors-neutrals-nLv3);padding:16px 8px;text-align:center}";
+      ".sn-stv-row .sn-stv-match{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
+      ".sn-stv-row .sn-stv-sport{font-size:10px;color:var(--colors-neutrals-nLv3);margin-top:2px}" +
+      ".sn-stv-row .sn-stv-watch{flex-shrink:0;background:#e10600;color:#fff;border:0;border-radius:7px;padding:6px 9px;font-size:11px;font-weight:700}" +
+      ".sn-stv-empty{font-size:12px;color:var(--colors-neutrals-nLv3);padding:12px 6px;text-align:center}";
     document.head.appendChild(s);
   }
 
-  function logoUrl() {
-    return "/brand/scorenet-logo.svg?v=" + VER;
-  }
-
-  function findSuggestedMount() {
-    var spans = document.querySelectorAll("span");
-    for (var i = 0; i < spans.length; i++) {
-      if ((spans[i].textContent || "").trim() === "Suggested") {
-        return spans[i].parentElement;
+  /** Insert before "Add channels/competitions to watchlist" — sits directly under Watchlist. */
+  function findMountBeforeAdd() {
+    var re = /^Add (channels|competitions) to watchlist$/i;
+    var nodes = document.querySelectorAll("span,h2,h3,div,p,button");
+    for (var i = 0; i < nodes.length; i++) {
+      var t = (nodes[i].textContent || "").replace(/\s+/g, " ").trim();
+      if (!re.test(t)) continue;
+      // Prefer a compact heading node, not a huge parent that also contains Watchlist
+      var el = nodes[i];
+      if ((el.textContent || "").length > 80) continue;
+      var mount = el;
+      // Climb to a block that is a direct section child (card row sibling)
+      for (var up = 0; up < 6 && mount.parentElement; up++) {
+        var parent = mount.parentElement;
+        var kids = parent.children;
+        if (kids && kids.length >= 2) {
+          // If parent also contains Watchlist label, mount is too high — use child
+          var pt = (parent.textContent || "").slice(0, 200);
+          if (/Watchlist/i.test(pt) && /Suggested/i.test(pt)) {
+            break;
+          }
+          return mount;
+        }
+        mount = parent;
       }
+      return el;
     }
     return null;
   }
 
-  function findWatchlistRow() {
-    var spans = document.querySelectorAll("span");
+  /** Fallback: after Watchlist cards container. */
+  function findMountAfterWatchlist() {
+    var spans = document.querySelectorAll("span,h2,h3,div");
     for (var i = 0; i < spans.length; i++) {
-      var t = (spans[i].textContent || "").trim();
-      if (!/^Watchlist\s*\(/.test(t) && t !== "Watchlist") continue;
+      var t = (spans[i].textContent || "").replace(/\s+/g, " ").trim();
+      if (!/^Watchlist(\s*\(\d+\))?$/.test(t)) continue;
       var probe = spans[i].parentElement;
       for (var d = 0; d < 8 && probe; d++) {
-        var imgs = probe.querySelectorAll('img[src*="tv-channel"],img[alt*="TV"],img[alt*="LIV"]');
-        if (imgs.length >= 1) {
-          var p = imgs[0].parentElement;
-          for (var up = 0; up < 8 && p; up++) {
-            if (p.children && p.children.length >= 2) return p;
-            p = p.parentElement;
-          }
+        var parent = probe.parentElement;
+        if (parent && parent.children && parent.children.length >= 2) {
+          return { parent: parent, after: probe };
         }
-        probe = probe.parentElement;
+        probe = parent;
       }
     }
     return null;
   }
 
-  function findFilterBar() {
-    var buttons = document.querySelectorAll("button");
-    for (var i = 0; i < buttons.length; i++) {
-      if ((buttons[i].textContent || "").trim() === "All channels") {
-        return buttons[i].parentElement;
-      }
-    }
-    return null;
-  }
-
-  /** Only the empty-state block (TV illustration + "No events…"), never the whole card. */
-  function findEmptyStateOnly() {
-    var spans = document.querySelectorAll("span");
-    for (var i = 0; i < spans.length; i++) {
-      if (!/No events on this day/i.test(spans[i].textContent || "")) continue;
-      var el = spans[i];
-      // Climb to a compact empty wrapper, stop before card that also has date tabs
-      var best = el.parentElement;
-      var cur = el.parentElement;
-      for (var up = 0; up < 10 && cur; up++) {
-        var txt = cur.textContent || "";
-        if (/Today/.test(txt) && /All channels|All sports/i.test(txt)) {
-          // cur is too big (includes dates/filters) — use previous best
-          break;
-        }
-        best = cur;
-        cur = cur.parentElement;
-      }
-      return best;
-    }
-    return null;
-  }
-
-  function findScheduleCard() {
-    var buttons = document.querySelectorAll("button,span");
-    for (var i = 0; i < buttons.length; i++) {
-      if ((buttons[i].textContent || "").trim() !== "Today") continue;
-      var card = buttons[i].closest('[class*="card-component"]');
-      if (card) return card;
-    }
-    return null;
-  }
-
-  function setSelected(on) {
-    state.selected = !!on;
+  function setOpen(on) {
+    state.open = !!on;
     try {
-      localStorage.setItem(LS_KEY, on ? "1" : "0");
+      localStorage.setItem(LS_OPEN, on ? "1" : "0");
     } catch (e) {}
     syncUi();
     if (on) loadEvents();
   }
 
-  function ensureWatchCard() {
-    if (document.getElementById("sn-stv-watchcard")) return;
-    var row = findWatchlistRow();
-    var card = document.createElement("button");
-    card.type = "button";
-    card.id = "sn-stv-watchcard";
-    card.setAttribute("data-sn-channel", CHANNEL_ID);
-    card.title = CHANNEL_NAME;
-    card.innerHTML =
+  function ensureEntry() {
+    if (document.getElementById("sn-stv-wrap")) return;
+
+    var wrap = document.createElement("div");
+    wrap.id = "sn-stv-wrap";
+    wrap.setAttribute("data-sn-stv", "1");
+    wrap.innerHTML =
+      '<button type="button" id="sn-stv-entry" aria-expanded="false">' +
+      '<span class="sn-stv-left">' +
       '<img src="' +
       logoUrl() +
-      '" alt="' +
+      '" alt="">' +
+      '<span class="sn-stv-meta">' +
+      '<span class="sn-stv-title">' +
       CHANNEL_NAME +
-      '"><span class="sn-stv-name">' +
-      CHANNEL_NAME +
-      "</span>";
-    card.onclick = function (e) {
+      "</span>" +
+      '<span class="sn-stv-sub">Live matches · ScoreNet</span>' +
+      "</span></span>" +
+      '<span class="sn-stv-chev" aria-hidden="true">▾</span>' +
+      "</button>" +
+      '<div id="sn-stv-panel" role="region" aria-label="Sports TV schedule">' +
+      '<div id="sn-stv-list"></div>' +
+      "</div>";
+
+    wrap.querySelector("#sn-stv-entry").onclick = function (e) {
       e.preventDefault();
       e.stopPropagation();
-      setSelected(true);
+      setOpen(!state.open);
     };
-    if (row) row.insertBefore(card, row.firstChild);
-  }
 
-  function ensureSuggest() {
-    if (document.getElementById("sn-stv-suggest")) return;
-    var mount = findSuggestedMount();
-    if (!mount) return;
-    var row = document.createElement("div");
-    row.id = "sn-stv-suggest";
-    row.setAttribute("data-sn-channel", CHANNEL_ID);
-    row.innerHTML =
-      '<div class="sn-stv-left"><img src="' +
-      logoUrl() +
-      '" alt=""><div class="sn-stv-meta"><span class="sn-stv-title">' +
-      CHANNEL_NAME +
-      '</span><span class="sn-stv-sub">Live via relay</span></div></div>' +
-      '<button type="button" class="sn-stv-plus" aria-label="Select Sports TV">+</button>';
-    row.onclick = function (e) {
-      e.preventDefault();
-      setSelected(true);
-    };
-    var label = null;
-    for (var i = 0; i < mount.children.length; i++) {
-      if ((mount.children[i].textContent || "").trim() === "Suggested") {
-        label = mount.children[i];
-        break;
+    var before = findMountBeforeAdd();
+    if (before && before.parentElement) {
+      before.parentElement.insertBefore(wrap, before);
+      return;
+    }
+    var after = findMountAfterWatchlist();
+    if (after && after.parent) {
+      if (after.after && after.after.nextSibling) {
+        after.parent.insertBefore(wrap, after.after.nextSibling);
+      } else {
+        after.parent.appendChild(wrap);
       }
+      return;
     }
-    if (label && label.nextSibling) mount.insertBefore(row, label.nextSibling);
-    else mount.appendChild(row);
-  }
-
-  function ensureChip() {
-    if (document.getElementById("sn-stv-chip")) return;
-    var bar = findFilterBar();
-    if (!bar) return;
-    var chip = document.createElement("button");
-    chip.type = "button";
-    chip.id = "sn-stv-chip";
-    chip.textContent = CHANNEL_NAME;
-    chip.onclick = function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      setSelected(!state.selected);
-    };
-    var all = null;
-    for (var i = 0; i < bar.children.length; i++) {
-      if ((bar.children[i].textContent || "").trim() === "All channels") {
-        all = bar.children[i];
-        break;
-      }
-    }
-    if (all && all.nextSibling) bar.insertBefore(chip, all.nextSibling);
-    else bar.appendChild(chip);
-  }
-
-  function ensurePanel() {
-    var panel = document.getElementById("sn-stv-panel");
-    if (panel) return panel;
-    panel = document.createElement("div");
-    panel.id = "sn-stv-panel";
-    panel.innerHTML =
-      "<h3>" +
-      CHANNEL_NAME +
-      " schedule</h3>" +
-      '<p class="sn-stv-hint">Live matches with TV from exchange relay (read-only).</p>' +
-      '<div id="sn-stv-list"></div>';
-
-    var empty = findEmptyStateOnly();
-    if (empty && empty.parentElement) {
-      // Place after empty-state sibling so dates/filters above stay intact
-      if (empty.nextSibling) empty.parentElement.insertBefore(panel, empty.nextSibling);
-      else empty.parentElement.appendChild(panel);
-      return panel;
-    }
-    var card = findScheduleCard();
-    if (card) {
-      card.appendChild(panel);
-      return panel;
-    }
-    document.body.appendChild(panel);
-    return panel;
   }
 
   function renderList() {
@@ -311,36 +223,14 @@
   }
 
   function syncUi() {
-    // Always restore any accidental full-card hides from older script
-    document.querySelectorAll("[data-sn-stv-hidden]").forEach(function (el) {
-      var txt = el.textContent || "";
-      if (/Today/.test(txt) && /All (sports|channels)/i.test(txt)) {
-        el.style.display = "";
-        el.removeAttribute("data-sn-stv-hidden");
-      }
-    });
-
-    var card = document.getElementById("sn-stv-watchcard");
-    var chip = document.getElementById("sn-stv-chip");
+    var entry = document.getElementById("sn-stv-entry");
     var panel = document.getElementById("sn-stv-panel");
-    if (card) card.classList.toggle("is-on", state.selected);
-    if (chip) chip.classList.toggle("is-on", state.selected);
-    if (panel) {
-      if (state.selected) panel.removeAttribute("hidden");
-      else panel.setAttribute("hidden", "");
+    if (entry) {
+      entry.classList.toggle("is-open", state.open);
+      entry.setAttribute("aria-expanded", state.open ? "true" : "false");
     }
-
-    var empty = findEmptyStateOnly();
-    if (empty && empty.id !== "sn-stv-panel") {
-      if (state.selected) {
-        empty.setAttribute("data-sn-stv-hidden", "1");
-        empty.style.display = "none";
-      } else if (empty.getAttribute("data-sn-stv-hidden") === "1") {
-        empty.style.display = "";
-        empty.removeAttribute("data-sn-stv-hidden");
-      }
-    }
-    renderList();
+    if (panel) panel.classList.toggle("is-open", state.open);
+    if (state.open) renderList();
   }
 
   function loadEvents() {
@@ -371,43 +261,51 @@
         state.error =
           "Could not read Sports TV (" +
           (err && err.message ? err.message : err) +
-          "). Is local /backend proxy running?";
+          ").";
         syncUi();
       });
   }
 
-
-  function preferChannelsTab() {
-    try {
-      var h = String(location.hash || "");
-      // Only nudge when hash says channels (or empty) but UI stuck on competitions
-      if (h && h !== "#" && !/^#tab:channels\b/i.test(h)) return;
-      var ch = document.getElementById("tab-channels");
-      var tr = document.getElementById("tab-tournaments");
-      if (ch && tr && tr.getAttribute("aria-selected") === "true") {
-        ch.click();
-      }
-    } catch (ePref) {}
-  }
-
   function boot() {
-    preferChannelsTab();
+    scrubLegacy();
     injectCss();
-    ensureWatchCard();
-    ensureSuggest();
-    ensureChip();
-    ensurePanel();
+    ensureEntry();
     syncUi();
-    if (state.selected) loadEvents();
+    if (state.open) loadEvents();
   }
+
+  // First paint: scrub any leftover legacy nodes immediately
+  scrubLegacy();
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
   } else {
     boot();
   }
-  setTimeout(boot, 400);
-  setTimeout(boot, 1200);
-  setTimeout(preferChannelsTab, 800);
-  setTimeout(preferChannelsTab, 2000);
+  [400, 1000, 2000, 4000].forEach(function (ms) {
+    setTimeout(boot, ms);
+  });
+
+  var t = null;
+  try {
+    new MutationObserver(function () {
+      if (t) return;
+      t = setTimeout(function () {
+        t = null;
+        if (!document.getElementById("sn-stv-wrap")) boot();
+        else {
+          // Re-scrub if React reintroduced nothing, but legacy ids reappear
+          if (
+            document.getElementById("sn-stv-suggest") ||
+            document.getElementById("sn-stv-chip") ||
+            document.getElementById("sn-stv-watchcard")
+          ) {
+            scrubLegacy();
+            ensureEntry();
+            syncUi();
+          }
+        }
+      }, 250);
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  } catch (eObs) {}
 })();

@@ -12,7 +12,7 @@ PEM_SRC = Path(r"D:\Tivra3\scorenet\betting_production (1).pem")
 HOST = "ubuntu@13.232.247.32"
 REMOTE_ROOT = "/var/www/scorenet"
 STAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
-VER = "20260909stv4"
+VER = "20260909stv7"
 TAR = ROOT / f"_sn_stv_deploy_{STAMP}.tar"
 FILES = ["brand/tv-schedule-sports.js", "tv-schedule/index.html"]
 
