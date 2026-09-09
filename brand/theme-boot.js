@@ -40,6 +40,7 @@
       var root = document.documentElement;
       root.classList.remove("light", "dark");
       root.classList.add(dark ? "dark" : "light");
+      root.setAttribute("data-theme", dark ? "dark" : "light");
       root.style.colorScheme = dark ? "dark" : "light";
     } catch (e2) {}
     return m;

@@ -1,0 +1,57 @@
+{
+  "hostCls": "pos_relative sn-profile-page-avatar-host",
+  "kids": [
+    {
+      "tag": "IMG",
+      "cls": "br_50%",
+      "src": "/assets/www.sofascore.com/player_2a4c7a9ccb.svg",
+      "hideAttr": "1",
+      "innerAttr": null,
+      "display": "none",
+      "visibility": "hidden",
+      "opacity": "1",
+      "w": 0,
+      "h": 0,
+      "y": 0,
+      "visible": false
+    },
+    {
+      "tag": "DIV",
+      "cls": "sn-profile-page-avatar-inner",
+      "src": "",
+      "hideAttr": null,
+      "innerAttr": "1",
+      "display": "flex",
+      "visibility": "visible",
+      "opacity": "1",
+      "w": 102,
+      "h": 102,
+      "y": 96,
+      "visible": true
+    },
+    {
+      "tag": "IMG",
+      "cls": "sn-profile-page-photo sn-profile-page-icon",
+      "src": "/brand/profile-avatar.svg?v=20260909av3",
+      "hideAttr": null,
+      "innerAttr": null,
+      "display": "block",
+      "visibility": "visible",
+      "opacity": "1",
+      "w": 102,
+      "h": 102,
+      "y": 96,
+      "visible": true
+    }
+  ],
+  "visibleSrcs": [
+    "DIV:sn-profile-page-avatar-inner",
+    "/brand/profile-avatar.svg?v=20260909av3"
+  ],
+  "painted": true,
+  "sofaHidden": {
+    "src": "/assets/www.sofascore.com/player_2a4c7a9ccb.svg",
+    "display": "none",
+    "hide": "1"
+  }
+}

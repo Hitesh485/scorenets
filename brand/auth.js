@@ -44,7 +44,7 @@
     }
   }
 
-  var PAGE_AVATAR_SRC = "/brand/profile-avatar.svg?v=20260909av2";
+  var PAGE_AVATAR_SRC = "/brand/profile-avatar.svg?v=20260909av3";
   var PAGE_ICON =
     '<img class="sn-profile-page-photo sn-profile-page-icon" src="' +
     PAGE_AVATAR_SRC +
@@ -1901,10 +1901,13 @@
         document.body.removeAttribute("data-sn-profile-guest");
         document.body.removeAttribute("data-sn-guest-mob");
       }
-      // Scrape was dark — keep dark so Sofa tokens match
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-      document.documentElement.setAttribute("data-theme", "dark");
+      // Respect Settings theme choice — never force dark over user pref
+      // Skip while sheet open (radio handler already applied)
+      if (!settingsOpen) {
+        try {
+          applyTheme(readTheme());
+        } catch (eTheme) {}
+      }
     } catch (e0) {}
     clearGuestMobPage();
     clearGuestBlankLayer();
@@ -1918,7 +1921,10 @@
         modal.removeAttribute("data-sn-auth-inflow");
       }
       modalOpen = false;
-      document.documentElement.classList.remove("sn-auth-lock");
+      // Don't steal lock while settings sheet is open
+      if (!settingsOpen) {
+        document.documentElement.classList.remove("sn-auth-lock");
+      }
     } catch (e1) {}
   }
 
@@ -2134,7 +2140,6 @@
     if (typeof window.__snApplyTheme === "function") {
       try {
         window.__snApplyTheme(m);
-        return m;
       } catch (eBoot) {}
     }
     try {
@@ -2148,7 +2153,11 @@
     try {
       document.documentElement.classList.remove("light", "dark");
       document.documentElement.classList.add(dark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
       document.documentElement.style.colorScheme = dark ? "dark" : "light";
+      if (document.body) {
+        document.body.setAttribute("data-theme", dark ? "dark" : "light");
+      }
     } catch (e2) {}
     return m;
   }
@@ -2605,7 +2614,7 @@
 
   function ensureSettingsModal() {
     var el = document.getElementById("sn-settings-modal");
-    if (el && el.getAttribute("data-sn-settings-ver") === "1") return el;
+    if (el && el.getAttribute("data-sn-settings-ver") === "3") return el;
     if (el) {
       try {
         el.parentNode && el.parentNode.removeChild(el);
@@ -2615,20 +2624,47 @@
     el.id = "sn-settings-modal";
     el.className = "sn-settings-modal hidden";
     el.setAttribute("data-sn-auth-ui", "1");
-    el.setAttribute("data-sn-settings-ver", "1");
+    el.setAttribute("data-sn-settings-ver", "3");
     document.body.appendChild(el);
     el.addEventListener("click", function (ev) {
       var t = ev.target;
       if (!t) return;
-      if (t.getAttribute && t.getAttribute("data-sn-settings-close") === "1") {
+      // X / backdrop — use closest (click often lands on SVG/path inside the button)
+      if (
+        (t.getAttribute && t.getAttribute("data-sn-settings-close") === "1") ||
+        (t.closest && t.closest('[data-sn-settings-close="1"]'))
+      ) {
         closeSettingsModal();
         return;
       }
       if (t.closest && t.closest("#sn-set-detect-lang")) {
         var det = detectLocaleLabel();
         setLocale(det.id, det.label);
-        var txt = el.querySelector(".sn-set-lang-text");
-        if (txt) txt.textContent = det.label;
+        refreshSettingsLangRow(el, det.id, det.label);
+        showSettingsToast();
+        return;
+      }
+      if (t.closest && t.closest("#sn-set-lang-btn")) {
+        var menu = el.querySelector("#sn-set-lang-menu");
+        var btn = el.querySelector("#sn-set-lang-btn");
+        if (menu) {
+          var open = menu.hasAttribute("hidden");
+          if (open) menu.removeAttribute("hidden");
+          else menu.setAttribute("hidden", "");
+          if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+        return;
+      }
+      var langOpt = t.closest && t.closest("#sn-set-lang-menu .sn-lang-opt");
+      if (langOpt) {
+        var lid = langOpt.getAttribute("data-sn-lang") || "en-GB";
+        var ll = langOpt.getAttribute("data-sn-lang-label") || "English (UK)";
+        setLocale(lid, ll);
+        refreshSettingsLangRow(el, lid, ll);
+        var menu2 = el.querySelector("#sn-set-lang-menu");
+        if (menu2) menu2.setAttribute("hidden", "");
+        var btn2 = el.querySelector("#sn-set-lang-btn");
+        if (btn2) btn2.setAttribute("aria-expanded", "false");
         showSettingsToast();
         return;
       }
@@ -2649,6 +2685,47 @@
       }
     });
     return el;
+  }
+
+  function refreshSettingsLangRow(el, id, label) {
+    if (!el) return;
+    var cur = LANG_OPTIONS.filter(function (o) {
+      return o.id === id;
+    })[0];
+    var txt = el.querySelector(".sn-set-lang-text");
+    if (txt) txt.textContent = label;
+    var flagHost = el.querySelector("#sn-set-lang-btn .sn-drop-flag-img");
+    if (flagHost && cur) {
+      flagHost.setAttribute("src", "https://img.sofascore.com/api/v1/country/" + cur.flag + "/flag");
+    }
+    el.querySelectorAll("#sn-set-lang-menu .sn-lang-opt").forEach(function (o) {
+      var on = (o.getAttribute("data-sn-lang") || "") === id;
+      o.classList.toggle("on", on);
+      o.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+
+  function settingsLangMenuHtml(selectedId) {
+    var html = '<ul class="sn-lang-menu sn-set-lang-menu" role="listbox" id="sn-set-lang-menu" hidden>';
+    for (var i = 0; i < LANG_OPTIONS.length; i++) {
+      var o = LANG_OPTIONS[i];
+      html +=
+        '<li role="option" aria-selected="' +
+        (o.id === selectedId ? "true" : "false") +
+        '" class="sn-lang-opt' +
+        (o.id === selectedId ? " on" : "") +
+        '" data-sn-lang="' +
+        o.id +
+        '" data-sn-lang-label="' +
+        o.label.replace(/"/g, "&quot;") +
+        '">' +
+        flagImg(o.flag) +
+        "<span>" +
+        o.label +
+        "</span></li>";
+    }
+    html += "</ul>";
+    return html;
   }
 
   function showSettingsToast() {
@@ -2682,54 +2759,142 @@
       return o.id === langId;
     })[0];
     var flag = flagImg(cur && cur.flag ? cur.flag : "GB");
+    var ic = dropIcons();
 
     el.innerHTML =
       '<div class="sn-settings-backdrop" data-sn-settings-close="1"></div>' +
-      '<div class="sn-settings-card" role="dialog" aria-modal="true" aria-labelledby="sn-settings-title">' +
-      '<div class="sn-settings-head">' +
-      '<div class="sn-settings-title" id="sn-settings-title">Settings</div>' +
-      '<button type="button" class="sn-settings-x" data-sn-settings-close="1" aria-label="Close">✕</button>' +
-      "</div>" +
+      '<div class="sn-settings-card" role="dialog" aria-modal="true" aria-label="Settings">' +
+      '<div class="sn-settings-grabber" aria-hidden="true"></div>' +
+      '<button type="button" class="sn-settings-x" data-sn-settings-close="1" aria-label="Close">' +
+      '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"/></svg>' +
+      "</button>" +
       '<div class="sn-settings-body">' +
-      '<div class="sn-settings-grid">' +
-      '<div class="sn-settings-block">' +
-      '<div class="sn-settings-label">Language</div>' +
-      '<div class="sn-set-lang-row">' +
+      '<div class="sn-settings-section sn-settings-section-lang">' +
+      '<button type="button" class="sn-set-lang-btn" id="sn-set-lang-btn" role="combobox" aria-expanded="false" aria-controls="sn-set-lang-menu">' +
       flag +
       '<span class="sn-set-lang-text">' +
       lang.replace(/</g, "&lt;") +
-      "</span></div>" +
-      '<button type="button" class="sn-drop-outline" id="sn-set-detect-lang">Automatically detect language</button>' +
+      "</span>" +
+      ic.chevronDown +
+      "</button>" +
+      settingsLangMenuHtml(langId) +
+      '<button type="button" class="sn-drop-outline sn-set-detect" id="sn-set-detect-lang">Automatically detect language</button>' +
       "</div>" +
-      '<div class="sn-settings-block">' +
-      '<div class="sn-settings-label">Odds format</div>' +
+      '<div class="sn-settings-section">' +
+      '<div class="sn-settings-label">Odds</div>' +
       radioRowHtml("odds", "decimal", "Decimal", odds === "decimal") +
       radioRowHtml("odds", "fractional", "Fractional", odds === "fractional") +
       radioRowHtml("odds", "american", "American", odds === "american") +
       "</div>" +
-      '<div class="sn-settings-block">' +
+      '<div class="sn-settings-section">' +
+      '<div class="sn-settings-label">Measurement system</div>' +
+      radioRowHtml("measure", "metric", "Metric", measure === "metric") +
+      radioRowHtml("measure", "imperial", "Imperial", measure === "imperial") +
+      "</div>" +
+      '<div class="sn-settings-section">' +
       '<div class="sn-settings-label">Theme</div>' +
       radioRowHtml("theme", "system", "System", theme === "system") +
       radioRowHtml("theme", "light", "Light", theme === "light") +
       radioRowHtml("theme", "dark", "Dark", theme === "dark") +
       "</div>" +
-      '<div class="sn-settings-block">' +
-      '<div class="sn-settings-label">Measurement system</div>' +
-      radioRowHtml("measure", "metric", "Metric", measure === "metric") +
-      radioRowHtml("measure", "imperial", "Imperial", measure === "imperial") +
-      "</div>" +
-      '<div class="sn-settings-block">' +
+      '<div class="sn-settings-section">' +
       '<div class="sn-settings-label">First day of the week</div>' +
       radioRowHtml("firstday", "monday", "Monday", first === "monday") +
       radioRowHtml("firstday", "saturday", "Saturday", first === "saturday") +
       radioRowHtml("firstday", "sunday", "Sunday", first === "sunday") +
       "</div>" +
-      "</div></div></div>";
+      "</div></div>";
 
     el.classList.remove("hidden");
     settingsOpen = true;
     document.documentElement.classList.add("sn-auth-lock");
   }
+
+  function looksLikeSettingsGear(el) {
+    if (!el || !el.getBoundingClientRect) return false;
+    if (el.id === "sn-live-tv-link" || el.getAttribute("data-sn-tv") === "1") return false;
+    if (el.getAttribute("data-sn-quick-links") === "1" || el.classList.contains("sn-header-ql-btn")) return false;
+    if (el.id === "sn-header-profile-btn" || el.getAttribute("data-sn-profile") === "1") return false;
+    var href = (el.getAttribute("href") || "").toLowerCase();
+    if (/\/settings\/?$/.test(href) || href.indexOf("/settings") >= 0) return true;
+    var aria = ((el.getAttribute("aria-label") || "") + " " + (el.getAttribute("title") || "")).toLowerCase();
+    if (/setting/.test(aria)) return true;
+    var r = el.getBoundingClientRect();
+    if (r.top > 90 || r.width < 16 || r.width > 48 || r.height < 16 || r.height > 48) return false;
+    var html = String(el.innerHTML || "");
+    // gear / cog path heuristics (Sofascore settings)
+    if (/M19\.14|M12 8c-2\.21|settings|cog/i.test(html)) return true;
+    if (el.querySelector && el.querySelector('svg path[d*="M19.14"], svg path[d*="M12 15.5"]')) return true;
+    return false;
+  }
+
+  function findHeaderSettingsControl() {
+    var header =
+      document.querySelector("header") ||
+      document.querySelector('[class*="Header"]');
+    if (!header) return null;
+    var owned = header.querySelector("[data-sn-settings-trigger='1']");
+    if (owned) return owned;
+    var nodes = header.querySelectorAll("a,button,[role='button']");
+    for (var i = 0; i < nodes.length; i++) {
+      if (looksLikeSettingsGear(nodes[i])) return nodes[i];
+    }
+    // Fallback: icon button immediately right of /feedback in the top bar
+    var feedback = header.querySelector('a[href="/feedback"],a[href*="/feedback"]');
+    if (feedback && feedback.parentElement) {
+      var kids = feedback.parentElement.querySelectorAll("a,button");
+      for (var k = 0; k < kids.length; k++) {
+        if (kids[k] === feedback) {
+          var next = kids[k + 1];
+          if (next && !next.getAttribute("href")) return next;
+        }
+      }
+    }
+    return null;
+  }
+
+  function bindHeaderSettingsGear() {
+    var btn = findHeaderSettingsControl();
+    if (!btn) return null;
+    try {
+      btn.setAttribute("data-sn-settings-trigger", "1");
+      if (!btn.getAttribute("aria-label")) btn.setAttribute("aria-label", "Settings");
+    } catch (e0) {}
+    if (btn.getAttribute("data-sn-settings-bound") === "1") return btn;
+    btn.setAttribute("data-sn-settings-bound", "1");
+    btn.addEventListener(
+      "click",
+      function (ev) {
+        try {
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+        } catch (e1) {}
+        openSettingsModal();
+      },
+      true
+    );
+    return btn;
+  }
+
+  // Intercept /settings navigations → sheet
+  document.addEventListener(
+    "click",
+    function (ev) {
+      var a = ev.target && ev.target.closest && ev.target.closest('a[href="/settings"],a[href="/settings/"],a[href*="/settings"]');
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (!/\/settings\/?(\?|#|$)/.test(href) && href.indexOf("/settings") < 0) return;
+      // ignore deep non-settings paths
+      if (/\/settings\//.test(href) && !/\/settings\/?(\?|#|$)/.test(href.replace(/https?:\/\/[^/]+/i, ""))) return;
+      try {
+        ev.preventDefault();
+        ev.stopPropagation();
+      } catch (e) {}
+      openSettingsModal();
+    },
+    true
+  );
 
   function renderLoggedInDrop(anchor) {
     var el = ensureDrop();
@@ -3781,6 +3946,9 @@
         ensureBottomNavProfileIcon();
       } catch (eBn0) {}
       try {
+        bindHeaderSettingsGear();
+      } catch (eSet0) {}
+      try {
         ensurePaywallSignIn();
         ensurePaywallQr();
       } catch (e2) {}
@@ -3803,6 +3971,9 @@
     try {
       bindQuickLinksBtn(profileBtn);
     } catch (e0) {}
+    try {
+      bindHeaderSettingsGear();
+    } catch (eSet) {}
     try {
       profileBtn = bindProfileBtn();
     } catch (ePass2) {}

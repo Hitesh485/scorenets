@@ -564,15 +564,15 @@ html.sn-auth-lock body {
   cursor: pointer;
 }
 
-/* ===== Settings modal (All settings) — theme via SofaScore tokens ===== */
+/* ===== Settings bottom sheet (Sofascore mobile gear) ===== */
 #sn-settings-modal {
   position: fixed;
   inset: 0;
   z-index: 2147483647;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 16px;
+  padding: 0;
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
@@ -583,82 +583,139 @@ html.sn-auth-lock body {
 #sn-settings-modal .sn-settings-backdrop {
   position: absolute;
   inset: 0;
-  background: var(--colors-overlay-darken3, rgba(0, 0, 0, 0.72));
+  background: rgba(0, 0, 0, 0.55);
 }
 
 #sn-settings-modal .sn-settings-card {
   position: relative;
   z-index: 1;
-  width: min(640px, calc(100vw - 24px));
-  max-height: calc(100vh - 48px);
+  width: 100%;
+  max-width: 560px;
+  max-height: min(92vh, 820px);
   overflow: auto;
+  background: #fff;
+  color: #121212;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.35);
+  padding: 8px 0 28px;
+}
+
+html.dark #sn-settings-modal .sn-settings-card {
   background: var(--colors-surface-sp, #272c32);
-  border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
-  color: var(--colors-surface-t, #fff);
+  color: var(--colors-neutrals-n-lv1, #eceef2);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.65);
 }
 
-#sn-settings-modal .sn-settings-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 20px 8px;
+@media (min-width: 900px) {
+  #sn-settings-modal {
+    align-items: center;
+    padding: 16px;
+  }
+  #sn-settings-modal .sn-settings-card {
+    border-radius: 16px;
+    max-height: calc(100vh - 48px);
+    width: min(420px, calc(100vw - 24px));
+  }
 }
 
-#sn-settings-modal .sn-settings-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--colors-neutrals-n-lv1, inherit);
+#sn-settings-modal .sn-settings-grabber {
+  width: 40px;
+  height: 4px;
+  border-radius: 999px;
+  background: #c9cdd3;
+  margin: 6px auto 4px;
+}
+
+html.dark #sn-settings-modal .sn-settings-grabber {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 #sn-settings-modal .sn-settings-x {
   appearance: none;
   border: 0;
   background: transparent;
-  color: var(--colors-neutrals-n-lv1, #fff);
-  font-size: 20px;
+  color: var(--colors-primary-default, #7a84ff);
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   line-height: 1;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
 #sn-settings-modal .sn-settings-body {
-  padding: 8px 16px 20px;
+  padding: 4px 16px 8px;
 }
 
-#sn-settings-modal .sn-settings-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+#sn-settings-modal .sn-settings-section {
+  padding: 14px 0 10px;
+  border-bottom: 1px solid #e6e8eb;
 }
 
-@media (max-width: 640px) {
-  #sn-settings-modal .sn-settings-grid {
-    grid-template-columns: 1fr;
-  }
+html.dark #sn-settings-modal .sn-settings-section {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-#sn-settings-modal .sn-settings-block {
-  background: var(--colors-surface-s2, rgba(0, 0, 0, 0.35));
-  border-radius: 10px;
-  padding: 14px 14px 10px;
+#sn-settings-modal .sn-settings-section:last-child {
+  border-bottom: 0;
 }
 
 #sn-settings-modal .sn-settings-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--colors-neutrals-n-lv3, #c5ccd4);
-  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #121212;
+  margin: 0 0 8px;
 }
 
-#sn-settings-modal .sn-set-lang-row {
+html.dark #sn-settings-modal .sn-settings-label {
+  color: var(--colors-neutrals-n-lv1, #eceef2);
+}
+
+#sn-settings-modal .sn-set-lang-btn {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
-  color: var(--colors-neutrals-n-lv1, #e8eef4);
-  font-size: 14px;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(122, 132, 255, 0.14);
+  color: #121212;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+html.dark #sn-settings-modal .sn-set-lang-btn {
+  background: rgba(122, 132, 255, 0.22);
+  color: var(--colors-neutrals-n-lv1, #eceef2);
+}
+
+#sn-settings-modal .sn-set-lang-btn .sn-drop-ico,
+#sn-settings-modal .sn-set-lang-btn .sn-drop-ico-sm,
+#sn-settings-modal .sn-set-lang-btn svg {
+  margin-left: auto;
+  width: 18px !important;
+  height: 18px !important;
+  color: #121212;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+html.dark #sn-settings-modal .sn-set-lang-btn svg {
+  color: #eceef2;
+}
+
+#sn-settings-modal .sn-set-lang-text {
+  flex: 1;
 }
 
 #sn-settings-modal .sn-drop-flag-img {
@@ -666,20 +723,61 @@ html.sn-auth-lock body {
   height: 24px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
+#sn-settings-modal .sn-set-detect,
 #sn-settings-modal .sn-drop-outline {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 12px;
   appearance: none;
-  background: transparent;
+  background: #fff;
   color: var(--colors-primary-default, #7a84ff);
-  border: 1px solid var(--colors-primary-default, #7a84ff);
+  border: 1.5px solid var(--colors-primary-default, #7a84ff);
   border-radius: 999px;
-  padding: 7px 14px;
+  padding: 8px 16px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
+  font-family: inherit;
+}
+
+html.dark #sn-settings-modal .sn-set-detect,
+html.dark #sn-settings-modal .sn-drop-outline {
+  background: transparent;
+}
+
+#sn-settings-modal .sn-set-lang-menu,
+#sn-settings-modal #sn-set-lang-menu {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 6px 0;
+  border-radius: 10px;
+  background: #f4f5f7;
+  max-height: 220px;
+  overflow: auto;
+}
+
+html.dark #sn-settings-modal .sn-set-lang-menu,
+html.dark #sn-settings-modal #sn-set-lang-menu {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+#sn-settings-modal #sn-set-lang-menu[hidden] {
+  display: none !important;
+}
+
+#sn-settings-modal .sn-lang-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#sn-settings-modal .sn-lang-opt.on,
+#sn-settings-modal .sn-lang-opt:hover {
+  background: rgba(122, 132, 255, 0.14);
 }
 
 #sn-settings-modal .sn-set-radio {
@@ -690,22 +788,32 @@ html.sn-auth-lock body {
   appearance: none;
   border: 0;
   background: transparent;
-  color: var(--colors-neutrals-n-lv1, #e8eef4);
-  font-size: 14px;
-  padding: 8px 4px;
+  color: #121212;
+  font-size: 15px;
+  padding: 10px 2px;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
   border-radius: 6px;
 }
 
-#sn-settings-modal .sn-set-radio:hover {
-  background: var(--colors-primary-highlight, rgba(122, 132, 255, 0.18));
+html.dark #sn-settings-modal .sn-set-radio {
+  color: var(--colors-neutrals-n-lv1, #eceef2);
+}
+
+#sn-settings-modal .sn-set-radio:hover,
+#sn-settings-modal .sn-set-radio.on {
+  background: rgba(122, 132, 255, 0.12);
+}
+
+html.dark #sn-settings-modal .sn-set-radio:hover,
+html.dark #sn-settings-modal .sn-set-radio.on {
+  background: rgba(122, 132, 255, 0.22);
 }
 
 #sn-settings-modal .sn-drop-radio {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: 2px solid var(--colors-primary-default, #7a84ff);
   box-sizing: border-box;
@@ -717,8 +825,8 @@ html.sn-auth-lock body {
 
 #sn-settings-modal .sn-set-radio.on .sn-drop-radio::after {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--colors-primary-default, #7a84ff);
 }
@@ -728,8 +836,8 @@ html.sn-auth-lock body {
   left: 50%;
   bottom: 28px;
   transform: translateX(-50%) translateY(20px);
-  background: var(--colors-surface-sp, #323843);
-  color: var(--colors-neutrals-n-lv1, #fff);
+  background: #323843;
+  color: #fff;
   padding: 12px 18px;
   border-radius: 10px;
   font-size: 14px;
@@ -738,7 +846,6 @@ html.sn-auth-lock body {
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--colors-neutrals-n-lv4, transparent);
 }
 
 #sn-settings-toast.show {
