@@ -824,25 +824,74 @@
   }
 
   function ensureQuickLinksBtn(profileBtn) {
-    // Header lightning / Quick links button removed from UI (page QL section stays)
+    var cluster = findMainHeaderActionsCluster();
+    // Prefer ScoreNet-owned bolt only (never mark sports-row icons as QL)
+    var owned = document.querySelector("header button.sn-header-ql-btn[data-sn-ql-injected='1']");
+    if (!owned) {
+      owned = document.querySelector("button.sn-header-ql-btn[data-sn-ql-injected='1']");
+    }
+
+    // Clear accidental marks on non-owned controls (stops sports-row false QL)
+    document.querySelectorAll("[data-sn-quick-links='1']").forEach(function (n) {
+      if (owned && n === owned) return;
+      if (n.getAttribute("data-sn-ql-injected") === "1") return;
+      try {
+        n.removeAttribute("data-sn-quick-links");
+        n.removeAttribute("data-sn-ql-bound");
+      } catch (eClr) {}
+    });
+
+    var parent =
+      (cluster && isPlausibleMainActionsRow(cluster) && cluster) ||
+      (profileBtn &&
+        profileBtn.parentElement &&
+        isPlausibleMainActionsRow(profileBtn.parentElement) &&
+        profileBtn.parentElement) ||
+      null;
+    if (!parent) return owned || null;
+
+    if (!owned) {
+      owned = document.createElement("button");
+      owned.type = "button";
+      owned.setAttribute("aria-label", "Quick links");
+      owned.setAttribute("data-sn-quick-links", "1");
+      owned.setAttribute("data-sn-ql-injected", "1");
+      owned.className = "sn-header-ql-btn";
+      owned.innerHTML =
+        '<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+        '<path fill="currentColor" d="M11 2 5.5 13H11l-1 9 8.5-12H13l1-8z"/></svg>';
+    }
+
+    owned.setAttribute("data-sn-quick-links", "1");
     try {
-      document
-        .querySelectorAll(
-          "header button.sn-header-ql-btn, header [data-sn-quick-links='1'], header button[aria-label='Quick links'], header button[aria-label='quick links']"
-        )
-        .forEach(function (n) {
-          try {
-            n.style.setProperty("display", "none", "important");
-            n.style.setProperty("visibility", "hidden", "important");
-            n.setAttribute("data-sn-native-ql-hidden", "1");
-            if (n.getAttribute("data-sn-ql-injected") === "1" && n.parentNode) {
-              n.parentNode.removeChild(n);
-            }
-          } catch (eHide) {}
-        });
-      hideNativeQuickLinkClones(null);
-    } catch (e0) {}
-    return null;
+      owned.style.setProperty("display", "inline-flex", "important");
+      owned.style.setProperty("visibility", "visible", "important");
+      owned.style.setProperty("opacity", "1", "important");
+      owned.removeAttribute("data-sn-hidden-dup-profile");
+      owned.removeAttribute("data-sn-native-ql-hidden");
+    } catch (eVis) {}
+
+    // Pin: immediately before profile when present, else append to search-row cluster
+    var before = null;
+    if (profileBtn && profileBtn.parentElement === parent) before = profileBtn;
+    else {
+      var existingProfile = document.getElementById("sn-header-profile-btn");
+      if (existingProfile && existingProfile.parentElement === parent) before = existingProfile;
+    }
+    try {
+      if (owned.parentElement !== parent || (before && owned.nextSibling !== before)) {
+        if (before) parent.insertBefore(owned, before);
+        else parent.appendChild(owned);
+      }
+    } catch (eMove) {
+      try {
+        parent.appendChild(owned);
+      } catch (e2) {}
+    }
+    try {
+      hideNativeQuickLinkClones(owned);
+    } catch (eNat) {}
+    return owned;
   }
 
   function findQuickLinksBtn(profileHint) {
@@ -1114,8 +1163,14 @@
     if (!header) return;
     var liveTv = document.getElementById("sn-live-tv-link");
     var liveLeft = liveTv && liveTv.getBoundingClientRect ? liveTv.getBoundingClientRect().left : -1;
+    var isDesktop = false;
+    try {
+      isDesktop = window.matchMedia && window.matchMedia("(min-width: 992px)").matches;
+    } catch (eMq) {
+      isDesktop = window.innerWidth >= 992;
+    }
 
-    // Header QL bolt removed — hide every injected bolt
+    // Deduplicate ScoreNet-injected bolts — keep owned (or rightmost)
     var injected = header.querySelectorAll("button.sn-header-ql-btn[data-sn-ql-injected='1']");
     if (!owned) {
       for (var d0 = 0; d0 < injected.length; d0++) {
@@ -1127,7 +1182,6 @@
     } else if (injected.length > 1) {
       var keep = owned;
       if (!keep) {
-        // Prefer bolt to the right of Live TV (canonical mobile order)
         for (var k = 0; k < injected.length; k++) {
           var ir = injected[k].getBoundingClientRect();
           if (liveLeft >= 0 && ir.left >= liveLeft - 2) {
@@ -1147,6 +1201,7 @@
       owned = keep;
     }
 
+    // Hide every non-owned lightning in header chrome (native SofaScore bolt, etc.)
     var nodes = header.querySelectorAll("button,a,[role='button']");
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
@@ -1159,17 +1214,32 @@
       try {
         var r = n.getBoundingClientRect();
         if (r.width < 8 || r.height < 8) continue;
-        if (r.top > 100) continue;
-        // Always hide native / unmarked bolts in header chrome (keep only owned)
-        // Especially the duplicate left of Live TV on mobile
-        if (liveLeft >= 0 && r.right <= liveLeft + 4) {
-          n.style.setProperty("display", "none", "important");
-          n.setAttribute("data-sn-native-ql-hidden", "1");
-          continue;
-        }
+        if (r.top > 120) continue;
         n.style.setProperty("display", "none", "important");
         n.setAttribute("data-sn-native-ql-hidden", "1");
       } catch (eHide) {}
+    }
+
+    // Desktop: if any bolt still sits left of owned in the same actions row, hide it
+    if (isDesktop && owned && owned.parentElement) {
+      try {
+        var ownedLeft = owned.getBoundingClientRect().left;
+        var sibs = owned.parentElement.querySelectorAll("button,a,[role='button']");
+        for (var s = 0; s < sibs.length; s++) {
+          var sib = sibs[s];
+          if (!sib || sib === owned) continue;
+          if (sib.id === "sn-live-tv-link" || sib.id === "sn-header-profile-btn") continue;
+          if (!(looksLikeLightning(sib) || isQuickLinksControl(sib) || sib.getAttribute("data-sn-ql-injected") === "1")) {
+            continue;
+          }
+          var sr = sib.getBoundingClientRect();
+          if (sr.width < 8 || sr.height < 8) continue;
+          if (sr.left < ownedLeft - 2) {
+            sib.style.setProperty("display", "none", "important");
+            sib.setAttribute("data-sn-native-ql-hidden", "1");
+          }
+        }
+      } catch (eLeft) {}
     }
   }
 
@@ -3929,6 +3999,10 @@
             profileBtn.setAttribute("data-sn-profile-trigger", "1");
           }
           hideDuplicateHeaderUserIcons(profileBtn);
+          var qlOwnedDesk =
+            document.querySelector("header button.sn-header-ql-btn[data-sn-ql-injected='1']") ||
+            document.querySelector("button.sn-header-ql-btn[data-sn-ql-injected='1']");
+          if (qlOwnedDesk) hideNativeQuickLinkClones(qlOwnedDesk);
         } else if (isMobileChrome()) {
           if (profileBtn) {
             profileBtn.style.setProperty("display", "none", "important");

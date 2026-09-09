@@ -1,3 +1,4 @@
+/* ScoreNet brand bust 20260910hdr — Live TV + QL header restored */
 /* ScoreNet brand — logo + ads + Google/Facebook/Apple auth. Do NOT touch Sofascore layout/flex. */
 
 /* Keep app shell visible + full-bleed mobile width.
@@ -27,21 +28,37 @@ button.sn-tv-match-btn {
   display: none !important;
 }
 
-/* Header Live TV chip — hidden (UI only; match-row TV already hidden above) */
+/* Live TV chip — compact, never blow out header */
 #sn-live-tv-link,
-a[data-sn-tv="1"],
-header a[href*="/tv-schedule"],
-header a[href*="live-tv"] {
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  width: 0 !important;
+a[data-sn-tv="1"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  margin: 0 8px 0 0 !important;
+  padding: 5px 9px !important;
+  border-radius: 8px !important;
+  background: #e10600 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  position: relative !important;
+  z-index: 5 !important;
+  max-width: none !important;
+  width: auto !important;
+  height: auto !important;
   min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  font-size: 0 !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
+
+/* Header Live TV chip — visible (match-row TV buttons stay hidden above) */
 
 /* Mobile header: drop Sofascore "download app" (overlaps Live TV) + collapse ad pocket */
 @media (max-width: 899px) {
@@ -58,6 +75,13 @@ header a[href*="live-tv"] {
     height: 0 !important;
     overflow: hidden !important;
     pointer-events: none !important;
+  }
+
+  #sn-live-tv-link,
+  a[data-sn-tv="1"] {
+    margin: 0 6px 0 0 !important;
+    padding: 4px 8px !important;
+    font-size: 10px !important;
   }
 
   /* 30x30 header ad pocket left of actions */
@@ -890,7 +914,8 @@ button.sn-header-ql-btn {
   height: 24px;
 }
 header [data-sn-native-profile-hidden="1"],
-header [data-sn-hidden-dup-profile="1"] {
+header [data-sn-hidden-dup-profile="1"],
+header [data-sn-native-ql-hidden="1"] {
   display: none !important;
 }
 
@@ -1304,21 +1329,7 @@ header [data-sn-hidden-dup-profile="1"] {
   display: none !important;
 }
 
-/* Header Quick links (lightning) — hidden; in-page Quick links section stays */
-header [data-sn-quick-links="1"],
-header button[aria-label="Quick links"],
-header button[aria-label="quick links"],
-header button.sn-header-ql-btn,
-header [data-sn-native-ql-hidden="1"] {
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  width: 0 !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
+/* Header Quick links (lightning) — visible again; in-page Quick links section unchanged */
 
 /* ===== Sofascore-clone sign-in modal (Google only) ===== */
 #sn-auth-modal {
@@ -2106,6 +2117,20 @@ body[data-sn-wc-page="1"] .desktop-only {
 }
 
 
+
+/* Match prediction carousel fully removed (Who will win / BTTS / score first) */
+[data-sn-vote-carousel-hidden="1"],
+[data-sn-who-win-hidden="1"]{
+  display:none!important;
+  height:0!important;
+  min-height:0!important;
+  max-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  overflow:hidden!important;
+  visibility:hidden!important;
+}
 
 /* ScoreNet predictions (Who will win + profile list) */
 .sn-predictions-list{display:flex;flex-direction:column;gap:12px;padding:8px 4px 16px;width:100%}

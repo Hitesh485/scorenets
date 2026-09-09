@@ -1,10 +1,12 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260910cmp";
+  var VER = "20260910tr";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
   var PIXEL = "/static/images/placeholders/pixel.png";
+  // SofaScore-style default trophy when mirrored tournament/team assets 404
+  var TOURNAMENT_DEFAULT = "/brand/tournament-default.png?v=" + VER;
 
   // Fantasy product removed — never land on /fantasy shells
   try {
@@ -494,6 +496,42 @@
       return url;
     }
   }
+
+  function isMirroredSofaImgAsset(url) {
+    try {
+      var s = String(url || "");
+      if (!s || /tournament-default/i.test(s)) return false;
+      return /\/assets\/img\.sofascore\.com\//i.test(s) || /^assets\/img\.sofascore\.com\//i.test(s);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function applyTournamentDefault(img) {
+    try {
+      if (!img || img.__snImgAssetFailed) return;
+      img.__snImgAssetFailed = 1;
+      img.removeAttribute("srcset");
+      img.removeAttribute("sizes");
+      img.src = TOURNAMENT_DEFAULT;
+      img.setAttribute("data-sn-tournament-fallback", "1");
+    } catch (e) {}
+  }
+
+  // Capture broken mirrored scrape icons → default trophy (SofaScore-style)
+  try {
+    document.addEventListener(
+      "error",
+      function (ev) {
+        var t = ev && ev.target;
+        if (!t || (t.tagName || "").toLowerCase() !== "img") return;
+        var s = t.currentSrc || t.getAttribute("src") || t.src || "";
+        if (!isMirroredSofaImgAsset(s)) return;
+        applyTournamentDefault(t);
+      },
+      true
+    );
+  } catch (eImgCap) {}
 
   function isSofaBrandAsset(url) {
     try {
@@ -1488,6 +1526,25 @@
   }
 
   brand();
+  // Broken scrape icons already in DOM (naturalWidth 0) → trophy fallback
+  try {
+    function snFixBrokenMirroredImgs() {
+      try {
+        var imgs = document.querySelectorAll('img[src*="/assets/img.sofascore.com/"],img[src*="assets/img.sofascore.com/"]');
+        for (var i = 0; i < imgs.length; i++) {
+          var img = imgs[i];
+          if (img.__snImgAssetFailed) continue;
+          if (img.complete && img.naturalWidth === 0) applyTournamentDefault(img);
+        }
+      } catch (e0) {}
+    }
+    snFixBrokenMirroredImgs();
+    document.addEventListener("DOMContentLoaded", snFixBrokenMirroredImgs);
+    window.addEventListener("load", snFixBrokenMirroredImgs);
+    [200, 800, 2000].forEach(function (ms) {
+      setTimeout(snFixBrokenMirroredImgs, ms);
+    });
+  } catch (eFixImg) {}
   // Team compare shell: hydrate ?ids= from live /api/v1 (Next disabled on this page).
   try {
     function snLoadCompareLive() {
@@ -1549,36 +1606,265 @@
     });
   } catch (e) {}
 
-  // Remove Sofascore "Who will win?" vote black card (collapse layout; no blank gap).
-  // Does not touch profile predictions list or weekly-challenge copy.
+  // Hide Torneo promo card + footer "Torneo by Sofascore" after Next hydration
+  // re-injects them from chunks (67101 / _app). Does NOT touch Quick Links "Torneo".
+  // CRITICAL: only hide the matched card/anchor — never climb into main/shell.
   try {
+    function snIsUnsafeTorneoTarget(el) {
+      if (!el || el === document.body || el === document.documentElement) return true;
+      if (el.tagName === "MAIN" || el.id === "__next") return true;
+      var cls = String(el.className || "");
+      if (/max-w_\[1440px\]|min-h_\[100vh\]|min-h_\[calc|stickyBox|fresnel-|bottomNavigation/i.test(cls)) {
+        return true;
+      }
+      try {
+        if (el.querySelectorAll('a[href*="/match/"]').length > 2) return true;
+      } catch (eQ) {}
+      var txt = el.textContent || "";
+      if (txt.length > 2200) return true;
+      return false;
+    }
+
+    function snHideTorneoNode(el) {
+      if (!el || el.getAttribute("data-sn-torneo-promo-hidden") === "1") return;
+      if (snIsUnsafeTorneoTarget(el)) return;
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("height", "0", "important");
+      el.style.setProperty("min-height", "0", "important");
+      el.style.setProperty("max-height", "0", "important");
+      el.style.setProperty("overflow", "hidden", "important");
+      el.style.setProperty("margin", "0", "important");
+      el.style.setProperty("padding", "0", "important");
+      el.style.setProperty("border", "0", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+      el.setAttribute("data-sn-torneo-promo-hidden", "1");
+    }
+
+    function snRestoreWrongTorneoHides() {
+      try {
+        var nodes = document.querySelectorAll('[data-sn-torneo-promo-hidden="1"]');
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          if (!snIsUnsafeTorneoTarget(el)) continue;
+          el.removeAttribute("data-sn-torneo-promo-hidden");
+          el.style.removeProperty("display");
+          el.style.removeProperty("height");
+          el.style.removeProperty("min-height");
+          el.style.removeProperty("max-height");
+          el.style.removeProperty("overflow");
+          el.style.removeProperty("margin");
+          el.style.removeProperty("padding");
+          el.style.removeProperty("border");
+          el.style.removeProperty("visibility");
+          el.style.removeProperty("pointer-events");
+        }
+      } catch (eRest) {}
+    }
+
+    function snIsTorneoPromoCard(card) {
+      if (!card || snIsUnsafeTorneoTarget(card)) return false;
+      var txt = card.textContent || "";
+      if (!/Did you know your tournament can appear here/i.test(txt)) return false;
+      if (!/Tournament planning tool/i.test(txt)) return false;
+      if (!card.querySelector('a[href*="torneo.sofascore.com"]')) return false;
+      return true;
+    }
+
+    function snHideTorneoPromo() {
+      try {
+        if (document.body && document.body.getAttribute("data-sn-profile-page") === "1") return;
+
+        // Footer link only (exact label) — leave QL "Torneo" chip alone
+        var links = document.querySelectorAll('a[href*="torneo.sofascore.com"]');
+        for (var i = 0; i < links.length; i++) {
+          var a = links[i];
+          if (a.getAttribute("data-sn-torneo-promo-hidden") === "1") continue;
+          var label = (a.textContent || "").replace(/\s+/g, " ").trim();
+          if (/^Torneo by Sofascore$/i.test(label)) {
+            snHideTorneoNode(a);
+            continue;
+          }
+          // Promo overlay cover-link → hide containing card only when promo copy matches
+          var aCls = String(a.getAttribute("class") || "");
+          if (/inset_0/.test(aCls) || /pos_absolute/.test(aCls)) {
+            var card = a.closest ? a.closest(".card-component") : null;
+            if (card && snIsTorneoPromoCard(card)) snHideTorneoNode(card);
+          }
+        }
+
+        // Backup: promo cards by copy + link
+        var cards = document.querySelectorAll(".card-component");
+        for (var c = 0; c < cards.length; c++) {
+          var cardEl = cards[c];
+          if (cardEl.getAttribute("data-sn-torneo-promo-hidden") === "1") continue;
+          if (snIsTorneoPromoCard(cardEl)) snHideTorneoNode(cardEl);
+        }
+
+        snRestoreWrongTorneoHides();
+      } catch (eHide) {}
+    }
+
+    snHideTorneoPromo();
+    document.addEventListener("DOMContentLoaded", snHideTorneoPromo);
+    [50, 200, 600, 1500, 3000, 6000].forEach(function (ms) {
+      setTimeout(snHideTorneoPromo, ms);
+    });
+    try {
+      var snTorneoT = null;
+      new MutationObserver(function () {
+        if (snTorneoT) return;
+        snTorneoT = setTimeout(function () {
+          snTorneoT = null;
+          snHideTorneoPromo();
+        }, 200);
+      }).observe(document.documentElement, { childList: true, subtree: true });
+    } catch (eObsT) {}
+  } catch (eTorneo) {}
+
+  // Remove Sofascore match prediction carousel entirely (Who will win / both teams score /
+  // who scores first + dots). Old hide only matched "Who will win?" so other slides + dots
+  // stayed. Does not touch profile predictions list or weekly-challenge copy.
+  // CRITICAL: never climb above the vote card — climbing while parent text still had
+  // "Who will win?" + "Cast your vote" (and no "Full-time") collapsed the whole desktop
+  // main shell (max-w_[1440px]), wiping the match list. Mobile had no vote widget → OK.
+  try {
+    var SN_VOTE_TITLE_RE =
+      /^(Who will win\?|Will both teams score\?|Who will score first\?)$/i;
+    var SN_VOTE_ANCHOR_RE =
+      /Who will win\?|Will both teams score\?|Who will score first\?/i;
+    var SN_VOTE_OUTSIDE_RE =
+      /\bFull-time\b|\bFT\b|Pre-match H2H|Head-to-head|Attack Momentum|TV Channels|Match info|Standings|Lineups|\bAbout\b|Live\s*\(|Finished|Upcoming|Football today/i;
+
+    function snIsUnsafeVoteCollapseTarget(el) {
+      if (!el || el === document.body || el === document.documentElement) return true;
+      if (el.tagName === "MAIN" || el.id === "__next") return true;
+      var cls = String(el.className || "");
+      if (/max-w_\[1440px\]|min-h_\[100vh\]|min-h_\[calc|stickyBox|fresnel-/i.test(cls)) {
+        return true;
+      }
+      try {
+        if (el.querySelectorAll('a[href*="/match/"]').length > 0) return true;
+      } catch (eQ) {}
+      var txt = el.textContent || "";
+      if (txt.length > 1800) return true;
+      return false;
+    }
+
+    function snCollapseVoteNode(el) {
+      if (!el || el.getAttribute("data-sn-vote-carousel-hidden") === "1") return;
+      if (snIsUnsafeVoteCollapseTarget(el)) return;
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("height", "0", "important");
+      el.style.setProperty("min-height", "0", "important");
+      el.style.setProperty("max-height", "0", "important");
+      el.style.setProperty("overflow", "hidden", "important");
+      el.style.setProperty("margin", "0", "important");
+      el.style.setProperty("padding", "0", "important");
+      el.style.setProperty("border", "0", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.setAttribute("data-sn-vote-carousel-hidden", "1");
+      el.setAttribute("data-sn-who-win-hidden", "1");
+    }
+
+    function snRestoreWrongVoteShells() {
+      try {
+        var nodes = document.querySelectorAll(
+          '[data-sn-vote-carousel-hidden="1"], [data-sn-who-win-hidden="1"]'
+        );
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          if (!snIsUnsafeVoteCollapseTarget(el)) continue;
+          el.removeAttribute("data-sn-vote-carousel-hidden");
+          el.removeAttribute("data-sn-who-win-hidden");
+          el.style.removeProperty("display");
+          el.style.removeProperty("height");
+          el.style.removeProperty("min-height");
+          el.style.removeProperty("max-height");
+          el.style.removeProperty("overflow");
+          el.style.removeProperty("margin");
+          el.style.removeProperty("padding");
+          el.style.removeProperty("border");
+          el.style.removeProperty("visibility");
+        }
+      } catch (eRest) {}
+    }
+
+    function snIsVoteOnlyNode(n) {
+      if (!n || snIsUnsafeVoteCollapseTarget(n)) return false;
+      var txt = n.textContent || "";
+      if (!SN_VOTE_ANCHOR_RE.test(txt)) return false;
+      if (!/Cast your vote|Total votes/i.test(txt)) return false;
+      if (SN_VOTE_OUTSIDE_RE.test(txt)) return false;
+      return true;
+    }
+
+    function snFindVoteCarouselRoot(from) {
+      var n = from;
+      var best = from;
+      var cardRoot = from && from.closest ? from.closest(".card-component") : null;
+      for (var i = 0; i < 8 && n && n.parentElement; i++) {
+        var parent = n.parentElement;
+        if (parent === document.body || parent === document.documentElement) break;
+        if (snIsUnsafeVoteCollapseTarget(parent)) break;
+        // Stay inside the vote card — never promote past .card-component.
+        if (cardRoot && parent !== cardRoot && !cardRoot.contains(parent)) break;
+        if (snIsVoteOnlyNode(parent)) {
+          best = parent;
+          n = parent;
+          continue;
+        }
+        // Parent also has odds/H2H → current node is the carousel (or card) to kill.
+        var ptxt = parent.textContent || "";
+        if (
+          SN_VOTE_OUTSIDE_RE.test(ptxt) &&
+          SN_VOTE_ANCHOR_RE.test(n.textContent || "") &&
+          /Cast your vote|Total votes/i.test(n.textContent || "")
+        ) {
+          return n;
+        }
+        break;
+      }
+      if (cardRoot && snIsVoteOnlyNode(cardRoot)) return cardRoot;
+      return best;
+    }
+
     function snHideWhoWillWinCards() {
       try {
         if (document.body && document.body.getAttribute("data-sn-profile-page") === "1") return;
-        var nodes = document.querySelectorAll("span");
+        snRestoreWrongVoteShells();
+        var nodes = document.querySelectorAll("span, h2, h3, p, div");
         for (var i = 0; i < nodes.length; i++) {
           var el = nodes[i];
           if (el.closest("#sn-predictions-list")) continue;
-          if (el.closest("[data-sn-who-win-hidden='1']")) continue;
+          if (el.closest("[data-sn-vote-carousel-hidden='1']")) continue;
+          if (el.closest("[data-sn-wc-vote-row='1']")) continue;
           var t = (el.textContent || "").replace(/\s+/g, " ").trim();
-          if (t !== "Who will win?") continue;
-          var card = el.closest(".card-component");
+          if (!SN_VOTE_TITLE_RE.test(t) && t !== "Cast your vote!") continue;
+          // Prefer the title node; "Cast your vote!" alone is ok if near a title.
+          if (t === "Cast your vote!") {
+            var near = (el.parentElement && el.parentElement.textContent) || "";
+            if (!SN_VOTE_ANCHOR_RE.test(near)) continue;
+          }
+          var card = el.closest(".card-component") || el.parentElement;
           if (!card) continue;
+          if (snIsUnsafeVoteCollapseTarget(card)) continue;
           var ct = card.textContent || "";
           if (!/Cast your vote|Total votes/i.test(ct)) continue;
-          card.style.setProperty("display", "none", "important");
-          card.style.setProperty("height", "0", "important");
-          card.style.setProperty("overflow", "hidden", "important");
-          card.style.setProperty("margin", "0", "important");
-          card.style.setProperty("padding", "0", "important");
-          card.style.setProperty("border", "0", "important");
-          card.setAttribute("data-sn-who-win-hidden", "1");
+          if (!SN_VOTE_ANCHOR_RE.test(ct)) continue;
+          if (SN_VOTE_OUTSIDE_RE.test(ct) && (card.querySelectorAll('a[href*="/match/"]').length > 0)) {
+            continue;
+          }
+          var root = snFindVoteCarouselRoot(card);
+          if (snIsUnsafeVoteCollapseTarget(root)) root = card;
+          snCollapseVoteNode(root);
+          if (root !== card) snCollapseVoteNode(card);
         }
       } catch (eHide) {}
     }
     snHideWhoWillWinCards();
     document.addEventListener("DOMContentLoaded", snHideWhoWillWinCards);
-    [50, 200, 600, 1500, 3000].forEach(function (ms) {
+    [50, 200, 600, 1500, 3000, 6000].forEach(function (ms) {
       setTimeout(snHideWhoWillWinCards, ms);
     });
     try {

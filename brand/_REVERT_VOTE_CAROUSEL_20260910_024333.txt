@@ -1,0 +1,4 @@
+ScoreNet remove prediction carousel deploy 20260910_024333
+VER boot: 20260910vote
+Revert: bash /var/www/scorenet/_revert_vote_carousel_20260910_024333/REVERT.sh
+Files: brand/boot.js, brand/brand.css + boot.js?v= bust on HTML shells
