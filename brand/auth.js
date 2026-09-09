@@ -1332,7 +1332,7 @@
       "<span>Give us feedback</span>" +
       qlChevron() +
       "</button>" +
-      qlItem("https://sofascore.helpscoutdocs.com", "Sofascore FAQ", faqIco, true) +
+      qlItem("https://sofascore.helpscoutdocs.com", "ScoreNet FAQ", faqIco, true) +
       "</div></div>";
 
     if (mobile) {

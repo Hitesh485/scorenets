@@ -1,7 +1,9 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260905e";
+  var VER = "20260909ui";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
+  // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
+  var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
   var PIXEL = "/static/images/placeholders/pixel.png";
 
   // Fantasy product removed — never land on /fantasy shells
@@ -1031,6 +1033,72 @@
     } catch (e) {}
   }
 
+  function rebrandUiLabel(s) {
+    if (!s || !/sofascore/i.test(s)) return s;
+    // Absolute URLs / bare hosts stay untouched (API & assets)
+    var t = String(s).trim();
+    if (/^https?:\/\//i.test(t)) return s;
+    if (/^[\w.-]*sofascore\.com\b/i.test(t) && !/\s/.test(t)) return s;
+    SOFA_BRAND_NAME_RE.lastIndex = 0;
+    return String(s).replace(SOFA_BRAND_NAME_RE, "ScoreNet");
+  }
+
+  function scrubBrandMeta() {
+    try {
+      document
+        .querySelectorAll(
+          'meta[property="og:title"],meta[property="og:site_name"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"],meta[name="description"],meta[name="application-name"],meta[name="apple-mobile-web-app-title"],meta[property="twitter:title"]'
+        )
+        .forEach(function (m) {
+          var c = m.getAttribute("content");
+          if (!c || !/sofascore/i.test(c)) return;
+          if (/^https?:\/\//i.test(String(c).trim())) return;
+          var n = rebrandUiLabel(c);
+          if (n !== c) m.setAttribute("content", n);
+        });
+    } catch (e) {}
+  }
+
+  function scrubBrandAttrs() {
+    try {
+      document.querySelectorAll("[title],[aria-label],[alt],[placeholder]").forEach(function (el) {
+        ["title", "aria-label", "alt", "placeholder"].forEach(function (attr) {
+          if (!el.hasAttribute(attr)) return;
+          var v = el.getAttribute(attr);
+          if (!v || !/sofascore/i.test(v)) return;
+          var n = rebrandUiLabel(v);
+          if (n !== v) el.setAttribute(attr, n);
+        });
+      });
+    } catch (e) {}
+  }
+
+  function scrubBrandTextNodes() {
+    try {
+      var root = document.body;
+      if (!root) return;
+      var skip = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1, CODE: 1, PRE: 1, SVG: 1 };
+      var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (node) {
+          var p = node.parentElement;
+          if (!p || skip[p.tagName]) return NodeFilter.FILTER_REJECT;
+          var t = node.nodeValue;
+          if (!t || !/sofascore/i.test(t)) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      });
+      var nodes = [];
+      var n;
+      while ((n = tw.nextNode())) nodes.push(n);
+      for (var i = 0; i < nodes.length; i++) {
+        var cur = nodes[i];
+        var v = cur.nodeValue;
+        var nv = rebrandUiLabel(v);
+        if (nv !== v) cur.nodeValue = nv;
+      }
+    } catch (e) {}
+  }
+
   function brand() {
     try {
       ensureAppVisible();
@@ -1053,13 +1121,18 @@
 
       // Do NOT rewrite generic logo_*.png site-wide — those are bookmaker / partner marks in odds
 
+      // UI-only brand rename (text/meta/attrs). Never href/src/API hosts.
+      scrubBrandMeta();
+      scrubBrandAttrs();
+      scrubBrandTextNodes();
+
       killAdvertisementSlots();
       ensureMobileFooter();
 
       unhideScoreLists();
 
       if (document.title && /sofascore/i.test(document.title)) {
-        document.title = document.title.replace(/Sofascore/gi, "ScoreNet");
+        document.title = rebrandUiLabel(document.title);
       }
     } catch (e) {}
   }
