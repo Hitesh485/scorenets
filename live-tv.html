@@ -221,7 +221,7 @@
     </a>
     <div class="sn-tv-health">
       <span class="sn-tv-dot" id="sn-tv-dot"></span>
-      <span class="sn-tv-health-text" id="sn-tv-health-text">Checking tunnel…</span>
+      <span class="sn-tv-health-text" id="sn-tv-health-text">Checking…</span>
       <a class="sn-tv-back" href="/">Scores</a>
     </div>
   </header>
@@ -229,28 +229,21 @@
   <main class="sn-tv-wrap">
     <section class="sn-tv-player" id="sn-tv-player">
       <div class="sn-tv-empty" id="sn-tv-empty">
-        <strong>Pick a live event</strong>
-        <span>Enter an event ID (gmid) and press Watch</span>
+        <strong>Pick a live match</strong>
+        <span>Choose a match below to start watching</span>
       </div>
     </section>
 
     <aside class="sn-tv-panel">
       <h1>Watch live</h1>
-      <p>Live TV matches from exchange (relay :8799). Dead/old event IDs show “starting soon” — use chips below.</p>
+      <p>Select a live match below, then press Watch.</p>
       <div class="sn-tv-row">
-        <input id="sn-tv-gmid" type="text" inputmode="numeric" placeholder="Event ID (live TV)" autocomplete="off" />
+        <input id="sn-tv-gmid" type="text" inputmode="numeric" placeholder="Or paste match ID" autocomplete="off" />
         <button type="button" id="sn-tv-play">Watch</button>
       </div>
       <div id="sn-tv-quick" style="margin-top:10px"></div>
       <div class="sn-tv-status" id="sn-tv-status"></div>
-      <p style="margin-top:12px;font-size:13px;line-height:1.5;color:#aaa">
-        Stream PC relay se unlock hota hai (browser pe direct playg3 IP-lock / starting soon dikhata hai).
-      </p>
-      <p style="margin-top:8px;font-size:13px">
-        <a id="sn-tv-upstream" href="#" target="_blank" rel="noreferrer" style="display:none;color:#7eb8ff;font-weight:600">
-          Open upstream player (new tab)
-        </a>
-      </p>
+      <a id="sn-tv-upstream" href="#" target="_blank" rel="noreferrer" hidden aria-hidden="true"></a>
     </aside>
   </main>
 
@@ -337,21 +330,17 @@
           var allows = (u && u.allows) || [];
           hasLiveProxy = allows.indexOf("live-proxy") !== -1;
           dot.className = "sn-tv-dot " + (ok && hasLiveProxy ? "ok" : "bad");
-          if (!ok) {
-            setHealthLabel("TV tunnel down");
-          } else if (!hasLiveProxy) {
-            setHealthLabel("Tunnel OK · live-proxy missing — restart PC relay");
+          if (!ok || !hasLiveProxy) {
+            setHealthLabel("Unavailable");
           } else {
-            setHealthLabel(
-              "TV tunnel OK · " + ((u && u.user) || "Demo9304") + " · :8799"
-            );
+            setHealthLabel("Live");
           }
           return hasLiveProxy;
         })
         .catch(function () {
           hasLiveProxy = false;
           dot.className = "sn-tv-dot bad";
-          setHealthLabel("TV tunnel unreachable");
+          setHealthLabel("Unavailable");
           return false;
         });
       return healthReady;
@@ -394,37 +383,34 @@
     function setUpstreamLink(url) {
       var a = document.getElementById("sn-tv-upstream");
       if (!a) return;
-      if (url) {
-        a.href = url;
-        a.style.display = "";
-      } else {
-        a.style.display = "none";
-      }
+      a.hidden = true;
+      a.setAttribute("aria-hidden", "true");
+      if (url) a.href = url;
     }
 
     function playGmid(gmid) {
       gmid = String(gmid || "").trim();
       if (!/^\d{1,15}$/.test(gmid)) {
-        setStatus("Enter a valid numeric event ID");
+        setStatus("Choose a match or enter a valid match ID");
         return;
       }
       lastGmid = gmid;
       input.value = gmid;
-      setStatus("Loading stream for " + gmid + "…");
+      var known = liveTvEvents.find(function (e) { return String(e.gmid) === gmid; });
+      setStatus("Loading" + (known && known.name ? " · " + known.name : "") + "…");
       history.replaceState(null, "", "/live-tv/?gmid=" + encodeURIComponent(gmid));
 
       if (!hasLiveProxy) {
         showPlayerMsg(
-          "Live proxy missing on PC",
-          "Home PC pe chalao: pc_relay_package\\home_pc_setup\\START_SPORTS_TV_8799.ps1"
+          "Live TV unavailable",
+          "Please try again in a moment."
         );
-        setStatus("Blocked: PC relay needs live-proxy");
+        setStatus("Live TV is temporarily unavailable");
         return;
       }
 
-      var known = liveTvEvents.find(function (e) { return String(e.gmid) === gmid; });
       if (liveTvEvents.length && !known) {
-        setStatus("Warning: " + gmid + " live TV list me nahi — try kar rahe hain…");
+        setStatus("Starting stream…");
       }
 
       ensureViewerIp(function (viewerIp) {
@@ -442,18 +428,18 @@
             if (!data || !data.url) {
               showPlayerMsg(
                 "Stream unavailable",
-                (data && (data.hint || data.msg || data.error)) || "gettv returned no URL."
+                "This match isn’t available to watch right now. Try another live match."
               );
-              setStatus("No stream for " + gmid);
+              setStatus("Stream unavailable");
               setUpstreamLink("");
               return;
             }
             if (data.probe && data.probe.locked && !data.probe.hasStream) {
               showPlayerMsg(
-                "Stream starting soon / offline",
-                "Is gmid pe abhi live video nahi hai (placeholder). Neeche se koi LIVE TV match choose karo."
+                "Starting soon",
+                "This match isn’t live on TV yet. Pick another match below."
               );
-              setStatus("Offline: " + gmid + " — pick a live TV chip");
+              setStatus("Starting soon — pick another match");
               setUpstreamLink(data.embedDirect || data.url);
               return;
             }
@@ -476,14 +462,14 @@
               player.appendChild(iframe);
             }
             iframe.onload = function () {
-              setStatus("Playing " + gmid + (known ? " · " + (known.name || "") : "") + " (PC relay)");
+              setStatus("Now playing" + (known && known.name ? " · " + known.name : ""));
             };
-            iframe.onerror = function () { setStatus("Player failed — Open upstream link"); };
+            iframe.onerror = function () { setStatus("Playback failed — try again"); };
             iframe.src = watchUrl;
-            setStatus("Loading via local /xfeed-rts → :8799");
+            setStatus("Loading" + (known && known.name ? " · " + known.name : "") + "…");
           })
-          .catch(function (err) {
-            showPlayerMsg("Stream error", String(err && err.message ? err.message : err));
+          .catch(function () {
+            showPlayerMsg("Something went wrong", "Please try again or pick another match.");
             setStatus("Failed to load stream");
           });
       });
@@ -507,7 +493,7 @@
         return;
       }
       if (bootT1 && bootT2) {
-        setStatus("Resolving live stream for " + bootT1 + " vs " + bootT2 + "…");
+        setStatus("Finding live stream…");
         fetch("/backend/tv/resolve?t1=" + encodeURIComponent(bootT1) + "&t2=" + encodeURIComponent(bootT2) + "&t=" + Date.now(), {
           credentials: "include",
           cache: "no-store",
@@ -519,20 +505,20 @@
               return;
             }
             showPlayerMsg(
-              "Stream nahi mila",
-              (j && j.hint) || "Exchange live list / highlighthome chahiye."
+              "Match not found",
+              "No live stream matched this game. Pick a match below."
             );
-            setStatus((j && (j.hint || j.error)) || "No matching live TV event");
+            setStatus("No matching live match");
           })
-          .catch(function (err) {
-            showPlayerMsg("Resolve failed", String(err && err.message || err));
+          .catch(function () {
+            showPlayerMsg("Something went wrong", "Please try again shortly.");
           });
         return;
       }
       if (liveTvEvents.length) {
         playGmid(String(liveTvEvents[0].gmid));
       } else {
-        showPlayerMsg("No live TV", "Abhi koi live+TV match nahi. Baad me try karo.");
+        showPlayerMsg("No live matches", "Check back soon for live Sports TV.");
       }
     });
   })();

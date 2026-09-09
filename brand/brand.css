@@ -27,25 +27,20 @@ button.sn-tv-match-btn {
   display: none !important;
 }
 
-/* Live TV chip — compact, never blow out header */
+/* Header Live TV chip — hidden (UI only; match-row TV already hidden above) */
 #sn-live-tv-link,
-a[data-sn-tv="1"] {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex: 0 0 auto !important;
-  margin: 0 8px 0 0 !important;
-  padding: 5px 9px !important;
-  border-radius: 8px !important;
-  background: #e10600 !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
-  line-height: 1 !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  position: relative !important;
-  z-index: 5 !important;
+a[data-sn-tv="1"],
+header a[href*="/tv-schedule"],
+header a[href*="live-tv"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
 }
 
 /* Mobile header: drop Sofascore "download app" (overlaps Live TV) + collapse ad pocket */
@@ -76,12 +71,6 @@ a[data-sn-tv="1"] {
     overflow: hidden !important;
   }
 
-  #sn-live-tv-link,
-  a[data-sn-tv="1"] {
-    margin: 0 6px 0 0 !important;
-    padding: 4px 8px !important;
-    font-size: 10px !important;
-  }
 }
 
 /* ScoreNet logo */
@@ -575,7 +564,7 @@ html.sn-auth-lock body {
   cursor: pointer;
 }
 
-/* ===== Settings modal (All settings) ===== */
+/* ===== Settings modal (All settings) — theme via SofaScore tokens ===== */
 #sn-settings-modal {
   position: fixed;
   inset: 0;
@@ -594,7 +583,7 @@ html.sn-auth-lock body {
 #sn-settings-modal .sn-settings-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.72);
+  background: var(--colors-overlay-darken3, rgba(0, 0, 0, 0.72));
 }
 
 #sn-settings-modal .sn-settings-card {
@@ -603,10 +592,10 @@ html.sn-auth-lock body {
   width: min(640px, calc(100vw - 24px));
   max-height: calc(100vh - 48px);
   overflow: auto;
-  background: #272c32;
+  background: var(--colors-surface-sp, #272c32);
   border-radius: 16px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
-  color: #fff;
+  color: var(--colors-surface-t, #fff);
 }
 
 #sn-settings-modal .sn-settings-head {
@@ -619,13 +608,14 @@ html.sn-auth-lock body {
 #sn-settings-modal .sn-settings-title {
   font-size: 22px;
   font-weight: 700;
+  color: var(--colors-neutrals-n-lv1, inherit);
 }
 
 #sn-settings-modal .sn-settings-x {
   appearance: none;
   border: 0;
   background: transparent;
-  color: #fff;
+  color: var(--colors-neutrals-n-lv1, #fff);
   font-size: 20px;
   cursor: pointer;
   width: 36px;
@@ -650,7 +640,7 @@ html.sn-auth-lock body {
 }
 
 #sn-settings-modal .sn-settings-block {
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--colors-surface-s2, rgba(0, 0, 0, 0.35));
   border-radius: 10px;
   padding: 14px 14px 10px;
 }
@@ -658,7 +648,7 @@ html.sn-auth-lock body {
 #sn-settings-modal .sn-settings-label {
   font-size: 13px;
   font-weight: 600;
-  color: #c5ccd4;
+  color: var(--colors-neutrals-n-lv3, #c5ccd4);
   margin-bottom: 10px;
 }
 
@@ -667,7 +657,7 @@ html.sn-auth-lock body {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: #e8eef4;
+  color: var(--colors-neutrals-n-lv1, #e8eef4);
   font-size: 14px;
 }
 
@@ -683,8 +673,8 @@ html.sn-auth-lock body {
   margin-bottom: 4px;
   appearance: none;
   background: transparent;
-  color: #7a84ff;
-  border: 1px solid #7a84ff;
+  color: var(--colors-primary-default, #7a84ff);
+  border: 1px solid var(--colors-primary-default, #7a84ff);
   border-radius: 999px;
   padding: 7px 14px;
   font-weight: 600;
@@ -700,7 +690,7 @@ html.sn-auth-lock body {
   appearance: none;
   border: 0;
   background: transparent;
-  color: #e8eef4;
+  color: var(--colors-neutrals-n-lv1, #e8eef4);
   font-size: 14px;
   padding: 8px 4px;
   cursor: pointer;
@@ -710,14 +700,14 @@ html.sn-auth-lock body {
 }
 
 #sn-settings-modal .sn-set-radio:hover {
-  background: rgba(122, 132, 255, 0.18);
+  background: var(--colors-primary-highlight, rgba(122, 132, 255, 0.18));
 }
 
 #sn-settings-modal .sn-drop-radio {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #7a84ff;
+  border: 2px solid var(--colors-primary-default, #7a84ff);
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -730,7 +720,7 @@ html.sn-auth-lock body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #7a84ff;
+  background: var(--colors-primary-default, #7a84ff);
 }
 
 #sn-settings-toast {
@@ -738,8 +728,8 @@ html.sn-auth-lock body {
   left: 50%;
   bottom: 28px;
   transform: translateX(-50%) translateY(20px);
-  background: #323843;
-  color: #fff;
+  background: var(--colors-surface-sp, #323843);
+  color: var(--colors-neutrals-n-lv1, #fff);
   padding: 12px 18px;
   border-radius: 10px;
   font-size: 14px;
@@ -748,6 +738,7 @@ html.sn-auth-lock body {
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--colors-neutrals-n-lv4, transparent);
 }
 
 #sn-settings-toast.show {
@@ -1206,20 +1197,11 @@ header [data-sn-hidden-dup-profile="1"] {
   display: none !important;
 }
 
-/* Quick links (lightning) must never be collapsed by dup-profile hiding */
+/* Header Quick links (lightning) — hidden; in-page Quick links section stays */
 header [data-sn-quick-links="1"],
 header button[aria-label="Quick links"],
-header button[aria-label="quick links"] {
-  display: inline-flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
-}
-header [data-sn-quick-links="1"][data-sn-hidden-dup-profile],
-header button[aria-label="Quick links"][data-sn-hidden-dup-profile] {
-  display: inline-flex !important;
-}
-/* Native Sofascore bolt clone (left of Live TV) — hide when ScoreNet QL exists */
+header button[aria-label="quick links"],
+header button.sn-header-ql-btn,
 header [data-sn-native-ql-hidden="1"] {
   display: none !important;
   visibility: hidden !important;
@@ -1507,10 +1489,12 @@ button img[data-sn-avatar],
 
 .sn-profile-page-avatar-host .sn-profile-page-icon,
 [data-sn-page-avatar="1"] .sn-profile-page-icon {
-  width: 46%;
-  height: 46%;
-  display: block;
-  opacity: 0.9;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  opacity: 1 !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
 }
 
 .sn-profile-page-avatar-host .sn-profile-page-photo,

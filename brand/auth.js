@@ -44,10 +44,11 @@
     }
   }
 
+  var PAGE_AVATAR_SRC = "/brand/profile-avatar.svg?v=20260909av2";
   var PAGE_ICON =
-    '<svg class="sn-profile-page-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-    '<path fill="currentColor" d="M12 12a4.8 4.8 0 1 0-4.8-4.8A4.8 4.8 0 0 0 12 12zm0 2.4c-3.2 0-9.6 1.61-9.6 4.8V21h19.2v-1.8c0-3.19-6.4-4.8-9.6-4.8z"/>' +
-    "</svg>";
+    '<img class="sn-profile-page-photo sn-profile-page-icon" src="' +
+    PAGE_AVATAR_SRC +
+    '" alt="" width="128" height="128" decoding="async" />';
 
   function stripAuthQuery() {
     try {
@@ -823,73 +824,25 @@
   }
 
   function ensureQuickLinksBtn(profileBtn) {
-    var cluster = findMainHeaderActionsCluster();
-    // Prefer ScoreNet-owned bolt only (never mark sports-row icons as QL)
-    var owned = document.querySelector("header button.sn-header-ql-btn[data-sn-ql-injected='1']");
-    if (!owned) {
-      owned = document.querySelector("button.sn-header-ql-btn[data-sn-ql-injected='1']");
-    }
-
-    // Clear accidental marks on non-owned controls (stops sports-row false QL)
-    document.querySelectorAll("[data-sn-quick-links='1']").forEach(function (n) {
-      if (owned && n === owned) return;
-      if (n.getAttribute("data-sn-ql-injected") === "1") return;
-      try {
-        n.removeAttribute("data-sn-quick-links");
-        n.removeAttribute("data-sn-ql-bound");
-      } catch (eClr) {}
-    });
-
-    var parent =
-      (cluster && isPlausibleMainActionsRow(cluster) && cluster) ||
-      (profileBtn &&
-        profileBtn.parentElement &&
-        isPlausibleMainActionsRow(profileBtn.parentElement) &&
-        profileBtn.parentElement) ||
-      null;
-    if (!parent) return owned || null;
-
-    if (!owned) {
-      owned = document.createElement("button");
-      owned.type = "button";
-      owned.setAttribute("aria-label", "Quick links");
-      owned.setAttribute("data-sn-quick-links", "1");
-      owned.setAttribute("data-sn-ql-injected", "1");
-      owned.className = "sn-header-ql-btn";
-      owned.innerHTML =
-        '<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-        '<path fill="currentColor" d="M11 2 5.5 13H11l-1 9 8.5-12H13l1-8z"/></svg>';
-    }
-
-    owned.setAttribute("data-sn-quick-links", "1");
+    // Header lightning / Quick links button removed from UI (page QL section stays)
     try {
-      owned.style.setProperty("display", "inline-flex", "important");
-      owned.style.setProperty("visibility", "visible", "important");
-      owned.style.setProperty("opacity", "1", "important");
-      owned.removeAttribute("data-sn-hidden-dup-profile");
-    } catch (eVis) {}
-
-    // Pin: immediately before profile when present, else append to search-row cluster
-    var before = null;
-    if (profileBtn && profileBtn.parentElement === parent) before = profileBtn;
-    else {
-      var existingProfile = document.getElementById("sn-header-profile-btn");
-      if (existingProfile && existingProfile.parentElement === parent) before = existingProfile;
-    }
-    try {
-      if (owned.parentElement !== parent || (before && owned.nextSibling !== before)) {
-        if (before) parent.insertBefore(owned, before);
-        else parent.appendChild(owned);
-      }
-    } catch (eMove) {
-      try {
-        parent.appendChild(owned);
-      } catch (e2) {}
-    }
-    try {
-      hideNativeQuickLinkClones(owned);
-    } catch (eNat) {}
-    return owned;
+      document
+        .querySelectorAll(
+          "header button.sn-header-ql-btn, header [data-sn-quick-links='1'], header button[aria-label='Quick links'], header button[aria-label='quick links']"
+        )
+        .forEach(function (n) {
+          try {
+            n.style.setProperty("display", "none", "important");
+            n.style.setProperty("visibility", "hidden", "important");
+            n.setAttribute("data-sn-native-ql-hidden", "1");
+            if (n.getAttribute("data-sn-ql-injected") === "1" && n.parentNode) {
+              n.parentNode.removeChild(n);
+            }
+          } catch (eHide) {}
+        });
+      hideNativeQuickLinkClones(null);
+    } catch (e0) {}
+    return null;
   }
 
   function findQuickLinksBtn(profileHint) {
@@ -1162,9 +1115,16 @@
     var liveTv = document.getElementById("sn-live-tv-link");
     var liveLeft = liveTv && liveTv.getBoundingClientRect ? liveTv.getBoundingClientRect().left : -1;
 
-    // Keep a single ScoreNet-owned bolt; hide extras if any
+    // Header QL bolt removed — hide every injected bolt
     var injected = header.querySelectorAll("button.sn-header-ql-btn[data-sn-ql-injected='1']");
-    if (injected.length > 1) {
+    if (!owned) {
+      for (var d0 = 0; d0 < injected.length; d0++) {
+        try {
+          injected[d0].style.setProperty("display", "none", "important");
+          injected[d0].setAttribute("data-sn-native-ql-hidden", "1");
+        } catch (eAll) {}
+      }
+    } else if (injected.length > 1) {
       var keep = owned;
       if (!keep) {
         // Prefer bolt to the right of Live TV (canonical mobile order)
@@ -1487,8 +1447,11 @@
       "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-hero{" +
       "display:flex;flex-direction:column;align-items:center;padding:12px 8px 4px}" +
       "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-avatar{" +
-      "width:96px;height:96px;border-radius:50%;background:#2a2e33;display:flex;align-items:center;" +
+      "width:96px;height:96px;border-radius:50%;overflow:hidden;background:transparent;display:flex;align-items:center;" +
       "justify-content:center;color:#9ca3af;margin-bottom:14px}" +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-avatar img," +
+      "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-avatar-img{" +
+      "width:100%!important;height:100%!important;object-fit:cover;display:block;border-radius:50%}" +
       "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-avatar svg{width:52%;height:52%}" +
       "body[data-sn-guest-mob='1'] #sn-guest-mob-root .sn-guest-tagline{" +
       "color:#fff;font-size:18px;font-weight:700;text-align:center;line-height:1.3;margin:0 8px 14px}" +
@@ -1647,9 +1610,10 @@
       "M15 15H1V1h14zM5.748 4.517c-.068 0-.107.029-.127.097l-2.185 6.773c-.02.058.01.097.068.097H4.61c.069 0 .108-.029.127-.097l.471-1.51H8.08l.48 1.51c.02.068.06.097.127.097h1.118c.058 0 .088-.039.069-.097L7.708 4.614c-.02-.068-.06-.097-.128-.097zm4.977 0c-.059 0-.098.039-.098.097v6.773c0 .058.04.097.098.097h1.058c.059 0 .098-.039.098-.097V4.614c0-.058-.04-.097-.098-.097zM6.768 5.73l.94 2.97H5.581l.941-2.97z",
       "0 0 16 16"
     );
-    var person = guestMobIco(
-      "M12 12a4.8 4.8 0 1 0-4.8-4.8A4.8 4.8 0 0 0 12 12zm0 2.4c-3.2 0-9.6 1.61-9.6 4.8V21h19.2v-1.8c0-3.19-6.4-4.8-9.6-4.8z"
-    );
+    var person =
+      '<img class="sn-guest-avatar-img" src="' +
+      PAGE_AVATAR_SRC +
+      '" alt="" width="128" height="128" decoding="async" />';
     var tv = guestMobIco(
       "M20 4H2v14h7v2h6v-2h7V4zm0 12H4V6h16zM8.273 13.916V9.013H6.582c-.05 0-.082-.034-.082-.085v-.844c0-.05.033-.084.082-.084h4.421c.049 0 .082.034.082.084v.844c0 .05-.033.085-.082.085H9.319v4.903c0 .05-.032.084-.081.084h-.883c-.049 0-.082-.034-.082-.084"
     );
@@ -1883,29 +1847,49 @@
   function scrubNativeGuestFantasy() {
     try {
       document.querySelectorAll("a[href='/fantasy'],a[href='/fantasy/'],a[href^='/fantasy/']").forEach(function (a) {
-        var row = a.closest("a") || a;
-        row.style.setProperty("display", "none", "important");
+        a.style.setProperty("display", "none", "important");
       });
-      // Benefit line "Play Fantasy & Weekly Challenge" → Weekly Challenge only
-      var nodes = document.querySelectorAll("span,div,p,li");
-      for (var i = 0; i < nodes.length; i++) {
-        var el = nodes[i];
-        if (el.childElementCount > 2) continue;
-        var t = (el.textContent || "").replace(/\s+/g, " ").trim();
-        if (/Play Fantasy\s*&\s*Weekly Challenge/i.test(t)) {
-          el.textContent = t.replace(/Play Fantasy\s*&\s*Weekly Challenge/i, "Play Weekly Challenge");
+      // Only rewrite LEAF text nodes — never el.textContent on parents (destroys layout DOM)
+      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        var val = node.nodeValue || "";
+        if (!/Fantasy/i.test(val)) continue;
+        if (/Play Fantasy\s*&\s*Weekly Challenge/i.test(val)) {
+          node.nodeValue = val.replace(
+            /Play Fantasy\s*&\s*Weekly Challenge/gi,
+            "Play Weekly Challenge"
+          );
         }
       }
-      // Fantasy promo cards
-      nodes = document.querySelectorAll("div,section,article");
-      for (var j = 0; j < nodes.length; j++) {
-        var card = nodes[j];
+      // Fantasy promo cards only — innermost match; never hide Quick links / Support / About
+      var promoCandidates = [];
+      document.querySelectorAll("div,section,article,a").forEach(function (card) {
+        if (card.getAttribute("data-sn-fantasy-promo-hide") === "1") return;
+        var kids = card.children ? card.children.length : 0;
+        if (kids > 12) return;
         var ct = (card.textContent || "").replace(/\s+/g, " ").trim();
-        if (ct.length > 220) continue;
-        if (/ScoreNet Fantasy|Sofascore Fantasy|Own your team\. Rule the league/i.test(ct) && /Play now/i.test(ct)) {
-          card.style.setProperty("display", "none", "important");
+        if (ct.length < 20 || ct.length > 220) return;
+        if (/Quick links|Give us feedback|ScoreNet FAQ|My profile/i.test(ct)) return;
+        if (
+          /Own your team\. Rule the league/i.test(ct) &&
+          /Play now/i.test(ct) &&
+          /Fantasy/i.test(ct)
+        ) {
+          promoCandidates.push(card);
         }
-      }
+      });
+      promoCandidates.forEach(function (card) {
+        if (promoCandidates.some(function (other) {
+          return other !== card && card.contains(other);
+        })) return;
+        card.style.setProperty("display", "none", "important");
+        card.setAttribute("data-sn-fantasy-promo-hide", "1");
+      });
+      // Fantasy QL rows only (href already hidden; also hide leftover label rows)
+      document.querySelectorAll("a[href*='fantasy'],a[href*='Fantasy']").forEach(function (a) {
+        a.style.setProperty("display", "none", "important");
+      });
     } catch (e) {}
   }
 
@@ -1917,6 +1901,10 @@
         document.body.removeAttribute("data-sn-profile-guest");
         document.body.removeAttribute("data-sn-guest-mob");
       }
+      // Scrape was dark — keep dark so Sofa tokens match
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
     } catch (e0) {}
     clearGuestMobPage();
     clearGuestBlankLayer();
