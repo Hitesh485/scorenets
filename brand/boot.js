@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909tvch";
+  var VER = "20260909pp";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -110,6 +110,7 @@
   // Sport shells (full page). Soft Next nav fails: Sofascore /_next/data is CORS-blocked.
   var SPORT_RE =
     /^\/(football|cricket|tennis|basketball|table-tennis|american-football|baseball|rugby|ice-hockey|handball|volleyball|mma)\/?$/i;
+
 
   function forceSportFullNav() {
     try {
