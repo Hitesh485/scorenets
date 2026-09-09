@@ -1,0 +1,46 @@
+team-streaks/${e}/${t||"all"}`,dm=e=>`/odds/${e}/high-value-streaks`,dg=(e,t)=>`/odds/${e}/top-h2h/${t||"all"}`,dy=(e,t)=>`/odds/${e}/winning/${t||"all"}`,d_=(e,t)=>`/odds/${e}/featured-events-by-tiers/${t}`,dv=(e,t)=>`/odds/${e}/featured-events/${t}`,db=(e,t)=>`/odds/${e}/featured-events-by-popularity/${t}`,dP=(e,t)=>`/odds/${e}/recommended-prematch/tournament/${t}`,dE=(e,t)=>`/odds/${e}/recommended-prematch-top-voted/sport/${t}`,dR=e=>`/odds/${e}`,dS=(e,t)=>`/odds/${e}/boost/${t}`,dT=(e,t)=>`/odds/season/${e}/provider/${t}/all`;var d$=tf({fetchOddsProviders:()=>dO,fetchOddsRegionProviders:()=>dA,fetchProviderBySlug:()=>dI,hasRecommendedPrematch:()=>dw,hasRecommendedPrematchTopVoted:()=>dC});let dO=(e,t)=>tD.getJson(dc(e,t)),dA=(e,t)=>tD.getJson(dd(e,t)),dw=(e,t)=>tD.hasResponse(dP(e,t)),dC=(e,t)=>tD.hasResponse(dE(e,t)),dI=e=>tD.getJson(dR(e));var dj=tf({bannerBackgroundImage:()=>dL,bannerLogo:()=>dD,countryBanners:()=>dN,countryOffers:()=>dM,signupLinkLogo:()=>dx});let dM=e=>`/offers/signuplink/${e}/web`,dx=e=>tD.getAbsoluteUrl(`/offers/signuplink/${e}/logo`,{isImageRoute:!0}),dN=(e,t,r,n)=>`/offers/banner/${e}/${t}/${r}/${n}`,dD=e=>tD.getAbsoluteUrl(`/offers/banner/${e}/logo`,{isImageRoute:!0}),dL=e=>tD.getAbsoluteUrl(`/offers/banner/${e}/background`,{isImageRoute:!0});var dk
+dTCTX ,{},{translatedSlugs:{}})})).apply(this,arguments)}var dl=tf({allSeasonOdds:()=>dT,betBoost:()=>dS,featuredEventsByPopularity:()=>db,featuredSportEvents:()=>dv,fe
+dTCTX atch-top-voted/sport/${t}`,dR=e=>`/odds/${e}`,dS=(e,t)=>`/odds/${e}/boost/${t}`,dT=(e,t)=>`/odds/season/${e}/provider/${t}/all`;var d$=tf({fetchOddsProviders:()=>
+has season: main-4d2b07aabf566e46_50ee980071.js
+namehit main-4d2b07aabf566e46_50ee980071.js
+main-4d2b07aabf566e46_50ee980071.js: },{translatedSlugs:{}})})).apply(this,arguments)}var dl=tf({allSeasonOdds:()=>dT,betBoost:()=>dS,featuredEventsByPopularity:()=>db,featuredSportEvents:()
+ODDS 52513.ffe8cf7e398761ca_7cff360bf7.js: en:[(0,r.jsx)("img",{src:"/static/images/odds/igaming-eng-dark.png
+ODDS 52513.ffe8cf7e398761ca_7cff360bf7.js: "}),(0,r.jsx)("img",{src:"/static/images/odds/igaming-fra-dark.png
+ODDS 52513.ffe8cf7e398761ca_7cff360bf7.js: eturn(0,r.jsx)(s._V,{src:"/static/images/odds/aams-logo.png
+ODDS 86843.ca38fad490db2707_d545d1b05e.js: en:[(0,s.jsx)("img",{src:"/static/images/odds/igaming-eng-dark.png
+ODDS 86843.ca38fad490db2707_d545d1b05e.js: "}),(0,s.jsx)("img",{src:"/static/images/odds/igaming-fra-dark.png
+ODDS 86843.ca38fad490db2707_d545d1b05e.js: eturn(0,s.jsx)(r._V,{src:"/static/images/odds/aams-logo.png
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: f-the-match/vote`,ec=(e,t)=>`/event/${e}/odds/${t}/featured
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,eu=(e,t)=>`/event/${e}/odds/${t}/all
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: rs/summary`,betBoost:(e,t)=>`/event/${e}/odds/${t}/boost
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: y`,hasAdditionalOdds:(e,t)=>`/event/${e}/odds/${t}/additional
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: vents:ey,oddsChanges:(e,t)=>`/event/${e}/odds/${t}/changes
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: ntityId:t,page:r}))})}});let oU=(e,t)=>`/odds/providers/${e}/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,oz=(e,t)=>`/odds/providers/${e}/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,oW=(e,t)=>`/odds/${e}/recommended-prematch/tournament/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,oq=(e,t)=>`/odds/${e}/recommended-prematch-top-voted/sport/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,oK=e=>`/odds/${e}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: freeze({__proto__:null,betBoost:(e,t)=>`/odds/${e}/boost/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,featuredEventsByPopularity:(e,t)=>`/odds/${e}/featured-events-by-popularity/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,featuredSportEvents:(e,t)=>`/odds/${e}/featured-events/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,featuredSportEventsByTiers:(e,t)=>`/odds/${e}/featured-events-by-tiers/${t}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: `,highValueStreaks:e=>`/odds/${e}/high-value-streaks
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: g:oK,providerImage:e=>v.getAbsoluteUrl(`/odds/provider/${e}/logo
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: ionProviders:oz,topDroppingOdds:(e,t)=>`/odds/${e}/dropping/${t||
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: "all"}`,topH2h:(e,t)=>`/odds/${e}/top-h2h/${t||
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: "all"}`,topTeamStreaks:(e,t)=>`/odds/top-team-streaks/${e}/${t||
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: "all"}`,winningOdds:(e,t)=>`/odds/${e}/winning/${t||
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: }`:""}`,oddsByDate:(e,t,r)=>`/sport/${e}/odds/${t}/${r}
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: .freeze({__proto__:null,allOdds:(e,t)=>`/odds/stage/${e}/provider/${t}/all
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: nce:is,extended:ia,featuredOdds:(e,t)=>`/odds/stage/${e}/provider/${t}/featured
+ODDS _app-8339e6e444c71bb4_f66c88a8e7.js: nkings:io,substages:ir,teamOdds:(e,t)=>`/odds/team/${e}/provider/${t}
+_app-2fb22ae299dc4aff_a51c1d1ca2.js forceOdds=0
+_app-2fb22ae299dc4aff_a51c1d1ca2.js SET_REFERRED_BRANDING=4
+_app-2fb22ae299dc4aff_a51c1d1ca2.js j3(=0
+_app-2fb22ae299dc4aff_a51c1d1ca2.js referredBranding=5
+_app-2fb22ae299dc4aff_a51c1d1ca2.js uniqueTournaments=5
+_app-d33180d1748d923a_e9fd9ea86c.js forceOdds=0
+_app-d33180d1748d923a_e9fd9ea86c.js SET_REFERRED_BRANDING=4
+_app-d33180d1748d923a_e9fd9ea86c.js j3(=0
+_app-d33180d1748d923a_e9fd9ea86c.js referredBranding=5
+_app-d33180d1748d923a_e9fd9ea86c.js uniqueTournaments=5

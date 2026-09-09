@@ -1,0 +1,28 @@
+D:\Tivra3\scorenet\scorenet\brand\boot.js
+    // Winner card loads /api/v1/odds/season/{seasonId}/provider/{id}/all
+D:\Tivra3\scorenet\scorenet\brand\_tmp_search.py
+      if "odds/season" not in tt and "season/" not in tt:
+          for m in re.finditer(r".{0,60}odds/season.{0,120}", tt):
+D:\Tivra3\scorenet\scorenet\brand\_tmp_search2.py
+          r"odds/season/\$\{[^}]+\}/provider/\$\{[^}]+\}/all",
+          r"`/odds/season/",
+D:\Tivra3\scorenet\scorenet\brand\_tmp_search3.py
+      for m in re.finditer(r".{0,40}odds/season/.{0,80}", t):
+      if "odds/season/" in t:
+          for m in re.finditer(r".{0,80}odds/season/.{0,100}", t):
+D:\Tivra3\scorenet\scorenet\brand\_tmp_season_path.py
+  # repo-wide odds/season
+      if "odds/season" in t:
+          for m in re.finditer(r".{0,60}odds/season.{0,80}", t):
+D:\Tivra3\scorenet\scorenet\brand\_tmp_winner_hook.py
+      for m in re.finditer(r".{0,40}odds/season/.{0,80}", t):
+D:\Tivra3\scorenet\scorenet\assets\www.sofascore.com\main-4d2b07aabf566e46_50ee980071.js
+  >`/odds/${e}`,dS=(e,t)=>`/odds/${e}/boost/${t}`,dT=(e,t)=>`/odds/season/${e}/provider/${t}/all`;var d$=tf({fetchOddsProviders:()=>dO,fetchOddsRegionPro
+COMBO main-4d2b07aabf566e46_50ee980071.js: /odds/${e}/boost/${t}`,dT=(e,t)=>`/odds/season/${e}/provider/${t}/all
+TPL main-4d2b07aabf566e46_50ee980071.js: `/odds/season/${e}/provider/${t}/all`
+OID 38788-b00545fb55ef4d95_e8bf6717dd.js: illed"===a[t].status&&(s[e]=a[t].value)}),s}async function g(e){let[t,r,i]=e,s={},a=!1,d=r.map(e=>e.oddsFromId),l=[],o=await y(t,d);if(r.forEach(e=>{o[e.oddsFromId]?(s[e.id]=o[e.oddsFromId],e.oddsFromId!==e.id&&e.oddsMayDiffer&&(a
+OID 38788-b00545fb55ef4d95_e8bf6717dd.js: ()=>l,tV:()=>d});var i=r(494),s=r(93353);let a=(e,t)=>e?.map(e=>{let r=e.provider;return t?{id:r.id,oddsFromId:r.liveOddsFrom?.id??r.oddsFrom?.id??r.id,fallbackProviderId:e.fallbackProvider?.id}:{id:r.id,oddsFromId:r.oddsFrom?.id?
+OID 43535-5eed4e5dd8f7aa55_4bc1fcd5ff.js: [r].status&&(a[e]=t[r].value)}),a}async function b(e){let[r,d,i]=e,a={},t=new Set,s=!1,o=d.map(e=>e.oddsFromId),l=[],c=await y(r,o);if(d.forEach(e=>{c[e.oddsFromId]?(a[e.id]=c[e.oddsFromId],e.oddsFromId!==e.id&&e.oddsMayDiffer&&(s
+OID 43535-5eed4e5dd8f7aa55_4bc1fcd5ff.js: ()=>o,tV:()=>s});var i=d(494),a=d(93353);let t=(e,r)=>e?.map(e=>{let d=e.provider;return r?{id:d.id,oddsFromId:d.liveOddsFrom?.id??d.oddsFrom?.id??d.id,fallbackProviderId:e.fallbackProvider?.id}:{id:d.id,oddsFromId:d.oddsFrom?.id?
+OID 89367.1f9f97c35b7ce3ce_ef4adadac2.js: .XUj.InProgress,o=(0,l.d4)(h.K),d=(0,l.d4)((0,h.Ul)(s)),x=!e||!d,m={};t?.forEach(e=>{m[`provider${e.oddsFromId}`]={route:r.bnp.allOdds(s.id,e.oddsFromId),skipCheck:x},e.fallbackProviderId&&(m[`provider${e.fallbackProviderId}`]={ro
+OID 89367.1f9f97c35b7ce3ce_ef4adadac2.js: ,c.A)(m,[s.id,x,a,t?.length],{refreshInterval:(0,u.c)(s)?g:void 0}),j=(t??[]).map(e=>p[`provider${e.oddsFromId}`]||p[`provider${e.fallbackProviderId}`]?1:0).reduce((e,t)=>e+t,0);return!x&&j>=(o??1)},v=()=>{let{event:e}=(0,n.useCon

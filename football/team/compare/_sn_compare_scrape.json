@@ -1,0 +1,1120 @@
+{
+  "scraped_at": "2026-09-08T18:53:05",
+  "target": "https://www.sofascore.com/football/team/compare?ids=2695%2C2699&s_ids=95836%2C95836&ut_ids=23%2C23",
+  "primary_view": "mobile",
+  "ver": "20260908cmp",
+  "assets": 79,
+  "images": 25,
+  "apis": [
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/country/IT/flag",
+      "bytes": 1728,
+      "file": "mobile__api__v1__country__IT__flag.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/2695/image",
+      "bytes": 8936,
+      "file": "mobile__api__v1__team__2695__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23/image",
+      "bytes": 6276,
+      "file": "mobile__api__v1__unique-tournament__23__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/41/image",
+      "bytes": 13060,
+      "file": "mobile__api__v1__team__41__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/country/EN/flag",
+      "bytes": 1748,
+      "file": "mobile__api__v1__country__EN__flag.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/2699/image",
+      "bytes": 3240,
+      "file": "mobile__api__v1__team__2699__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/2702/image",
+      "bytes": 5402,
+      "file": "mobile__api__v1__team__2702__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/country/DE/flag",
+      "bytes": 1614,
+      "file": "mobile__api__v1__country__DE__flag.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+      "bytes": 3014,
+      "file": "mobile__api__v1__unique-tournament__35__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
+      "bytes": 3106,
+      "file": "mobile__api__v1__unique-tournament__17__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/8/image",
+      "bytes": 1490,
+      "file": "mobile__api__v1__unique-tournament__8__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/country/ES/flag",
+      "bytes": 3662,
+      "file": "mobile__api__v1__country__ES__flag.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/17/image",
+      "bytes": 9202,
+      "file": "mobile__api__v1__team__17__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/42/image",
+      "bytes": 6596,
+      "file": "mobile__api__v1__team__42__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/2817/image",
+      "bytes": 5172,
+      "file": "mobile__api__v1__team__2817__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/2672/image",
+      "bytes": 7836,
+      "file": "mobile__api__v1__team__2672__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/2829/image",
+      "bytes": 7488,
+      "file": "mobile__api__v1__team__2829__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+      "bytes": 3014,
+      "file": "mobile__api__v1__unique-tournament__35__image__dark.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/8/image/dark",
+      "bytes": 1490,
+      "file": "mobile__api__v1__unique-tournament__8__image__dark.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
+      "bytes": 3458,
+      "file": "mobile__api__v1__unique-tournament__17__image__dark.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23/image/dark",
+      "bytes": 6276,
+      "file": "mobile__api__v1__unique-tournament__23__image__dark.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://img.sofascore.com/api/v1/team/48/image",
+      "bytes": 10234,
+      "file": "mobile__api__v1__team__48__image.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "bytes": 211,
+      "file": "mobile__api__v1__country__alpha2.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "mobile__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "bytes": 2107,
+      "file": "mobile__api__v1__config__country-sport-priorities__country.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/48/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2971,
+      "file": "mobile__api__v1__team__48__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/41/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2968,
+      "file": "mobile__api__v1__team__41__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/42/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2970,
+      "file": "mobile__api__v1__team__42__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2817/unique-tournament/8/season/77559/statistics/overall",
+      "bytes": 2973,
+      "file": "mobile__api__v1__team__2817__unique-tournament__8__season__77559__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "bytes": 10175,
+      "file": "mobile__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2829/unique-tournament/8/season/77559/statistics/overall",
+      "bytes": 2975,
+      "file": "mobile__api__v1__team__2829__unique-tournament__8__season__77559__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2699/team-statistics/seasons",
+      "bytes": 13974,
+      "file": "mobile__api__v1__team__2699__team-statistics__seasons.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2695/team-statistics/seasons",
+      "bytes": 7844,
+      "file": "mobile__api__v1__team__2695__team-statistics__seasons.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+      "bytes": 5379,
+      "file": "mobile__api__v1__odds__providers__IN__web.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+      "bytes": 2497,
+      "file": "mobile__api__v1__config__country-sport-priorities__country__IN.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2699",
+      "bytes": 6161,
+      "file": "mobile__api__v1__team__2699.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2695",
+      "bytes": 6225,
+      "file": "mobile__api__v1__team__2695.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2699/unique-tournament/23/season/95836/statistics/overall",
+      "bytes": 3034,
+      "file": "mobile__api__v1__team__2699__unique-tournament__23__season__95836__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2695/unique-tournament/23/season/95836/statistics/overall",
+      "bytes": 3061,
+      "file": "mobile__api__v1__team__2695__unique-tournament__23__season__95836__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+      "bytes": 2576,
+      "file": "mobile__api__v1__odds__providers__IN__web-odds.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2702/unique-tournament/23/season/76457/statistics/overall",
+      "bytes": 2969,
+      "file": "mobile__api__v1__team__2702__unique-tournament__23__season__76457__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "bytes": 33701,
+      "file": "mobile__api__v1__event__newly-added-events.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/2672/unique-tournament/35/season/77333/statistics/overall",
+      "bytes": 2977,
+      "file": "mobile__api__v1__team__2672__unique-tournament__35__season__77333__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/team/17/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2960,
+      "file": "mobile__api__v1__team__17__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+      "bytes": 16,
+      "file": "mobile__api__v1__odds__providers__IN__web-featured.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/dsp/country/IN",
+      "bytes": 220588,
+      "file": "mobile__api__v1__dsp__country__IN.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "mobile__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/country/IT/flag",
+      "bytes": 1728,
+      "file": "tablet__api__v1__country__IT__flag.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/2695/image",
+      "bytes": 8936,
+      "file": "tablet__api__v1__team__2695__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/2699/image",
+      "bytes": 3240,
+      "file": "tablet__api__v1__team__2699__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/country/EN/flag",
+      "bytes": 1748,
+      "file": "tablet__api__v1__country__EN__flag.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/41/image",
+      "bytes": 13060,
+      "file": "tablet__api__v1__team__41__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23/image",
+      "bytes": 6276,
+      "file": "tablet__api__v1__unique-tournament__23__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/2702/image",
+      "bytes": 5402,
+      "file": "tablet__api__v1__team__2702__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+      "bytes": 3014,
+      "file": "tablet__api__v1__unique-tournament__35__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
+      "bytes": 3106,
+      "file": "tablet__api__v1__unique-tournament__17__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/2829/image",
+      "bytes": 7488,
+      "file": "tablet__api__v1__team__2829__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/42/image",
+      "bytes": 6596,
+      "file": "tablet__api__v1__team__42__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/country/DE/flag",
+      "bytes": 1614,
+      "file": "tablet__api__v1__country__DE__flag.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/2817/image",
+      "bytes": 5172,
+      "file": "tablet__api__v1__team__2817__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/2672/image",
+      "bytes": 7836,
+      "file": "tablet__api__v1__team__2672__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/48/image",
+      "bytes": 10234,
+      "file": "tablet__api__v1__team__48__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/8/image",
+      "bytes": 1490,
+      "file": "tablet__api__v1__unique-tournament__8__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/country/ES/flag",
+      "bytes": 3662,
+      "file": "tablet__api__v1__country__ES__flag.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/team/17/image",
+      "bytes": 9202,
+      "file": "tablet__api__v1__team__17__image.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23/image/dark",
+      "bytes": 6276,
+      "file": "tablet__api__v1__unique-tournament__23__image__dark.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+      "bytes": 3014,
+      "file": "tablet__api__v1__unique-tournament__35__image__dark.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
+      "bytes": 3458,
+      "file": "tablet__api__v1__unique-tournament__17__image__dark.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/8/image/dark",
+      "bytes": 1490,
+      "file": "tablet__api__v1__unique-tournament__8__image__dark.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "bytes": 211,
+      "file": "tablet__api__v1__country__alpha2.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "bytes": 2107,
+      "file": "tablet__api__v1__config__country-sport-priorities__country.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "tablet__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/41/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2968,
+      "file": "tablet__api__v1__team__41__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2699/team-statistics/seasons",
+      "bytes": 13974,
+      "file": "tablet__api__v1__team__2699__team-statistics__seasons.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "bytes": 10175,
+      "file": "tablet__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2695/team-statistics/seasons",
+      "bytes": 7844,
+      "file": "tablet__api__v1__team__2695__team-statistics__seasons.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/42/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2970,
+      "file": "tablet__api__v1__team__42__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/48/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2971,
+      "file": "tablet__api__v1__team__48__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2702/unique-tournament/23/season/76457/statistics/overall",
+      "bytes": 2969,
+      "file": "tablet__api__v1__team__2702__unique-tournament__23__season__76457__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2817/unique-tournament/8/season/77559/statistics/overall",
+      "bytes": 2973,
+      "file": "tablet__api__v1__team__2817__unique-tournament__8__season__77559__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2829/unique-tournament/8/season/77559/statistics/overall",
+      "bytes": 2975,
+      "file": "tablet__api__v1__team__2829__unique-tournament__8__season__77559__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2672/unique-tournament/35/season/77333/statistics/overall",
+      "bytes": 2977,
+      "file": "tablet__api__v1__team__2672__unique-tournament__35__season__77333__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/17/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2960,
+      "file": "tablet__api__v1__team__17__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+      "bytes": 5379,
+      "file": "tablet__api__v1__odds__providers__IN__web.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2695/unique-tournament/23/season/95836/statistics/overall",
+      "bytes": 3061,
+      "file": "tablet__api__v1__team__2695__unique-tournament__23__season__95836__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2699/unique-tournament/23/season/95836/statistics/overall",
+      "bytes": 3034,
+      "file": "tablet__api__v1__team__2699__unique-tournament__23__season__95836__statistics__overall.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+      "bytes": 2497,
+      "file": "tablet__api__v1__config__country-sport-priorities__country__IN.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2695",
+      "bytes": 6225,
+      "file": "tablet__api__v1__team__2695.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/team/2699",
+      "bytes": 6161,
+      "file": "tablet__api__v1__team__2699.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "bytes": 33701,
+      "file": "tablet__api__v1__event__newly-added-events.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+      "bytes": 2576,
+      "file": "tablet__api__v1__odds__providers__IN__web-odds.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+      "bytes": 16,
+      "file": "tablet__api__v1__odds__providers__IN__web-featured.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "tablet__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/country/IT/flag",
+      "bytes": 1728,
+      "file": "desktop__api__v1__country__IT__flag.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23/image",
+      "bytes": 6276,
+      "file": "desktop__api__v1__unique-tournament__23__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2699/image",
+      "bytes": 3240,
+      "file": "desktop__api__v1__team__2699__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2695/image",
+      "bytes": 8936,
+      "file": "desktop__api__v1__team__2695__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/country/EN/flag",
+      "bytes": 1748,
+      "file": "desktop__api__v1__country__EN__flag.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/41/image",
+      "bytes": 13060,
+      "file": "desktop__api__v1__team__41__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/17/image",
+      "bytes": 9202,
+      "file": "desktop__api__v1__team__17__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2702/image",
+      "bytes": 5402,
+      "file": "desktop__api__v1__team__2702__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
+      "bytes": 3106,
+      "file": "desktop__api__v1__unique-tournament__17__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2817/image",
+      "bytes": 5172,
+      "file": "desktop__api__v1__team__2817__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/country/DE/flag",
+      "bytes": 1614,
+      "file": "desktop__api__v1__country__DE__flag.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/8/image",
+      "bytes": 1490,
+      "file": "desktop__api__v1__unique-tournament__8__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35/image",
+      "bytes": 3014,
+      "file": "desktop__api__v1__unique-tournament__35__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/8/image/dark",
+      "bytes": 1490,
+      "file": "desktop__api__v1__unique-tournament__8__image__dark.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/48/image",
+      "bytes": 10234,
+      "file": "desktop__api__v1__team__48__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/country/ES/flag",
+      "bytes": 3662,
+      "file": "desktop__api__v1__country__ES__flag.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2672/image",
+      "bytes": 7836,
+      "file": "desktop__api__v1__team__2672__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2829/image",
+      "bytes": 7488,
+      "file": "desktop__api__v1__team__2829__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/42/image",
+      "bytes": 6596,
+      "file": "desktop__api__v1__team__42__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
+      "bytes": 3458,
+      "file": "desktop__api__v1__unique-tournament__17__image__dark.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23/image/dark",
+      "bytes": 6276,
+      "file": "desktop__api__v1__unique-tournament__23__image__dark.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
+      "bytes": 3014,
+      "file": "desktop__api__v1__unique-tournament__35__image__dark.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "bytes": 2107,
+      "file": "desktop__api__v1__config__country-sport-priorities__country.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "bytes": 211,
+      "file": "desktop__api__v1__country__alpha2.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2699/team-statistics/seasons",
+      "bytes": 13974,
+      "file": "desktop__api__v1__team__2699__team-statistics__seasons.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2695/team-statistics/seasons",
+      "bytes": 7844,
+      "file": "desktop__api__v1__team__2695__team-statistics__seasons.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2817/unique-tournament/8/season/77559/statistics/overall",
+      "bytes": 2973,
+      "file": "desktop__api__v1__team__2817__unique-tournament__8__season__77559__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/48/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2971,
+      "file": "desktop__api__v1__team__48__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2829/unique-tournament/8/season/77559/statistics/overall",
+      "bytes": 2975,
+      "file": "desktop__api__v1__team__2829__unique-tournament__8__season__77559__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2702/unique-tournament/23/season/76457/statistics/overall",
+      "bytes": 2969,
+      "file": "desktop__api__v1__team__2702__unique-tournament__23__season__76457__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2672/unique-tournament/35/season/77333/statistics/overall",
+      "bytes": 2977,
+      "file": "desktop__api__v1__team__2672__unique-tournament__35__season__77333__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "bytes": 10175,
+      "file": "desktop__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/42/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2970,
+      "file": "desktop__api__v1__team__42__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/17/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2960,
+      "file": "desktop__api__v1__team__17__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/41/unique-tournament/17/season/76986/statistics/overall",
+      "bytes": 2968,
+      "file": "desktop__api__v1__team__41__unique-tournament__17__season__76986__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+      "bytes": 5379,
+      "file": "desktop__api__v1__odds__providers__IN__web.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+      "bytes": 2497,
+      "file": "desktop__api__v1__config__country-sport-priorities__country__IN.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2695",
+      "bytes": 6225,
+      "file": "desktop__api__v1__team__2695.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2699/unique-tournament/23/season/95836/statistics/overall",
+      "bytes": 3034,
+      "file": "desktop__api__v1__team__2699__unique-tournament__23__season__95836__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2699",
+      "bytes": 6161,
+      "file": "desktop__api__v1__team__2699.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/team/2695/unique-tournament/23/season/95836/statistics/overall",
+      "bytes": 3061,
+      "file": "desktop__api__v1__team__2695__unique-tournament__23__season__95836__statistics__overall.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/trending/events/IN/all",
+      "bytes": 323250,
+      "file": "desktop__api__v1__trending__events__IN__all.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "desktop__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+      "bytes": 2576,
+      "file": "desktop__api__v1__odds__providers__IN__web-odds.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "bytes": 33701,
+      "file": "desktop__api__v1__event__newly-added-events.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/56035/image",
+      "bytes": 11282,
+      "file": "desktop__api__v1__team__56035__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/40/image",
+      "bytes": 8518,
+      "file": "desktop__api__v1__team__40__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/34318/image",
+      "bytes": 12056,
+      "file": "desktop__api__v1__team__34318__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/56021/image",
+      "bytes": 8648,
+      "file": "desktop__api__v1__team__56021__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2888/image",
+      "bytes": 8402,
+      "file": "desktop__api__v1__team__2888__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/34469/image",
+      "bytes": 7584,
+      "file": "desktop__api__v1__team__34469__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2058/image",
+      "bytes": 1980,
+      "file": "desktop__api__v1__team__2058__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/56027/image",
+      "bytes": 1612,
+      "file": "desktop__api__v1__team__56027__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3250/image",
+      "bytes": 7130,
+      "file": "desktop__api__v1__team__3250__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/34315/image",
+      "bytes": 8060,
+      "file": "desktop__api__v1__team__34315__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/168086/image",
+      "bytes": 2042,
+      "file": "desktop__api__v1__team__168086__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2697/image",
+      "bytes": 3764,
+      "file": "desktop__api__v1__team__2697__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2846/image",
+      "bytes": 5166,
+      "file": "desktop__api__v1__team__2846__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1961/image",
+      "bytes": 7598,
+      "file": "desktop__api__v1__team__1961__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/168090/image",
+      "bytes": 5016,
+      "file": "desktop__api__v1__team__168090__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1981/image",
+      "bytes": 2126,
+      "file": "desktop__api__v1__team__1981__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2816/image",
+      "bytes": 4220,
+      "file": "desktop__api__v1__team__2816__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/5926/image",
+      "bytes": 5340,
+      "file": "desktop__api__v1__team__5926__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1962/image",
+      "bytes": 4650,
+      "file": "desktop__api__v1__team__1962__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/308084/image",
+      "bytes": 3710,
+      "file": "desktop__api__v1__team__308084__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2819/image",
+      "bytes": 5930,
+      "file": "desktop__api__v1__team__2819__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2673/image",
+      "bytes": 5868,
+      "file": "desktop__api__v1__team__2673__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3202/image",
+      "bytes": 5938,
+      "file": "desktop__api__v1__team__3202__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/36837/image",
+      "bytes": 4836,
+      "file": "desktop__api__v1__team__36837__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+      "bytes": 16,
+      "file": "desktop__api__v1__odds__providers__IN__web-featured.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/36/image",
+      "bytes": 11306,
+      "file": "desktop__api__v1__team__36__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3002/image",
+      "bytes": 8410,
+      "file": "desktop__api__v1__team__3002__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1643/image",
+      "bytes": 4390,
+      "file": "desktop__api__v1__team__1643__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2959/image",
+      "bytes": 8586,
+      "file": "desktop__api__v1__team__2959__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2824/image",
+      "bytes": 7628,
+      "file": "desktop__api__v1__team__2824__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/57163/image",
+      "bytes": 5520,
+      "file": "desktop__api__v1__team__57163__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/7/image",
+      "bytes": 8170,
+      "file": "desktop__api__v1__team__7__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/23400/image",
+      "bytes": 12792,
+      "file": "desktop__api__v1__team__23400__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/25/image",
+      "bytes": 7700,
+      "file": "desktop__api__v1__team__25__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/39/image",
+      "bytes": 13914,
+      "file": "desktop__api__v1__team__39__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/168094/image",
+      "bytes": 9602,
+      "file": "desktop__api__v1__team__168094__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/dsp/country/IN",
+      "bytes": 220588,
+      "file": "desktop__api__v1__dsp__country__IN.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "desktop__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 607,
+      "file": "desktop__api__v1__sport__19800__event-count.json"
+    }
+  ],
+  "views": [
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "title": "Sofascore",
+      "ok": true,
+      "html_bytes": 339598,
+      "raw": "_raw_mobile.html",
+      "shot": "_shot_mobile.png",
+      "new_assets": 75,
+      "new_apis": 47,
+      "has_general": true,
+      "has_attacking": true,
+      "has_udinese": true
+    },
+    {
+      "viewport": "tablet",
+      "width": 768,
+      "height": 1024,
+      "title": "Sofascore",
+      "ok": true,
+      "html_bytes": 317557,
+      "raw": "_raw_tablet.html",
+      "shot": "_shot_tablet.png",
+      "new_assets": 0,
+      "new_apis": 46,
+      "has_general": true,
+      "has_attacking": true,
+      "has_udinese": true
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "title": "Sofascore",
+      "ok": true,
+      "html_bytes": 485269,
+      "raw": "_raw_desktop.html",
+      "shot": "_shot_desktop.png",
+      "new_assets": 4,
+      "new_apis": 84,
+      "has_general": true,
+      "has_attacking": true,
+      "has_udinese": true
+    }
+  ],
+  "leftover_next_static": []
+}

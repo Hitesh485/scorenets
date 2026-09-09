@@ -1,0 +1,20 @@
+FILE main-4d2b07aabf566e46_50ee980071.js
+ment_ids)?[]:c,disabledContextualModules:null==(d=t.disabled_contextual_modules)?[]:d})),{},{translatedSlugs:{}})})).apply(this,arguments)}var dl=tf({allSeasonOdds:()=>dT,betBoost:()=>dS,featuredEventsByPopularity:()=>db,featuredSportEvents:()=>dv,featuredSportEventsByTiers:()=>d_,highValueStreaks:()=>dm,providerBySlug:()=>dR,providerImage:()=>df,providers:()=>
+WINSTORE _app-2fb22ae299dc4aff_a51c1d1ca2.js: .push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(N,r),sagaMiddleware:t}},B=D(),F=()=>
+STORENAME _app-2fb22ae299dc4aff_a51c1d1ca2.js: found getStore
+STORENAME _app-2fb22ae299dc4aff_a51c1d1ca2.js: found getStore
+STOREMOD _app-2fb22ae299dc4aff_a51c1d1ca2.js: y)();e.push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(N,r),sagaMiddleware:t}},B=D(),F=()=>(0,n.S$s)()?D():B},66046:(e,t,r)=>{var n=r(98499),a=r(24877),o=r(23356),i=r(99048),s=/^\[objec
+WINSTORE _app-41296c0d5f0139d7_54e25566e8.js: .push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(N,r),sagaMiddleware:t}},B=D(),F=()=>
+STORENAME _app-41296c0d5f0139d7_54e25566e8.js: found getStore
+STORENAME _app-41296c0d5f0139d7_54e25566e8.js: found getStore
+STOREMOD _app-41296c0d5f0139d7_54e25566e8.js: y)();e.push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(N,r),sagaMiddleware:t}},B=D(),F=()=>(0,n.S$s)()?D():B},66046:(e,t,r)=>{var n=r(98499),a=r(24877),o=r(23356),i=r(99048),s=/^\[objec
+WINSTORE _app-8339e6e444c71bb4_f66c88a8e7.js: .push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(D,r),sagaMiddleware:t}},B=N(),F=()=>
+STORENAME _app-8339e6e444c71bb4_f66c88a8e7.js: found getStore
+STORENAME _app-8339e6e444c71bb4_f66c88a8e7.js: found getStore
+WINSTORE _app-d33180d1748d923a_e9fd9ea86c.js: .push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(N,r),sagaMiddleware:t}},B=D(),F=()=>
+STORENAME _app-d33180d1748d923a_e9fd9ea86c.js: found getStore
+STORENAME _app-d33180d1748d923a_e9fd9ea86c.js: found getStore
+STOREMOD _app-d33180d1748d923a_e9fd9ea86c.js: y)();e.push(t),e.push(i.wA);let r=(0,a.Tw)(...e);return(0,n.Cu5)()&&!(0,n.S$s)()&&(r=(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||a.Zz)((0,a.Tw)(...e))),{store:(0,a.Yl)(N,r),sagaMiddleware:t}},B=D(),F=()=>(0,n.S$s)()?D():B},66046:(e,t,r)=>{var n=r(98499),a=r(24877),o=r(23356),i=r(99048),s=/^\[objec
+MSG winner=Winner
+MSG winner=Winner
+MSG winner=Winner

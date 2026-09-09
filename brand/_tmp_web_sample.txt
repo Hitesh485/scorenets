@@ -1,0 +1,57 @@
+{
+  "provider": {
+    "name": "1xBet India",
+    "slug": "1xbet-india",
+    "defaultBetSlipLink": "https://reffpa.com/L?tag=d_1329933m_2895c__[]general[]_d41963_l62764_odds&site=1329933&ad=2895",
+    "oddsFrom": {
+      "name": "bet365",
+      "slug": "bet365",
+      "defaultBetSlipLink": "https://www.bet365.com/hub/aff/open-account?affiliate=365_04034487",
+      "country": "international",
+      "id": 1,
+      "colors": {
+        "primary": "#017b5b"
+      },
+      "brandId": 1
+    },
+    "liveOddsFrom": {
+      "name": "bet365",
+      "slug": "bet365",
+      "defaultBetSlipLink": "https://www.bet365.com/hub/aff/open-account?affiliate=365_04034487",
+      "country": "international",
+      "id": 1,
+      "colors": {
+        "primary": "#017b5b"
+      },
+      "brandId": 1
+    },
+    "country": "IN",
+    "id": 314,
+    "colors": {
+      "primary": "#1d5583"
+    },
+    "brandId": 52
+  },
+  "branded": true,
+  "weight": 10,
+  "featuredOddsType": "default",
+  "defaultBetSlipLink": "https://refpa83698.com/L?tag=d_1329933m_2895c__[]general[]_d41963_l62764_odds&site=1329933&ad=2895",
+  "betSlipLink": "https://refpa83698.com/L?tag=d_1329933m_2895c__[]general[]_d41963_l62764_odds&site=1329933&ad=2895",
+  "group": 1,
+  "sort": 1,
+  "type": "web",
+  "campaignId": 10,
+  "fallbackProvider": {
+    "name": "bet365",
+    "slug": "bet365",
+    "defaultBetSlipLink": "https://www.bet365.com/hub/aff/open-account?affiliate=365_04034487",
+    "country": "international",
+    "id": 1,
+    "colors": {
+      "primary": "#017b5b"
+    },
+    "brandId": 1
+  },
+  "id": 29655,
+  "impressionCostEncrypted": "4Xq7x39qJbXazsLHAspmXWZ1tVKraZW8Cw=="
+}

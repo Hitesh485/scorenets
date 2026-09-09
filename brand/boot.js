@@ -378,6 +378,177 @@
     return /\/api\/v1\/branding\//i.test(String(url || ""));
   }
 
+  // Sofascore branding is 404; returning 200 {} changes odds provider selection.
+  // Match Sofascore so tournament Winner (To Win Outright) can resolve Bet365.
+  function brandingNotFound() {
+    return new Response('{"error":{"code":404,"message":"Not Found"}}', {
+      status: 404,
+      headers: { "Content-Type": "application/json", "x-scorenet-stub": "branding-404" },
+    });
+  }
+
+  // Winner card loads /api/v1/odds/season/{seasonId}/provider/{id}/all
+  // India campaign ids (314/712/…) 404; Bet365 data provider id 1 has the markets.
+  function mapSeasonOddsUrl(url) {
+    var s = String(url || "");
+    return s.replace(
+      /(\/api\/v1\/odds\/season\/\d+\/provider\/)\d+(\/all\b)/i,
+      function (_m, a, b) {
+        return a + "1" + b;
+      }
+    );
+  }
+
+  // Tournament Winner needs referredBranding.forceOdds (web-featured is empty in this geo).
+  // Client: providers.find(p => p.provider.id === oddsProviderId) then season odds via oddsFromId (→1).
+  var snCachedWebProviderId = null;
+  var snForceOddsLastKey = "";
+
+  function snIsTournamentPath() {
+    return /\/tournament\//i.test(String(location.pathname || ""));
+  }
+
+  function snRememberWebProviders(body) {
+    try {
+      var list = body && body.providers;
+      if (!list || !list.length) return;
+      for (var i = 0; i < list.length; i++) {
+        var id = list[i] && list[i].provider && list[i].provider.id;
+        if (typeof id === "number" && id > 0) {
+          snCachedWebProviderId = id;
+          return;
+        }
+      }
+    } catch (eMem) {}
+  }
+
+  function snFindReduxStore() {
+    try {
+      var roots = [document.getElementById("__next"), document.querySelector("[data-reactroot]"), document.body];
+      for (var r = 0; r < roots.length; r++) {
+        var el = roots[r];
+        if (!el) continue;
+        var keys = Object.keys(el);
+        var fiberKey = null;
+        for (var k = 0; k < keys.length; k++) {
+          if (keys[k].indexOf("__reactFiber") === 0 || keys[k].indexOf("__reactContainer") === 0) {
+            fiberKey = keys[k];
+            break;
+          }
+        }
+        if (!fiberKey) continue;
+        var fiber = el[fiberKey];
+        var q = [fiber];
+        var seen = 0;
+        while (q.length && seen < 2500) {
+          seen++;
+          var node = q.shift();
+          if (!node) continue;
+          var props = node.memoizedProps || node.pendingProps;
+          if (props && props.store && typeof props.store.dispatch === "function" && typeof props.store.getState === "function") {
+            return props.store;
+          }
+          if (node.stateNode && node.stateNode.store && typeof node.stateNode.store.dispatch === "function") {
+            return node.stateNode.store;
+          }
+          if (node.child) q.push(node.child);
+          if (node.sibling) q.push(node.sibling);
+        }
+      }
+    } catch (eFind) {}
+    return null;
+  }
+
+  function snPickOddsProviderId(store) {
+    try {
+      var st = store.getState();
+      var odds = st && st.odds;
+      var lists = [];
+      if (odds) {
+        if (odds.allProviders) lists.push(odds.allProviders);
+        if (odds.providers) lists.push(odds.providers);
+      }
+      for (var li = 0; li < lists.length; li++) {
+        var arr = lists[li];
+        if (!arr || !arr.length) continue;
+        for (var i = 0; i < arr.length; i++) {
+          var id = arr[i] && arr[i].provider && arr[i].provider.id;
+          if (typeof id === "number" && id > 0) return id;
+        }
+      }
+    } catch (ePick) {}
+    return snCachedWebProviderId;
+  }
+
+  function snForceTournamentWinnerOdds() {
+    try {
+      if (!snIsTournamentPath()) {
+        snForceOddsLastKey = "";
+        return;
+      }
+      var store = snFindReduxStore();
+      if (!store) return;
+      var providerId = snPickOddsProviderId(store);
+      if (!providerId) return;
+      var st = store.getState();
+      var cur = st && st.branding && st.branding.referredBranding;
+      if (
+        cur &&
+        cur.type === "uniqueTournament" &&
+        cur.branding &&
+        cur.branding.forceOdds === true &&
+        cur.branding.oddsProviderId === providerId
+      ) {
+        return;
+      }
+      var key = location.pathname + "#" + providerId;
+      store.dispatch({
+        type: "SET_REFERRED_BRANDING",
+        payload: {
+          referredBranding: {
+            type: "uniqueTournament",
+            branding: { forceOdds: true, oddsProviderId: providerId },
+          },
+        },
+      });
+      snForceOddsLastKey = key;
+    } catch (eForce) {}
+  }
+
+  function snStartForceOddsWatcher() {
+    try {
+      if (window.__snForceOddsWatch) return;
+      window.__snForceOddsWatch = 1;
+      var ticks = 0;
+      var iv = setInterval(function () {
+        ticks++;
+        snForceTournamentWinnerOdds();
+        if (ticks > 40) clearInterval(iv);
+      }, 500);
+      [0, 200, 800, 2000, 4000, 8000].forEach(function (ms) {
+        setTimeout(snForceTournamentWinnerOdds, ms);
+      });
+      window.addEventListener("popstate", function () {
+        setTimeout(snForceTournamentWinnerOdds, 50);
+        setTimeout(snForceTournamentWinnerOdds, 400);
+      });
+      var _ps = history.pushState;
+      var _rs = history.replaceState;
+      history.pushState = function () {
+        var r = _ps.apply(this, arguments);
+        setTimeout(snForceTournamentWinnerOdds, 50);
+        setTimeout(snForceTournamentWinnerOdds, 400);
+        return r;
+      };
+      history.replaceState = function () {
+        var r = _rs.apply(this, arguments);
+        setTimeout(snForceTournamentWinnerOdds, 50);
+        setTimeout(snForceTournamentWinnerOdds, 400);
+        return r;
+      };
+    } catch (eWatch) {}
+  }
+
   // 1x1 PNG bytes (no atob — Sofascore wrappers break atob)
   var PIXEL_BYTES = new Uint8Array([
     137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 0, 0, 0, 31, 21, 196,
@@ -444,13 +615,37 @@
     var _fetch = window.fetch;
     window.fetch = function (input, init) {
       var url = typeof input === "string" ? input : input && input.url;
-      if (blocked(url) || isBrandingApi(url)) {
+      if (blocked(url)) {
         return Promise.resolve(emptyJson());
+      }
+      if (isBrandingApi(url)) {
+        return Promise.resolve(brandingNotFound());
       }
       if (isMissingLocalStub(url)) {
         return emptyPng();
       }
-      return _fetch.apply(this, arguments);
+      var mapped = mapSeasonOddsUrl(url);
+      if (mapped && mapped !== url) {
+        if (typeof input === "string") input = mapped;
+        else if (input && input.url) input = new Request(mapped, input);
+        url = mapped;
+      }
+      var p = _fetch.apply(this, arguments);
+      try {
+        if (url && /\/api\/v1\/odds\/providers\/[^/]+\/web(?:\?|$)/i.test(String(url))) {
+          p = p.then(function (res) {
+            try {
+              var clone = res.clone();
+              clone.json().then(function (body) {
+                snRememberWebProviders(body);
+                snForceTournamentWinnerOdds();
+              }).catch(function () {});
+            } catch (eCap) {}
+            return res;
+          });
+        }
+      } catch (eHook) {}
+      return p;
     };
   } catch (e) {}
 
@@ -458,7 +653,9 @@
     var XO = XMLHttpRequest.prototype.open;
     var XS = XMLHttpRequest.prototype.send;
     XMLHttpRequest.prototype.open = function (method, url) {
+      if (!blocked(url)) url = mapSeasonOddsUrl(url);
       this.__snUrl = url;
+      arguments[1] = url;
       if (blocked(url)) {
         this.__snBlock = true;
         return XO.call(this, method, PIXEL, true);
@@ -957,6 +1154,9 @@
     killAdvertisementSlots();
     ensureMobileFooter();
   });
+  try {
+    snStartForceOddsWatcher();
+  } catch (eFo) {}
   var t = null;
   try {
     new MutationObserver(function () {

@@ -1,0 +1,36 @@
+44166-1f750e6de7598827_9d0607c7d2.js To Win Outright@10912
+":"betting_market_home_away","European Handicap":"betting_market_european_handicap","Match handicap":"betting_market_match_handicap","Total sets/games":"betting_market_total_sets_games","Over/under":"betting_market_over_under","1X2 and score sum":"betting_market_one_x_and_two_score_sum","Odd":"odd_market","Even":"even_market","Yes":"yes","No":"no","Over":"over","Under":"under","No goal":"noGoal","To Win Outright":"win","Race Winner":"winner","Podium Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":3}},"Points Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":10}},"Fastest In Practice 1":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":1}},"Fastest In Practice 2":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":2}},"Fastest In Practice 3":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":3}},"Fastest In Qualifying 1":{"id":"motorsport_odds_fastest_in_qualifying","values":{"n":1}},"Fastest In Qualifying 2":{"id":"motorspor
+---
+44166-1f750e6de7598827_9d0607c7d2.js allSeasonOdds@-1
+44166-1f750e6de7598827_9d0607c7d2.js odds/season@-1
+44166-1f750e6de7598827_9d0607c7d2.js forceOdds@-1
+44166-1f750e6de7598827_9d0607c7d2.js featuredOnly@-1
+44166-1f750e6de7598827_9d0607c7d2.js W0@-1
+44166-1f750e6de7598827_9d0607c7d2.js see_more@-1
+45266-1b782b5e73e0005a_be865e8d40.js To Win Outright@9683
+":"betting_market_home_away","European Handicap":"betting_market_european_handicap","Match handicap":"betting_market_match_handicap","Total sets/games":"betting_market_total_sets_games","Over/under":"betting_market_over_under","1X2 and score sum":"betting_market_one_x_and_two_score_sum","Odd":"odd_market","Even":"even_market","Yes":"yes","No":"no","Over":"over","Under":"under","No goal":"noGoal","To Win Outright":"win","Race Winner":"winner","Podium Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":3}},"Points Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":10}},"Fastest In Practice 1":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":1}},"Fastest In Practice 2":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":2}},"Fastest In Practice 3":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":3}},"Fastest In Qualifying 1":{"id":"motorsport_odds_fastest_in_qualifying","values":{"n":1}},"Fastest In Qualifying 2":{"id":"motorspor
+---
+45266-1b782b5e73e0005a_be865e8d40.js allSeasonOdds@-1
+45266-1b782b5e73e0005a_be865e8d40.js odds/season@-1
+45266-1b782b5e73e0005a_be865e8d40.js forceOdds@-1
+45266-1b782b5e73e0005a_be865e8d40.js featuredOnly@-1
+45266-1b782b5e73e0005a_be865e8d40.js W0@-1
+45266-1b782b5e73e0005a_be865e8d40.js see_more@-1
+52513.ffe8cf7e398761ca_7cff360bf7.js To Win Outright@44167
+":"betting_market_home_away","European Handicap":"betting_market_european_handicap","Match handicap":"betting_market_match_handicap","Total sets/games":"betting_market_total_sets_games","Over/under":"betting_market_over_under","1X2 and score sum":"betting_market_one_x_and_two_score_sum","Odd":"odd_market","Even":"even_market","Yes":"yes","No":"no","Over":"over","Under":"under","No goal":"noGoal","To Win Outright":"win","Race Winner":"winner","Podium Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":3}},"Points Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":10}},"Fastest In Practice 1":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":1}},"Fastest In Practice 2":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":2}},"Fastest In Practice 3":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":3}},"Fastest In Qualifying 1":{"id":"motorsport_odds_fastest_in_qualifying","values":{"n":1}},"Fastest In Qualifying 2":{"id":"motorspor
+---
+52513.ffe8cf7e398761ca_7cff360bf7.js allSeasonOdds@-1
+52513.ffe8cf7e398761ca_7cff360bf7.js odds/season@-1
+52513.ffe8cf7e398761ca_7cff360bf7.js forceOdds@-1
+52513.ffe8cf7e398761ca_7cff360bf7.js featuredOnly@-1
+52513.ffe8cf7e398761ca_7cff360bf7.js W0@-1
+52513.ffe8cf7e398761ca_7cff360bf7.js see_more@-1
+86843.ca38fad490db2707_d545d1b05e.js To Win Outright@32179
+":"betting_market_home_away","European Handicap":"betting_market_european_handicap","Match handicap":"betting_market_match_handicap","Total sets/games":"betting_market_total_sets_games","Over/under":"betting_market_over_under","1X2 and score sum":"betting_market_one_x_and_two_score_sum","Odd":"odd_market","Even":"even_market","Yes":"yes","No":"no","Over":"over","Under":"under","No goal":"noGoal","To Win Outright":"win","Race Winner":"winner","Podium Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":3}},"Points Finish":{"id":"motorsport_odds_race_top_finish","values":{"n":10}},"Fastest In Practice 1":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":1}},"Fastest In Practice 2":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":2}},"Fastest In Practice 3":{"id":"motorsport_odds_fastest_in_free_practice","values":{"n":3}},"Fastest In Qualifying 1":{"id":"motorsport_odds_fastest_in_qualifying","values":{"n":1}},"Fastest In Qualifying 2":{"id":"motorspor
+---
+86843.ca38fad490db2707_d545d1b05e.js allSeasonOdds@-1
+86843.ca38fad490db2707_d545d1b05e.js odds/season@-1
+86843.ca38fad490db2707_d545d1b05e.js forceOdds@-1
+86843.ca38fad490db2707_d545d1b05e.js featuredOnly@-1
+86843.ca38fad490db2707_d545d1b05e.js W0@-1
+86843.ca38fad490db2707_d545d1b05e.js see_more@-1

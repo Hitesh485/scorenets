@@ -438,14 +438,28 @@
   window.fetch = function (input, init) {
     var urlStr = typeof input === "string" ? input : input && input.url;
 
-    // Stub Sofascore branding (always 404) — avoid console noise
+    // Match Sofascore branding 404 (do not fake 200 {} — breaks Winner odds provider pick)
     if (urlStr && /\/api\/v1\/branding\//i.test(urlStr)) {
       return Promise.resolve(
-        new Response("{}", {
-          status: 200,
-          headers: { "Content-Type": "application/json", "x-scorenet-stub": "branding" },
+        new Response('{"error":{"code":404,"message":"Not Found"}}', {
+          status: 404,
+          headers: { "Content-Type": "application/json", "x-scorenet-stub": "branding-404" },
         })
       );
+    }
+    // Tournament Winner: season outright odds only exist on Bet365 provider id 1
+    if (urlStr && /\/api\/v1\/odds\/season\/\d+\/provider\/\d+\/all/i.test(urlStr)) {
+      var snSeason = String(urlStr).replace(
+        /(\/api\/v1\/odds\/season\/\d+\/provider\/)\d+(\/all\b)/i,
+        function (_m, a, b) {
+          return a + "1" + b;
+        }
+      );
+      if (snSeason !== urlStr) {
+        if (typeof input === "string") input = snSeason;
+        else if (input && input.url) input = new Request(snSeason, input);
+        urlStr = snSeason;
+      }
     }
 
     var synth = urlStr ? handleNextDataFetch(urlStr) : null;
@@ -473,7 +487,14 @@
       // leave same-origin; fetch wrapper handles Next soft-nav (XHR rare)
       arguments[1] = u;
     } else {
-      arguments[1] = mapUrl(url);
+      u = mapUrl(url);
+      u = String(u || "").replace(
+        /(\/api\/v1\/odds\/season\/\d+\/provider\/)\d+(\/all\b)/i,
+        function (_m, a, b) {
+          return a + "1" + b;
+        }
+      );
+      arguments[1] = u;
     }
     return open.apply(this, arguments);
   };
