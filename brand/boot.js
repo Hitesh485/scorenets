@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909cv";
+  var VER = "20260909tvch";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -14,6 +14,19 @@
       return;
     }
   } catch (eFantasyRedir) {}
+
+  // TV schedule: Sofascore SPA defaults to By competition when hash has no tab.
+  // Force #tab:channels before Next hydrates so Watchlist/Suggested show SonyLIV etc.
+  try {
+    var _snTvPath = (location.pathname || "").replace(/\/+$/, "") || "/";
+    if (_snTvPath === "/tv-schedule") {
+      var _snHash = String(location.hash || "").replace(/^#/, "");
+      if (!/(?:^|,)tab:/i.test(_snHash)) {
+        var _snNewHash = "tab:channels" + (_snHash ? "," + _snHash : "");
+        history.replaceState(null, "", location.pathname + location.search + "#" + _snNewHash);
+      }
+    }
+  } catch (eTvTab) {}
 
   // Quiet noisy third-party / hydration errors from scraped Sofascore SPA
   try {
@@ -140,8 +153,11 @@
             "/user/top-contributors",
             "/user/top-editors",
             "/feedback",
+            "/privacy-policy",
+            "/cookies-policy",
             "/football/player-transfers",
             "/football/player-of-the-season",
+            "/football/team/compare",
             "/tv-schedule",
             "/betting-tips-today",
           ];
@@ -1330,7 +1346,11 @@
       var need =
         document.querySelector("script[data-sn-next-disabled]") ||
         /^\/user(\/|$)/.test(location.pathname || "") ||
-        /^\/fantasy(\/|$)/.test(location.pathname || "");
+        /^\/fantasy(\/|$)/.test(location.pathname || "") ||
+        /^\/privacy-policy(\/|$)/.test(location.pathname || "") ||
+        /^\/cookies-policy(\/|$)/.test(location.pathname || "") ||
+        /^\/impressum(\/|$)/.test(location.pathname || "") ||
+        /^\/feedback(\/|$)/.test(location.pathname || "");
       if (!need) return;
       if (document.querySelector('script[src*="live-ticker.js"]')) return;
       var s = document.createElement("script");

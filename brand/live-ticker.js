@@ -32,6 +32,9 @@
     if (/^\/user(\/|$)/.test(path)) return true;
     if (/^\/fantasy(\/|$)/.test(path)) return true;
     if (path === "/feedback") return true;
+    if (path === "/privacy-policy") return true;
+    if (path === "/cookies-policy") return true;
+    if (path === "/impressum") return true;
     return false;
   }
 

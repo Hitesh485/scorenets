@@ -2,12 +2,21 @@
    Reads /backend/tv/live-events (AWS relay via scorenets.com). No server writes.
    Does NOT hide date tabs / sport filters / channel chips. */
 (function () {
-  var VER = "20260909stv4";
+  var VER = "20260909stv5";
   var CHANNEL_ID = "sn-sports-tv";
   var CHANNEL_NAME = "Sports TV";
   var LS_KEY = "sn_sports_tv_selected";
 
   if (!/^\/tv-schedule\/?$/.test(location.pathname)) return;
+
+  // Default to By channel when landing with no hash (do not override explicit tournament hash)
+  try {
+    var h = String(location.hash || "");
+    if (!h || h === "#") {
+      history.replaceState(null, "", location.pathname + location.search + "#tab:channels");
+    }
+  } catch (eHash) {}
+
 
   // Allow hot-reload of fixed script version
   if (window.__SN_SPORTS_TV__ === VER) return;
@@ -21,8 +30,9 @@
     });
   } catch (e0) {}
 
+  // Opt-in only — native Sofascore channel list (SonyLIV / Apple TV / …) stays primary
   var state = {
-    selected: localStorage.getItem(LS_KEY) !== "0",
+    selected: localStorage.getItem(LS_KEY) === "1",
     events: [],
     loading: false,
     error: "",
@@ -366,7 +376,22 @@
       });
   }
 
+
+  function preferChannelsTab() {
+    try {
+      var h = String(location.hash || "");
+      // Only nudge when hash says channels (or empty) but UI stuck on competitions
+      if (h && h !== "#" && !/^#tab:channels\b/i.test(h)) return;
+      var ch = document.getElementById("tab-channels");
+      var tr = document.getElementById("tab-tournaments");
+      if (ch && tr && tr.getAttribute("aria-selected") === "true") {
+        ch.click();
+      }
+    } catch (ePref) {}
+  }
+
   function boot() {
+    preferChannelsTab();
     injectCss();
     ensureWatchCard();
     ensureSuggest();
@@ -383,4 +408,6 @@
   }
   setTimeout(boot, 400);
   setTimeout(boot, 1200);
+  setTimeout(preferChannelsTab, 800);
+  setTimeout(preferChannelsTab, 2000);
 })();

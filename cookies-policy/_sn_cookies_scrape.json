@@ -1,0 +1,537 @@
+{
+  "scraped_at": "2026-09-09T13:16:50",
+  "target": "https://www.sofascore.com/cookies-policy",
+  "primary_view": "desktop",
+  "ver": "20260909cp",
+  "assets": 67,
+  "images": 0,
+  "apis": [
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "bytes": 2107,
+      "file": "mobile__api__v1__config__country-sport-priorities__country.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "bytes": 209,
+      "file": "mobile__api__v1__country__alpha2.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "mobile__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "bytes": 10770,
+      "file": "mobile__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+      "bytes": 5379,
+      "file": "mobile__api__v1__odds__providers__IN__web.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+      "bytes": 2497,
+      "file": "mobile__api__v1__config__country-sport-priorities__country__IN.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "bytes": 2853,
+      "file": "mobile__api__v1__event__newly-added-events.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+      "bytes": 2576,
+      "file": "mobile__api__v1__odds__providers__IN__web-odds.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+      "bytes": 16,
+      "file": "mobile__api__v1__odds__providers__IN__web-featured.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "mobile__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "mobile__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "mobile__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "bytes": 209,
+      "file": "tablet__api__v1__country__alpha2.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "bytes": 2107,
+      "file": "tablet__api__v1__config__country-sport-priorities__country.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "bytes": 10770,
+      "file": "tablet__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+      "bytes": 5379,
+      "file": "tablet__api__v1__odds__providers__IN__web.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+      "bytes": 2497,
+      "file": "tablet__api__v1__config__country-sport-priorities__country__IN.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "bytes": 2853,
+      "file": "tablet__api__v1__event__newly-added-events.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+      "bytes": 2576,
+      "file": "tablet__api__v1__odds__providers__IN__web-odds.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "tablet__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+      "bytes": 16,
+      "file": "tablet__api__v1__odds__providers__IN__web-featured.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "tablet__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "tablet",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "tablet__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "bytes": 209,
+      "file": "desktop__api__v1__country__alpha2.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "bytes": 2107,
+      "file": "desktop__api__v1__config__country-sport-priorities__country.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "desktop__api__v1__sport__19800__event-count.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "bytes": 10770,
+      "file": "desktop__api__v1__sofascore-news__en__posts__page-1__per_page-12__categories-sport.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web",
+      "bytes": 5379,
+      "file": "desktop__api__v1__odds__providers__IN__web.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/IN",
+      "bytes": 2497,
+      "file": "desktop__api__v1__config__country-sport-priorities__country__IN.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-odds",
+      "bytes": 2576,
+      "file": "desktop__api__v1__odds__providers__IN__web-odds.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "bytes": 2853,
+      "file": "desktop__api__v1__event__newly-added-events.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/odds/providers/IN/web-featured",
+      "bytes": 16,
+      "file": "desktop__api__v1__odds__providers__IN__web-featured.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/trending/events/IN/all",
+      "bytes": 317531,
+      "file": "desktop__api__v1__trending__events__IN__all.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/23400/image",
+      "bytes": 12792,
+      "file": "desktop__api__v1__team__23400__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2817/image",
+      "bytes": 5172,
+      "file": "desktop__api__v1__team__2817__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1643/image",
+      "bytes": 4390,
+      "file": "desktop__api__v1__team__1643__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2816/image",
+      "bytes": 4220,
+      "file": "desktop__api__v1__team__2816__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2697/image",
+      "bytes": 3764,
+      "file": "desktop__api__v1__team__2697__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2829/image",
+      "bytes": 7488,
+      "file": "desktop__api__v1__team__2829__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/168090/image",
+      "bytes": 5016,
+      "file": "desktop__api__v1__team__168090__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/25/image",
+      "bytes": 7700,
+      "file": "desktop__api__v1__team__25__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2819/image",
+      "bytes": 5930,
+      "file": "desktop__api__v1__team__2819__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/17/image",
+      "bytes": 9202,
+      "file": "desktop__api__v1__team__17__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2959/image",
+      "bytes": 8586,
+      "file": "desktop__api__v1__team__2959__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/7/image",
+      "bytes": 8170,
+      "file": "desktop__api__v1__team__7__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3206/image",
+      "bytes": 2566,
+      "file": "desktop__api__v1__team__3206__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/4430/image",
+      "bytes": 2648,
+      "file": "desktop__api__v1__team__4430__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1981/image",
+      "bytes": 2126,
+      "file": "desktop__api__v1__team__1981__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3653/image",
+      "bytes": 3034,
+      "file": "desktop__api__v1__team__3653__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2673/image",
+      "bytes": 5868,
+      "file": "desktop__api__v1__team__2673__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/44/image",
+      "bytes": 4180,
+      "file": "desktop__api__v1__team__44__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3002/image",
+      "bytes": 8410,
+      "file": "desktop__api__v1__team__3002__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3202/image",
+      "bytes": 5938,
+      "file": "desktop__api__v1__team__3202__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/5257/image",
+      "bytes": 4642,
+      "file": "desktop__api__v1__team__5257__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/57163/image",
+      "bytes": 5520,
+      "file": "desktop__api__v1__team__57163__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/34/image",
+      "bytes": 5132,
+      "file": "desktop__api__v1__team__34__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/36837/image",
+      "bytes": 4836,
+      "file": "desktop__api__v1__team__36837__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/36/image",
+      "bytes": 11306,
+      "file": "desktop__api__v1__team__36__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2714/image",
+      "bytes": 9064,
+      "file": "desktop__api__v1__team__2714__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/42/image",
+      "bytes": 6596,
+      "file": "desktop__api__v1__team__42__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1977/image",
+      "bytes": 3130,
+      "file": "desktop__api__v1__team__1977__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3628/image",
+      "bytes": 3002,
+      "file": "desktop__api__v1__team__3628__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/4424/image",
+      "bytes": 3058,
+      "file": "desktop__api__v1__team__4424__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/38/image",
+      "bytes": 11344,
+      "file": "desktop__api__v1__team__38__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/2836/image",
+      "bytes": 5352,
+      "file": "desktop__api__v1__team__2836__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1968/image",
+      "bytes": 5126,
+      "file": "desktop__api__v1__team__1968__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3654/image",
+      "bytes": 4648,
+      "file": "desktop__api__v1__team__3654__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/3656/image",
+      "bytes": 4534,
+      "file": "desktop__api__v1__team__3656__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1961/image",
+      "bytes": 7598,
+      "file": "desktop__api__v1__team__1961__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/102339/image",
+      "bytes": 10286,
+      "file": "desktop__api__v1__team__102339__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1963/image",
+      "bytes": 10330,
+      "file": "desktop__api__v1__team__1963__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/39/image",
+      "bytes": 13914,
+      "file": "desktop__api__v1__team__39__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://img.sofascore.com/api/v1/team/1957/image",
+      "bytes": 10210,
+      "file": "desktop__api__v1__team__1957__image.json"
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.sofascore.com/api/v1/sport/19800/event-count",
+      "bytes": 634,
+      "file": "desktop__api__v1__sport__19800__event-count.json"
+    }
+  ],
+  "views": [
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "title": "Football Live Score - Sofascore",
+      "ok": true,
+      "html_bytes": 184086,
+      "raw": "_raw_mobile.html",
+      "shot": "_shot_mobile.png",
+      "new_assets": 63,
+      "new_apis": 12,
+      "ticker_chips": 0,
+      "has_what_are_cookies": true,
+      "has_sofa_url": true
+    },
+    {
+      "viewport": "tablet",
+      "width": 768,
+      "height": 1024,
+      "title": "Football Live Score - Sofascore",
+      "ok": true,
+      "html_bytes": 183245,
+      "raw": "_raw_tablet.html",
+      "shot": "_shot_tablet.png",
+      "new_assets": 0,
+      "new_apis": 11,
+      "ticker_chips": 0,
+      "has_what_are_cookies": true,
+      "has_sofa_url": true
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "title": "Football Live Score - Sofascore",
+      "ok": true,
+      "html_bytes": 301865,
+      "raw": "_raw_desktop.html",
+      "shot": "_shot_desktop.png",
+      "new_assets": 4,
+      "new_apis": 51,
+      "ticker_chips": 20,
+      "has_what_are_cookies": true,
+      "has_sofa_url": true
+    }
+  ],
+  "leftover_next_static": [],
+  "live_ticker_wired": true,
+  "mapping_sample": {
+    "/_next/static/chunks/99618.f47f07fe54f3f87d.js": "/assets/www.sofascore.com/99618.f47f07fe54f3f87d_e9716cc451.js",
+    "/_next/static/chunks/38731.2d3f42ed810c33fe.js": "/assets/www.sofascore.com/38731.2d3f42ed810c33fe_037a06ae8c.js",
+    "/static/fonts/SofascoreSans/woff2/SofascoreSans-Regular.woff2": "/assets/www.sofascore.com/SofascoreSans-Regular_ac2d5d1600.woff2",
+    "/static/fonts/SofascoreSans/woff2/SofascoreSans-Medium.woff2": "/assets/www.sofascore.com/SofascoreSans-Medium_6eca5e9b74.woff2",
+    "/_next/static/css/76580ff7e9e948b6.css": "/assets/www.sofascore.com/76580ff7e9e948b6_cc927f4864.css",
+    "/static/fonts/SofascoreSans/woff2/SofascoreSans-Bold.woff2": "/assets/www.sofascore.com/SofascoreSans-Bold_c62cd5aebb.woff2",
+    "/_next/static/chunks/59908.495e38b296da7741.js": "/assets/www.sofascore.com/59908.495e38b296da7741_86dc65f913.js",
+    "/_next/static/chunks/77581.b2aa7d2a3ff9bb74.js": "/assets/www.sofascore.com/77581.b2aa7d2a3ff9bb74_a1f4108ff4.js",
+    "/_next/static/chunks/85984.edc9bd00e3f0b3c2.js": "/assets/www.sofascore.com/85984.edc9bd00e3f0b3c2_03a6352dc6.js",
+    "/_next/static/chunks/75575.22aae18ec4240c05.js": "/assets/www.sofascore.com/75575.22aae18ec4240c05_8b43b01a8f.js",
+    "/_next/static/chunks/3045.e159d86a7dc30330.js": "/assets/www.sofascore.com/3045.e159d86a7dc30330_d12177db91.js",
+    "/_next/static/chunks/45023.bf0d96b9e59b68fa.js": "/assets/www.sofascore.com/45023.bf0d96b9e59b68fa_e14291fa6e.js",
+    "/_next/static/chunks/71339.2cbd53d09181ea0a.js": "/assets/www.sofascore.com/71339.2cbd53d09181ea0a_d3aee85952.js",
+    "/_next/static/chunks/5258.388e19ededb92953.js": "/assets/www.sofascore.com/5258.388e19ededb92953_cf1aa5ace6.js",
+    "/_next/static/chunks/5817.c2b68ed21b59e868.js": "/assets/www.sofascore.com/5817.c2b68ed21b59e868_1135777f63.js",
+    "/_next/static/chunks/68481.ee95b65deac1cf33.js": "/assets/www.sofascore.com/68481.ee95b65deac1cf33_8e7bfed49d.js",
+    "/_next/static/chunks/41224.e5ebdda3e14a9de1.js": "/assets/www.sofascore.com/41224.e5ebdda3e14a9de1_80b97a516d.js",
+    "/_next/static/Tfm3vhssBRvrmD6b4fXnZ/_ssgManifest.js": "/assets/www.sofascore.com/_ssgManifest_b404e23d62.js",
+    "/_next/static/chunks/pages/cookies-policy-bd5b03a8d2b9de12.js": "/assets/www.sofascore.com/cookies-policy-bd5b03a8d2b9de12_f675072035.js",
+    "/_next/static/Tfm3vhssBRvrmD6b4fXnZ/_buildManifest.js": "/assets/www.sofascore.com/_buildManifest_adf4b97fcd.js",
+    "/_next/static/chunks/webpack-ed6060cd70d9b92b.js": "/assets/www.sofascore.com/webpack-ed6060cd70d9b92b_ff68f895fc.js",
+    "/static/locales/messages.en.ef518a3c3bb6.js": "/assets/www.sofascore.com/messages.en.ef518a3c3bb6_1ef5e3009c.js",
+    "/_next/static/chunks/framework-aed03caaeb4d9b0d.js": "/assets/www.sofascore.com/framework-aed03caaeb4d9b0d_7011f2e1c7.js",
+    "/_next/static/chunks/main-a6e822a7d6755a98.js": "/assets/www.sofascore.com/main-a6e822a7d6755a98_88394d63f9.js",
+    "/_next/static/chunks/d333b046-b1256f18810602e8.js": "/assets/www.sofascore.com/d333b046-b1256f18810602e8_a397014236.js",
+    "/_next/static/chunks/pages/_app-621b50befbcf10f7.js": "/assets/www.sofascore.com/_app-621b50befbcf10f7_6b456ed2aa.js",
+    "/_next/static/chunks/4765-ff83bcc092500da8.js": "/assets/www.sofascore.com/4765-ff83bcc092500da8_b1ea5a4f5e.js",
+    "/_next/static/chunks/52054.1dbe364c54210b59.js": "/assets/www.sofascore.com/52054.1dbe364c54210b59_e50531de49.js",
+    "/static/scripts/highlightsWorker.js": "/assets/www.sofascore.com/highlightsWorker_739237d943.js",
+    "/_next/static/chunks/27976.c8a01d94f2904a45.js": "/assets/www.sofascore.com/27976.c8a01d94f2904a45_0fae976ddd.js"
+  },
+  "shell": "cookies-policy/index.html",
+  "notes": "Desktop shell kept for full navbar+ticker; live-ticker/live-bridge/live-ws wired; policy URL rewritten to scorenets.com"
+}
