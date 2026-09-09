@@ -1,6 +1,7 @@
 /* ScoreNet Live TV — header link (never inject into ad slots) */
 (function () {
-  var VER = "20260908ql";
+  var VER = "20260909tvt";
+  var LIVE_TV_HREF = "/tv-schedule/#tab:tournaments";
 
   function isBadMount(el) {
     if (!el || !el.closest) return true;
@@ -71,12 +72,15 @@
       if (!mount || isBadMount(mount)) return;
 
       if (existing) {
+        existing.href = LIVE_TV_HREF;
+        existing.setAttribute("data-sn-tv", "1");
+        if (!(existing.textContent || "").trim()) existing.textContent = "Live TV";
         if (existing.parentElement === mount) return;
         existing.parentElement && existing.parentElement.removeChild(existing);
       } else {
         existing = document.createElement("a");
         existing.id = "sn-live-tv-link";
-        existing.href = "/live-tv/";
+        existing.href = LIVE_TV_HREF;
         existing.textContent = "Live TV";
         existing.setAttribute("data-sn-tv", "1");
       }

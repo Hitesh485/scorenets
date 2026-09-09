@@ -1,6 +1,6 @@
 /* ScoreNet boot v11 — quiet console + YouTube Error 153 referrer fix */
 (function () {
-  var VER = "20260909fr";
+  var VER = "20260909sp";
   var LOGO = "/brand/scorenet-logo.svg?v=" + VER;
   // Visible brand name only — never match sofascore.com hosts/URLs or "Sofascore Pro"
   var SOFA_BRAND_NAME_RE = /\bSofascore\b(?!\s+Pro)(?!\.com)/gi;
@@ -303,6 +303,65 @@
     } catch (eNav) {}
   }
   fixMobileBottomNav();
+
+  // Mobile/tablet only: Sofascore over-scrolls the sport icon strip on non-football
+  // pages (active sport ends up off-screen left). Pin strip so active sport is visible.
+  // Desktop sport nav is untouched (hide_md strip / md layout).
+  function snFixMobileSportStripScroll() {
+    try {
+      if (!window.matchMedia || !window.matchMedia("(max-width: 991.98px)").matches) return;
+      var path = (location.pathname || "").replace(/\/+$/, "") || "/";
+      var sport = "football";
+      if (path === "/" || path === "/football") {
+        sport = "football";
+      } else {
+        var m = /^\/([a-z0-9-]+)(?:\/|$)/i.exec(path);
+        if (!m) return;
+        sport = m[1].toLowerCase();
+      }
+      // Not a sport home strip context
+      if (
+        /^(user|tv-schedule|feedback|privacy-policy|cookies-policy|impressum|fantasy|sofascore-news|blog|editorial|articles|betting-tips-today|live-tv|favorites|trending)$/i.test(
+          sport
+        )
+      ) {
+        return;
+      }
+      var li = document.getElementById("sport-menu-item-" + sport);
+      if (!li) return;
+      var strip = li.closest("ul");
+      if (!strip) return;
+      var cls = String(strip.className || "");
+      if (cls.indexOf("ov-x_scroll") < 0 && cls.indexOf("hide_md") < 0) {
+        var ox = window.getComputedStyle(strip).overflowX;
+        if (ox !== "auto" && ox !== "scroll" && ox !== "overlay") return;
+      }
+      var max = Math.max(0, strip.scrollWidth - strip.clientWidth);
+      var target = 0;
+      if (sport !== "football") {
+        // Keep active sport near the left edge (not centered — centering overshoots)
+        target = Math.max(0, Math.min(li.offsetLeft - 4, max));
+      }
+      if (Math.abs(strip.scrollLeft - target) > 8) {
+        strip.scrollLeft = target;
+      }
+    } catch (eStrip) {}
+  }
+  try {
+    function snBindSportStripFix() {
+      snFixMobileSportStripScroll();
+      [50, 150, 400, 900, 1800].forEach(function (ms) {
+        setTimeout(snFixMobileSportStripScroll, ms);
+      });
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", snBindSportStripFix);
+    } else {
+      snBindSportStripFix();
+    }
+    window.addEventListener("load", snFixMobileSportStripScroll);
+    window.addEventListener("pageshow", snFixMobileSportStripScroll);
+  } catch (eStripBoot) {}
 
   // Ensure profile freeze shell gets Fresnel CSS hooks
   try {
@@ -1330,9 +1389,56 @@
         var cur = nodes[i];
         var v = cur.nodeValue;
         var nv = rebrandUiLabel(v);
+        // Footer: React keeps "2026" and "Sofascore/ScoreNet –" as adjacent text nodes
+        if (nv !== v && /^ScoreNet\b/.test(nv) && !/^\s/.test(nv)) {
+          var prev = cur.previousSibling;
+          while (prev && prev.nodeType === 8) prev = prev.previousSibling;
+          if (
+            prev &&
+            prev.nodeType === 3 &&
+            /^\d{4}\s*$/.test(String(prev.nodeValue || ""))
+          ) {
+            nv = " " + nv;
+          }
+        }
         if (nv !== v) cur.nodeValue = nv;
       }
     } catch (e) {}
+  }
+
+  // © 2026ScoreNet → © 2026 ScoreNet (year + brand glued across / inside text nodes)
+  function snFixCopyrightYearBrandSpace() {
+    try {
+      if (!document.body) return;
+      var skip = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1, CODE: 1, PRE: 1, SVG: 1 };
+      var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (node) {
+          var p = node.parentElement;
+          if (!p || skip[p.tagName]) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      });
+      var n;
+      while ((n = tw.nextNode())) {
+        var v = n.nodeValue;
+        if (!v) continue;
+        if (/(\d{4})(ScoreNet)\b/.test(v)) {
+          n.nodeValue = v.replace(/(\d{4})(ScoreNet)\b/g, "$1 $2");
+          continue;
+        }
+        if (!/^\d{4}\s*$/.test(v)) continue;
+        var next = n.nextSibling;
+        while (next && next.nodeType === 8) next = next.nextSibling;
+        if (
+          next &&
+          next.nodeType === 3 &&
+          /^ScoreNet\b/.test(String(next.nodeValue || "")) &&
+          !/^\s/.test(String(next.nodeValue || ""))
+        ) {
+          next.nodeValue = " " + next.nodeValue;
+        }
+      }
+    } catch (eFixSp) {}
   }
 
   function brand() {
@@ -1359,6 +1465,7 @@
       scrubBrandMeta();
       scrubBrandAttrs();
       scrubBrandTextNodes();
+      snFixCopyrightYearBrandSpace();
 
       killAdvertisementSlots();
       ensureMobileFooter();
