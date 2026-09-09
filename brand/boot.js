@@ -174,7 +174,7 @@
   }
   forceSportFullNav();
 
-  // Mobile bottom nav on freeze shells: Search/Favourites lack working Next handlers.
+  // Mobile bottom nav: Favourites -> /favorites; Search focuses header / home.
   function fixMobileBottomNav() {
     try {
       document.addEventListener(
@@ -196,7 +196,7 @@
             .toLowerCase();
           var href = (node.getAttribute("href") || "").split("?")[0].split("#")[0];
 
-          // Favourites — no dedicated shell yet
+          // Favourites — mobile/tablet bottom nav (desktop header star already soft-navs)
           if (
             href === "/favorites" ||
             href === "/favourites" ||
@@ -205,11 +205,25 @@
             label === "favourites" ||
             label === "favorites"
           ) {
+            var favPath = location.pathname || "";
+            if (
+              favPath === "/favorites" ||
+              favPath === "/favourites" ||
+              favPath === "/favorites/" ||
+              favPath === "/favourites/"
+            ) {
+              return;
+            }
             ev.preventDefault();
             ev.stopPropagation();
             if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
-            // Home has live scores + favourites entry points until /favorites shell exists
-            location.assign("/");
+            try {
+              if (window.next && window.next.router && typeof window.next.router.push === "function") {
+                window.next.router.push("/favorites");
+                return;
+              }
+            } catch (eFav) {}
+            location.assign("/favorites");
             return;
           }
 

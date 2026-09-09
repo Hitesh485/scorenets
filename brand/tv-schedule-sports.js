@@ -2,7 +2,7 @@
    Reads /backend/tv/live-events (AWS relay via scorenets.com). No server writes.
    Does NOT hide date tabs / sport filters / channel chips. */
 (function () {
-  var VER = "20260908stv3";
+  var VER = "20260909stv4";
   var CHANNEL_ID = "sn-sports-tv";
   var CHANNEL_NAME = "Sports TV";
   var LS_KEY = "sn_sports_tv_selected";
